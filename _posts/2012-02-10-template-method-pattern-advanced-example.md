@@ -93,7 +93,8 @@ public abstract class MessageSenderDecorator : MessageSenderBase
 }
 ```
 
-Now we'll implement the first decorator.
+Now we’ll implement the first decorator.
+
 
 ```csharp
 public class MessageSenderPlaceholderParserDecorator : MessageSenderDecorator
