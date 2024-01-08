@@ -1,0 +1,1219 @@
+[
+  
+    {
+      "title"    : "Amazon Prime architecture didn’t change",
+      "category" : "",
+      "tags"     : "4+1 architectural view model, architecture, and microservices",
+      "url"      : "/2023/05/16/amazon-prime-architecture-didnt-change/",
+      "date"     : "May 16, 2023"
+    } ,
+  
+    {
+      "title"    : "Distributed Monolith",
+      "category" : "",
+      "tags"     : "architecture, microservices, and soa",
+      "url"      : "/2021/07/01/distributed-monolith/",
+      "date"     : "Jul 1, 2021"
+    } ,
+  
+    {
+      "title"    : "Priority Queues – Interceptors",
+      "category" : "",
+      "tags"     : "4+1 architectural view model, architecture, mediatr, message priority, microservices, and priority queues",
+      "url"      : "/2020/08/26/priority-queues-interceptors/",
+      "date"     : "Aug 26, 2020"
+    } ,
+  
+    {
+      "title"    : "4+1 architectural view model",
+      "category" : "",
+      "tags"     : "4+1 architectural view model and microservices",
+      "url"      : "/2020/08/07/41-architectural-view-model/",
+      "date"     : "Aug 7, 2020"
+    } ,
+  
+    {
+      "title"    : "Priority Queues – Publishing",
+      "category" : "",
+      "tags"     : "message priority and priority queues",
+      "url"      : "/2020/07/23/priority-queues-publishing/",
+      "date"     : "Jul 23, 2020"
+    } ,
+  
+    {
+      "title"    : "Priority Queues – Sender decides",
+      "category" : "",
+      "tags"     : "priority queues",
+      "url"      : "/2020/07/18/priority-queues-sender-decides/",
+      "date"     : "Jul 18, 2020"
+    } ,
+  
+    {
+      "title"    : "Priority Queues – Why you don’t need them",
+      "category" : "",
+      "tags"     : "message priority and priority queues",
+      "url"      : "/2020/07/16/priority-queues-why-you-dont-need-them/",
+      "date"     : "Jul 16, 2020"
+    } ,
+  
+    {
+      "title"    : "BloggingAbout.NET is dead",
+      "category" : "",
+      "tags"     : "bloggingabout.net and personal",
+      "url"      : "/2020/06/27/bloggingabout-net-is-dead/",
+      "date"     : "Jun 27, 2020"
+    } ,
+  
+    {
+      "title"    : "Dealing with eventual consistency",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2020/06/27/dealing-with-eventual-consistency/",
+      "date"     : "Jun 27, 2020"
+    } ,
+  
+    {
+      "title"    : "Adding correlation identifier to logs with NServiceBus",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2019/06/26/adding-correlation-identifier-to-logs-with-nservicebus/",
+      "date"     : "Jun 26, 2019"
+    } ,
+  
+    {
+      "title"    : "Concurrency and Feyenoord Rotterdam",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2017/10/16/concurrency-and-feyenoord/",
+      "date"     : "Oct 16, 2017"
+    } ,
+  
+    {
+      "title"    : "What is a servicebus?",
+      "category" : "",
+      "tags"     : "servicebus queue transport broker",
+      "url"      : "/2017/03/02/what-is-a-servicebus/",
+      "date"     : "Mar 2, 2017"
+    } ,
+  
+    {
+      "title"    : "Microservices deployment",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2017/02/21/microservices-deployment/",
+      "date"     : "Feb 21, 2017"
+    } ,
+  
+    {
+      "title"    : "SDN Presentations on batchjobs and microservices",
+      "category" : "",
+      "tags"     : "microservices, nservicebus, sagas, and soa",
+      "url"      : "/2016/09/02/presentations-batchjobs-microservices/",
+      "date"     : "Sep 2, 2016"
+    } ,
+  
+    {
+      "title"    : "Death of the batch job – NServiceBus Sagas",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2016/03/17/nservicebus-sagas-presentation/",
+      "date"     : "Mar 17, 2016"
+    } ,
+  
+    {
+      "title"    : "No Deadlines",
+      "category" : "",
+      "tags"     : "deadlines and estimates",
+      "url"      : "/2016/03/14/no-deadlines/",
+      "date"     : "Mar 14, 2016"
+    } ,
+  
+    {
+      "title"    : "NDC London 2016 Distributed System Principles",
+      "category" : "",
+      "tags"     : "architecture and distributed systems",
+      "url"      : "/2016/03/02/ndc-london-2016-distributed-system-principles/",
+      "date"     : "Mar 2, 2016"
+    } ,
+  
+    {
+      "title"    : "NServiceBus Publish Subscribe tutorial",
+      "category" : "",
+      "tags"     : "nservicebus and publish subscribe",
+      "url"      : "/2015/10/28/nservicebus-publish-subscribe-tutorial/",
+      "date"     : "Oct 28, 2015"
+    } ,
+  
+    {
+      "title"    : "Business Components as mini systems",
+      "category" : "",
+      "tags"     : "architecture, messaging, and nservicebus",
+      "url"      : "/2015/10/27/business-components-as-mini-systems/",
+      "date"     : "Oct 27, 2015"
+    } ,
+  
+    {
+      "title"    : "Building reliable applications with messaging",
+      "category" : "",
+      "tags"     : "messaging, nservicebus, and presentation",
+      "url"      : "/2015/10/16/building-reliable-applications-messaging/",
+      "date"     : "Oct 16, 2015"
+    } ,
+  
+    {
+      "title"    : "Upcoming sessions end 2015",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2015/09/01/upcoming-session-end-2015/",
+      "date"     : "Sep 1, 2015"
+    } ,
+  
+    {
+      "title"    : "NDC Oslo talk on duplicating vs replicating data in microservices",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2015/07/22/ndc-oslo-talk-duplicating-vs-replicating-data-microservices/",
+      "date"     : "Jul 22, 2015"
+    } ,
+  
+    {
+      "title"    : "Unit test code snippet for Visual Studio",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2015/04/10/unit-test-code-snippet-visual-studio/",
+      "date"     : "Apr 10, 2015"
+    } ,
+  
+    {
+      "title"    : "CORS on Windows Azure for jquery calls to CDN",
+      "category" : "",
+      "tags"     : "asp.net, azure, and security",
+      "url"      : "/2015/03/04/cors-on-azure-for-jquery-calls-to-cdn/",
+      "date"     : "Mar 4, 2015"
+    } ,
+  
+    {
+      "title"    : "LIDNUG Presentation on messaging",
+      "category" : "",
+      "tags"     : "architecture, messaging, msmq, nservicebus, and wcf",
+      "url"      : "/2014/07/28/lidnug-presentation-messaging/",
+      "date"     : "Jul 28, 2014"
+    } ,
+  
+    {
+      "title"    : "Microsoft Azure Redis SessionStateProvider",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2014/05/13/microsoft-azure-redis-sessionstateprovider/",
+      "date"     : "May 13, 2014"
+    } ,
+  
+    {
+      "title"    : "ASP.NET MVC and Bootstrap 2 buttons for radio buttons",
+      "category" : "",
+      "tags"     : "Bootstrap 2, HTML, jQuery, and MVC",
+      "url"      : "/2014/04/24/asp-net-mvc-and-bootstrap-2-buttons-for-radio-buttons/",
+      "date"     : "Apr 24, 2014"
+    } ,
+  
+    {
+      "title"    : "Distributed Systems Design",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2014/02/28/distributed-systems-design/",
+      "date"     : "Feb 28, 2014"
+    } ,
+  
+    {
+      "title"    : "Autonomous Business Components",
+      "category" : "",
+      "tags"     : "architecture, eda, nservicebus, and soa",
+      "url"      : "/2014/02/19/autonomous-business-components/",
+      "date"     : "Feb 19, 2014"
+    } ,
+  
+    {
+      "title"    : "Partitioning data through events",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/07/30/partitioning-data-through-events/",
+      "date"     : "Jul 30, 2013"
+    } ,
+  
+    {
+      "title"    : "Employers don’t need a recruiter",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/06/14/employers-dont-need-a-recruiter/",
+      "date"     : "Jun 14, 2013"
+    } ,
+  
+    {
+      "title"    : "SDN Event June 14th",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/06/14/sdn-event-june-14th/",
+      "date"     : "Jun 14, 2013"
+    } ,
+  
+    {
+      "title"    : "The comparison between software development and construction fails",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/04/20/the-comparison-between-software-development-and-construction-fails/",
+      "date"     : "Apr 20, 2013"
+    } ,
+  
+    {
+      "title"    : "SDN Event March 18th",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/03/19/sdn-event-march-18th/",
+      "date"     : "Mar 19, 2013"
+    } ,
+  
+    {
+      "title"    : "Colored console tracelistener for Enterprise Library 5.0",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/03/05/colored-console-tracelistener-for-enterprise-library-5-0/",
+      "date"     : "Mar 5, 2013"
+    } ,
+  
+    {
+      "title"    : "Databases and coupling",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2013/01/04/databases-and-coupling/",
+      "date"     : "Jan 4, 2013"
+    } ,
+  
+    {
+      "title"    : "Bing Maps on WPF and custom PushPin tutorial for PixelSense",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/10/17/bing-maps-on-wpf-and-custom-pushpin-tutorial-for-pixelsense/",
+      "date"     : "Oct 17, 2012"
+    } ,
+  
+    {
+      "title"    : "High availability",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/09/19/high-availability/",
+      "date"     : "Sep 19, 2012"
+    } ,
+  
+    {
+      "title"    : "The 11th Fallacy of Enterprise Computing",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/04/26/the-11th-fallacy-of-enterprise-computing/",
+      "date"     : "Apr 26, 2012"
+    } ,
+  
+    {
+      "title"    : "What is messaging",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/04/25/what-is-messaging/",
+      "date"     : "Apr 25, 2012"
+    } ,
+  
+    {
+      "title"    : "CQRS Journey taking community contributions",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/04/02/cqrs-journey-taking-community-contributions/",
+      "date"     : "Apr 2, 2012"
+    } ,
+  
+    {
+      "title"    : "Visual Studio 11  Unit tests",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/03/01/visual-studio-11-unit-tests/",
+      "date"     : "Mar 1, 2012"
+    } ,
+  
+    {
+      "title"    : "Template Method Pattern advanced example",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/02/10/template-method-pattern-advanced-example/",
+      "date"     : "Feb 10, 2012"
+    } ,
+  
+    {
+      "title"    : "Template Method Pattern example",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/02/10/template-method-pattern-example/",
+      "date"     : "Feb 10, 2012"
+    } ,
+  
+    {
+      "title"    : "Template Method Pattern explanation",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/02/10/template-method-pattern-explanation/",
+      "date"     : "Feb 10, 2012"
+    } ,
+  
+    {
+      "title"    : "nServiceBus synchronously",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2012/01/31/nservicebus-synchronously/",
+      "date"     : "Jan 31, 2012"
+    } ,
+  
+    {
+      "title"    : "How to unit test a method that has void as return type",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/09/15/how-to-unit-test-a-method-that-has-void-as-return-type/",
+      "date"     : "Sep 15, 2011"
+    } ,
+  
+    {
+      "title"    : "Locking in SQL Server and the nolock and readpast hints",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/09/13/locking-in-sql-server-and-the-nolock-and-readpast-hints/",
+      "date"     : "Sep 13, 2011"
+    } ,
+  
+    {
+      "title"    : "Value of Unit testing",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/09/12/value-of-unit-testing/",
+      "date"     : "Sep 12, 2011"
+    } ,
+  
+    {
+      "title"    : "Scrum guide 2011",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/08/16/scrum-guide-2011/",
+      "date"     : "Aug 16, 2011"
+    } ,
+  
+    {
+      "title"    : "Publish Subscribe with nServiceBus tutorial",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/02/03/publish-subscribe-with-nservicebus-tutorial/",
+      "date"     : "Feb 3, 2011"
+    } ,
+  
+    {
+      "title"    : "ClickOnce deployment and customHostSpecified error",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2011/01/11/clickonce-deployment-and-customhostspecified-error/",
+      "date"     : "Jan 11, 2011"
+    } ,
+  
+    {
+      "title"    : "Silverlight vs. Windows Forms or ASP.NET",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/12/04/silverlight-vs-windows-forms-or-asp-net/",
+      "date"     : "Dec 4, 2010"
+    } ,
+  
+    {
+      "title"    : "Embedding images in an app_offline.htm",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/11/19/embedding-images-in-an-app_offline-htm/",
+      "date"     : "Nov 19, 2010"
+    } ,
+  
+    {
+      "title"    : "Doesn’t take a genius to build massively scalable systems",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/09/28/doesnt-take-a-genius-to-build-massively-scalable-systems/",
+      "date"     : "Sep 28, 2010"
+    } ,
+  
+    {
+      "title"    : "Miracles still do happen",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/09/08/miracles-still-do-happen/",
+      "date"     : "Sep 8, 2010"
+    } ,
+  
+    {
+      "title"    : "Worst day of my life",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/07/26/worst-day-of-my-life/",
+      "date"     : "Jul 26, 2010"
+    } ,
+  
+    {
+      "title"    : "WCF Simple Example in Visual Studio 2010 – part 2",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/06/19/wcf-simple-example-in-visual-studio-2010-part-2/",
+      "date"     : "Jun 19, 2010"
+    } ,
+  
+    {
+      "title"    : "WCF Simple Example in Visual Studio 2010",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/06/16/wcf-simple-example-in-visual-studio-2010/",
+      "date"     : "Jun 16, 2010"
+    } ,
+  
+    {
+      "title"    : "Workflow Tracking Profile Editor",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/06/08/workflow-tracking-profile-editor/",
+      "date"     : "Jun 8, 2010"
+    } ,
+  
+    {
+      "title"    : "Microsoft AppFabric explained for SDN",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/05/25/microsoft-appfabric-explained-for-sdn/",
+      "date"     : "May 25, 2010"
+    } ,
+  
+    {
+      "title"    : "MIX 2010 Keynote coverage",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/03/15/mix-2010-keynote-coverage/",
+      "date"     : "Mar 15, 2010"
+    } ,
+  
+    {
+      "title"    : "AppFabric  Configuration binding extension could not be found.",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/02/27/appfabric-configuration-binding-extension-could-not-be-found/",
+      "date"     : "Feb 27, 2010"
+    } ,
+  
+    {
+      "title"    : "ClickOnce manual updates",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2010/02/24/clickonce-manual-updates/",
+      "date"     : "Feb 24, 2010"
+    } ,
+  
+    {
+      "title"    : "Season greetings from BloggingAbout.NET",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/12/23/season-greetings-from-bloggingabout-net/",
+      "date"     : "Dec 23, 2009"
+    } ,
+  
+    {
+      "title"    : "Scott Hanselman happy to be inside a Vertigo Player",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/11/19/scott-hanselman-happy-to-be-inside-a-vertigo-player/",
+      "date"     : "Nov 19, 2009"
+    } ,
+  
+    {
+      "title"    : "New era",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/11/19/new-era/",
+      "date"     : "Nov 19, 2009"
+    } ,
+  
+    {
+      "title"    : "Zune player in taskbar",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/10/26/zune-player-in-taskbar/",
+      "date"     : "Oct 26, 2009"
+    } ,
+  
+    {
+      "title"    : "Create a custom caching manager for Enterprise Library 4",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/10/22/create-a-custom-caching-manager-for-enterprise-library-4/",
+      "date"     : "Oct 22, 2009"
+    } ,
+  
+    {
+      "title"    : "SDC 2009 slidedecks and demos",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/10/20/sdc-2009-slidedecks-and-demos/",
+      "date"     : "Oct 20, 2009"
+    } ,
+  
+    {
+      "title"    : "Syntaxhighlighter",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/10/12/syntaxhighlighter/",
+      "date"     : "Oct 12, 2009"
+    } ,
+  
+    {
+      "title"    : "Devnology &amp; after party (OffTopic)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/08/05/devnology-after-party-offtopic/",
+      "date"     : "Aug 5, 2009"
+    } ,
+  
+    {
+      "title"    : "Adding SharePoint class resources to your feature using WSPBuilder",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/07/24/adding-sharepoint-class-resources-to-your-feature-using-wspbuilder/",
+      "date"     : "Jul 24, 2009"
+    } ,
+  
+    {
+      "title"    : "Quickstart tutorial into Enterprise Library logging",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/07/21/quickstart-tutorial-into-enterprise-library-logging/",
+      "date"     : "Jul 21, 2009"
+    } ,
+  
+    {
+      "title"    : "Azure pricing",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/07/14/azure-pricing/",
+      "date"     : "Jul 14, 2009"
+    } ,
+  
+    {
+      "title"    : "SQL Data Services update",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/07/08/sql-data-services-update/",
+      "date"     : "Jul 8, 2009"
+    } ,
+  
+    {
+      "title"    : "Reinventing Programming",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/07/08/re-inventing-programming/",
+      "date"     : "Jul 8, 2009"
+    } ,
+  
+    {
+      "title"    : "Twikini, the mobile twitter client",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/07/01/twikini-the-mobile-twitter-client/",
+      "date"     : "Jul 1, 2009"
+    } ,
+  
+    {
+      "title"    : "Is Azure ready for production usage?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/06/29/is-azure-ready-for-production-usage/",
+      "date"     : "Jun 29, 2009"
+    } ,
+  
+    {
+      "title"    : "SDN Event June 2009",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/06/27/sdn-event-june-2009/",
+      "date"     : "Jun 27, 2009"
+    } ,
+  
+    {
+      "title"    : "Attempted to read or write protected memory in a .NET application",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/06/08/attempted-to-read-or-write-protected-memory-in-a-net-application/",
+      "date"     : "Jun 8, 2009"
+    } ,
+  
+    {
+      "title"    : "Typemock Isolator 5.3.1 can fake DateTime.Now",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/06/03/typemock-isolator-5-3-1-can-fake-datetime-now/",
+      "date"     : "Jun 3, 2009"
+    } ,
+  
+    {
+      "title"    : "DevDays09 slides  If you build it, you’ll ship it",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/06/03/devdays09-slides-if-you-build-it-youll-ship-it/",
+      "date"     : "Jun 3, 2009"
+    } ,
+  
+    {
+      "title"    : "I’ll be speaking at the Microsoft Developer Days 2009",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/05/19/ill-be-speaking-at-the-microsoft-developer-days-2009/",
+      "date"     : "May 19, 2009"
+    } ,
+  
+    {
+      "title"    : "Why developers should not be happy with a project manager",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/05/18/why-developers-should-not-be-happy-with-a-project-manager/",
+      "date"     : "May 18, 2009"
+    } ,
+  
+    {
+      "title"    : "DevDays wildcard proposals and voting",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/04/16/devdays-wildcard-proposals-and-voting/",
+      "date"     : "Apr 16, 2009"
+    } ,
+  
+    {
+      "title"    : "Wildcard proposal  If you build it, you’ll ship it",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/04/14/wildcard-proposal-if-you-build-it-youll-ship-it/",
+      "date"     : "Apr 14, 2009"
+    } ,
+  
+    {
+      "title"    : "Asserting private objects with unit testing",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/04/14/asserting-private-objects-with-unit-testing/",
+      "date"     : "Apr 14, 2009"
+    } ,
+  
+    {
+      "title"    : "Silverlight 3 SDK Beta 1",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/03/18/silverlight-3-sdk-beta-1/",
+      "date"     : "Mar 18, 2009"
+    } ,
+  
+    {
+      "title"    : "Best developer tools",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/03/13/best-developer-tools/",
+      "date"     : "Mar 13, 2009"
+    } ,
+  
+    {
+      "title"    : "Azure and Virtual Machine hours",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/03/12/azure-and-virtual-machine-hours/",
+      "date"     : "Mar 12, 2009"
+    } ,
+  
+    {
+      "title"    : "Attach to debugger script and shortcut",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/03/10/attach-to-debugger-script-and-shortcut/",
+      "date"     : "Mar 10, 2009"
+    } ,
+  
+    {
+      "title"    : "Visual Studio settings",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/03/06/visual-studio-settings/",
+      "date"     : "Mar 6, 2009"
+    } ,
+  
+    {
+      "title"    : "Cloud service in Azure  Speedtraps",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/02/23/cloud-service-in-azure-speedtraps/",
+      "date"     : "Feb 23, 2009"
+    } ,
+  
+    {
+      "title"    : "Faking extension methods",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/02/21/faking-extension-methods/",
+      "date"     : "Feb 21, 2009"
+    } ,
+  
+    {
+      "title"    : "Broken Azure",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/02/19/broken-azure/",
+      "date"     : "Feb 19, 2009"
+    } ,
+  
+    {
+      "title"    : "Chirp",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/02/02/chirp/",
+      "date"     : "Feb 2, 2009"
+    } ,
+  
+    {
+      "title"    : "ZoomIt 3.0",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2009/01/14/zoomit-3-0/",
+      "date"     : "Jan 14, 2009"
+    } ,
+  
+    {
+      "title"    : "Deploying ClickOnce applications automated using FinalBuilder",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/11/26/deploying-clickonce-applications-automated-using-finalbuilder/",
+      "date"     : "Nov 26, 2008"
+    } ,
+  
+    {
+      "title"    : "Typemock Isolator for SharePoint",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/11/24/typemock-isolator-for-sharepoint/",
+      "date"     : "Nov 24, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC 2009",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/11/04/pdc-2009/",
+      "date"     : "Nov 4, 2008"
+    } ,
+  
+    {
+      "title"    : "Entity Framework Futures",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/11/04/entity-framework-futures/",
+      "date"     : "Nov 4, 2008"
+    } ,
+  
+    {
+      "title"    : "Oslo  Building textual DSLs",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/30/oslo-building-textual-dsls/",
+      "date"     : "Oct 30, 2008"
+    } ,
+  
+    {
+      "title"    : "“M” and MService",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/30/m-and-mservice/",
+      "date"     : "Oct 30, 2008"
+    } ,
+  
+    {
+      "title"    : "“Oslo” repositories and models",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/30/oslo-repositories-and-models/",
+      "date"     : "Oct 30, 2008"
+    } ,
+  
+    {
+      "title"    : "Oslo Customizing and Extending the Visual Design Experience",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/29/oslo-customizing-and-extending-the-visual-design-experience/",
+      "date"     : "Oct 29, 2008"
+    } ,
+  
+    {
+      "title"    : "Best PDC session so far  Lap around “Oslo”",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/28/best-pdc-session-so-far-lap-around-oslo/",
+      "date"     : "Oct 28, 2008"
+    } ,
+  
+    {
+      "title"    : "CodeRush Xpress",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/28/coderush-xpress/",
+      "date"     : "Oct 28, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC 2008 Photos",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/28/pdc-2008-photos/",
+      "date"     : "Oct 28, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC 2008  Keynote 2",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/28/pdc-2008-keynote-2/",
+      "date"     : "Oct 28, 2008"
+    } ,
+  
+    {
+      "title"    : "The language ‘M’",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/28/the-language-m/",
+      "date"     : "Oct 28, 2008"
+    } ,
+  
+    {
+      "title"    : "Silverlight 2.0 on mobile announced today",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/28/silverlight-2-0-on-mobile-announced-today/",
+      "date"     : "Oct 28, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC2008 keynote  Windows Azure",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/27/pdc2008-keynote-windows-azure/",
+      "date"     : "Oct 27, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC session schedule online",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/16/pdc-session-schedule-online/",
+      "date"     : "Oct 16, 2008"
+    } ,
+  
+    {
+      "title"    : "Silverlight 2 released!",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/14/silverlight-2-released/",
+      "date"     : "Oct 14, 2008"
+    } ,
+  
+    {
+      "title"    : "ClickOnce deployment, signed manifests and automated builds and ResolveKeySource failing…",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/10/clickonce-deployment-signed-manifests-and-automated-builds-and-resolvekeysource-failing/",
+      "date"     : "Oct 10, 2008"
+    } ,
+  
+    {
+      "title"    : "Problems",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/09/problems/",
+      "date"     : "Oct 9, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC 2008  Sessions &amp; hard drive",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/01/pdc-2008-sessions-hard-drive/",
+      "date"     : "Oct 1, 2008"
+    } ,
+  
+    {
+      "title"    : "Who is actually using LINQ or LINQ to SQL?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/10/01/who-is-actually-using-linq-or-linq-to-sql/",
+      "date"     : "Oct 1, 2008"
+    } ,
+  
+    {
+      "title"    : "Typemock Isolator  Getting internal variables",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/09/29/typemock-isolator-getting-internal-variables/",
+      "date"     : "Sep 29, 2008"
+    } ,
+  
+    {
+      "title"    : "Microsoft project “Velocity”",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/09/18/microsoft-project-velocity/",
+      "date"     : "Sep 18, 2008"
+    } ,
+  
+    {
+      "title"    : "FinalBuilder  Action lists",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/09/18/finalbuilder-action-lists/",
+      "date"     : "Sep 18, 2008"
+    } ,
+  
+    {
+      "title"    : "Oslo, D and the PDC",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/09/10/oslo-d-and-the-pdc/",
+      "date"     : "Sep 10, 2008"
+    } ,
+  
+    {
+      "title"    : "Internet Explorer 8 Beta 2 experiences",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/09/01/internet-explorer-8-beta-2-experiences/",
+      "date"     : "Sep 1, 2008"
+    } ,
+  
+    {
+      "title"    : "Gaming for students",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/08/05/gaming-for-students/",
+      "date"     : "Aug 5, 2008"
+    } ,
+  
+    {
+      "title"    : "What’s a good library to create PDF documents?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/07/30/whats-a-good-library-to-create-pdf-documents/",
+      "date"     : "Jul 30, 2008"
+    } ,
+  
+    {
+      "title"    : "Waegis was launched",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/07/10/waegis-was-launched/",
+      "date"     : "Jul 10, 2008"
+    } ,
+  
+    {
+      "title"    : "LINQ to SQL objects and doing inmemory queries over them",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/07/10/linq-to-sql-objects-and-doing-in-memory-queries-over-them/",
+      "date"     : "Jul 10, 2008"
+    } ,
+  
+    {
+      "title"    : "TypeMock Isolator and LINQ",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/26/typemock-isolator-and-linq/",
+      "date"     : "Jun 26, 2008"
+    } ,
+  
+    {
+      "title"    : "The new pc",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/26/the-new-pc/",
+      "date"     : "Jun 26, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC08  Meet me in Los Angeles",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/18/pdc08-meet-me-in-los-angeles/",
+      "date"     : "Jun 18, 2008"
+    } ,
+  
+    {
+      "title"    : "Unit tests are for functionality, not code!",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/13/unit-tests-are-for-functionality-not-code/",
+      "date"     : "Jun 13, 2008"
+    } ,
+  
+    {
+      "title"    : "Stopwatch snippet",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/11/stopwatch-snippet/",
+      "date"     : "Jun 11, 2008"
+    } ,
+  
+    {
+      "title"    : "Office Live Workspace",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/06/office-live-workspace/",
+      "date"     : "Jun 6, 2008"
+    } ,
+  
+    {
+      "title"    : "Windows Live Writer and ZoomIt",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/06/05/windows-live-writer-and-zoomit/",
+      "date"     : "Jun 5, 2008"
+    } ,
+  
+    {
+      "title"    : "VS2008 DataDude and conditional deployment",
+      "category" : "",
+      "tags"     : "FinalBuilder, MSBuild, TeamBuild, Visual Studio 2008, VS2008, and DataDude",
+      "url"      : "/2008/06/02/vs2008-datadude-and-conditional-deployment/",
+      "date"     : "Jun 2, 2008"
+    } ,
+  
+    {
+      "title"    : "PDC2008",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/05/28/pdc2008/",
+      "date"     : "May 28, 2008"
+    } ,
+  
+    {
+      "title"    : "Programmatically creating an IIS7 site",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/05/16/programmatically-creating-an-iis7-site/",
+      "date"     : "May 16, 2008"
+    } ,
+  
+    {
+      "title"    : "Community Server 2008",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/04/21/community-server-2008/",
+      "date"     : "Apr 21, 2008"
+    } ,
+  
+    {
+      "title"    : "Community Server on Windows 2008",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/04/16/community-server-on-windows-2008/",
+      "date"     : "Apr 16, 2008"
+    } ,
+  
+    {
+      "title"    : "New BloggingAbout.NET Server",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/04/11/new-bloggingabout-net-server/",
+      "date"     : "Apr 11, 2008"
+    } ,
+  
+    {
+      "title"    : "CopySourceAsHtml 2008",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/04/02/copysourceashtml-2008/",
+      "date"     : "Apr 2, 2008"
+    } ,
+  
+    {
+      "title"    : "BloggingAbout.NET and costs",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/04/01/bloggingabout-net-and-costs/",
+      "date"     : "Apr 1, 2008"
+    } ,
+  
+    {
+      "title"    : "Add service reference is disabled",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/03/28/add-service-reference-is-disabled/",
+      "date"     : "Mar 28, 2008"
+    } ,
+  
+    {
+      "title"    : "Silverlight and clearing its isolated storage",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/03/14/silverlight-and-clearing-its-isolated-storage/",
+      "date"     : "Mar 14, 2008"
+    } ,
+  
+    {
+      "title"    : "How Do I? Videos",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/03/12/how-do-i-videos/",
+      "date"     : "Mar 12, 2008"
+    } ,
+  
+    {
+      "title"    : "Getting started with Silverlight 2",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/03/11/getting-started-with-silverlight-2/",
+      "date"     : "Mar 11, 2008"
+    } ,
+  
+    {
+      "title"    : "Query analyzer for SQL Server 20052008",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/03/07/query-analyzer-for-sql-server-20052008/",
+      "date"     : "Mar 7, 2008"
+    } ,
+  
+    {
+      "title"    : "MIX08 announcements",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/03/05/mix08-announcements/",
+      "date"     : "Mar 5, 2008"
+    } ,
+  
+    {
+      "title"    : "Getting data from Excel the fast way, using LINQ",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/02/29/getting-data-from-excel-the-fast-way-using-linq/",
+      "date"     : "Feb 29, 2008"
+    } ,
+  
+    {
+      "title"    : "Hosting a WCF service in a Windows Service",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2008/02/28/hosting-a-wcf-service-in-a-windows-service/",
+      "date"     : "Feb 28, 2008"
+    } ,
+  
+    {
+      "title"    : "WCF Binding decision chart",
+      "category" : "",
+      "tags"     : "Windows Communication Foundation and WCF",
+      "url"      : "/2006/12/01/wcf-binding-decision-chart/",
+      "date"     : "Dec 1, 2006"
+    } 
+  
+]
