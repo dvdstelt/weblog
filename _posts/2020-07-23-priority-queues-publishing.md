@@ -5,7 +5,7 @@ author: Dennis van der Stelt
 image: '/images/priority-queues-publishing/header.jpg'
 date: 20200723 110731
 title: Priority Queues – Publishing
-description: Instead of deciding to which queue a priority message should be send to, a better des...
+description: Instead of deciding to which queue a priority message should be sent to, a better des...
 categories:
     - Architecture and Design
     - NServiceBus
@@ -17,9 +17,7 @@ redirect_from:
   - "/blogs/dennis/archive/2020/07/23/priority-queues-publishing.aspx"
 ---
 
-![](/images/priority-queues-publishing/791350-1559843002948-16x91-1.jpg)
-
-Instead of deciding to which queue a priority message should be send to, a better design is where the sender has no knowledge of priority messages or any receiver. We can achieve this using the publish/subscribe messaging pattern.
+Instead of deciding to which queue a priority message should be sent to, a better design is where the sender has no knowledge of priority messages or any receiver. We can achieve this using the publish/subscribe messaging pattern.
 
 This article is example 2 of a series on dealing with message priority and priority queues. You can find the explanation and index in the [opening post](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/).
 
@@ -87,7 +85,7 @@ public class SubmitOrderHandler : IHandleMessages<ordersubmitted>
 
 In the code above we see the [message handler](https://github.com/dvdstelt/PriorityQueues/blob/master/src/02%20-%20PublishSubscribe/RegularReceiver/Handler/SubmitOrderHandler.cs) for the `RegularReceiver`. In line 5 we see that the incoming `CustomerId `on the message is verified against a list of known strategic customers. If the `CustomerId `is not found in that list, we process the message. The `StrategicReceiver` [message handler](https://github.com/dvdstelt/PriorityQueues/blob/master/src/02%20-%20PublishSubscribe/StrategicReceiver/Handlers/SubmitOrderHandler.cs) looks almost alike, except that it only processes messages where the `CustomerId` *is in the list of known strategic customers*.
 
-For demo purposes, the message handler for the `RegularReceiver `delays each message for 250 milliseconds. That way we can see what would happen if more messages would be processes by this handler, but they take longer than the ‘better performing’ `StrategicReceiver`.
+For demo purposes, the message handler for the `RegularReceiver `delays each message for 250 milliseconds. That way we can see what would happen if more messages were processed by this handler, but they take longer than the ‘better performing’ `StrategicReceiver`.
 
 ## Running the sample
 
@@ -97,10 +95,10 @@ If you run this second sample, again make sure the 3 appropriate Console Window 
 
 ## Pros and cons
 
-I’ll reiterate some of the items in the list
+I’ll reiterate some of the items on the list
 * Pro: The sender has no knowledge about whether a customer is a strategic customer or not.
 * Pro: The sender is better loosely coupled to the receivers.
-* Pro: There is no one with knowledge about all the receivers. You could theoretically add a new receiver without changing the others. If you create a third category customer, this could mean changing at least the strategic receiver.
+* Pro: There is no one with knowledge about all the receivers. You could theoretically add a new receiver without changing the others. If you create a third-category customer, this could mean changing at least the strategic receiver.
 * Con: The messages are duplicated at best (a copy of the message in each queue) and are processed by each endpoint.
     * This increases I/O and reduces performance
     * In cloud scenarios, you pay per transaction, which means increased cost.
