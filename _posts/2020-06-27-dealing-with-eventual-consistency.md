@@ -14,7 +14,7 @@ redirect_from:
   - "/blogs/dennis/archive/2020/06/27/dealing-with-eventual-consistency.aspx"
 ---
 
-<iframe src="https://www.youtube.com/watch?v=jTz74m1KbBs" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/jTz74m1KbBs" frameborder="0" allowfullscreen></iframe>
 
 Last year during Øredev I presented on how to deal with eventual consistency.
 

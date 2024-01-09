@@ -103,6 +103,15 @@ And try to understand the difference between request/response and publish/subscr
 Together this can bring true loose coupling and a highly scalable system that can still be maintained after many years in production.
 
 If you want to know more, I recommend reading my blog and watching the following videos:
-* My presentation at NDC on sharing data between services [Autonomous microservices don’t share data. Period.](https://www.youtube.com/watch?v=0TYbHVc2yWI)
-* Udi Dahan on [Avoid Failed SOA business & Autonomous Components to the Rescue](https://www.youtube.com/watch?v=82SZ-cEtE7o)
-* If you worry about asynchronous communication and eventual consistency [Dealing with eventual consistency](https://www.youtube.com/watch?v=kXGUSVz3eNg)
+
+My presentation at NDC on sharing data between services: _Autonomous microservices don’t share data. Period._
+
+<iframe src="https://www.youtube.com/embed/0TYbHVc2yWI" frameborder="0" allowfullscreen></iframe>
+
+Udi Dahan on _Avoid Failed SOA business & Autonomous Components to the Rescue_
+
+<iframe src="https://www.youtube.com/embed/82SZ-cEtE7o" frameborder="0" allowfullscreen></iframe>
+
+If you worry about asynchronous communication and eventual consistency _Dealing with eventual consistency_
+
+<iframe src="https://www.youtube.com/embed/kXGUSVz3eNg" frameborder="0" allowfullscreen></iframe>
