@@ -17,11 +17,9 @@ redirect_from:
   - "/blogs/dennis/archive/2020/07/16/priority-queues-why-you-dont-need-them.aspx"
 ---
 
-![](/images/priority-queues-why-you-dont-need-them/Blog_Website_eTHJ59p.jpg__1140x340_q90_crop-center_subsampling-21.jpg)
+At Starbucks, you can get a coffee pretty quickly, mostly because of the way their queuing system works¹. But imagine if Starbucks starts selling burgers, prescription drugs and used cars². A burger might come in a basket with cheese, bacon, a drink and choice of fries. A car requires even more processes to complete before a transaction is finished. Different wait times for these products will ruin the customer experience for people waiting in line to order a coffee, who have to wait for completely different processes to finish first.
 
-At Starbucks you can get a coffee pretty quickly, mostly because of the way their queuing system works¹. But imagine if Starbucks starts selling burgers, prescription drugs and used cars². A burger might come in a basket with cheese, bacon, a drink and choice of fries. A car requires even more processes to complete before a transaction is finished. Different wait times for these products will ruin the customer experience for people waiting in line to order a coffee, who have to wait for completely different processes to finish first.
-
-What we’d like is for customers that want to purchase a coffee quickly to get through the line faster than those getting a car. Obviously, this is not a real business scenario. But one that could exist in our domain is where we have strategic customers—the VIP customers with lots and lots of money. The business rules might specify that strategic customers need to get priority over regular customers. As with the Starbucks example, we don’t want strategic customers to have to wait in line with regular customers, making them wait until every customer before them has been served.
+What we’d like is for customers who want to purchase a coffee quickly to get through the line faster than those getting a car. Obviously, this is not a real business scenario. But one that could exist in our domain is where we have strategic customers—the VIP customers with lots and lots of money. The business rules might specify that strategic customers need to get priority over regular customers. As with the Starbucks example, we don’t want strategic customers to have to wait in line with regular customers, making them wait until every customer before them has been served.
 
 We might think that priority queues are a good fit for this scenario. But are they?
 
@@ -41,7 +39,7 @@ But if we have two different endpoints to send messages to, each of them with th
 
 ## Three examples
 
-In a series of 3 follow-up articles I will show several ways how to <s>deal with priority queues</s> manage message priority.
+In a series of 3 follow-up articles, I will show several ways how to <s>deal with priority queues</s> and manage message priority.
 * [Sender decides](https://bloggingabout-linux.azurewebsites.net/2020/07/18/priority-queues-sender-decides/)  
 In this sample, the sender of the messages decides where a command should go. It thus has knowledge of the different customer types.
 * [Publishing messages, sender decoupled](https://bloggingabout-linux.azurewebsites.net/2020/07/23/priority-queues-publishing/)  
