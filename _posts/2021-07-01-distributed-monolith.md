@@ -5,7 +5,7 @@ author: Dennis van der Stelt
 image: '/images/distributed-monolith/header.jpeg'
 date: 20210701 014322
 title: Distributed Monolith
-description: How can a microservices based architecture, that looked great on paper, turn into a s...
+description: How can a microservices-based architecture, that looked great on paper, turn into a s...
 tags:
   - architecture
   - microservices
@@ -36,7 +36,7 @@ class Program
 
 There’s a subroutine (method) called `WriteLine`, we provide it with some text and it outputs the text on the console. Let’s take this example a few steps further.
 
-In the not-so-distant past, developers were promised that if they’d use webservices, their system would be decoupled, and more scalable, and additional promises were made. Because their big, bad, monolithic application was broken up into smaller webservices it would then suddenly turn into this decoupled distributed system.
+In the not-so-distant past, developers were promised that if they used webservices, their system would be decoupled, and more scalable, and additional promises were made. Because their big, bad, monolithic application was broken up into smaller webservices it would then suddenly turn into this decoupled distributed system.
 
 So taking the "Hello world" sample one step further, the end result would be something like this.
 
