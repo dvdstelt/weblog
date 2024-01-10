@@ -25,7 +25,6 @@ Again, I really need to clarify that this was a temporary solution and eventuall
 
 Here’s the code to do it though
 
-
 ```csharp
 DataResponseMessage response = null;
 
@@ -50,7 +49,6 @@ Console.WriteLine("Reply : {0}", response.ResponseMessage);
 
 For completeness, I’ll include the message handler from the component the message was sent to. This is normal NServiceBus code.
 
-
 ```csharp
 public class RequestDataMessageHandler : IHandleMessages<requestdatamessage>
 {
@@ -67,4 +65,4 @@ public class RequestDataMessageHandler : IHandleMessages<requestdatamessage>
         Bus.Reply(response);
     }
 }
-```</dataresponsemessage></requestdatamessage>
+```

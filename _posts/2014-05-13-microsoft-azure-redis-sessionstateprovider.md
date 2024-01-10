@@ -15,8 +15,9 @@ Read this morning about the Microsoft Azure Redis Cache Service on [Scott Guthri
 
 You’ll have to log in to the [Microsoft Azure Preview Portal](http://portal.azure.com/) and create a Redis cache service. After that you must have an ASP.NET Website for forms or MVC and install the [following Nuget package](http://www.nuget.org/packages/Harbour.RedisSessionStateStore/), which uses the StackExchange Redis Client:
 
-> Install-Package Harbour.RedisSessionStateStore
-
+```
+Install-Package Harbour.RedisSessionStateStore
+```
 
 ```xml
 <system.web>

@@ -12,7 +12,7 @@ redirect_from:
 ---
 
 We’ve all seen the comparison between development work and constructing buildings. I think the comparison is fundamentally flawed. There are numerous posts out in the world that confirm this. Random Google articles are [here](http://wordaligned.org/articles/why-software-development-isnt-like-construction), [here](http://www.kuro5hin.org/story/2003/3/13/211831/159) and [here](http://stackoverflow.com/questions/1241912/whats-wrong-with-the-analogy-between-software-and-building-construction). I like the last one on Stackoverflow, because the writer is quite cynical when answering the question why they differ.
-* [![](/images/the-comparison-between-software-development-and-construction-fails/4834_connections_5f00_thumb_5f00_7ca1ea3e.jpg)](/wp-content/uploads/2014/01/4834_connections_5f00_thumb_5f00_7ca1ea3e.jpg)They [customers] can’t take delivery of your finished underground carpark and ask you to add an airport (also underground).
+* They [customers] can’t take delivery of your finished underground carpark and ask you to add an airport (also underground).
 * They aren’t allowed to change the law of gravity after you finish the design. Or expect the building to work on another planet.
 * They don’t blame the architect when they can’t get an 18 wheeler delivery truck through reception, into the elevator and to the loading dock that they demanded be on the 24th floor.
 

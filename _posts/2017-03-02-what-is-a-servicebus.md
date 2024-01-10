@@ -7,7 +7,8 @@ date: 20170302 080025
 title: What is a servicebus?
 description: The first time I read about the concept of a servicebus and saw the images, I could n...
 tags:
-  - servicebus queue transport broker
+  - servicebus
+  - queue
 redirect_from:
   - "/dennis/2017/03/02/what-is-a-servicebus"
   - "/blogs/dennis/archive/2017/03/02/what-is-a-servicebus.aspx"
