@@ -14,17 +14,15 @@ redirect_from:
   - "/blogs/dennis/archive/2020/08/07/41-architectural-view-model.aspx"
 ---
 
-![](/images/41-architectural-view-model/bridging-gap-n28e7fa92rh00zgf0e2z8lwbwb7z88pthbew6gk51k1.jpg)
-
 Once upon a time, I came across a question about a system that was designed according to the microservices architectural style. The question was about how to handle network requests across a scaled-out and load-balanced back-end. When a single visitor accessed the website, it resulted in tens of thousands of HTTP requests in the back-end. With 3 to 4 users, connection timeouts started appearing everywhere. Even though their microservices were loosely coupled and autonomous.
 
-The reason I am sharing this is that everyone immediately understands this behavior is wildly undesirable. Tens of thousands of network requests for a single page request is simply too many. It’s an example of something that went well beyond how we would expect a system to perform. Tens of thousands out-of-process HTTP request for visiting a single page is obviously a problem. But with how many requests is it not a problem anymore? 5000? 1000? 50? 10?
+The reason I am sharing this is that everyone immediately understands this behavior is wildly undesirable. Tens of thousands of network requests for a single page request is simply too many. It’s an example of something that went well beyond how we would expect a system to perform. Tens of thousands of out-of-process HTTP requests for visiting a single page is obviously a problem. But with how many requests is it not a problem anymore? 5000? 1000? 50? 10?
 
 ## The problem
 
-One of the problems here is that likely on paper everything looked fine. There were all these fine-grained services that all would do their own work. They all seemed loosely coupled and autonomous. A monolith is one big block. On paper, the microservices were small, independent blocks that all would do their own thing and are loosely coupled from all the other blocks. Once in production though, every single service relied on many other services, which rely again on many others. An entire chain of RPC requests occurred, often over HTTP, every single one of them inflicted with the [fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing).
+One of the problems here is that likely on paper everything looked fine. There were all these fine-grained services that all would do their own work. They all seemed loosely coupled and autonomous. A monolith is one big block. On paper, the microservices were small, independent blocks that all would do their own thing and were loosely coupled from all the other blocks. Once in production though, every single service relied on many other services, which rely again on many others. An entire chain of RPC requests occurred, often over HTTP, every single one of them inflicted with the [fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing).
 
-On paper everything seemed fine, but in production the experience is quite different.
+On paper, everything seemed fine, but in production, the experience is quite different.
 
 ## Different architectural views
 
@@ -54,7 +52,7 @@ The `RegularReceiver.Interceptor` and `StrategicReceiver.Interceptor` their name
 
 ![](/images/41-architectural-view-model/41-physical-view.png)
 
-In the physical- or deployment view however, the Interceptor components are not deployed with the components they belong to. Instead, they are deployed with the sender. This means the deployment view literally changes how we look at the components, then how we looked at them from the logical view. How they are actually deployed, loaded and used is part of the next blogpost in the [Priority Queues – Why you don’t need them](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/) series of posts.
+In the physical- or deployment view, however, the Interceptor components are not deployed with the components they belong to. Instead, they are deployed with the sender. This means the deployment view literally changes how we look at the components, then how we look at them from the logical view. How they are actually deployed, loaded, and used is part of the next blogpost in the [Priority Queues – Why you don’t need them](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/) series of posts.
 
 ## Conclusion
 

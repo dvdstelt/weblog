@@ -70,3 +70,8 @@ p img {
 ## Make sure tags with spaces are correctly rendered
 ## Find where the url for tags is rendered and change the tag into following:
 tag | replace: ' ','-'
+
+## --------------------------------------------------------------------------------------
+## /_layouts/post.html
+## Make sure we exclude Disqus and include Disgus
+{% include github-comments.html %}
