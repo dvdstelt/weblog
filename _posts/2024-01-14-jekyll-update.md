@@ -3,7 +3,7 @@ layout: post
 id: 579114
 author: Dennis van der Stelt
 image: '/images/jekyll/header.jpg'
-date: 20240110 090000
+date: 20240114 090000
 title: BloggingAbout.NET migrated to Jekyll
 description: A long awaited goal is finally here
 categories:
