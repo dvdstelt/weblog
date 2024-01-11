@@ -14,19 +14,21 @@ redirect_from:
 ---
 
 This blogpost is part of a series
-1. [Template Method Pattern explanation](https://bloggingabout.net/2012/02/10/template-method-pattern-explanation) 
-2. Template Method Pattern example 
-3. [Template Method Pattern advanced](https://bloggingabout.net/2012/02/10/template-method-pattern-advanced-example) 
+1. [Template Method Pattern explanation](https://bloggingabout.net/2012/02/10/template-method-pattern-explanation)
+2. Template Method Pattern example
+3. [Template Method Pattern advanced](https://bloggingabout.net/2012/02/10/template-method-pattern-advanced-example)
 
 So in my previous post I explained how I change the template method pattern a bit with protected abstract methods. In this post I’ll explain why I used this pattern and how I chose to implement it.
-**Requirements** At my current employer we send a lot of messages to customers. It varies per customer how message are being send. Some want a simple email, others want an xml document in their email, others want an xml document over HttpPost and others want us to send the message directly into a customers system, for example SalesForce. Most customers only have one option, some customers want multiple options.
+
+##### Requirements
+
+At my current employer we send a lot of messages to customers. It varies per customer how message are being send. Some want a simple email, others want an xml document in their email, others want an xml document over HttpPost and others want us to send the message directly into a customers system, for example SalesForce. Most customers only have one option, some customers want multiple options.
 
 When the software was first build, we only did send messages via email. A very simple solution was build. As more and more variations were required, a better solution was required. In our system, information is gathered, which is being inserted into the messages we send. We needed templated messages which contain placeholders. However, as some customers receive XML fed directly into their system, we needed to change some placeholder values, as not every system understands our values “male” and “female”, but rather have “1” or “0” for these values. Technical requirements are also important. We need to be able to store a successful or failed result to a datastore and needed to log exceptions as well.
 
 First, we’ll have a look at how we solve different transport mechanisms. Additional requirements for templates will be explained in another post, where we’ll add the decorator pattern and implement an additional template method pattern.
 
 Perhaps you’ll understand better what I implemented, if I show you the code that is executed to actually send out everything. In our system, we dynamically define which modules are being executed, in the following code I’ve defined a message sender for email and HttpPost.
-
 
 ```csharp
 static void Main(string[] args)
@@ -50,7 +52,6 @@ static void Main(string[] args)
 ```
 
 First the message is defined. It contains a guid for reference, an email address and a template. The template is the actual message. Then we initialize the two message senders and execute these one at a time in the foreach loop. Let’s have a look at the implementation of the base class.
-
 
 ```csharp
 public abstract class MessageSenderBase 
@@ -89,7 +90,6 @@ The Initialize and CleanUp method don’t do anything in the above code, but nor
 
 The Execute method is the only public method. It is the method that will be executed and used to run every method in the right order. This will always run the SendMessage method of a derived class, simply because this base class has no implementation. So let’s have a look at our email sender.
 
-
 ```csharp
 public class EmailMessageSender : MessageSenderBase
 {
@@ -102,4 +102,4 @@ public class EmailMessageSender : MessageSenderBase
 
 This could not be a lot simpler. Of course the actual implementation isn’t here, but that’s the point of the example. There’s no other code in this class, but the code that’s related to sending the message over email. This is completely according to the Single Responsibility Principle. When a customer requires an additional way of sending the message, we don’t need to change any code. We simply add another class with the required functionality. That’s Open/Closed Principle for you!
 
-I hope you understand why I like this implementation of the Template Method Pattern. For deriving classes, it’s completely clear what to implement. For external applications, it’s completely clear what to execute. In the last part of the Template Method Pattern series, we’ll introduce additional functionality and solve one problem with the decorator pattern and another template method pattern implementation. That post also includes a download if you want to play around with the code.</messagesenderbase></messagesenderbase>
+I hope you understand why I like this implementation of the Template Method Pattern. For deriving classes, it’s completely clear what to implement. For external applications, it’s completely clear what to execute. In the last part of the Template Method Pattern series, we’ll introduce additional functionality and solve one problem with the decorator pattern and another template method pattern implementation. That post also includes a download if you want to play around with the code.

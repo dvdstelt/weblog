@@ -66,8 +66,9 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll/tagging
-#  - jekyll-redirect-from
-#  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-twitter-plugin-2
 
 kramdown:
   input: GFM

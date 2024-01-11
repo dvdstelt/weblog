@@ -42,6 +42,7 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-tagging (1.1.0)
       nuggets
+    jekyll-twitter-plugin-2 (1.0.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.4.0)
@@ -81,6 +82,7 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-sitemap
   jekyll-tagging
+  jekyll-twitter-plugin-2
 
 BUNDLED WITH
    2.4.20

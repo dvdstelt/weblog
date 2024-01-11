@@ -16,28 +16,29 @@ So finally they released some information on Azure pricing, or the Azure Busines
 
 First, it’ll be commercially available from PDC09 in LA this year.
 
-<table border="0" cellspacing="0" cellpadding="2" width="591">
-<tbody>
+
+<div class="table-container">
+<table>
 <tr>
-<td valign="top" width="199">**Windows Azure**</td>
-<td valign="top" width="187">**SQL Azure**</td>
-<td valign="top" width="203">**.NET Services**</td>
+<th>Windows Azure</th>
+<th>SQL Azure</th>
+<th>.NET Services</th>
 </tr>
 <tr>
-<td valign="top" width="199">– Compute @ $0.12 / hour</td>
-<td valign="top" width="187">– Web Edition – 1GB @ $9.99</td>
+<td>Compute @ $0.12 / hour</td>
+<td>Web Edition – 1GB @ $9.99</td>
 <td valign="top" rowspan="3" width="203">Messages @ $0.15/100K message operations , including Service Bus messages and Access Control tokens</td>
 </tr>
 <tr>
-<td valign="top" width="199">– Storage @ $0.15 / GB</td>
-<td valign="top" width="187">– Business – 10GB @ $99.99</td>
+<td>Storage @ $0.15 / GB</td>
+<td>Business – 10GB @ $99.99</td>
 </tr>
 <tr>
-<td valign="top" width="199">– Transactions @ $0.01 / 10K</td>
-<td valign="top" width="187"> </td>
+<td>Transactions @ $0.01 / 10K</td>
+<td></td>
 </tr>
-</tbody>
 </table>
+</div>
 
 Bandwith on all three will be charged at $0.10 in and $0.15 out per GB.
 

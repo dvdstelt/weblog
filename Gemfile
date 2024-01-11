@@ -6,3 +6,4 @@ gem 'jekyll-tagging'
 gem "jekyll-sitemap"
 gem 'jekyll-redirect-from'
 gem 'jekyll-feed'
+gem 'jekyll-twitter-plugin-2'

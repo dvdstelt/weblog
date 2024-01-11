@@ -26,7 +26,6 @@ For installation I’ll redirect you to the official site.
 
 This is the end result:
 
-
 ```csharp
 namespace ConsoleApplication1
 {
@@ -41,4 +40,4 @@ namespace ConsoleApplication1
         }
     }
 }
-```</pre>
+```
