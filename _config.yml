@@ -26,7 +26,7 @@ hero:
 # Contact Settings
 contact:
   email: dvdstelt@gmail.com # Add your email for contant form
-  description: The Force is strong with this one. I have you now. I find your lack of faith disturbing. Hey, Luke! May the Force be with you. She must have hidden the plans in the escape pod. Send a detachment down to retrieve them, and see to it personally, Commander. There’ll be no one to stop us this time! # Add a description of your form
+  description: I'm a developer, international speaker and coach/trainer. Contact me for information about me and my services or anything else, or visit my professional website at https://compilesoftware.nl/
 
 # NOTE
 # Aditu theme comes with a contact form built-in. You can use this form with Formspree service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
@@ -44,7 +44,7 @@ social:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: bloggingabout-net # Add your shortname for Disqus Comment. For example mr-brown
+# disqus-identifier: bloggingabout-net # Add your shortname for Disqus Comment. For example mr-brown
 
 
 #-------------------------------

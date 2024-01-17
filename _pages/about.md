@@ -2,29 +2,22 @@
 layout: page
 title: About
 permalink: /about/
-image: '/images/60.jpg'
+image: '/images/about.jpg'
 ---
 
-Hi, my name is Brandon Watson. I like being at the center of events, being free and enjoying every moment. Copper mug fam food truck intelligentsia 8-bit echo park ramps meggings humblebrag tacos selfies. Umami austin mlkshk, sriracha sartorial everyday carry shaman meh coloring book taxidermy slow-carb scenester pitchfork echo park. Selvage bushwick chambray coloring book put a bird.
+Hi, my name is Dennis van der Stelt. Since I was 10 I knew I wanted to be a software developer. On my MSX 8020 I was writing MSX-Basic and I couldn't imagine doing anything else but this. Switched to MSX-2 8245 and 8280 and from there to PC where I started out with Turbo Pascal, Assembler and C++. Ended up doing Visual Basic for a large consultancy company and ended up with .NET.
 
-![Time to think]({{site.baseurl}}/images/31.jpg)
-*Time to think*
+The first thing I developed in .NET was a website to share information and code called Wasabi. We came up with the name because of the hilarious [Budweiser commercials](https://www.youtube.com/watch?v=r04SBkkhQ1I). Wasabi ultimately turned into a site for blogging. A couple of years later I was looking for a better and usable domain name and ended up with BloggingAbout.NET. Initially a site for other developers to host their blog, but ultimately all other blogs were removed and it ended up as my own personal weblog, which you're looking at now.
 
-Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Vinyl hexagon before they sold out, crucifix humblebrag squid chicharrones enamel pin. Iceland humblebrag farm-to-table, lyft pug tilde irony.
-Hot chicken shoreditch tousled listicle, actually meggings vape. Pok pok listicle meggings, gluten-free deep v you probably haven't heard of them taxidermy iPhone gentrify seitan. Marfa schlitz literally.
+![Wasabi.NET]({{site.baseurl}}/images/wasabi.jpg)
+*The beginning of BloggingAbout.NET as Wasabi*
 
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/29.jpg">
-    <img src="/images/30.jpg">
-    <img src="/images/31.jpg">
-  </div>
-</div>
+I regularly present at usergroups or large conferences like NDC, Oredev, KCDC and others and occasionally blog about being there as well. One of my favorite presentations is Dealing with eventual consistency because of the graphics.
 
-The Force is strong with this one. I have you now. I find your lack of faith disturbing. Hey, Luke! May the Force be with you. She must have hidden the plans in the escape pod. Send a detachment down to retrieve them, and see to it personally, Commander. There’ll be no one to stop us this time!
+<p><iframe src="https://www.youtube.com/embed/Wy-BmhB6ty4" frameborder="0" allowfullscreen></iframe></p>
 
-<p><iframe src="https://www.youtube.com/embed/ZSPkcpGmflE" frameborder="0" allowfullscreen></iframe></p>
+Or my other presentation about Autonomous Microservices can't share data, which uses the Lessig presentation style, which I first saw in the [Identity 2.0 Keynote](https://www.youtube.com/watch?v=RrpajcAgR1E) by Dick Hardt and always wanted to do a presentation like that. I immediately regretted it after coming up with 200 slides and have the presentation far from finished. But I committed to it and finished it and the current version is way over 400 slides. I'm pretty happy about it and think every conference deserves to show it at least once ;-)
 
-Shoreditch activated charcoal iceland hexagon. Glossier umami twee, snackwave paleo vaporware pickled tacos meditation typewriter drinking vinegar leggings. Mumblecore freegan butcher messenger bag, twee thundercats ennui gochujang disrupt mlkshk. Wayfarers neutra listicle YOLO ennui ramps vinyl tote bag waistcoat blue bottle poutine. Fam yuccie man bun brunch fashion.
+So for every conference organizer, here's my [sessionize profile](https://sessionize.com/dennis-van-der-stelt/) and you can [contact me]({{site.baseurl}}/contact) to do this or any other presentation at your conference or user group.
 
-Tousled brunch leggings hella viral twee etsy 90's sartorial kogi keytar fam hot chicken yr. Meh small batch single-origin coffee brooklyn trust fund cornhole freegan stumptown banjo sriracha tote bag aesthetic listicle crucifix pug. Mustache vaporware kitsch, snackwave cronut semiotics viral cray.
+<p><iframe src="https://www.youtube.com/embed/0TYbHVc2yWI" frameborder="0" allowfullscreen></iframe></p>
