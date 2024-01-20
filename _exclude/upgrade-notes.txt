@@ -75,3 +75,13 @@ tag | replace: ' ','-'
 ## /_layouts/post.html
 ## Make sure we exclude Disqus and include Disgus
 {% include github-comments.html %}
+
+## --------------------------------------------------------------------------------------
+## /_includes/google-analytics.html
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KYNPK4927H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KYNPK4927H');
+</script>
