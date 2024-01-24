@@ -1,8 +1,8 @@
 ---
 layout: post
-id: 579114
+id: 202401171
 author: Dennis van der Stelt
-image: '/images/jekyll/header.jpg'
+image: '/images/2024/jekyll/header.jpg'
 date: 20240117 090000
 title: BloggingAbout.NET migrated to Jekyll
 description: A long awaited goal is finally here
@@ -20,12 +20,12 @@ I finally had enough of it a couple of months ago and started looking around for
 
  <div class="gallery-box">
     <div class="gallery">
-      <img src="/images/jekyll/2004-frontpage.png">
-      <img src="/images/jekyll/2006-frontpage.png">
-      <img src="/images/jekyll/2008-frontpage.png">
-      <img src="/images/jekyll/2015-frontpage-small.png">
-      <img src="/images/jekyll/2021-frontpage.png">
-      <img src="/images/jekyll/2024-frontpage.png">
+      <img src="/images/2024/jekyll/2004-frontpage.png">
+      <img src="/images/2024/jekyll/2006-frontpage.png">
+      <img src="/images/2024/jekyll/2008-frontpage.png">
+      <img src="/images/2024/jekyll/2015-frontpage-small.png">
+      <img src="/images/2024/jekyll/2021-frontpage.png">
+      <img src="/images/2024/jekyll/2024-frontpage.png">
     </div>
     <em>BloggingAbout.NET over the years</em>
   </div>
