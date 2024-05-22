@@ -53,7 +53,17 @@ Even though we removed the direct dependency on the database in the *physical vi
 
 So when you hear you shouldn't use a shared database but instead introduce a [service layer](https://martinfowler.com/eaaCatalog/serviceLayer.html) because it has less coupling, you might want to reconsider if this is actually true.
 
+## Data ownership
+
+
+
+## Pros and cons
+
+So why is the common conception that shared databases are bad, but introducing a service layer is good practice?
+
 #### Versioning
+
+On of the reasons is versioning. It is much easier to provide 
 
 
 
