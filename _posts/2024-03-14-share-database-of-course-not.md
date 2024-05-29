@@ -13,25 +13,19 @@ tags:
 
 ---
 
-Whenever I hear developers or architects talk about it, almost always everyone agrees that services shouldn't share their database. It's something that is so widely known that everyone tries to avoid it. In this article we'll discuss why *we think* it's a bad idea but how looking at it from a different angle, we might come to different opinions than we currently have.
-
-***Unfortunately, it's not always possible. Due to time pressure or some of the (architectural) patterns don't allow it and a database is shared. We know it's an issue and promise ourselves we'll fix it in the future when we get rid of some technical debt. But it is also widely known that these are great plans, but it'll likely never happen.***
-
-> [!TIP]
->
-> Before you read on, try to think for a while why it's actually such a bad idea to have services share their database.
+Whenever I hear developers or architects talk, almost always everyone agrees that services shouldn't share their database. It's something that is so widely known that everyone tries to avoid it. In this article we'll discuss why *we think* it's a bad idea, but how looking at it from a different angle, we might come to different opinions than we currently have.
 
 ## Sharing a database
 
 It is a common conception that a shared databases massively increases coupling. Adding or modifying features of a system often results in modifying the database schema. As a result, other services that depend on that schema, immediately break. Every service needs to be verified if it won't break because of the dependency on that schema.
 
-#### Different views make coupling visible
+### Different views make coupling visible
 
 I'm an advocate for looking at your architecture through different lenses. The [4+1 architectural view model](https://bloggingabout.net/2020/08/07/41-architectural-view-model/) provides this and allows us to use different views to see our architecture. In the image below, on the left is a logical view of a system and on the right a physical view of the system. In the logical view you can see that each service has its own *datastore* and is logically separated from any other service. On the right side you can see the same 3 components with their own database. However, some of them also access the database of another service.
 
 ![](\images\2024\share-database\shared-database.png)
 
-I often see developers create designs like this; as if there's no coupling and hiding this the logical view. But the coupling is then introduced in the physical view without visualizing this.
+I often see developers create designs like this; as if there's no coupling and hiding this in the logical view. But the coupling is then introduced in the physical view without visualizing this.
 
 We can see the example in our image above. We now visualized a dependency (read: coupling) in the physical view and we should not hide this dependency in the logical view either. It means the logical view isn't correct. Let's update the image and make sure it's correctly representing those dependencies.
 
@@ -39,7 +33,7 @@ We can see the example in our image above. We now visualized a dependency (read:
 
 ## Decoupling through layers
 
-As I mentioned before, it's a common conception that this should not be how we share data between services. To solve this, we want to introduce a [service layer](https://martinfowler.com/eaaCatalog/serviceLayer.html). Don't you love that you can use the word "service" everywhere and have it mean something different each time? Anyway, here's an updated picture. Now each service has its own WebAPI. Not visible in our image, but imagine an API that shares data over HTTP in JSON format. If a service requires some data, it can just do a request to the other service.
+As I mentioned before, it's a common conception that this should not be how we share data between services. To solve this, we want to introduce a [service layer](https://martinfowler.com/eaaCatalog/serviceLayer.html). Don't you love that you can use the word "service" everywhere and have it mean something different each time? Anyway, here's an updated picture. Now each service has its own WebAPI. Not visible in our image, but our API could share data over HTTP in JSON format. If a service requires some data, it can just do a request to the other service.
 
 ![shared-api](\images\2024\share-database\shared-api.png)
 
@@ -53,46 +47,4 @@ Even though we removed the direct dependency on the database in the *physical vi
 
 So when you hear you shouldn't use a shared database but instead introduce a [service layer](https://martinfowler.com/eaaCatalog/serviceLayer.html) because it has less coupling, you might want to reconsider if this is actually true.
 
-## Data ownership
-
-
-
-## Pros and cons
-
-So why is the common conception that shared databases are bad, but introducing a service layer is good practice?
-
-#### Versioning
-
-On of the reasons is versioning. It is much easier to provide 
-
-
-
-### 
-
-Er is koppeling tussen microservices als ze data delen, ongeacht of dat via een directe verbinding is naar de data in een database, of naar data via een zelfgebouwde API.
-
-### Consistency
-
-Als je caching gebruikt, heb je eventual consistency.
-
-Als je direct naar database gaat, heb je grootste kans dat consistency overeind blijft. Dat lukt echter alleen als je bijv. de order, orderdetails, inventory, shipping status en meer tegelijkertijd bijwerkt. Met microservices zijn meer van deze zaken verdeeld over meerdere microservices en meerdere databases. Hoe houd je dan je database consistent? Met een API heb je hetzelfde probleem, maar velen merken dit aan als voordeel van direct naar databases gaan. Dat is dus niet haalbaar in een echt microservices systeem.
-
-### Versioning
-
-Het is lastiger met database om versioning toe te passen dan met een andere API, zoals REST.
-
-### Data synchronization
-
-Sowieso een slecht idee. Eventual consistency is al iets wat niet eenvoudig is om mee om te gaan, laat staan als data verspreid moet worden over meerdere microservices en hun database en het probleem verergert.
-
-
-
-https://www.techtarget.com/searchapparchitecture/tip/Can-you-really-use-a-shared-database-for-microservices
-
-https://www.linkedin.com/advice/0/what-benefits-drawbacks-using-shared-database-microservices
-
-https://thegreatapi.com/blog/why-sharing-a-database-between-microservices-is-a-bad-idea/#:~:text=In%20conclusion%2C%20sharing%20a%20database,the%20risk%20of%20security%20concerns.
-
-https://medium.com/@benlugavere/why-microservices-shouldnt-share-a-database-a48216ba26d5
-
-https://microservices.io/patterns/data/shared-database.html
+I'm working on a series of blogposts that should explain how we can truly have logical services that have no direct dependency on each other. Where the [service boundaries are explicit](https://www.infoq.com/news/2007/08/MsSoaTenets/). A link to the original [Don Box article](https://web.archive.org/web/20040615055648/http://msdn.microsoft.com/msdnmag/issues/04/01/Indigo/default.aspx).
