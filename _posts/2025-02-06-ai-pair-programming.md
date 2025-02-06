@@ -5,7 +5,7 @@ author: Dennis van der Stelt
 image: '/images/2025/ai-pair-programming/header.jpg'
 date: 20250206 010000
 title: AI pair programming
-description: What is so bad about shared databases with microservices?
+description: Look at me, being all enthusiastic about AI
 tags:
   - ai
   - coding
@@ -34,7 +34,7 @@ The system needed email notifications, so I asked about implementing Razor templ
 Here's where it gets interesting. I was implementing license plate lookups against an external HTTP service. Before coding, I ran the approach by Claude. I didn't want to give it all details, I really wanted to hear what it had in mind. Instead of just implementing my request, it flagged potential issues - specifically around service load and resilience.
 The suggested solution? A thread-safe caching layer:
 
-```
+```csharp
 public class RegisteredPlatesCache
 {
     private readonly HttpClient httpClient;
