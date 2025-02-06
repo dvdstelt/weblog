@@ -2,7 +2,7 @@
 layout: post
 id: 20250206
 author: Dennis van der Stelt
-image: '/images/2024/share-database/header.jpg'
+image: '/images/2025/ai-pair-programming/header.jpg'
 date: 20250206 010000
 title: AI pair programming
 description: What is so bad about shared databases with microservices?
