@@ -14,7 +14,7 @@ I've been coding for decades, but the past few months have transformed my develo
 
 ## Real-World Applications
 
-Let me share some concrete examples. My son recently got an assignment at school to create a website with login capabilities and an administrative screen. PHP isn't my daily driver - I'm primarily in the .NET ecosystem. Usually, this would mean context-switching between PHP docs, session management details, and more. Instead, AI helped implement a secure authentication flow in about 15 minutes. Clean code, proper password hashing, session handling - everything.
+Let me share some concrete examples. My son recently got an assignment at school to create a website with login capabilities and an administrative screen. I've never used PHP before - I'm primarily in the .NET ecosystem. Usually, this would mean context-switching between PHP docs, session management details, and more. Instead, AI helped implement a secure authentication flow in about 15 minutes. Clean code, proper password hashing, session handling - everything.
 
 ## Beyond Basic Code Generation
 
@@ -31,7 +31,7 @@ The system needed email notifications, so I asked how to implement Razor templat
 
 ## Architectural Insights
 
-But Claude AI provided even more interesting solutions further down. I was implementing license plate lookups against an external HTTP service. I ran the approach by Claude, without giving away too many details on the solution I was thinking of. Instead, I wanted to hear what Claude had in mind. Instead of just implementing what I asked for, it flagged potential issues - specifically around service load and resilience. That went further than what I expected.
+But Claude AI provided even more interesting solutions. I was implementing license plate lookups against an external HTTP service. I ran the approach by Claude, without giving away too many details on the solution I was thinking of. Instead, I wanted to hear what Claude had in mind. Instead of just implementing what I asked for, it flagged potential issues - specifically around service load and resilience. That went further than what I expected.
 
 The suggested is a thread-safe caching layer:
 
@@ -98,9 +98,9 @@ This implementation handles, according to Claude AI:
 - Configurable refresh intervals
 - Proper cancellation support
 
-## Development Flow
+## Rider - my favorite IDE
 
-The entire experience runs smoothly in [JetBrains Rider](https://www.jetbrains.com/rider/). Direct IDE integration means I can maintain my normal development flow while leveraging AI assistance. In other words, I don't have to `ALT`+`TAB` all the time and copy and paste code around. And I can select various models like OpenAI GPT-4o, but also Anthropic Claude 3.5 Sonnet, which is currently my favorite. It's producing the best results and feels like it's actually reasoning about your questions and code. And [JetBrains Rider is free for non-commercial use](https://blog.jetbrains.com/blog/2024/10/24/webstorm-and-rider-are-now-free-for-non-commercial-use-2/), which is excellent, although the AI plugin obviously isn't.
+The entire experience runs smoothly in [JetBrains Rider](https://www.jetbrains.com/rider/). Direct IDE integration means I don't have to continuously `ALT` + `TAB` and leave my IDE for a web-based chat all the time. And I can select various models like OpenAI GPT-4o, including Anthropic Claude 3.5 Sonnet, which is currently my favorite. It's producing the best results and feels like it's actually reasoning about your questions and code. And [JetBrains Rider is free for non-commercial use](https://blog.jetbrains.com/blog/2024/10/24/webstorm-and-rider-are-now-free-for-non-commercial-use-2/), which is excellent, although the AI plugin isn't.
 
 ## Looking Forward
 
@@ -110,4 +110,4 @@ For experienced developers, it means less time on boilerplate and more focus on 
 
 The key isn't to fear or resist this change - it's to understand how to leverage it effectively. Good developers will always be essential. We need to understand system design, recognize potential issues, and validate generated solutions. But now, we have a powerful tool that accelerates our ability to turn those insights into working code.
 
-Far from making developers obsolete, AI is making us more effective than ever. And personally I'm excited to see where this goes next. At least it's a ton of fun working with it!
+Far from making developers obsolete, AI is making us more effective than ever. Personally, I'm excited to see where this goes next. At least it's a ton of fun working with it!
