@@ -104,10 +104,10 @@ The entire experience runs smoothly in [JetBrains Rider](https://www.jetbrains.c
 
 ## Looking Forward
 
-After 20+ years of development, I've seen many tools and technologies come and go. AI assistance feels different. It's not just another IDE feature or code generator. It's a fundamental shift in approaching problem-solving in software development.
+After 20+ years of development, I've seen many tools and technologies come and go. AI assistance is different. It's not just another IDE feature, code generator or some technology that will be replaced by another one. It's a fundamental shift in approaching problem-solving in software development.
 
-For experienced developers, it means less time on boilerplate and more focus on architecture and business logic. For learning developers (like my son), it means having a patient mentor who can explain concepts and provide working examples. But remember to ask it to be a coach and provide guidance, not answers!
+For experienced developers, it means less time spent on repetitive code or using search engines and StackOverflow for some obscure features but more focus on architecture and business logic. According to [a DORA report](https://dora.dev/research/ai/value-of-development-work/), developers even experience less burnout. Learning developers (like my son), it means having a patient mentor who can explain concepts and provide working examples. But remember to ask it to be a coach and provide guidance, not answers!
 
-The key isn't to fear or resist this change - it's to understand how to leverage it effectively. Good developers will always be essential. We need to understand system design, recognize potential issues, and validate generated solutions. But now, we have a powerful tool that accelerates our ability to turn those insights into working code.
+The key isn't to fear or resist this change - it's to understand how to leverage it effectively. Good developers will always be essential. We must understand system design, recognize potential issues, and validate generated solutions. But now, we have a powerful tool that accelerates our ability to turn those insights into working code.
 
 Far from making developers obsolete, AI is making us more effective than ever. Personally, I'm excited to see where this goes next. At least it's a ton of fun working with it!
