@@ -28,7 +28,7 @@ You pay monthly for:
 - Digital storage (Google Drive, iCloud, Dropbox)
 - Software you used to buy once (Microsoft Office, Adobe Creative Cloud, Notion, even your favorite to-do list)
 
-And then there’s the **box economy**. You can subscribe to receive fresh vegetables from **HelloFresh**, premium cuts of meat from **ButcherBox**, hand-picked craft beers via **Beer52**, and even collectible toys with **Loot Crate**. It’s like Christmas morning — except you’re paying for the surprise... forever. There's a subscription for everything, and if there isn’t yet, someone’s pitching it on Kickstarter right now.
+And then there’s the **box economy**. You can subscribe to receive fresh vegetables from **HelloFresh**, premium cuts of meat from **ButcherBox**, hand-picked craft beers via **Beer52** (yes, I'm guilty of having a subscription on [Moersleutel The Guild](https://moersleutel.com/nl/guild/)), and even collectible toys with **Loot Crate**. It’s like Christmas morning — except you’re paying for the surprise... forever. There's a subscription for everything, and if there isn’t yet, someone’s pitching it on Kickstarter right now.
 
 ## The Paywall on Wheels
 
