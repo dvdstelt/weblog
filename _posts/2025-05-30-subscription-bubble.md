@@ -50,8 +50,6 @@ Optimizing for ROI in the cloud requires engineering discipline, FinOps awarenes
 
 Cloud **can** be cheaper. But just like subscriptions, only if you **actually manage it**.
 
----
-
 ## The Subscription Bubble
 
 So here we are. Death by recurring charges. Individuals are bleeding €10 here, €15 there. Teams are spinning up services and forgetting to tear them down. Executives approve software with auto-renew turned on.
@@ -63,8 +61,6 @@ Sound familiar?
 We may not be inflating dotcom stocks anymore, but we’re certainly inflating **value expectations**. Subscriptions are sold as cheaper, more flexible, and lower-risk options. But left unchecked, they add up to the same unsustainable place: paying more for less and wondering where all the money went.
 
 **We’re all just frogs in a slowly boiling pot of recurring payments. Cancel something before it croaks you.**
-
----
 
 ## The Inevitable Pop?
 
