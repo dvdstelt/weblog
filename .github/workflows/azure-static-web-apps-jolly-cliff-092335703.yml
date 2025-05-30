@@ -11,7 +11,7 @@ on:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') && !github.event.pull_request.draft
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
@@ -34,6 +34,26 @@ jobs:
           app_build_command: 'npm run build'
           api_build_command: 'rm -rf ./node_modules/@next/swc-* && rm -rf ./.next/cache'          
           ###### End of Repository/Build Configurations ######
+      - name: Extract Preview URL from Deployment Log
+        if: github.event_name == 'pull_request' && github.event.action != 'closed' && !github.event.pull_request.draft
+        id: extract-url
+        run: |
+          # Find the URL in the deployment log (look for "https://*.azurestaticapps.net")
+          url=$(grep -Eo 'https://[a-zA-Z0-9-]+\.azurestaticapps\.net' $GITHUB_WORKSPACE/_site/../* 2>/dev/null | head -1)
+          # Fallback: try the job log (GitHub Actions doesn't make this easy! If the Azure action prints the URL, this may not work)
+          if [ -z "$url" ]; then
+            url=$(grep -Eo 'https://[a-zA-Z0-9-]+\.azurestaticapps\.net' $GITHUB_WORKSPACE/../* 2>/dev/null | head -1)
+          fi
+          echo "url=$url" >> $GITHUB_OUTPUT
+      - name: Comment PR with Preview URL
+        if: github.event_name == 'pull_request' && github.event.action != 'closed'
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            🚀 Preview deployed!  
+            [View the website](${{ steps.extract-url.outputs.url }})          
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
