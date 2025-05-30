@@ -40,7 +40,7 @@ Now cars come with subscriptions. Heated seats? That’ll be €19.99/month. Wan
 
 In 2020, car subscriptions made **$4.1 billion**. By 2030, they’re projected to hit **$32 billion**. That’s not a side hustle—that’s a business model. Your next oil change might come bundled with a cancellation link.
 
-![Car subscription growth chart](/mnt/data/A_2D_digital_infographic_illustrates_the_projected.png)
+![Car subscription growth chart](/images/2025/subscription-bubble/carsubscriptions.png)
 
 Even printers have gotten in on the game. HP offers ink subscriptions. Yes—**subscriptions. For. Ink.**
 
@@ -68,8 +68,6 @@ Sound familiar?
 
 We may not be inflating dotcom stocks anymore, but we’re certainly inflating **value expectations**. Subscriptions are sold as cheaper, more flexible, and lower-risk options. But left unchecked, they add up to the same unsustainable place: paying more for less and wondering where all the money went.
 
-![Worried frog in a boiling subscription bubble](/mnt/data/A_2D_digital_illustration_features_the_words_"SUBS.png)
-
 **We’re all just frogs in a slowly boiling pot of recurring payments. Cancel something before it croaks you.**
 
 ---
@@ -77,5 +75,3 @@ We may not be inflating dotcom stocks anymore, but we’re certainly inflating *
 ## The Inevitable Pop?
 
 How long can this go on? Just like the dotcom craze, the subscription surge feels unstoppable—until it isn’t. Sooner or later, people will start asking *what* they’re paying for, *why*, and *if it’s worth it*. When enough of us hit unsubscribe, we might see the **subscription bubble burst**—not with a bang, but with a thousand quiet cancellations.
-
-![Photo of a woman canceling a subscription](/mnt/data/A_photograph_captures_a_young_Caucasian_woman_with.png)
