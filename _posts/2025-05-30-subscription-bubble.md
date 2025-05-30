@@ -42,9 +42,9 @@ Even printers have gotten in on the game. HP offers ink subscriptions. Yes — *
 
 ## The Cloud: Not Always the Silver Lining
 
-Cloud providers pitch elasticity, scale, and cost savings. But for many companies, moving from on-prem to cloud doesn’t cut costs — it increases them. Especially if you *just* lift and shift.
+And what about us techies? Cloud providers pitch elasticity, scale, and cost savings. But for many companies, moving from on-prem to cloud doesn’t cut costs — it increases them. Especially if you *just* lift and shift.
 
-If your app idles 90% of the time and you run it 24/7 in the cloud, guess what? You're still paying 100% of the bill.
+If your app idles 90% of the time and you run it 24/7 in the cloud, guess what? You're still paying 100% of the bill if you don't build on the right services.
 
 Optimizing for ROI in the cloud requires engineering discipline, FinOps awareness, and frankly, time that many teams don’t have.
 
