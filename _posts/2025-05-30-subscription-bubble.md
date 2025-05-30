@@ -4,7 +4,7 @@ id: 20250530
 author: Dennis van der Stelt
 image: '/images/2025/subscription-bubble/header.avif'
 date: 20250530 010000
-title: From Dotcom to DotCon: Are We Living in a Subscription Bubble?
+title: From Dotcom to DotCon - Are We Living in a Subscription Bubble?
 description: A witty look at how we're drowning in subscriptions—from streaming and software to cars and cloud—and why it might all pop like the dotcom bubble
 tags:
   - story
