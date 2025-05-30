@@ -5,20 +5,18 @@ author: Dennis van der Stelt
 image: '/images/2025/subscription-bubble/header.avif'
 date: 20250530 010000
 title: From Dotcom to DotCon - Are We Living in a Subscription Bubble?
-description: A witty look at how we're drowning in subscriptions—from streaming and software to cars and cloud—and why it might all pop like the dotcom bubble
+description: A witty look at how we're drowning in subscriptions and why it might all pop like the dotcom bubble
 tags:
   - story
 ---
 
-In the late 1990s, the world lost its collective mind over the internet. The dotcom bubble inflated fast, with venture capitalists throwing money at anything ending in ".com"—even companies without products, plans, or revenue. Pets.com had a sock puppet and a Super Bowl ad. Webvan promised groceries at your door before we had the bandwidth to load their homepage. It all came crashing down around 2000, burning trillions in market value.
+In the late 1990s, the world lost its collective mind over the internet. The dotcom bubble inflated fast, with venture capitalists throwing money at anything ending in ".com" — even companies without products, plans, or revenue. Pets.com had a sock puppet and a Super Bowl ad. Webvan promised groceries at your door before we had the bandwidth to load their homepage. It all came crashing down around 2000, burning trillions in market value.
 
 Fast forward to now: we’ve matured, right?
 
 Sort of.
 
-We’ve swapped speculative IPOs for another kind of quiet inflation—**subscriptions**. And just like before, most people aren’t really tracking the total cost.
-
----
+We’ve swapped speculative IPOs for another kind of quiet inflation — **subscriptions**. And just like before, most people aren’t really tracking the total cost.
 
 ## Death by a Thousand Monthly Charges
 
@@ -30,25 +28,21 @@ You pay monthly for:
 - Digital storage (Google Drive, iCloud, Dropbox)
 - Software you used to buy once (Microsoft Office, Adobe Creative Cloud, Notion, even your favorite to-do list)
 
-And then there’s the **box economy**. You can subscribe to receive fresh vegetables from **HelloFresh**, premium cuts of meat from **ButcherBox**, hand-picked craft beers via **Beer52**, and even collectible toys with **Loot Crate**. It’s like Christmas morning—except you’re paying for the surprise... forever. There's a subscription for everything, and if there isn’t yet, someone’s pitching it on Kickstarter right now.
-
----
+And then there’s the **box economy**. You can subscribe to receive fresh vegetables from **HelloFresh**, premium cuts of meat from **ButcherBox**, hand-picked craft beers via **Beer52**, and even collectible toys with **Loot Crate**. It’s like Christmas morning — except you’re paying for the surprise... forever. There's a subscription for everything, and if there isn’t yet, someone’s pitching it on Kickstarter right now.
 
 ## The Paywall on Wheels
 
 Now cars come with subscriptions. Heated seats? That’ll be €19.99/month. Want remote start? Monthly. BMW, Mercedes, and others are quietly rolling out these paywalls on wheels.
 
-In 2020, car subscriptions made **$4.1 billion**. By 2030, they’re projected to hit **$32 billion**. That’s not a side hustle—that’s a business model. Your next oil change might come bundled with a cancellation link.
+In 2020, car subscriptions made **$4.1 billion**. By 2030, they’re projected to hit **$32 billion**. That’s not a side hustle — that’s a business model. Your next oil change might come bundled with a cancellation link.
+
+Even printers have gotten in on the game. HP offers ink subscriptions. Yes — **subscriptions. For ink!**
 
 ![Car subscription growth chart](/images/2025/subscription-bubble/carsubscriptions.png)
 
-Even printers have gotten in on the game. HP offers ink subscriptions. Yes—**subscriptions. For. Ink.**
-
----
-
 ## The Cloud: Not Always the Silver Lining
 
-Cloud providers pitch elasticity, scale, and cost savings. But for many companies, moving from on-prem to cloud doesn’t cut costs—it increases them. Especially if you *just* lift and shift.
+Cloud providers pitch elasticity, scale, and cost savings. But for many companies, moving from on-prem to cloud doesn’t cut costs — it increases them. Especially if you *just* lift and shift.
 
 If your app idles 90% of the time and you run it 24/7 in the cloud, guess what? You're still paying 100% of the bill.
 
@@ -62,7 +56,7 @@ Cloud **can** be cheaper. But just like subscriptions, only if you **actually ma
 
 So here we are. Death by recurring charges. Individuals are bleeding €10 here, €15 there. Teams are spinning up services and forgetting to tear them down. Executives approve software with auto-renew turned on.
 
-Nobody has a complete picture of what they're paying for—or why.
+Nobody has a complete picture of what they're paying for, or why.
 
 Sound familiar?
 
@@ -74,4 +68,4 @@ We may not be inflating dotcom stocks anymore, but we’re certainly inflating *
 
 ## The Inevitable Pop?
 
-How long can this go on? Just like the dotcom craze, the subscription surge feels unstoppable—until it isn’t. Sooner or later, people will start asking *what* they’re paying for, *why*, and *if it’s worth it*. When enough of us hit unsubscribe, we might see the **subscription bubble burst**—not with a bang, but with a thousand quiet cancellations.
+How long can this go on? Just like the dotcom craze, the subscription surge feels unstoppable — until it isn’t. Sooner or later, people will start asking *what* they’re paying for, *why*, and *if it’s worth it*. When enough of us hit unsubscribe, we might see the **subscription bubble burst**—not with a bang, but with a thousand quiet cancellations.
