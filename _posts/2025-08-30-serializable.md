@@ -2,7 +2,7 @@
 layout: post
 id: 20250830
 author: Dennis van der Stelt
-image: '/images/2025/serializable/header.jpg'
+image: '/images/2025/database-lock.jpg'
 date: 20250830 010000
 title: serializable transactions in your distributed system
 description: Foreign keys, serializable transactions, and why they won't save your distributed system
