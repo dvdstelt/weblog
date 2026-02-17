@@ -55,7 +55,12 @@ jobs:
             const prNumber = context.payload.pull_request.number;
             const staticWebAppUrl = '${{ steps.builddeploy.outputs.static_web_app_url }}'.replace(/\/$/, '');
             const hostname = staticWebAppUrl.replace('https://', '');
-            const previewUrl = `https://${hostname.split('.')[0]}-${prNumber}.${hostname.split('.').slice(1).join('.')}`;
+            const parts = hostname.split('.');
+            const subdomain = parts[0];
+            const rest = parts.slice(1).join('.');
+            const previewUrl = subdomain.endsWith(`-${prNumber}`)
+              ? staticWebAppUrl
+              : `https://${subdomain}-${prNumber}.${rest}`;
 
             const body = `🔗 **Preview deployed!**\n\n${previewUrl}`;
             const marker = '<!-- azure-swa-preview -->';
