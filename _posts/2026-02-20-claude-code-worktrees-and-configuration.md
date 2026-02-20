@@ -36,7 +36,7 @@ Why does that matter? Because of worktrees.
 
 [Git worktrees](https://git-scm.com/docs/git-worktree) let you check out multiple branches of the same repository simultaneously, each in its own directory. Instead of stashing your work to switch branches, you create a worktree and have both branches open side by side.
 
-I use this a lot with [OmNomNom](https://github.com/dvdstelt/omnomnom), a demo project for a talk I give on service boundaries. It has multiple branches representing different stages of the demo, and I often want to work on two of them at the same time. In my setup, worktrees are created as siblings of the project:
+I could use it this way with [OmNomNom](https://github.com/dvdstelt/omnomnom), a demo project for a talk I give on service boundaries. It has multiple branches representing different stages of the demo, and I often want to work on two of them at the same time. In my setup, worktrees are created as siblings of the project:
 
 ```
 /workspace/omnomnom/              # main checkout
@@ -50,7 +50,7 @@ D:\git\dvdstelt\omnomnom\
 D:\git\dvdstelt\omnomnom@location\
 ```
 
-There's a catch, though. Git worktrees store absolute paths internally -- the worktree's `.git` file points back to the main repository's `.git/worktrees/` directory, and vice versa. A path like `/workspace/omnomnom/.git/worktrees/...` is meaningless on the Windows host, and `D:\git\dvdstelt\omnomnom\.git\worktrees\...` is meaningless inside the container.
+There's a catch, though. Git worktrees store absolute paths internally. The worktree's `.git` file points back to the main repository's `.git/worktrees/` directory, and vice versa. A path like `/workspace/omnomnom/.git/worktrees/...` is meaningless on the Windows host, and `D:\git\dvdstelt\omnomnom\.git\worktrees\...` is meaningless inside the container.
 
 ## git-wtadd: the cross-platform fix
 
@@ -94,9 +94,9 @@ fi
 
 There are two separate path problems to fix, and the script handles both.
 
-The first is the `.git` file inside the new worktree directory. By default, git writes an absolute Linux path there. Rewriting it to a relative path solves this -- the relative path from `omnomnom@location` back to `omnomnom/.git/worktrees/...` is identical whether you're looking from `/workspace/` or `D:\git\dvdstelt\`, so both sides can resolve it.
+The first is the `.git` file inside the new worktree directory. By default, git writes an absolute Linux path there. Rewriting it to a relative path solves this. The relative path from `omnomnom@location` back to `omnomnom/.git/worktrees/...` is identical whether you're looking from `/workspace/` or `D:\git\dvdstelt\`, so both sides can resolve it.
 
-The second problem is subtler. Git also maintains a `gitdir` file inside the main repo at `.git/worktrees/<name>/gitdir`. This points back to the worktree's `.git` file, and it's what `git worktree list` and Windows tools like GitKraken read to discover worktrees. By default it contains a Linux container path -- which is completely meaningless on Windows.
+The second problem is subtler. Git also maintains a `gitdir` file inside the main repo at `.git/worktrees/<name>/gitdir`. This points back to the worktree's `.git` file, and it's what `git worktree list` and Windows tools like [GitKraken](https://www.gitkraken.com/) read to discover worktrees. By default it contains a Linux container path, which is completely meaningless on Windows.
 
 The script uses `HOST_WORKSPACE` and `CONTAINER_WORKDIR` (those env vars passed in by the launcher) to translate the container path to the Windows host path before writing it. After this, `git worktree list` works on the host, GitKraken shows the worktrees, and nothing needs to know it's also a Linux path somewhere else.
 
@@ -129,7 +129,7 @@ def fix_paths(filepath):
             f.write(content)
 ```
 
-It scans the plugin configuration files for Windows-style paths and rewrites them to Linux paths. It's idempotent -- if the paths are already Linux-style, it does nothing. This runs via `entrypoint.sh` before Claude Code starts, so by the time you interact with Claude, all plugins work correctly.
+It scans the plugin configuration files for Windows-style paths and rewrites them to Linux paths. It's idempotent; if the paths are already Linux-style, it does nothing. This runs via `entrypoint.sh` before Claude Code starts, so by the time you interact with Claude, all plugins work correctly.
 
 The entrypoint also sets up your git identity if it's not already configured, and disables automatic git garbage collection:
 
@@ -147,16 +147,15 @@ git config --global gc.auto 0
 exec claude "$@"
 ```
 
-The `gc.auto 0` line is there specifically because of the worktree setup. The `gitdir` files I mentioned above now contain Windows host paths. If git ran automatic garbage collection inside the container, it would try to resolve those Windows paths to check whether the worktrees are still valid -- fail -- and incorrectly prune them. Disabling gc inside the container is safe: it's an ephemeral environment and gc isn't needed there. The Windows host can handle gc perfectly well on its own.
+The `gc.auto 0` line is there specifically because of the worktree setup. The `gitdir` files I mentioned above now contain Windows host paths. If git ran automatic garbage collection inside the container, it would try to resolve those Windows paths to check whether the worktrees are still valid, fail, and incorrectly prune them. Disabling gc inside the container is safe: it's an ephemeral environment and gc isn't needed there. The Windows host can handle gc perfectly well on its own.
 
 ## Teaching Claude your conventions
 
-Here's where it gets interesting. Claude Code reads a `CLAUDE.md` file (if present) at the start of every session. This file is like a set of standing instructions -- you write down your conventions and preferences, and Claude follows them without you having to repeat yourself.
+Here's where it gets interesting. Claude Code reads a `CLAUDE.md` file (if present) at the start of every session. This file is like a set of standing instructions. You write down your conventions and preferences, and Claude follows them without you having to repeat yourself.
 
 My global `CLAUDE.md` includes things like:
 
 - **Git workflow rules:** never push to `main`, always work on feature branches, commit after each logical change
-- **Commit message conventions:** emoji prefixes to categorize commits (a bug fix gets a different emoji than a new feature)
 - **Worktree conventions:** always use `git-wtadd`, create worktrees as siblings under `/workspace` with the `@` separator
 - **Technology preferences:** .NET 10, semantic versioning, which NuGet feeds to use
 
@@ -175,9 +174,9 @@ using `@` as separator:
 **Always use `git-wtadd`** instead of `git worktree add`.
 ```
 
-This means when I ask Claude to work on something, it already knows to create a worktree, use the right naming convention, and keep the main checkout clean. I don't have to explain this every time. It's like onboarding a new team member -- you write it down once, and they follow the house rules.
+This means when I ask Claude to work on something, it already knows to create a worktree, use the right naming convention, and keep the main checkout clean. I don't have to explain this every time. It's like onboarding a new team member. You write it down once, and they follow the house rules.
 
-You can also have project-specific instruction files that complement the global one. My blog has its own with a skill definition for writing posts in my voice and style; OmNomNom has one describing the service boundary conventions used in the demo. Different repositories have different conventions, and the configuration files let you express that without polluting the global one.
+You can also have project-specific instruction files that complement the global one. I have one that can clean up the git commit history; OmNomNom has one describing the service boundary conventions used in the demo. Different repositories have different conventions, and the configuration files let you express that without polluting the global one.
 
 ## A useful status bar
 
@@ -185,7 +184,7 @@ One thing I added later: a custom status line at the bottom of the Claude Code t
 
 The context percentage is the one I actually watch. When it starts climbing past 50% or 60%, it's a signal that the conversation has grown long enough that Claude might start losing track of details from early in the session. At that point I'll usually wrap up what I'm doing and start fresh.
 
-The working directory display uses `HOST_WORKSPACE` -- the same env var the launcher injects -- so instead of showing `/workspace/omnomnom` it shows `D:\git\dvdstelt\omnomnom`. A small thing, but it means the status bar reflects where I actually am on disk rather than where the container thinks it is.
+The working directory display uses `HOST_WORKSPACE` (the same env var the launcher injects) so instead of showing `/workspace/omnomnom` it shows `D:\git\dvdstelt\omnomnom`. A small thing, but it means the status bar reflects where I actually am on disk rather than where the container thinks it is.
 
 The status line is configured in `~/.claude/settings.json`:
 
@@ -211,9 +210,9 @@ Let me put all the pieces together. When I want to work on something:
 5. Claude Code starts, reads my global and project-specific configuration files
 6. The status bar shows the model, my real Windows path, and context usage
 7. Claude knows my conventions: worktree naming, commit messages, branching rules
-8. If it needs to work on a feature, it creates a worktree with `git-wtadd` -- paths work on both sides
+8. If it needs to work on a feature, it creates a worktree with `git-wtadd` and paths will work on both sides
 9. Everything it writes is visible on my Windows machine in real-time
 
 My machine stays clean. Claude has full access to everything it needs. The worktrees work on both sides of the container boundary. And the configuration files mean I don't have to re-explain my preferences every session.
 
-Is it a perfect setup? No -- there are no solutions, only trade-offs. Docker adds a layer of indirection, rebuilding the image takes a few minutes, and occasionally you'll install something in a container and forget to add it to the Dockerfile. But compared to the alternative of cluttering my host machine with every tool under the sun, I'll take it.
+Is it a perfect setup? No, but a trade off I can live with. Docker adds a layer of indirection, rebuilding the image takes a few minutes, and occasionally you'll install something in a container and forget to add it to the Dockerfile. But compared to the alternative of cluttering my host machine with every tool under the sun, I'll take it.
