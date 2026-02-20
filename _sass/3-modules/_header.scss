@@ -31,6 +31,10 @@
   &:hover {
     color: $text-color;
   }
+  @media only screen and (max-width: $mobile) {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 }
 
 .logo__image {

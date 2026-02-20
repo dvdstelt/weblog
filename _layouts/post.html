@@ -7,6 +7,24 @@ layout: default
     <div class="col col-12">
       <div class="image-box">
         <img class="post-image" src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+        <div class="post-head post-head--overlay">
+          {% assign words = content | number_of_words %}
+          {% assign reading_time = words | divided_by: 200 %}
+          {% if reading_time == 0 %}{% assign reading_time = 1 %}{% endif %}
+          <h1 class="post-title">{{ page.title | escape }}</h1>
+          <div class="post__date-reading">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{page.date | date: '%b %d, %Y'}}</time>
+            <span class="post__separator">·</span>
+            <span class="post__reading-time"><i class="ion ion-ios-time"></i> {{ reading_time }} min read</span>
+          </div>
+          {% if page.tags.size >= 1 %}
+          <div class="post-tags">
+            {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ','-' }}" class="post-tags__tag">#{{ tag }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -19,25 +37,26 @@ layout: default
       <!-- begin post -->
       <article class="post animate">
 
+        {% unless page.image %}
         <div class="post-head">
+          {% assign words = content | number_of_words %}
+          {% assign reading_time = words | divided_by: 200 %}
+          {% if reading_time == 0 %}{% assign reading_time = 1 %}{% endif %}
+          <h1 class="post-title">{{ page.title | escape }}</h1>
+          <div class="post__date-reading">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{page.date | date: '%b %d, %Y'}}</time>
+            <span class="post__separator">·</span>
+            <span class="post__reading-time"><i class="ion ion-ios-time"></i> {{ reading_time }} min read</span>
+          </div>
           {% if page.tags.size >= 1 %}
           <div class="post-tags">
             {% for tag in page.tags %}
-            <a href="{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ','-' }}" class="post-tags__tag">{{ tag }}</a>
+            <a href="{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ','-' }}" class="post-tags__tag">#{{ tag }}</a>
             {% endfor %}
           </div>
           {% endif %}
-          <h1 class="post-title">{{ page.title | escape }}</h1>
-          <div class="post__meta">
-            <div class="post__author">
-              <a href="{{site.baseurl}}/about/" class="post__author-image"
-                style="background-image: url({{site.baseurl}}{{site.author.avatar}})" aria-label="{{site.author.name}}'s Picture"></a> <a href="{{site.baseurl}}/about/" class="post__author-link">{{site.author.name}}</a>
-            </div>
-            <span class="post__date">
-              <time datetime="{{ page.date | date_to_xmlschema }}">{{page.date | date: '%b %d, %Y'}}</time>
-            </span>
-          </div>
         </div>
+        {% endunless %}
 
         <div class="post__content">
           {{ content }}
