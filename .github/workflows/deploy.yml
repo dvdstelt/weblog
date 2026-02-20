@@ -26,6 +26,10 @@ jobs:
           submodules: true
           lfs: false
 
+      - name: Record build start time
+        id: timer
+        run: echo "start=$(date +%s)" >> $GITHUB_OUTPUT
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -61,7 +65,13 @@ jobs:
               ? staticWebAppUrl
               : `https://${subdomain}-${prNumber}.${rest}`;
 
-            const body = `🔗 **Preview deployed!**\n\n${previewUrl}`;
+            const start = parseInt('${{ steps.timer.outputs.start }}');
+            const elapsed = Math.floor(Date.now() / 1000) - start;
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            const duration = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+
+            const body = `🔗 **Preview deployed!** _(built in ${duration})_\n\n${previewUrl}`;
             const marker = '<!-- azure-swa-preview -->';
 
             const { data: comments } = await github.rest.issues.listComments({
