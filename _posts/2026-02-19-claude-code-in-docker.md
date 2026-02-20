@@ -73,6 +73,8 @@ for %%I in ("%cd%\..") do set "PARENT_DIR=%%~fI"
 
 docker run -it ^
     --name %CONTAINER_NAME% ^
+    -e HOST_WORKSPACE=%cd% ^
+    -e CONTAINER_WORKDIR=/workspace/%FOLDER_NAME% ^
     -v "%USERPROFILE%\.claude:/root/.claude" ^
     -v "%USERPROFILE%\.config:/root/.config" ^
     -v "%PARENT_DIR%:/workspace" ^
@@ -80,8 +82,10 @@ docker run -it ^
     claude-code %*
 ```
 
-A few things happen here. The script derives a container name from the folder you're in -- so running `cc` from `D:\git\dvdstelt\weblog` creates a container called `claude-weblog`. It mounts three volumes:
+A few things happen here. The script derives a container name from the folder you're in -- so running `cc` from `D:\git\dvdstelt\weblog` creates a container called `claude-weblog`. It passes two environment variables and mounts three volumes:
 
+- **`HOST_WORKSPACE`** is set to the current Windows directory (e.g. `D:\git\dvdstelt\weblog`). Inside the container, things like the status bar and worktree tooling use this to show and record the real Windows path instead of the Linux container path.
+- **`CONTAINER_WORKDIR`** is the corresponding path inside the container (e.g. `/workspace/weblog`). Together with `HOST_WORKSPACE`, this lets scripts translate between the two.
 - **`%USERPROFILE%\.claude`** maps to `/root/.claude` inside the container. This is where Claude stores its authentication, settings, and plugin configuration. By mounting this from the host, you only need to log in once and that auth persists across all containers.
 - **`%USERPROFILE%\.config`** maps to `/root/.config` for general application configuration.
 - **The parent directory** of your project maps to `/workspace`. This is a deliberate choice and I'll explain why in the next post when I talk about worktrees.
