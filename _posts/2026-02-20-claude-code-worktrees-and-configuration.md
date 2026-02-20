@@ -102,6 +102,14 @@ The script uses `HOST_WORKSPACE` and `CONTAINER_WORKDIR` (those env vars passed 
 
 The script is baked into the Docker image via the Dockerfile, so it's always available as `git-wtadd`.
 
+## Parallel agents, zero stashing
+
+Once a worktree exists on disk, you can open a terminal in it and type `cc` just like you would in the main checkout. The launcher creates a fresh container with a name derived from the worktree folder, so `omnomnom@location` becomes a container called `claude-omnomnom-location`. That container runs its own Claude session, tracking its own branch, with no connection to whatever is happening in the main checkout container.
+
+This means you can have several things running at the same time. The main branch humming along in one terminal. A feature branch in another. A quick experiment in a third. Each one is a separate worktree, a separate container, a separate Claude instance. You can switch between them instantly, because there is nothing to switch: everything stays exactly where it was. No stashing work-in-progress, no losing track of which branch had what, no "wait, what was I doing here?"
+
+This is particularly useful when you want Claude agents working in parallel. Ask one to build out a feature while another writes tests for a different area. They operate on different branches and never step on each other. When the work is ready, you bring it together: open the main checkout, point Claude at both branches, and let it handle the merge. Merge conflicts in code are not the scary beast they used to be when an agent can read both sides and reason about the intent behind each change.
+
 ## Fixing plugin paths on startup
 
 Sharing the `.claude` directory between Windows and the container creates another path problem. Claude Code stores plugin configurations with absolute paths. On Windows, that looks like `C:\Users\dvdst\.claude\plugins\cache\...`. Inside the container, that path doesn't exist -- it should be `/root/.claude/plugins/cache/...`.
