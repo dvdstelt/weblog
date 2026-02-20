@@ -28,7 +28,7 @@ docker run -it ^
     claude-code
 ```
 
-If I run `cc` from `D:\git\dvdstelt\weblog`, the mount is `D:\git\dvdstelt` to `/workspace`. Claude's working directory is set to `/workspace/weblog`, so from its perspective nothing changes. But it also has access to sibling folders under `/workspace`.
+If I run `cc` from `D:\git\dvdstelt\omnomnom`, the mount is `D:\git\dvdstelt` to `/workspace`. Claude's working directory is set to `/workspace/omnomnom`, so from its perspective nothing changes. But it also has access to sibling folders under `/workspace`.
 
 Why does that matter? Because of worktrees.
 
@@ -36,21 +36,21 @@ Why does that matter? Because of worktrees.
 
 [Git worktrees](https://git-scm.com/docs/git-worktree) let you check out multiple branches of the same repository simultaneously, each in its own directory. Instead of stashing your work to switch branches, you create a worktree and have both branches open side by side.
 
-In my setup, worktrees are created as siblings of the project:
+I use this a lot with [OmNomNom](https://github.com/dvdstelt/omnomnom), a demo project for a talk I give on service boundaries. It has multiple branches representing different stages of the demo, and I often want to work on two of them at the same time. In my setup, worktrees are created as siblings of the project:
 
 ```
-/workspace/weblog/                          # main checkout
-/workspace/weblog@blogpost-claude-in-docker # worktree for this blog post
+/workspace/omnomnom/              # main checkout
+/workspace/omnomnom@location      # worktree for the location branch
 ```
 
 Because the parent directory is mounted, these worktrees are visible both inside the container *and* on the Windows host. On the Windows side, they show up as:
 
 ```
-D:\git\dvdstelt\weblog\
-D:\git\dvdstelt\weblog@blogpost-claude-in-docker\
+D:\git\dvdstelt\omnomnom\
+D:\git\dvdstelt\omnomnom@location\
 ```
 
-There's a catch, though. Git worktrees store absolute paths internally -- the worktree's `.git` file points back to the main repository's `.git/worktrees/` directory, and vice versa. A path like `/workspace/weblog/.git/worktrees/...` is meaningless on the Windows host, and `D:\git\dvdstelt\weblog\.git\worktrees\...` is meaningless inside the container.
+There's a catch, though. Git worktrees store absolute paths internally -- the worktree's `.git` file points back to the main repository's `.git/worktrees/` directory, and vice versa. A path like `/workspace/omnomnom/.git/worktrees/...` is meaningless on the Windows host, and `D:\git\dvdstelt\omnomnom\.git\worktrees\...` is meaningless inside the container.
 
 ## git-wtadd: the cross-platform fix
 
@@ -94,7 +94,7 @@ fi
 
 There are two separate path problems to fix, and the script handles both.
 
-The first is the `.git` file inside the new worktree directory. By default, git writes an absolute Linux path there. Rewriting it to a relative path solves this -- the relative path from `weblog@feature-x` back to `weblog/.git/worktrees/...` is identical whether you're looking from `/workspace/` or `D:\git\dvdstelt\`, so both sides can resolve it.
+The first is the `.git` file inside the new worktree directory. By default, git writes an absolute Linux path there. Rewriting it to a relative path solves this -- the relative path from `omnomnom@location` back to `omnomnom/.git/worktrees/...` is identical whether you're looking from `/workspace/` or `D:\git\dvdstelt\`, so both sides can resolve it.
 
 The second problem is subtler. Git also maintains a `gitdir` file inside the main repo at `.git/worktrees/<name>/gitdir`. This points back to the worktree's `.git` file, and it's what `git worktree list` and Windows tools like GitKraken read to discover worktrees. By default it contains a Linux container path -- which is completely meaningless on Windows.
 
@@ -177,7 +177,7 @@ using `@` as separator:
 
 This means when I ask Claude to work on something, it already knows to create a worktree, use the right naming convention, and keep the main checkout clean. I don't have to explain this every time. It's like onboarding a new team member -- you write it down once, and they follow the house rules.
 
-You can also have project-specific instruction files that complement the global one. My blog has its own with a skill definition for writing blog posts in my voice and style. Different repositories have different conventions, and the configuration files let you express that.
+You can also have project-specific instruction files that complement the global one. My blog has its own with a skill definition for writing posts in my voice and style; OmNomNom has one describing the service boundary conventions used in the demo. Different repositories have different conventions, and the configuration files let you express that without polluting the global one.
 
 ## A useful status bar
 
@@ -185,7 +185,7 @@ One thing I added later: a custom status line at the bottom of the Claude Code t
 
 The context percentage is the one I actually watch. When it starts climbing past 50% or 60%, it's a signal that the conversation has grown long enough that Claude might start losing track of details from early in the session. At that point I'll usually wrap up what I'm doing and start fresh.
 
-The working directory display uses `HOST_WORKSPACE` -- the same env var the launcher injects -- so instead of showing `/workspace/weblog` it shows `D:\git\dvdstelt\weblog`. A small thing, but it means the status bar reflects where I actually am on disk rather than where the container thinks it is.
+The working directory display uses `HOST_WORKSPACE` -- the same env var the launcher injects -- so instead of showing `/workspace/omnomnom` it shows `D:\git\dvdstelt\omnomnom`. A small thing, but it means the status bar reflects where I actually am on disk rather than where the container thinks it is.
 
 The status line is configured in `~/.claude/settings.json`:
 
