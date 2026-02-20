@@ -2,7 +2,7 @@
 layout: post
 id: 20260219
 author: Dennis van der Stelt
-image: '/images/2026/claude-code-in-docker/header.jpg'
+image: '/images/2026/claude-code-in-docker.png'
 date: 20260219 010000
 title: Running Claude Code in Docker
 description: How I keep my Windows machine clean by stuffing all development tools into a Docker container

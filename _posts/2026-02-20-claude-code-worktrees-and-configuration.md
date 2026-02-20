@@ -2,7 +2,7 @@
 layout: post
 id: 20260220
 author: Dennis van der Stelt
-image: '/images/2026/claude-code-worktrees-and-configuration/header.jpg'
+image: '/images/2026/claude-code-worktrees-and-configuration.png'
 date: 20260220 010000
 title: Claude Code - Worktrees and configuration
 description: Teaching an AI agent your conventions so it can actually follow them
