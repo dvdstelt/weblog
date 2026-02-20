@@ -81,6 +81,7 @@
     margin-bottom: 12px;
     font-family: 'Sora', sans-serif;
     font-size: 13px;
+    font-weight: 600;
 
     .post__separator {
       opacity: 0.5;
@@ -120,6 +121,19 @@
 
     .post-title {
       font-size: 22px;
+      margin: 0 0 6px;
+    }
+
+    .post__date-reading {
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .post-tags {
+      .post-tags__tag {
+        font-size: 10px;
+        padding: 2px 8px;
+      }
     }
   }
 }
