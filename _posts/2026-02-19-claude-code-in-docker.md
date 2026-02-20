@@ -69,6 +69,7 @@ The idea is simple: navigate to any project folder and type `cc`. That's it. The
 @echo off
 for %%I in ("%cd%") do set "FOLDER_NAME=%%~nxI"
 set "CONTAINER_NAME=claude-%FOLDER_NAME%"
+set "CONTAINER_NAME=%CONTAINER_NAME:@=-%"
 for %%I in ("%cd%\..") do set "PARENT_DIR=%%~fI"
 
 docker run -it ^
@@ -82,7 +83,7 @@ docker run -it ^
     claude-code %*
 ```
 
-A few things happen here. The script derives a container name from the folder you're in -- so running `cc` from `D:\git\dvdstelt\weblog` creates a container called `claude-weblog`. It passes two environment variables and mounts three volumes:
+A few things happen here. The script derives a container name from the folder you're in, so running `cc` from `D:\git\dvdstelt\weblog` creates a container called `claude-weblog`. The `@` character is replaced with `-` in container names, so running from a worktree like `weblog@feature-x` gives you `claude-weblog-feature-x`. It passes two environment variables and mounts three volumes:
 
 - **`HOST_WORKSPACE`** is set to the current Windows directory (e.g. `D:\git\dvdstelt\weblog`). Inside the container, things like the status bar and worktree tooling use this to show and record the real Windows path instead of the Linux container path.
 - **`CONTAINER_WORKDIR`** is the corresponding path inside the container (e.g. `/workspace/weblog`). Together with `HOST_WORKSPACE`, this lets scripts translate between the two.
@@ -90,7 +91,7 @@ A few things happen here. The script derives a container name from the folder yo
 - **`%USERPROFILE%\.config`** maps to `/root/.config` for general application configuration.
 - **The parent directory** of your project maps to `/workspace`. This is a deliberate choice and I'll explain why in the next post when I talk about worktrees.
 
-The container name matters because of `ccc` -- a shortcut for `cc --continue`. If a container named `claude-weblog` already exists, `ccc` reattaches to it instead of starting fresh. Your conversation history, any packages Claude installed mid-session, all preserved. And there's `ccd`, which opens a bash shell in the running container for when you want to poke around yourself.
+The container name matters because of `ccc`, a shortcut for `cc --continue`. If a container named `claude-weblog` already exists, `ccc` reattaches to it instead of starting fresh. Your conversation history, any packages Claude installed mid-session, all preserved. And there's `ccd`, which opens a bash shell in the running container for when you want to poke around yourself.
 
 ## Environment variables
 
