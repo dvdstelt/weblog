@@ -12,3 +12,4 @@ dist/
 .vscode
 .tweet-cache/
 .claude/
+.DS_Store git add src/styles/ .gitignore
