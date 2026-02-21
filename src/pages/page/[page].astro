@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import type { GetStaticPathsOptions, Page } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const allPosts = (await getCollection('posts')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+  // Generate pages 2, 3, 4... — page 1 is src/pages/index.astro
+  return paginate(allPosts, { pageSize: 9 }).filter(({ params }) => params.page !== '1');
+}
+
+interface Props {
+  page: Page<CollectionEntry<'posts'>>;
+}
+
+const { page } = Astro.props;
+const pageNum = page.currentPage;
+const totalPages = page.lastPage;
+---
+<Base title={`Page ${pageNum}`}>
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="contaniner__inner-box">
+            <div class="row grid">
+              {page.data.map((post) => <ArticleCard post={post} />)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12 load-more">
+        <div class="pagination">
+          {pageNum > 2 && (
+            <a href={pageNum === 2 ? '/' : `/page/${pageNum - 1}/`} class="button button--middle">
+              <i class="ion ion-ios-arrow-back"></i> Newer Posts
+            </a>
+          )}
+          {pageNum === 2 && (
+            <a href="/" class="button button--middle">
+              <i class="ion ion-ios-arrow-back"></i> Newer Posts
+            </a>
+          )}
+          {pageNum < totalPages && (
+            <a href={`/page/${pageNum + 1}/`} class="button button--middle">
+              Older Posts <i class="ion ion-ios-arrow-forward"></i>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

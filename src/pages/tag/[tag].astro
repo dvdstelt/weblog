@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { tagSlug } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts');
+
+  // Collect all unique tags
+  const tagMap = new Map<string, CollectionEntry<'posts'>[]>();
+  for (const post of allPosts) {
+    for (const tag of post.data.tags ?? []) {
+      const slug = tagSlug(tag);
+      if (!tagMap.has(slug)) tagMap.set(slug, []);
+      tagMap.get(slug)!.push(post);
+    }
+  }
+
+  return Array.from(tagMap.entries()).map(([slug, posts]) => ({
+    params: { tag: slug },
+    props: {
+      tag: slug,
+      posts: posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+    },
+  }));
+}
+
+interface Props {
+  tag: string;
+  posts: CollectionEntry<'posts'>[];
+}
+
+const { tag, posts } = Astro.props;
+---
+<Base title={`#${tag}`} description={`Posts tagged with ${tag}`}>
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+        <div class="archive-box">
+          <h1 class="archive-title">#{tag}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12 col-d-10 col-m-12 push-m-0 push-d-1">
+        <div class="container__inner">
+          <div class="contaniner__inner-box">
+            <div class="row grid">
+              {posts.map((post) => <ArticleCard post={post} />)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>
