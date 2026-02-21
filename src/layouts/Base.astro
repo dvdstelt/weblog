@@ -51,7 +51,6 @@ const { title, description, image, pubDate } = Astro.props;
 
       searchOpenIcon?.addEventListener('click', () => {
         searchBox?.classList.add('is-visible');
-        setTimeout(() => (document.querySelector('#pagefind-search input') as HTMLElement)?.focus(), 300);
       });
       searchCloseIcon?.addEventListener('click', () => searchBox?.classList.remove('is-visible'));
 

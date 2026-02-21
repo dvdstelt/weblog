@@ -1,250 +1,247 @@
-/* Search overlay */
+// ---- Search — command-palette style ----
+//
+// A floating card that appears at 15 vh with a spring entrance animation.
+// The full-screen .search div acts as the click-to-dismiss backdrop.
+
 .search {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
-  overflow: hidden;
-  background-color: $dark;
-  transition: all 0.5s ease-in-out;
+  background: rgba($dark, 0.72);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 
   &.is-visible {
     opacity: 1;
     visibility: visible;
-  }
 
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    backdrop-filter: saturate(180%) blur(10px);
-    background-color: rgba($dark, .9);
+    .search__panel {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
   }
 }
 
-// Prevent body scroll while search is open
 body:has(.search.is-visible) {
   overflow: hidden;
 }
 
-.search__box {
-  position: relative;
-  max-width: 650px;
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 200px;
+// Floating card
+.search__panel {
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%) translateY(-14px);
+  width: calc(100% - 32px);
+  max-width: 620px;
+  max-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  background: lighten($blue-dark, 4%);
+  border: 1px solid rgba($brand-color, 0.55);
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px rgba($brand-color, 0.08),
+    0 30px 60px rgba(0, 0, 0, 0.65),
+    0 0 80px rgba($brand-color, 0.07);
+  overflow: hidden;
+  opacity: 0;
+  // Spring-like entrance: overshoot easing
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   0.18s ease;
 
-  @media only screen and (max-width: $tablet) {
-    width: 80%;
-    padding-top: 100px;
-  }
-
-  @media only screen and (max-width: $mobile) {
-    width: 90%;
-  }
-}
-
-// Close button is kept here in .search__group (not moved into the Pagefind form,
-// because Pagefind/Preact re-renders the form on each search and would evict it).
-// Height matches the input: 2×15px padding + 42px line-height + 2×3px border = 78px.
-.search__group {
-  position: relative;
-
-  .search__close {
-    position: absolute;
+  @media (max-width: $mobile) {
     top: 0;
-    right: 15px;
-    height: 78px;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    line-height: 1;
-    color: rgba($white, 0.5);
-    background: none;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100dvh;
+    border-radius: 0;
     border: none;
-    padding: 4px;
-    cursor: pointer;
-    transition: color 0.25s;
-    z-index: 10;
-
-    &:hover {
-      color: $white;
-    }
+    border-bottom: 1px solid rgba($brand-color, 0.45);
   }
 }
 
+// ── Input row ─────────────────────────────────────────────────────────────────
 
-// ---- Pagefind UI theme ----
-// Override @pagefind/default-ui to match the site's dark colour scheme.
+.search__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba($white, 0.07);
+  flex-shrink: 0;
+}
 
-#pagefind-search {
-  // CSS custom properties consumed by the Pagefind default UI
-  --pagefind-ui-scale: 1;
-  --pagefind-ui-primary: #{$brand-color};
-  --pagefind-ui-text: #{$white};
-  --pagefind-ui-background: transparent;
-  --pagefind-ui-border: #{rgba($white, 0.5)};
-  --pagefind-ui-tag: #{$brand-color};
-  --pagefind-ui-border-width: 3px;
-  --pagefind-ui-border-radius: 5px;
-  --pagefind-ui-font: #{$base-font-family};
+.search__icon {
+  font-size: 20px;
+  color: rgba($white, 0.3);
+  flex-shrink: 0;
+  pointer-events: none;
+}
 
-  // Remove the magnifying-glass pseudo-element Pagefind injects before the form
-  .pagefind-ui__form::before {
-    display: none !important;
-  }
+.search__input {
+  flex: 1;
+  height: 58px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: $base-font-family;
+  font-size: 20px;
+  font-weight: 600;
+  color: $white;
+  caret-color: $brand-color;
 
-  // Input — large, bold, right padding for the X button
-  .pagefind-ui__search-input {
-    font-family: $base-font-family !important;
-    font-size: 28px !important;
-    font-weight: 700 !important;
-    padding: 15px 50px 15px 20px !important;
-    line-height: 42px !important;
-    color: $white !important;
-    background: transparent !important;
-
-    &::placeholder {
-      font-weight: 700;
-      color: rgba($white, 0.5) !important;
-    }
-
-    &:focus {
-      border-color: $brand-color !important;
-      outline: none !important;
-    }
-
-    @media only screen and (max-width: $mobile) {
-      font-size: 22px !important;
-    }
-  }
-
-  // Hide the SVG magnifying-glass icon element
-  .pagefind-ui__search-icon {
-    display: none !important;
-  }
-
-  // Hide Pagefind's own "Clear" text button — our X button closes the overlay
-  .pagefind-ui__search-clear {
-    display: none !important;
-  }
-
-  // Result count line
-  .pagefind-ui__message {
-    font-family: $base-font-family;
-    color: rgba($white, 0.4);
-    font-size: 12px;
-    margin: 8px 0 4px;
-  }
-
-  // Scrollable results list — page must not scroll
-  .pagefind-ui__results {
-    max-height: 55vh;
-    overflow-y: auto;
-    margin: 0;
-    padding: 0;
-
-    &::-webkit-scrollbar {
-      width: 3px;
-    }
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: rgba($white, 0.15);
-      border-radius: 2px;
-    }
-  }
-
-  // Individual result — matching original spacing and divider
-  .pagefind-ui__result {
-    border-bottom: 1px solid rgba($white, 0.1) !important;
-    padding: 15px 0 !important;
-    margin-bottom: 15px !important;
-    list-style: none;
-  }
-
-  .pagefind-ui__result-inner {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  // No thumbnails
-  .pagefind-ui__result-image {
-    display: none !important;
-  }
-
-  // Result title — Josefin Sans 18px, matching original search link style
-  .pagefind-ui__result-title {
-    font-family: $base-font-family !important;
-    font-size: 18px !important;
-    font-weight: 700 !important;
-    margin: 0 0 2px !important;
-    line-height: 1.3 !important;
-  }
-
-  .pagefind-ui__result-link {
-    color: $white !important;
-    text-decoration: none;
-
-    &:hover {
-      color: rgba($white, 0.75) !important;
-    }
-  }
-
-  // Date injected by Search.astro script — matches original .search-results-date style
-  .search-result-date {
-    font-family: $base-font-family;
-    font-size: 12px;
-    line-height: 1;
+  &::placeholder {
+    color: rgba($white, 0.22);
     font-weight: 400;
-    color: rgba($white, 0.6);
-    margin: 0 0 6px !important;
   }
+}
 
-  // Excerpt — muted, max 2 lines
-  .pagefind-ui__result-excerpt {
-    font-family: $base-font-family !important;
-    font-size: 13px !important;
-    color: rgba($white, 0.5) !important;
-    margin: 0 !important;
-    line-height: 1.5 !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+.search__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba($white, 0.12);
+  border-radius: 5px;
+  font-size: 14px;
+  color: rgba($white, 0.4);
+  background: none;
+  cursor: pointer;
+  transition: $global-transition;
 
-  // Highlight: brand blue tint instead of yellow
-  mark {
-    background-color: rgba($brand-color, 0.45);
+  &:hover {
     color: $white;
-    padding: 0 2px;
-    border-radius: 2px;
+    border-color: rgba($white, 0.35);
   }
+}
 
-  // "Load more results" button
-  .pagefind-ui__button {
-    display: block;
-    width: 100%;
-    margin: 12px 0 20px;
-    padding: 10px 20px;
-    background: transparent;
-    border: 1px solid rgba($white, 0.15);
-    border-radius: 5px;
-    color: rgba($white, 0.6);
-    font-family: $base-font-family;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: $global-transition;
+// ── Result count ──────────────────────────────────────────────────────────────
+
+.search__meta {
+  padding: 8px 16px 2px;
+  font-family: $base-font-family;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba($white, 0.22);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+// ── Results list ──────────────────────────────────────────────────────────────
+
+.search__results {
+  flex: 1;
+  list-style: none;
+  margin: 4px 0;
+  padding: 0;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar        { width: 3px; }
+  &::-webkit-scrollbar-track  { background: transparent; }
+  &::-webkit-scrollbar-thumb  { background: rgba($white, 0.1); border-radius: 2px; }
+}
+
+.search__result {
+  > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 16px 10px 19px;
+    border-left: 3px solid transparent;
+    text-decoration: none;
+    transition: background 0.1s;
+    min-height: 52px;
 
     &:hover {
-      background: $brand-color;
-      border-color: $brand-color;
-      color: $white;
+      background: rgba($white, 0.04);
     }
+  }
+
+  &.is-selected > a {
+    background: rgba($brand-color, 0.13);
+    border-left-color: $brand-color;
+  }
+}
+
+.search__result-title {
+  display: block;
+  font-family: $base-font-family;
+  font-size: 16px;
+  font-weight: 700;
+  color: $white;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  mark {
+    background: rgba($brand-color, 0.45);
+    color: $white;
+    border-radius: 2px;
+    padding: 0 2px;
+    font-style: normal;
+  }
+}
+
+.search__result-date {
+  display: block;
+  font-family: $base-font-family;
+  font-size: 12px;
+  color: rgba($white, 0.38);
+  margin-top: 3px;
+  line-height: 1;
+}
+
+// ── Empty / no-results state ──────────────────────────────────────────────────
+
+.search__empty {
+  padding: 36px 16px;
+  text-align: center;
+  font-family: $base-font-family;
+  font-size: 14px;
+  color: rgba($white, 0.28);
+  list-style: none;
+
+  em {
+    color: rgba($white, 0.45);
+    font-style: normal;
+  }
+}
+
+// ── Keyboard-hint footer ──────────────────────────────────────────────────────
+
+.search__footer {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 7px 16px;
+  border-top: 1px solid rgba($white, 0.05);
+  font-family: $base-font-family;
+  font-size: 11px;
+  color: rgba($white, 0.22);
+  flex-shrink: 0;
+
+  kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 5px;
+    margin-right: 3px;
+    background: rgba($white, 0.06);
+    border: 1px solid rgba($white, 0.1);
+    border-radius: 3px;
+    font-family: 'Poppins', monospace;
+    font-size: 10px;
+    color: rgba($white, 0.42);
+    line-height: 16px;
   }
 }
