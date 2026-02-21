@@ -1,8 +1,4 @@
 {
-  "routes": [
-    { "route": "/dennis/*", "redirect": "/*", "statusCode": 301 },
-    { "route": "/blogs/dennis/archive/*", "redirect": "/*", "statusCode": 301 }
-  ],
   "navigationFallback": {
     "rewrite": "/404.html"
   }

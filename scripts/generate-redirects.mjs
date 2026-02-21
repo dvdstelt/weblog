@@ -1,26 +1,29 @@
 /**
  * Generates public/staticwebapp.config.json for Azure Static Web Apps.
  *
- * All old redirect_from paths follow one of two patterns:
- *   /dennis/<slug>              (short URL)
- *   /blogs/dennis/archive/<…>   (.aspx legacy URL)
+ * Azure SWA redirect rules do not support variable substitution in the
+ * redirect destination, so individual per-post rules (575 posts x 2 patterns
+ * = 1,150 rules) exceed the 20 KB config-file limit and wildcard rules cannot
+ * strip path prefixes or suffixes dynamically.
  *
- * Rather than listing 1,150 individual rules (which blows Azure SWA's 20 KB
- * config-file limit), we emit two wildcard rules that cover both prefixes.
+ * Legacy URL patterns are therefore handled client-side by the 404 page:
+ *   /dennis/YYYY/MM/DD/slug          -> /YYYY/MM/DD/slug/
+ *   /dennis/YYYY/MM/DD/slug.aspx     -> /YYYY/MM/DD/slug/
+ *   /blogs/dennis/archive/.../slug.aspx -> /YYYY/MM/DD/slug/
+ *   /YYYY/MM/DD/slug.aspx            -> /YYYY/MM/DD/slug/
+ *
+ * This script only emits the navigationFallback so unmatched paths are served
+ * the 404 page (which carries the redirect logic).
  */
 import { writeFileSync } from 'fs';
 
 const OUT_FILE = new URL('../public/staticwebapp.config.json', import.meta.url).pathname;
 
 const config = {
-  routes: [
-    { route: '/dennis/*', redirect: '/*', statusCode: 301 },
-    { route: '/blogs/dennis/archive/*', redirect: '/*', statusCode: 301 },
-  ],
   navigationFallback: {
     rewrite: '/404.html',
   },
 };
 
 writeFileSync(OUT_FILE, JSON.stringify(config, null, 2) + '\n');
-console.log('Generated wildcard redirect rules -> public/staticwebapp.config.json');
+console.log('Written public/staticwebapp.config.json');
