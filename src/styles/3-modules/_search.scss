@@ -150,3 +150,101 @@
     }
   }
 }
+
+
+// ---- Pagefind UI theme ----
+// Override @pagefind/default-ui to match the site's dark colour scheme.
+
+#pagefind-search {
+  // CSS custom properties consumed by the Pagefind default UI
+  --pagefind-ui-scale: 1;
+  --pagefind-ui-primary: #{$brand-color};
+  --pagefind-ui-text: #{$white};
+  --pagefind-ui-background: transparent;
+  --pagefind-ui-border: #{rgba($white, 0.5)};
+  --pagefind-ui-tag: #{$brand-color};
+  --pagefind-ui-border-width: 3px;
+  --pagefind-ui-border-radius: 5px;
+  --pagefind-ui-font: 'Poppins', Arial, sans-serif;
+
+  // Match the old search input: large, bold, no icon offset
+  .pagefind-ui__search-input {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    padding: 15px 20px !important;
+    line-height: 42px !important;
+    color: $white !important;
+    background: transparent !important;
+
+    &::placeholder {
+      font-weight: 700;
+      color: rgba($white, 0.5);
+    }
+  }
+
+  // Hide the built-in magnifying-glass icon (old design had none)
+  .pagefind-ui__search-icon {
+    display: none;
+  }
+
+  // Result titles: bold white
+  .pagefind-ui__result-title {
+    color: $white !important;
+    font-weight: 700 !important;
+    font-size: 18px;
+  }
+
+  .pagefind-ui__result-link {
+    color: $white;
+    &:hover { color: rgba($white, 0.8); }
+  }
+
+  // Excerpt: muted, smaller — matches the old date/subtitle tone
+  .pagefind-ui__result-excerpt {
+    color: rgba($white, 0.6) !important;
+    font-size: 14px;
+  }
+
+  // Highlight: brand blue tint instead of the default yellow
+  mark {
+    background-color: rgba($brand-color, 0.5);
+    color: $white;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  // Hide post thumbnail images (blurry post headers clutter the clean look)
+  .pagefind-ui__result-image {
+    display: none !important;
+  }
+
+  // Result rows: thin divider, matching old design
+  .pagefind-ui__result {
+    border-bottom: 1px solid rgba($white, 0.1);
+  }
+
+  // Result count line
+  .pagefind-ui__message {
+    color: rgba($white, 0.5);
+    font-size: 14px;
+  }
+
+  // "Load more results" button
+  .pagefind-ui__button {
+    background: transparent;
+    border: 2px solid rgba($white, 0.3);
+    color: $white;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 12px 30px;
+    transition: $global-transition;
+    cursor: pointer;
+    width: auto;
+
+    &:hover {
+      background: $brand-color;
+      border-color: $brand-color;
+    }
+  }
+}
