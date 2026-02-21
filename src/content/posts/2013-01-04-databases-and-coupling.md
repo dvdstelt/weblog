@@ -1,0 +1,27 @@
+---
+id: 578249
+author: Dennis van der Stelt
+title: Databases and coupling
+description: We probably all learned this at school. When you build software, you analyze requirem...
+pubDate: '2013-01-04T10:36:12'
+image: /images/databases-and-coupling/header.png
+tags:
+  - Architecture and Design
+  - WCF
+redirect_from:
+  - /dennis/2013/01/04/databases-and-coupling
+  - /blogs/dennis/archive/2013/01/04/databases-and-coupling.aspx
+---
+We probably all learned this at school. When you build software, you analyze requirements, find the nouns and build an [entity-relationship model](http://en.wikipedia.org/wiki/Entity-relationship_diagram), an ERD. You start with the first normal form and [normalize the model](http://en.wikipedia.org/wiki/Database_normalization) until you start building software upon it. But when you’re building software in a distributed environment, multiple components will likely need to access the same data. In the most traditional of systems, you’ll have a single database with great value in it, because all data the is valuable to your company is in this database. And all those components are based on this data, so they need access to it. Being more concrete, you can think of this as multiple Visual Studio solutions with projects and they all have connection strings to this high value database.
+
+[![](/images/databases-and-coupling/3441_reducecoupling_5f00_thumb_5f00_49c4c56e.png)](/wp-content/uploads/2014/01/3441_reducecoupling_5f00_thumb_5f00_49c4c56e.png)We all know coupling is bad, however we don’t always know how to fix this. Because we don’t know where the worst coupling is. Let’s think about this for a minute. We build layers into our software, sometimes even separated through additional facades implemented through SOAP and XML. And than we tell ourselves the user interface is decoupled from the database. So that changes in the database can be made without affecting the upper layers and the user interface. We’ve hidden this behind a data-layer and use complex O/RM solutions to hide even more behind models with complex mappings to the database. Until even the slightest change means updating the model, the mapping, the data-layer and even business logic, facades and everything all the way up to the user interface. Even worse, this change, which took too long to build… it completely breaks other components in our distributed architecture.
+
+I’ve seen so many solutions trying to fix this. From stored procedures that can be changed on the fly (but without proper testing), to additional tools that should fix problems, to ad hoc data changes. And I just deliberately mentioned the three worst solutions, in my humble opinion. Because too many people execute these so called fixes, ranging from junior developers on the maintenance team to the senior DBA. The problem is, that all of them do this without proper knowledge of the business rules. Because these are actually in the code. So how come we still think we can solve all problems using the mentioned solutions?
+
+So coming back to our question, where the worst coupling is. It’s in the database! There’s so much hidden business logic in our data. Some of the data belongs together without anyone being able to notice this. One of the worst invisible coupling I’ve ever seen is where the status of a client was made up out of multiple records in a single table. The state of a client was reflected by a record and second record. Unless there was a third record with some information, than the client had another state. Unless the second record had its timestamp in the past, than it was in even another state. And this went on and on. In the end this resulted in hundreds of locations where all these conditions were checked. These states were however completely invisible in the database! One had to just *know* what they could possible represent. Until some developer came along and made up another combination of records to present another state.
+
+[![](/images/databases-and-coupling/1643_database_2d00_integration_5f00_thumb_5f00_5acb8402.jpg)](/wp-content/uploads/2014/01/1643_database_2d00_integration_5f00_thumb_5f00_5acb8402.jpg)So how can this be solved? That’s difficult to answer. But a good way to start is try to divide and conquer. Everything that can be taken out of the big database, should be put in another database. That will make the problem smaller and more manageable. Of course it’s ridiculous to just add more connection strings to every single component, so that they can still access the same database. We’d still have the same coupling, but with added complexity of querying the databases. We can’t directly join tables anymore, and don’t get me started on SQL Server’s linked servers.
+
+Will SOAP and XML free us from the coupling? Not really. Or better yet, not at all. Not in the way most people intended to get rid of coupling. Coupling isn’t solved by taking out design time coupling. It’s the runtime coupling that’s difficult to solve. What if the webservice that queries your smaller database is offline, or it’s blocked by requests from other webservices. Or it’s simply not fast enough for your performance demands.
+
+The solution is to decouple these services even during runtime. This means they can’t call each other anymore. We have to make sure they know the answer, before these services are asking the question. How this can be achieved, is something for another post.
