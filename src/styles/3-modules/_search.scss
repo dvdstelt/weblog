@@ -1,4 +1,4 @@
-/* Search */
+/* Search overlay */
 .search {
   position: fixed;
   top: 0;
@@ -8,12 +8,15 @@
   z-index: 100;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   background-color: $dark;
   transition: all 0.5s ease-in-out;
+
   &.is-visible {
     opacity: 1;
     visibility: visible;
   }
+
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     -webkit-backdrop-filter: saturate(180%) blur(10px);
     backdrop-filter: saturate(180%) blur(10px);
@@ -21,6 +24,10 @@
   }
 }
 
+// Prevent body scroll while search is open
+body:has(.search.is-visible) {
+  overflow: hidden;
+}
 
 .search__box {
   position: relative;
@@ -29,25 +36,11 @@
   margin: 0 auto;
   padding-top: 200px;
 
-  .search__close {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    font-size: 30px;
-    line-height: 1;
-    color: rgba($text-color, .5);
-    transition: all .25s;
-    cursor: pointer;
-    &:hover {
-      color: $text-color;
-    }
-  }
-
   @media only screen and (max-width: $tablet) {
     width: 80%;
     padding-top: 100px;
   }
+
   @media only screen and (max-width: $mobile) {
     width: 90%;
   }
@@ -55,100 +48,6 @@
 
 .search__group {
   position: relative;
-  margin-bottom: 30px;
-
-  .search__text {
-    width: 100%;
-    height: auto;
-    padding: 15px 20px;
-    font-family: $heading-font-family;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 42px;
-    border-radius: 5px;
-    border: 3px solid rgba($text-color, .5);
-    transition: all .3s;
-    color: $text-color;
-    background-color: transparent;
-
-    &::-webkit-input-placeholder {
-      font-weight: 700;
-      color: rgba($text-color, .5);
-    }
-    &::placeholder {
-      font-weight: 700;
-      color: rgba($text-color, .5);
-    }
-    &::-ms-clear {
-      display: none;
-    }
-    &:focus {
-      color: $text-color;
-      border-color: $brand-color;
-    }
-
-    @media only screen and (max-width: $mobile) {
-      font-size: 26px;
-    }
-  }
-}
-
-.search-results-list {
-  height: 55vh;
-  padding: 0 0 25px 0;
-  list-style: circle;
-  font-weight: 700;
-  color: $text-color;
-  overflow: auto;
-  white-space: normal;
-
-  .search-results__item {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    display: list-item;
-    list-style-type: none;
-    border-bottom: 1px solid rgba($text-color, .1);
-  }
-
-  
-  .search-results__link {
-    position: relative;
-    display: block;
-    margin-left: -15px;
-    padding-left: 20px;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    color: $text-color;
-    transition: all .25s ease-in-out;
-    &:hover {
-      margin-left: 15px;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 0;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      border: 1px solid $text-color;
-    }
-  }
-
-  .search-results-date {
-    font-size: 12px;
-    line-height: 1;
-    font-weight: 400;
-    color: rgba($text-color, .6);
-  }
-
-  .no-results {
-    list-style: none;
-    h3 {
-      font-size: 18px;
-    }
-  }
 }
 
 
@@ -167,84 +66,162 @@
   --pagefind-ui-border-radius: 5px;
   --pagefind-ui-font: 'Poppins', Arial, sans-serif;
 
-  // Match the old search input: large, bold, no icon offset
+  // Form wrapper — needed so the close button can be positioned inside it
+  .pagefind-ui__form {
+    position: relative;
+  }
+
+  // Close button injected into the form by Search.astro script
+  .search__close {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    line-height: 1;
+    color: rgba($white, 0.5);
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.25s;
+    z-index: 10;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  // Input — large, bold, no icon, right padding for the X button
   .pagefind-ui__search-input {
+    font-family: 'Poppins', Arial, sans-serif !important;
     font-size: 28px !important;
     font-weight: 700 !important;
-    padding: 15px 20px !important;
+    padding: 15px 50px 15px 20px !important;
     line-height: 42px !important;
     color: $white !important;
     background: transparent !important;
 
     &::placeholder {
       font-weight: 700;
-      color: rgba($white, 0.5);
+      color: rgba($white, 0.5) !important;
+    }
+
+    @media only screen and (max-width: $mobile) {
+      font-size: 22px !important;
     }
   }
 
-  // Hide the built-in magnifying-glass icon (old design had none)
+  // Hide the built-in magnifying-glass icon
   .pagefind-ui__search-icon {
-    display: none;
+    display: none !important;
   }
 
-  // Result titles: bold white
+  // Hide Pagefind's own "Clear" text button — our X button closes the overlay
+  .pagefind-ui__search-clear {
+    display: none !important;
+  }
+
+  // Result count line
+  .pagefind-ui__message {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: rgba($white, 0.4);
+    font-size: 12px;
+    margin: 8px 0 4px;
+  }
+
+  // Scrollable results list — page must not scroll
+  .pagefind-ui__results {
+    max-height: 55vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba($white, 0.15);
+      border-radius: 2px;
+    }
+  }
+
+  // Individual result — compact, thin dark divider
+  .pagefind-ui__result {
+    border-top: 1px solid rgba($white, 0.06) !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    list-style: none;
+  }
+
+  .pagefind-ui__result-inner {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  // No thumbnails
+  .pagefind-ui__result-image {
+    display: none !important;
+  }
+
+  // Result title
   .pagefind-ui__result-title {
-    color: $white !important;
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-size: 16px !important;
     font-weight: 700 !important;
-    font-size: 18px;
+    margin: 0 0 3px !important;
+    line-height: 1.3 !important;
   }
 
   .pagefind-ui__result-link {
-    color: $white;
-    &:hover { color: rgba($white, 0.8); }
+    color: $white !important;
+    text-decoration: none;
+
+    &:hover {
+      color: rgba($white, 0.75) !important;
+    }
   }
 
-  // Excerpt: muted, smaller — matches the old date/subtitle tone
+  // Excerpt — muted, compact
   .pagefind-ui__result-excerpt {
-    color: rgba($white, 0.6) !important;
-    font-size: 14px;
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-size: 13px !important;
+    color: rgba($white, 0.5) !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
   }
 
-  // Highlight: brand blue tint instead of the default yellow
+  // Highlight: brand blue tint instead of yellow
   mark {
-    background-color: rgba($brand-color, 0.5);
+    background-color: rgba($brand-color, 0.45);
     color: $white;
     padding: 0 2px;
     border-radius: 2px;
   }
 
-  // Hide post thumbnail images (blurry post headers clutter the clean look)
-  .pagefind-ui__result-image {
-    display: none !important;
-  }
-
-  // Result rows: thin divider, matching old design
-  .pagefind-ui__result {
-    border-bottom: 1px solid rgba($white, 0.1);
-  }
-
-  // Result count line
-  .pagefind-ui__message {
-    color: rgba($white, 0.5);
-    font-size: 14px;
-  }
-
   // "Load more results" button
   .pagefind-ui__button {
+    display: block;
+    width: 100%;
+    margin: 12px 0 20px;
+    padding: 10px 20px;
     background: transparent;
-    border: 2px solid rgba($white, 0.3);
-    color: $white;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-weight: 600;
+    border: 1px solid rgba($white, 0.15);
     border-radius: 5px;
-    padding: 12px 30px;
-    transition: $global-transition;
+    color: rgba($white, 0.6);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
-    width: auto;
+    transition: $global-transition;
 
     &:hover {
       background: $brand-color;
       border-color: $brand-color;
+      color: $white;
     }
   }
 }
