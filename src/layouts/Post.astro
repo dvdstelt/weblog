@@ -83,6 +83,8 @@ const shareDesc = encodeURIComponent(description);
           )}
 
           <div class="post__content" data-pagefind-body>
+            {/* Visually hidden title copy with boosted weight so title matches rank higher in Pagefind */}
+            <span data-pagefind-weight="10" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">{title}</span>
             <slot />
           </div>
 
