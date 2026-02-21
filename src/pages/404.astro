@@ -16,3 +16,34 @@ import Page from '../layouts/Page.astro';
     </div>
   </div>
 </Page>
+
+<script>
+  /**
+   * Handle legacy URL patterns that Azure SWA wildcard rules cannot fully resolve:
+   *
+   *   /dennis/YYYY/MM/DD/slug.aspx          -> /YYYY/MM/DD/slug/
+   *   /blogs/dennis/archive/YYYY/MM/DD/slug.aspx  -> already 301'd to /YYYY/MM/DD/slug.aspx
+   *                                               -> this script then strips .aspx
+   *   /YYYY/MM/DD/slug.aspx  (with or without trailing slash)  -> /YYYY/MM/DD/slug/
+   */
+  (function () {
+    let path = window.location.pathname;
+
+    // Strip trailing slash before processing
+    if (path.endsWith('/')) path = path.slice(0, -1);
+
+    // Strip .aspx extension
+    if (path.endsWith('.aspx')) path = path.slice(0, -5);
+
+    // Strip old /dennis/ prefix (in case .aspx URL arrived without going through the SWA rule)
+    if (path.startsWith('/dennis/')) path = path.slice('/dennis'.length);
+
+    // Strip old /blogs/dennis/archive/ prefix (fallback if SWA wildcard rule did not match)
+    if (path.startsWith('/blogs/dennis/archive/')) path = path.slice('/blogs/dennis/archive'.length);
+
+    // Redirect only if the result looks like a date-based post: /YYYY/MM/DD/slug
+    if (/^\/\d{4}\/\d{2}\/\d{2}\/.+/.test(path)) {
+      window.location.replace(path + '/');
+    }
+  })();
+</script>
