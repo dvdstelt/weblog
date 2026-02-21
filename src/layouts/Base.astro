@@ -1,0 +1,74 @@
+---
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/main.scss';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  pubDate?: Date;
+}
+
+const { title, description, image, pubDate } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <Head
+    title={title}
+    description={description}
+    image={image}
+    pubDate={pubDate}
+    canonicalURL={Astro.url.href}
+  />
+
+  <body>
+    <Header />
+
+    <!-- begin content -->
+    <main class="content" aria-label="Content">
+      <slot />
+    </main>
+    <!-- end content -->
+
+    <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+    <Footer />
+
+    <script>
+      // Menu open/close
+      const menuOpenIcon = document.querySelector('.nav__icon-menu');
+      const menuCloseIcon = document.querySelector('.nav__icon-close');
+      const menuList = document.querySelector('.menu-overlay');
+      const searchOpenIcon = document.querySelector('.nav__icon-search');
+      const searchCloseIcon = document.querySelector('#js-search-close');
+      const searchBox = document.querySelector('.search');
+      const topButton = document.querySelector('.top');
+
+      menuOpenIcon?.addEventListener('click', () => menuList?.classList.add('is-open'));
+      menuCloseIcon?.addEventListener('click', () => menuList?.classList.remove('is-open'));
+
+      searchOpenIcon?.addEventListener('click', () => {
+        searchBox?.classList.add('is-visible');
+      });
+      searchCloseIcon?.addEventListener('click', () => searchBox?.classList.remove('is-visible'));
+
+      searchBox?.addEventListener('click', (e) => {
+        if (e.target === searchBox) searchBox.classList.remove('is-visible');
+      });
+      document.addEventListener('keyup', (e) => {
+        if (e.key === 'Escape') searchBox?.classList.remove('is-visible');
+      });
+
+      // Page load animation
+      setTimeout(() => document.body.classList.add('is-in'), 150);
+
+      // Scroll-to-top button
+      topButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      window.addEventListener('scroll', () => {
+        topButton?.classList.toggle('is-active', window.scrollY > window.innerHeight);
+      });
+    </script>
+  </body>
+</html>

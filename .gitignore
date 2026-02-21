@@ -1,8 +1,15 @@
+# Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 
+# Astro
+node_modules/
+dist/
+.astro/
+
 .vscode
 .tweet-cache/
 .claude/
+.DS_Store git add src/styles/ .gitignore

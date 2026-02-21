@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const PAGE_SIZE = 9;
+
+const allPosts = (await getCollection('posts')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const posts = allPosts.slice(0, PAGE_SIZE);
+const totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+---
+<Base>
+  <Hero />
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="container__inner">
+          <div class="contaniner__inner-box">
+            <div class="row grid">
+              {posts.map((post) => <ArticleCard post={post} />)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {totalPages > 1 && (
+    <div class="container">
+      <div class="row">
+        <div class="col col-12 load-more">
+          <div class="pagination">
+            <a href="/page/2/" class="button button--middle">
+              Older Posts <i class="ion ion-ios-arrow-forward"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+</Base>

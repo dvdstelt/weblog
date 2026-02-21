@@ -1,0 +1,18 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+<ul class="nav__list list-reset">
+  {navItems.map(({ href, label }) => (
+    <li class="nav__item">
+      <a href={href} class={`nav__link${currentPath === href ? ' active-link' : ''}`}>
+        {label}
+      </a>
+    </li>
+  ))}
+</ul>

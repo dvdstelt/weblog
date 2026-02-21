@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getPostUrl } from '../lib/posts';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { title, description, image, pubDate } = post.data;
+const url = getPostUrl(post);
+const dateISO = pubDate.toISOString();
+const dateFormatted = pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+<div class="article col col-4 col-d-6 col-t-12 grid__post animate">
+  <div class="article__inner">
+    {image && (
+      <a class="article__image" href={url}>
+        <img src={image} alt={title} />
+      </a>
+    )}
+    <div class="article__content">
+      <div class="article-tags"></div>
+      <h2 class="article__title">
+        <a href={url}>{title}</a>
+      </h2>
+      <p class="article__excerpt">
+        {description}
+      </p>
+      <div class="article__meta">
+        <div class="article__author">
+          <a href="/about/" class="article__author-image" style="background-image: url(/images/dennis.jpg)" aria-label="Dennis van der Stelt's Picture"></a>
+          <a href="/about/" class="article__author-link">Dennis van der Stelt</a>
+        </div>
+        <span class="article__date">
+          <time datetime={dateISO}>{dateFormatted}</time>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

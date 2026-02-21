@@ -1,0 +1,41 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+<Base title={title} description={description} image={image}>
+  {image && (
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <div class="image-box">
+            <img class="page-image" src={image} alt={title} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 push-2 col-d-10 col-m-12 push-d-1 push-m-0">
+        <!-- begin page -->
+        <article class="page animate">
+          <div class="page-head">
+            <h1 class="page-title">{title}</h1>
+          </div>
+          <div class="page__content">
+            <slot />
+          </div>
+        </article>
+        <!-- end page -->
+      </div>
+    </div>
+  </div>
+</Base>

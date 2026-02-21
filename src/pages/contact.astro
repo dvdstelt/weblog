@@ -1,0 +1,27 @@
+---
+import Page from '../layouts/Page.astro';
+
+const description = "I'm a developer, international speaker and coach/trainer. Contact me for information about me and my services or anything else, or visit my professional website at https://compilesoftware.nl/";
+---
+<Page title="Contact Me" image="/images/contact.jpg" description={description}>
+  <div class="form-container">
+    <p class="contact-description">{description}</p>
+    <form class="form" action="https://formspree.io/f/xrgnbryb" method="POST">
+      <div class="form__group">
+        <label class="form__label" for="form-name">Your Name</label>
+        <input class="form__input" id="form-name" type="text" name="name" placeholder="Name..." required />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="form-email">Your Email</label>
+        <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="Email..." required />
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="form-text">Your Message</label>
+        <textarea class="form__input" id="form-text" name="text" rows="10" placeholder="Message..." required></textarea>
+      </div>
+      <div class="form__group">
+        <button class="button button--primary" type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+</Page>

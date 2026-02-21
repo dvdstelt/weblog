@@ -1,0 +1,19 @@
+{
+  "name": "weblog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && npx pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@pagefind/default-ui": "^1.4.0",
+    "astro": "^5.17.1",
+    "remark-github-alerts": "^0.1.1",
+    "sass": "^1.97.3"
+  }
+}
