@@ -46,8 +46,33 @@ body:has(.search.is-visible) {
   }
 }
 
+// Close button is kept here in .search__group (not moved into the Pagefind form,
+// because Pagefind/Preact re-renders the form on each search and would evict it).
+// Height matches the input: 2×15px padding + 42px line-height + 2×3px border = 78px.
 .search__group {
   position: relative;
+
+  .search__close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    line-height: 1;
+    color: rgba($white, 0.5);
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    transition: color 0.25s;
+    z-index: 10;
+
+    &:hover {
+      color: $white;
+    }
+  }
 }
 
 
@@ -64,37 +89,16 @@ body:has(.search.is-visible) {
   --pagefind-ui-tag: #{$brand-color};
   --pagefind-ui-border-width: 3px;
   --pagefind-ui-border-radius: 5px;
-  --pagefind-ui-font: 'Poppins', Arial, sans-serif;
+  --pagefind-ui-font: #{$base-font-family};
 
-  // Form wrapper — needed so the close button can be positioned inside it
-  .pagefind-ui__form {
-    position: relative;
+  // Remove the magnifying-glass pseudo-element Pagefind injects before the form
+  .pagefind-ui__form::before {
+    display: none !important;
   }
 
-  // Close button injected into the form by Search.astro script
-  .search__close {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    font-size: 24px;
-    line-height: 1;
-    color: rgba($white, 0.5);
-    background: none;
-    border: none;
-    padding: 4px;
-    cursor: pointer;
-    transition: color 0.25s;
-    z-index: 10;
-
-    &:hover {
-      color: $white;
-    }
-  }
-
-  // Input — large, bold, no icon, right padding for the X button
+  // Input — large, bold, right padding for the X button
   .pagefind-ui__search-input {
-    font-family: 'Poppins', Arial, sans-serif !important;
+    font-family: $base-font-family !important;
     font-size: 28px !important;
     font-weight: 700 !important;
     padding: 15px 50px 15px 20px !important;
@@ -107,12 +111,17 @@ body:has(.search.is-visible) {
       color: rgba($white, 0.5) !important;
     }
 
+    &:focus {
+      border-color: $brand-color !important;
+      outline: none !important;
+    }
+
     @media only screen and (max-width: $mobile) {
       font-size: 22px !important;
     }
   }
 
-  // Hide the built-in magnifying-glass icon
+  // Hide the SVG magnifying-glass icon element
   .pagefind-ui__search-icon {
     display: none !important;
   }
@@ -124,7 +133,7 @@ body:has(.search.is-visible) {
 
   // Result count line
   .pagefind-ui__message {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: $base-font-family;
     color: rgba($white, 0.4);
     font-size: 12px;
     margin: 8px 0 4px;
@@ -149,11 +158,11 @@ body:has(.search.is-visible) {
     }
   }
 
-  // Individual result — compact, thin dark divider
+  // Individual result — matching original spacing and divider
   .pagefind-ui__result {
-    border-top: 1px solid rgba($white, 0.06) !important;
-    padding: 8px 0 !important;
-    margin: 0 !important;
+    border-bottom: 1px solid rgba($white, 0.1) !important;
+    padding: 15px 0 !important;
+    margin-bottom: 15px !important;
     list-style: none;
   }
 
@@ -167,12 +176,12 @@ body:has(.search.is-visible) {
     display: none !important;
   }
 
-  // Result title
+  // Result title — Josefin Sans 18px, matching original search link style
   .pagefind-ui__result-title {
-    font-family: 'Poppins', Arial, sans-serif !important;
-    font-size: 16px !important;
+    font-family: $base-font-family !important;
+    font-size: 18px !important;
     font-weight: 700 !important;
-    margin: 0 0 3px !important;
+    margin: 0 0 2px !important;
     line-height: 1.3 !important;
   }
 
@@ -185,13 +194,27 @@ body:has(.search.is-visible) {
     }
   }
 
-  // Excerpt — muted, compact
+  // Date injected by Search.astro script — matches original .search-results-date style
+  .search-result-date {
+    font-family: $base-font-family;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+    color: rgba($white, 0.6);
+    margin: 0 0 6px !important;
+  }
+
+  // Excerpt — muted, max 2 lines
   .pagefind-ui__result-excerpt {
-    font-family: 'Poppins', Arial, sans-serif !important;
+    font-family: $base-font-family !important;
     font-size: 13px !important;
     color: rgba($white, 0.5) !important;
     margin: 0 !important;
     line-height: 1.5 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   // Highlight: brand blue tint instead of yellow
@@ -212,7 +235,7 @@ body:has(.search.is-visible) {
     border: 1px solid rgba($white, 0.15);
     border-radius: 5px;
     color: rgba($white, 0.6);
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: $base-font-family;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
