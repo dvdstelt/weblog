@@ -14,8 +14,8 @@ redirect_from:
 This blogpost is part of a series
 
 1. Template Method Pattern explanation
-2. [Template Method Pattern example](https://bloggingabout.net/2012/02/10/template-method-pattern-example)
-3. [Template Method Pattern advanced](https://bloggingabout.net/2012/02/10/template-method-pattern-advanced-example)
+2. [Template Method Pattern example](/2012/02/10/template-method-pattern-example/)
+3. [Template Method Pattern advanced](/2012/02/10/template-method-pattern-advanced-example/)
 
 I’ve recently read a post about someone who hated the Template Method Pattern, because its intent wasn’t revealed. When based on the many examples out there, you might agree with this. First let’s see what the theoretical intent of the pattern is. You can look it up on [wikipedia](http://en.wikipedia.org/wiki/Template_method_pattern), but recently I’ve come across [sourcemaking.com](http://sourcemaking.com/design_patterns/template_method) where a lot of patterns are described and I really like that site! Besides a good theoretical explanation it also has examples in many languages. About the intent of the Template Method Pattern it says:
 

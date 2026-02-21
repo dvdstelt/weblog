@@ -77,7 +77,7 @@ There are at least two issues with the discussed approach so far.
 
 ##### Low coupling, high cohesion
 
-There are *things* in our system that have very high cohesion and have a high amount of coupling. This could be the database and the user interface or some details in an order and details from a customer. These highly cohesive *things* should stay together and [not be split apart](https://bloggingabout-linux.azurewebsites.net/2015/10/27/business-components-as-mini-systems/). Not in a different architectural layer, not in a different component and especially not separated via HTTP requests. If we can find those *things* and put them together in something we can call a logical service*, we can decouple them from other *things* that also share a high cohesion with each other. That’s how we achieve loose coupling.
+There are *things* in our system that have very high cohesion and have a high amount of coupling. This could be the database and the user interface or some details in an order and details from a customer. These highly cohesive *things* should stay together and [not be split apart](/2015/10/27/business-components-as-mini-systems/). Not in a different architectural layer, not in a different component and especially not separated via HTTP requests. If we can find those *things* and put them together in something we can call a logical service*, we can decouple them from other *things* that also share a high cohesion with each other. That’s how we achieve loose coupling.
 * A logical service means it’s not a technical thing like a webservice, controller or something similar, but a collection of *things* that logically should be grouped together.
 
 ##### Keeping the model in sync with events

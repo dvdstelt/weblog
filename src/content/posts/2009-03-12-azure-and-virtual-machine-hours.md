@@ -12,7 +12,7 @@ redirect_from:
 ---
 I suddenly remember that Azure can supply you with analytics on how your services and storage is doing, so I wanted to check this. Some funny results came out of this.
 
-First of all, these statistics are about my [speed traps](https://bloggingabout.net/2009/02/23/cloud-service-in-azure-speedtraps) application I blogged about before. It’s nice to know what it actually does. 
+First of all, these statistics are about my [speed traps](/2009/02/23/cloud-service-in-azure-speedtraps/) application I blogged about before. It’s nice to know what it actually does. 
 1. The application is running two roles:
     1. A web role for displaying an HTML page to the users with all speed traps. This role also has a WCF service running in the same web role.
     2. A worker role for retrieving the speed traps from my external source.

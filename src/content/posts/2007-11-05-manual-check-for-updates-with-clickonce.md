@@ -190,7 +190,7 @@ Here we again do some error checking for when things go wrong. But all we’re d
 This is now all happening in the background without the users being notified when there’s no update and without the annoying popup dialog. It’s also really easy to create your own “Check for updates” button or menu option now.
 
 Have fun with ClickOnce and forget about those awful web based applications! 😉
-**UPDATE :** Here’s how you can [turn off automatic updates with ClickOnce](https://bloggingabout.net/2007/11/28/turn-off-automatic-updates-with-clickonce).
+**UPDATE :** Here’s how you can [turn off automatic updates with ClickOnce](/2007/11/28/turn-off-automatic-updates-with-clickonce/).
 **UPDATE 2 :** Here’s [an example solution](https://bloggingabout-linux.azurewebsites.net/wp-content/uploads/sites/2/2007/11/ClickOnceDemo.zip), without the BackgroundWorker.
 
 

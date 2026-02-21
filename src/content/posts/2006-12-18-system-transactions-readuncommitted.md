@@ -203,7 +203,7 @@ We’ve got two connections set up. On line 17, we set the IsolationLevel to Rea
 
 </div>
 
-The problem here is however that we’ll [automatically get bumped up to a distributed transaction](https://bloggingabout.net/2006/09/27/System.Transactions-_3A00_-What-to-choose_3F00_). So make sure the MSDTC service is running. 
+The problem here is however that we’ll [automatically get bumped up to a distributed transaction](/2006/09/27/System.Transactions-_3A00_-What-to-choose_3F00_/). So make sure the MSDTC service is running. 
 **Conclusion** Now you know how you can read uncommitted data that’s being updated in <u>other</u> transactions. Be sure to know however that this is called a “dirty read”. You’re reading data that in 99% of the time is data you don’t want. It’s not being updated for nothing! The person who asked me the question actually had a valid reason to choose this, although the initial design of the application might not be the best. But it wasn’t his, so he wasn’t to blame. 
 
 [Sahil Malik](http://blah.winsmarts.com/) once made a weblog post about [why the heck](http://codebetter.com/blogs/sahil.malik/archive/2005/07/24/129770.aspx) (old weblog) we would want to use ReadUncommitted. He couldn’t think of a single reason to use it. I now know one reason, but I still agree with him. I’m sorry if I wasted your time with this long weblog post, with a final conclusion that you shouldn’t use ReadUncommitted. 😉  
@@ -212,6 +212,6 @@ Table of contents
 1. [An introduction](https://bloggingabout.net/2006/02/09/11011)
 2. [Unit Testing](https://bloggingabout.net/2006/02/10/11017)
 3. [Promotable Enlistment](https://bloggingabout.net/2006/03/20/11748)
-4. [What to choose?](https://bloggingabout.net/2006/09/27/System.Transactions-_3A00_-What-to-choose_3F00_)
+4. [What to choose?](/2006/09/27/System.Transactions-_3A00_-What-to-choose_3F00_/)
 
 

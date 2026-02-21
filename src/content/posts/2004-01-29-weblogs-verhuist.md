@@ -16,4 +16,4 @@ Daar is nu verandering in gekomen! Ondanks het feit dat LogicaCMG ons niet wilde
 
 Anyway, spread the word, zou ik zeggen!
 
-En nogmaals, als je ook mee wilt bloggen, kan dat.Kijk gewoon even naar mijn [First Post!](http://sphear.demon.nl/weblogs/dennis/archive/2003/10/21/145.aspx) en daar vind je meer informatie.
+En nogmaals, als je ook mee wilt bloggen, kan dat.Kijk gewoon even naar mijn [First Post!](http://sphear.demon.nl/weblogs/2003/10/21/145/) en daar vind je meer informatie.

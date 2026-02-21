@@ -79,7 +79,7 @@ For everyone else, I advice to setup some test project and see what has to be do
 When in doubt, just use System.Transactions. When looking at the last list, I think it’s a good option. Especially considering the alternatives.
 
 Table of contents  
- 1.[An introduction](/blogs/dennis/archive/2006/02/09/11011.aspx)  
- 2.[Unit Testing](/blogs/dennis/archive/2006/02/10/11017.aspx)  
- 3.[Promotable Enlistment](/blogs/dennis/archive/2006/03/20/11748.aspx)  
+ 1.[An introduction](/2006/02/09/11011/)  
+ 2.[Unit Testing](/2006/02/10/11017/)  
+ 3.[Promotable Enlistment](/2006/03/20/11748/)  
  4.What to choose?

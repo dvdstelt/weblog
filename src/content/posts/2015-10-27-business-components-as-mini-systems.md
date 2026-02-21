@@ -15,7 +15,7 @@ redirect_from:
   - /dennis/2015/10/27/business-components-as-mini-systems
   - /blogs/dennis/archive/2015/10/27/business-components-as-mini-systems.aspx
 ---
-In my [High Availability](https://bloggingabout-linux.azurewebsites.net/2012/09/19/high-availability/) article I mentioned business components and questions were asked in the comments, what these business components actually are. This post is a follow up to my previous post about the [autonomy of those business components](https://bloggingabout-linux.azurewebsites.net/2014/02/19/autonomous-business-components/). I’ll specifically try to answer the question in the first comment.
+In my [High Availability](/2012/09/19/high-availability/) article I mentioned business components and questions were asked in the comments, what these business components actually are. This post is a follow up to my previous post about the [autonomy of those business components](/2014/02/19/autonomous-business-components/). I’ll specifically try to answer the question in the first comment.
 
 > Is “Business Component” a mini system that owns ui, app services, domain model and db? or it owns everything mentioned above except ui layer?
 

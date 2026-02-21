@@ -13,7 +13,7 @@ redirect_from:
 ---
 It’s been a while since I blogged about one of my favorite topics, Windows Communication Foundation.
 
-In this article I’ll explain how you can use MSMQ with WCF to really process messages asynchronously. It’s unbelievable how easy this is. Read my complete [WCF series](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction) on how to set up your first service. The idea in this example is that we have to send some e-mails, but we don’t want that to be done immediately.
+In this article I’ll explain how you can use MSMQ with WCF to really process messages asynchronously. It’s unbelievable how easy this is. Read my complete [WCF series](/2006/10/18/WCF-Part-0-_3A00_-Introduction/) on how to set up your first service. The idea in this example is that we have to send some e-mails, but we don’t want that to be done immediately.
 
 We’ll setup the service with a Console Application. In another post we’ll host our service using a Windows Service.
 **1: Make sure MSMQ is installed.** [![WindowsComponentsVista](/images/wcf-and-msmq/windowscomponentsvista_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/WCFandMSMQ_BAEC/WindowsComponentsVista_2.png) MSMQ must of course be installed. Check your Windows components to see if it’s installed. In Vista this is under “Control Panel” -> “Programs and Features” -> “Turn Windows features on or off”.

@@ -13,7 +13,7 @@ redirect_from:
   - /dennis/2013/07/30/partitioning-data-through-events
   - /blogs/dennis/archive/2013/07/30/partitioning-data-through-events.aspx
 ---
-In my [last post I explained the problem of coupling](https://bloggingabout.net/2013/01/04/databases-and-coupling). One of the mentioned solutions was to divide and conquer. Don’t put everything into a single monolithic database, because sooner or later you’ll run into problems because of that decision.
+In my [last post I explained the problem of coupling](/2013/01/04/databases-and-coupling/). One of the mentioned solutions was to divide and conquer. Don’t put everything into a single monolithic database, because sooner or later you’ll run into problems because of that decision.
 * Every component will have coupling towards and inside the database.
     * Once a change is made, it is possible another component will fail at runtime.
     * Locking is really hard to solve with so many components accessing the same data for different reasons.
@@ -52,7 +52,7 @@ This is all the information required to have the business rule go into effect an
 
 ## Events
 
-[![](/images/partitioning-data-through-events/7181_contact_2d00_movie_2d00_still_5f00_57b952bf.jpg)](/wp-content/uploads/2014/01/7181_contact_2d00_movie_2d00_still_5f00_57b952bf.jpg)I hope you’re starting to see a pattern. What we are specifying in the above examples are simple messages between two components. The first bullet of both messages specifies their intent. When you’re used to [messaging patterns](https://bloggingabout.net/2012/04/25/what-is-messaging) you’ll understand that we can specify the intent in the name of the message.
+[![](/images/partitioning-data-through-events/7181_contact_2d00_movie_2d00_still_5f00_57b952bf.jpg)](/wp-content/uploads/2014/01/7181_contact_2d00_movie_2d00_still_5f00_57b952bf.jpg)I hope you’re starting to see a pattern. What we are specifying in the above examples are simple messages between two components. The first bullet of both messages specifies their intent. When you’re used to [messaging patterns](/2012/04/25/what-is-messaging/) you’ll understand that we can specify the intent in the name of the message.
 
 We can send the message specifically to the financial system, but what if we’ve isolated other components as well? What if they need to be made aware of the purchase as well? An example could be a component that needs to ship the purchased items. We can send the message to different locations using [publish/subscribe pattern](http://www.enterpriseintegrationpatterns.com/PublishSubscribeChannel.html). Whenever we use pub/sub we send out events, and events are always in the past tense.
 

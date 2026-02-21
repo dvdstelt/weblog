@@ -15,7 +15,7 @@ redirect_from:
 ---
 We’ll return once again to the WCF ABC and in this part we’ll examine what we can do with the address of our service. There are many options on how to specify the address of your service, especially when you start combining options. But I’ll discuss the three main options. Don’t be scared by the size of this article, it’s easy to understand. 🙂
 **Explicitly  
-**As seen in [part 3](https://bloggingabout.net/2006/11/09/WCF-Part-3-_3A00_-Hosting-the-service) about configuration, we configured the address of our service explicitly in the address attribute of our service’s endpoints; one for our service itself and one for metadata. What we haven’t done is setup an endpoint for WSDL discovery. If we want to enable http discovery, we need to set this up at the serviceMetadata behavior. Because we’re not using relative addresses, we need to set it explicitly as well.
+**As seen in [part 3](/2006/11/09/WCF-Part-3-_3A00_-Hosting-the-service/) about configuration, we configured the address of our service explicitly in the address attribute of our service’s endpoints; one for our service itself and one for metadata. What we haven’t done is setup an endpoint for WSDL discovery. If we want to enable http discovery, we need to set this up at the serviceMetadata behavior. Because we’re not using relative addresses, we need to set it explicitly as well.
 
 
 ```csharp
@@ -118,6 +118,6 @@ So we can do this in config too? Of course. In the relative addresses method, th
 </service>
 ```
 
-[[Go to the WCF series article index](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]
 
 

@@ -10,7 +10,7 @@ redirect_from:
   - /dennis/2010/09/08/miracles-still-do-happen
   - /blogs/dennis/archive/2010/09/08/miracles-still-do-happen.aspx
 ---
-It’s been six weeks since [my last blogpost](https://bloggingabout-linux.azurewebsites.net/2010/07/26/worst-day-of-my-life/). And although people could’ve kept up with the current situation via [my Twitter account](http://twitter.com/dvdstelt), I’ve decided to make one more post on what happened in the previous weeks, since people asked for it in comments and via other channels.
+It’s been six weeks since [my last blogpost](/2010/07/26/worst-day-of-my-life/). And although people could’ve kept up with the current situation via [my Twitter account](http://twitter.com/dvdstelt), I’ve decided to make one more post on what happened in the previous weeks, since people asked for it in comments and via other channels.
 
 The past weeks have been very, very hard. The fact that my wife could die (which was enough stressful on its own), organizing a lot of help, talking to hundreds of people over the past few weeks, dealing with a lot of kind people offering help but also a lot of idiots, etc, demanded a lot of me. This resulted in that I did not have a single moment for myself to take my mind off of what was happening. My children were also very upset about what happened and tested me way beyond my limits. Which is very understandable, but doesn’t mean it was fun. I found out what it was to have your body and mind running on adrenaline and having the adrenaline run out. But so far about me…
 

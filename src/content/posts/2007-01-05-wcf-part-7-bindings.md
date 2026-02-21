@@ -22,7 +22,7 @@ The image also shows the architecture of WCF. The service-host initiates one or
 2. **Encoder** This is text/xml for HTTP bindings, but binary xml for the TCP binding.
 3. **Transport** This can be HTTP or TCP, NamedPipes or MSMQ.
 
-Depending on what you actually want and need, you’d normally decide which binding is best for your situation. Using the decision chart I’ve shown in [this post](https://bloggingabout.net/2006/12/01/WCF-Binding-decision-chart), you can see what bindings are available and when to choose what. In the following table you can see some abilities and which binding supports them.
+Depending on what you actually want and need, you’d normally decide which binding is best for your situation. Using the decision chart I’ve shown in [this post](/2006/12/01/WCF-Binding-decision-chart/), you can see what bindings are available and when to choose what. In the following table you can see some abilities and which binding supports them.
 
 ![](/images/wcf-part-7-bindings/bindings.png) 
 
@@ -38,6 +38,6 @@ The great thing about WCF and these bindings is, that in theory you can deploy a
 
 Although this article discusses bindings, we’ll definitely get back to things like security, transactions, etc. But these are all topics on their own and deserve one or more posts in this WCF series.
 
-[[Go to the WCF series article index](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]
 
 

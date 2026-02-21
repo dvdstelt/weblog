@@ -33,7 +33,7 @@ public async Task PlanWedding(WeddingRequest request)
 
 Four lines. Clean. Readable. And absolutely riddled with problems that aren't visible in those four lines. What happens when `OrderCake` succeeds but `ReserveDate` fails because the venue is no longer available? What if `OrderArrangement` times out and you can't tell if the flowers were actually ordered or not? What if the wedding planner crashes between ordering the cake and reserving the venue?
 
-The orchestrator pattern hides the [fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) behind what looks like simple method calls. We've [been here before](https://bloggingabout.net/2021/07/01/distributed-monolith/) with webservices and later with microservices doing thousands of HTTP requests. Making distributed calls look like local method calls is a pattern that keeps coming back, and it keeps causing the same problems.
+The orchestrator pattern hides the [fallacies of distributed computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing) behind what looks like simple method calls. We've [been here before](/2021/07/01/distributed-monolith/) with webservices and later with microservices doing thousands of HTTP requests. Making distributed calls look like local method calls is a pattern that keeps coming back, and it keeps causing the same problems.
 
 ## Orchestration versus choreography
 
@@ -107,7 +107,7 @@ Each component should own its own data. If the bakery needs to know the number o
 
 But what if the guest list wasn't finalized yet? The bakery could have its own saga. It received the `WeddingAnnounced` event, so it knows a cake will be needed. But it can't determine the size until it knows the number of guests. So the bakery's saga waits for a `GuestListFinalized` event. It also sets a timeout, because if the guest count hasn't arrived a few weeks before the wedding date, the bakery needs to act. Maybe it publishes a `GuestCountRequired` event to let the wedding planner know that time is running out. The bakery doesn't need to know *why* the guest list is late. It just knows it can't do its job without it and that there's a deadline approaching. That's autonomy.
 
-I've [written before](https://bloggingabout.net/2024/03/14/share-database-of-course-not/) about why shared databases create coupling. The same principle applies to events. Stuffing an event full of data is just another way of sharing a schema between services.
+I've [written before](/2024/03/14/share-database-of-course-not/) about why shared databases create coupling. The same principle applies to events. Stuffing an event full of data is just another way of sharing a schema between services.
 
 ## Handling failure requires domain knowledge
 

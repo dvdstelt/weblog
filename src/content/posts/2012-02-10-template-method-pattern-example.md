@@ -12,9 +12,9 @@ redirect_from:
   - /blogs/dennis/archive/2012/02/10/template-method-pattern-example.aspx
 ---
 This blogpost is part of a series
-1. [Template Method Pattern explanation](https://bloggingabout.net/2012/02/10/template-method-pattern-explanation)
+1. [Template Method Pattern explanation](/2012/02/10/template-method-pattern-explanation/)
 2. Template Method Pattern example
-3. [Template Method Pattern advanced](https://bloggingabout.net/2012/02/10/template-method-pattern-advanced-example)
+3. [Template Method Pattern advanced](/2012/02/10/template-method-pattern-advanced-example/)
 
 So in my previous post I explained how I change the template method pattern a bit with protected abstract methods. In this post I’ll explain why I used this pattern and how I chose to implement it.
 

@@ -13,7 +13,7 @@ redirect_from:
   - /dennis/2007/04/20/wcf-simple-example
   - /blogs/dennis/archive/2007/04/20/wcf-simple-example.aspx
 ---
-**Update : This post was updated and is much more explaining in this post, [WCF Simple Example in Visual Studio 2010](/blogs/dennis/archive/2010/06/16/wcf-simple-example-in-visual-studio-2010.aspx "WCF Simple Example in Visual Studio 2010")** On my [WCF Introduction](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction) post I received a trackback to an example that should be really simple to start WCF with. I’m not here to judge the post (although I could ;-), but it got me thinking. Although I created some small posts on how WCF works, together it might still be too much for people that just want to see the simplest example. So this post is about that example.
+**Update : This post was updated and is much more explaining in this post, [WCF Simple Example in Visual Studio 2010](/2010/06/16/wcf-simple-example-in-visual-studio-2010/ "WCF Simple Example in Visual Studio 2010")** On my [WCF Introduction](/2006/10/18/WCF-Part-0-_3A00_-Introduction/) post I received a trackback to an example that should be really simple to start WCF with. I’m not here to judge the post (although I could ;-), but it got me thinking. Although I created some small posts on how WCF works, together it might still be too much for people that just want to see the simplest example. So this post is about that example.
 
 There are two ways to present this. In this example I’ll use as little code as possible in as few locations as possible. The other way is using the WCF Service Library project that comes with the VS2005 WCF Extension but requires a lot more code, text, etc. More about the in another post.
 
@@ -24,7 +24,7 @@ You don’t need the SDK. And don’t worry about the November 2006 CTP status, 
 2. Open Visual Studio 2005 and create a new console application project, called “Host”.
 3. Add a reference to the project for the System.ServiceModel assembly. It’s the core assembly used by WCF.  
 
-If you’re using Visual Studio 2008, check out [this article](/blogs/dennis/archive/2008/03/28/quot-add-service-reference-quot-is-disabled.aspx) if you have problems with adding the service reference.[![add_reference](/images/wcf-simple-example/add_reference_thumb_1.gif)](/blogs/dennis/WindowsLiveWriter/WCFSimpleExample_D8A5/add_reference_4.gif)
+If you’re using Visual Studio 2008, check out [this article](/2008/03/28/quot-add-service-reference-quot-is-disabled/) if you have problems with adding the service reference.[![add_reference](/images/wcf-simple-example/add_reference_thumb_1.gif)](/blogs/dennis/WindowsLiveWriter/WCFSimpleExample_D8A5/add_reference_4.gif)
 4. Add a using statement at the top of your class for System.ServiceModel.
 
 ```csharp
@@ -104,6 +104,6 @@ private void button1_Click(object sender, EventArgs e)
 
 Congratulations, the most easy and fastest way to create a WCF service. Source-code can be [downloaded here](/files/SimpleExample.zip).  
  **UPDATE :** The zip file was broken, but is now fixed again.
-**Update : This post was updated and is much more explaining in this post,** [**WCF Simple Example in Visual Studio 2010**](/blogs/dennis/archive/2010/06/16/wcf-simple-example-in-visual-studio-2010.aspx "WCF Simple Example in Visual Studio 2010")
+**Update : This post was updated and is much more explaining in this post,** [**WCF Simple Example in Visual Studio 2010**](/2010/06/16/wcf-simple-example-in-visual-studio-2010/ "WCF Simple Example in Visual Studio 2010")
 
 

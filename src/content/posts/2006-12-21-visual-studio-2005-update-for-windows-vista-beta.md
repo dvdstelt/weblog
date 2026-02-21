@@ -16,7 +16,7 @@ redirect_from:
   - /dennis/2006/12/21/visual-studio-2005-update-for-windows-vista-beta
   - /blogs/dennis/archive/2006/12/21/visual-studio-2005-update-for-windows-vista-beta.aspx
 ---
-Just recently [Service Pack 1 was released](https://bloggingabout.net/2006/12/15/Visual-Studio-2005-SP1-available_2100_) (**Beta!**) for Visual Studio 2005.Back then, the Vista update had a link, but it was removed. [Miguel](http://blogs.clearscreen.com/migs/archive/2006/12/21/5616.aspx) blogged that the beta version is online!
+Just recently [Service Pack 1 was released](/2006/12/15/Visual-Studio-2005-SP1-available_2100_/) (**Beta!**) for Visual Studio 2005.Back then, the Vista update had a link, but it was removed. [Miguel](http://blogs.clearscreen.com/migs/archive/2006/12/21/5616.aspx) blogged that the beta version is online!
 
 This update is required because of the security enhancements to Windows Vista. One of the biggest problems was the debugger, for example attaching the debugger to the new IIS7.Here’s info from Microsoft…
 

@@ -13,7 +13,7 @@ redirect_from:
   - /blogs/dennis/archive/2006/08/14/community-server-2-1-features.aspx
 ---
 Community Server just keeps getting better and better, providing more features then I could even imagine to incorporate into a product like this. Some features that our bloggers will probably notice most:
-* **FreeTextBox** The editor that was installed since version CS 2.0 with the advanced feature to upload images and files into your own personal folder. New is the ability to insert a code-snipper via a popup window, although I still like [CopySourceAsHTML](/blogs/dennis/archive/2006/02/10/11019.aspx) best, especially with the [tip coming from Jan Schreuder](/blogs/jschreuder/archive/2006/07/31/13194.aspx).  
+* **FreeTextBox** The editor that was installed since version CS 2.0 with the advanced feature to upload images and files into your own personal folder. New is the ability to insert a code-snipper via a popup window, although I still like [CopySourceAsHTML](/2006/02/10/11019/) best, especially with the [tip coming from Jan Schreuder](/blogs/jschreuder/archive/2006/07/31/13194.aspx).  
 * **Tags  
 **CS 2.1 introduces tags, kind of removing the categories. Tags that are used a lot of the time, appear in bold and larger on the /blogs/ page, as well as on your own weblog. It’s introduced with del.icio.us and technorati and very popular to group posts. Perhaps we should think about standarizing tags or something, because a lot of strange tags appear on the /blogs/ page! 🙂  
 * **New Skins  

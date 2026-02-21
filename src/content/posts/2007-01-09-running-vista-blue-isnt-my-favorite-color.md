@@ -12,7 +12,7 @@ redirect_from:
   - /dennis/2007/01/09/running-vista-blue-isnt-my-favorite-color
   - /blogs/dennis/archive/2007/01/09/running-vista-blue-isnt-my-favorite-color.aspx
 ---
-I just blogged that [I’ll be switching back to Windows XP](https://bloggingabout.net/2007/01/09/running-vista-i-think-not). One of the problems I forgot to mention is this one:
+I just blogged that [I’ll be switching back to Windows XP](/2007/01/09/running-vista-i-think-not/). One of the problems I forgot to mention is this one:
 
 ![](/images/running-vista-blue-isnt-my-favorite-color/bluescreen.png) 
 

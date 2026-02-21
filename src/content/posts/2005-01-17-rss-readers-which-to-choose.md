@@ -26,11 +26,11 @@ Below is a short example of an RSS message from this blog:
 
 <span class="lnum">   3:  </span><span class="kwrd"><</span><span class="html">title</span><span class="kwrd">></span>New .Text version?<span class="kwrd">SPAN class=html>title</span><span class="kwrd">></span>  
 
-<span class="lnum">   4:  </span><span class="kwrd"><</span><span class="html">link</span><span class="kwrd">></span>https://bloggingabout-linux.azurewebsites.net/dennis/archive/2005/01/12/1887.aspx<span class="kwrd">SPAN class=html>link</span><span class="kwrd">></span>  
+<span class="lnum">   4:  </span><span class="kwrd"><</span><span class="html">link</span><span class="kwrd">></span>/2005/01/12/1887/<span class="kwrd">SPAN class=html>link</span><span class="kwrd">></span>  
 
 <span class="lnum">   5:  </span><span class="kwrd"><</span><span class="html">pubDate</span><span class="kwrd">></span>Wed, 12 Jan 2005 13:17:00 GMT<span class="kwrd">SPAN class=html>pubDate</span><span class="kwrd">></span>  
 
-<span class="lnum">   6:  </span><span class="kwrd"><</span><span class="html">guid</span><span class="kwrd">></span>https://bloggingabout-linux.azurewebsites.net/dennis/archive/2005/01/12/1887.aspx<span class="kwrd">SPAN class=html>guid</span><span class="kwrd">></span>  
+<span class="lnum">   6:  </span><span class="kwrd"><</span><span class="html">guid</span><span class="kwrd">></span>/2005/01/12/1887/<span class="kwrd">SPAN class=html>guid</span><span class="kwrd">></span>  
 
 <span class="lnum">   7:  </span><span class="kwrd"><</span><span class="html">description</span><span class="kwrd">><</span><span class="html">P</span><span class="kwrd">></span>Well, seems telligent systems themselves are already blogging ...  
 

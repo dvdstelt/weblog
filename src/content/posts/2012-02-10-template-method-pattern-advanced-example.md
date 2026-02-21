@@ -13,8 +13,8 @@ redirect_from:
 ---
 This blogpost is part of a series
 
-1. [Template Method Pattern explanation](/blogs/dennis/archive/2012/02/10/template-method-pattern-explanation.aspx)
-2. [Template Method Pattern example](/blogs/dennis/archive/2012/02/10/template-method-pattern-example.aspx)
+1. [Template Method Pattern explanation](/2012/02/10/template-method-pattern-explanation/)
+2. [Template Method Pattern example](/2012/02/10/template-method-pattern-example/)
 3. Template Method Pattern advanced
 
 So we’ve looked at the Template Method Pattern with an implementation as really simple example, and another real world implementation. We have additional requirements however. We also need to transform the template so that placeholders will contain the proper text, and have the value of the placeholders customized to our customers. Let’s first look again at the executing code, so we get an idea of what API we want.

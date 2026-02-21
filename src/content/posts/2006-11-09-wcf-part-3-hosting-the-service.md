@@ -13,7 +13,7 @@ redirect_from:
   - /dennis/2006/11/09/wcf-part-3-hosting-the-service
   - /blogs/dennis/archive/2006/11/09/wcf-part-3-hosting-the-service.aspx
 ---
-Finally .NET Framework 3.0 [RTM’d](https://bloggingabout-linux.azurewebsites.net/blogs/mglaser/archive/2006/11/07/.NET-Framework-3.0-has-been-released_2100_.aspx), so I don’t have to run in my VMWare anymore. A good time to see if everything works and create the host for the service contract [we’ve created last time](https://bloggingabout.net/2006/10/31/WCF-Part-2-_3A00_-Defining-contract). We’ll do this using a C# console application, as those just rock in simplicity.
+Finally .NET Framework 3.0 [RTM’d](https://bloggingabout-linux.azurewebsites.net/blogs/mglaser/archive/2006/11/07/.NET-Framework-3.0-has-been-released_2100_.aspx), so I don’t have to run in my VMWare anymore. A good time to see if everything works and create the host for the service contract [we’ve created last time](/2006/10/31/WCF-Part-2-_3A00_-Defining-contract/). We’ll do this using a C# console application, as those just rock in simplicity.
 
 We need a ServiceHost object to host our service. It implements IDisposable, so we’ll use the using statement to create one.
 
@@ -93,6 +93,6 @@ Notice that we have one service. In the above configuration you can see my names
 
 You can run this and your service *will* run and be live, but noone can tell how to communicate with it. For this, we need metadata! But that’s for the next post.
 
-[[Go to the WCF series article index](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]
 
 

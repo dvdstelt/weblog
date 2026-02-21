@@ -25,8 +25,8 @@ Of the SOLID principles, made famous by Robert C. Martin, we’ll discuss the Si
 </center>
 
 I spoke about the Template Method Pattern as well. More information on my blog at the following locations 
-    1. [Template Method Explanation](https://bloggingabout.net/2012/02/10/template-method-pattern-explanation) 
-    2. [Template Method Example](https://bloggingabout.net/2012/02/10/template-method-pattern-example) 
-    3. [Template Method Advanced Example](https://bloggingabout.net/2012/02/10/template-method-pattern-advanced-example) 
+    1. [Template Method Explanation](/2012/02/10/template-method-pattern-explanation/) 
+    2. [Template Method Example](/2012/02/10/template-method-pattern-example/) 
+    3. [Template Method Advanced Example](/2012/02/10/template-method-pattern-advanced-example/) 
 
 If you have questions, don’t hesitate to [contact me](/contact).

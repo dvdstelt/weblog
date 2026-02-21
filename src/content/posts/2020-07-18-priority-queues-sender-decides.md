@@ -15,7 +15,7 @@ redirect_from:
 ---
 When we send a message that should be processed with a higher priority, often it’s not enough to just have priority queues. More than likely the higher priority messages are also processed differently, different decisions, and even different deployment requirements. As a result, it is likely more efficient to have two separate components each deal with their own messages.
 
-This article is example 1 of a series on dealing with message priority. You can find the explanation and index in the [opening post](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/).
+This article is example 1 of a series on dealing with message priority. You can find the explanation and index in the [opening post](/2020/07/16/priority-queues-why-you-dont-need-them/).
 
 ## Introduction
 
@@ -141,6 +141,6 @@ You can test the behavior by sending a single message. You can see an emulation 
 
 ## Conclusion
 
-As you can see we are now able to deal with message priority by having two separate queues, but also having two different endpoints. With all the benefits mentioned in the [opening post](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/).
+As you can see we are now able to deal with message priority by having two separate queues, but also having two different endpoints. With all the benefits mentioned in the [opening post](/2020/07/16/priority-queues-why-you-dont-need-them/).
 
 In the next article we’ll have a look how to lose the knowledge of both receiver from the sender by using publish/subscribe. And thus remove the coupling the sender has on both receivers.</submitorderhandler></submitorder>

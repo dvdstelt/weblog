@@ -72,7 +72,7 @@ Now we have to fill in the blanks. More information can be found in the articles
   This is a bit misleading, as you can’t just enter any name, it’s actually the type of the service.  
   This must be the fully qualified name of the implementation of our service. This means not the interface, but the class. Its name is `EmailValidator` but its full name includes the namespace, resulting in `EmailService.EmailValidator`.
 * Address  
-  The address we don’t have to fill in, because the base address in our code already defines it. You can also define this in configuration as you can read in the post [Address](/blogs/dennis/archive/2006/11/29/WCF-Part-6-_3A00_-Address.aspx). 
+  The address we don’t have to fill in, because the base address in our code already defines it. You can also define this in configuration as you can read in the post [Address](/2006/11/29/WCF-Part-6-_3A00_-Address/). 
 * Binding  
   The binding is simply basicHttpBinding. Note the camelCasing. 
 * Contract  

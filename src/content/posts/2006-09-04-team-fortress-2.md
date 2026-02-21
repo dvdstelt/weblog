@@ -21,4 +21,4 @@ Mostly new is the cartoonish style Valve has used to give the game its own look.
 * View the first trailer [here on Google Video](http://video.google.nl/videoplay?docid=1247449380900269849). Good quality.  
 * View the latest trailer [here on Google Video](http://video.google.com/videoplay?docid=-1928280306450385997). The sound isn’t too great though.  
 * [Official Site](http://www.teamfortress.com/)  
-* View the trailers inline [on my other site here](http://lekkerouderwets.nl/blogs/dennis/archive/2006/09/04/Team-Fortress-2.aspx).
+* View the trailers inline [on my other site here](http://lekkerouderwets.nl/2006/09/04/Team-Fortress-2/).

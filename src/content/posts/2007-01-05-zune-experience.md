@@ -13,7 +13,7 @@ redirect_from:
   - /dennis/2007/01/05/zune-experience
   - /blogs/dennis/archive/2007/01/05/zune-experience.aspx
 ---
-So I’ve been playing around with [my new Zune player](https://bloggingabout.net/2006/12/08/My-Zune-player-arrived_2100_).
+So I’ve been playing around with [my new Zune player](/2006/12/08/My-Zune-player-arrived_2100_/).
 
 I’ve listened to a ton of music, converted and watched movies on it and I’ve shown pictures of my family to grandmothers and other relatives. I love my Zune player, seriously!
 

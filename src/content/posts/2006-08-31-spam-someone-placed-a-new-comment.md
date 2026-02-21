@@ -11,7 +11,7 @@ redirect_from:
   - /dennis/2006/08/31/spam-someone-placed-a-new-comment
   - /blogs/dennis/archive/2006/08/31/spam-someone-placed-a-new-comment.aspx
 ---
-At this community with some beautiful members who like to blog here, we had a serious problem. Spam comments. I’ve blogged about it [before](/blogs/dennis/archive/2006/08/22/Spam-control.aspx) and others as well. So when reading the [article about the CS Spam Blocker](http://jaysonknight.com/blog/archive/2006/08/20/CS-Tidbits-_2300_21_3A00_-Exploring-The-CS-Spam-Blocker.aspx) by [Jayson Knight](http://jaysonknight.com/), I read that comments marked as spam would be deleted automatically. So I tried to figure out how this was working. But still, for every comment-spam I received, I also got an email. Resulting in a flooded mailbox from time to time.
+At this community with some beautiful members who like to blog here, we had a serious problem. Spam comments. I’ve blogged about it [before](/2006/08/22/Spam-control/) and others as well. So when reading the [article about the CS Spam Blocker](http://jaysonknight.com/blog/archive/2006/08/20/CS-Tidbits-_2300_21_3A00_-Exploring-The-CS-Spam-Blocker.aspx) by [Jayson Knight](http://jaysonknight.com/), I read that comments marked as spam would be deleted automatically. So I tried to figure out how this was working. But still, for every comment-spam I received, I also got an email. Resulting in a flooded mailbox from time to time.
 
 So when I saw J-O Eriksson talk about the [spam comments being deleted by an automated job](http://joeriksson.com/archive/2006/08/30/Deleting-Auto_2D00_Deleted-Spam-comments.aspx), I asked myself what Jasyon Knight actually ment. So I asked, and as you can see in the replies in the J-O Eriksson post, it’s solved! 🙂
 

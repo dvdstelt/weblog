@@ -37,13 +37,13 @@ But if we have two different endpoints to send messages to, each of them with th
 ## Three examples
 
 In a series of 3 follow-up articles, I will show several ways how to <s>deal with priority queues</s> and manage message priority.
-* [Sender decides](https://bloggingabout-linux.azurewebsites.net/2020/07/18/priority-queues-sender-decides/)  
+* [Sender decides](/2020/07/18/priority-queues-sender-decides/)  
 In this sample, the sender of the messages decides where a command should go. It thus has knowledge of the different customer types.
-* [Publishing messages, sender decoupled](https://bloggingabout-linux.azurewebsites.net/2020/07/23/priority-queues-publishing/)  
+* [Publishing messages, sender decoupled](/2020/07/23/priority-queues-publishing/)  
 Instead of sending a message, events are published. The sender has no knowledge of customer types, which improves loose coupling.
-* [4+1 architectural view models](https://bloggingabout-linux.azurewebsites.net/2020/08/07/41-architectural-view-model/)  
+* [4+1 architectural view models](/2020/08/07/41-architectural-view-model/)  
 A side-step from the priority queues to explain the difference view models in your architecture and introduce some concepts used in the next article.
-* [Interceptors](https://bloggingabout-linux.azurewebsites.net/2020/08/26/priority-queues-interceptors/)  
+* [Interceptors](/2020/08/26/priority-queues-interceptors/)  
 In this post we’re separating logical design from physical design and try to achieve the maximum decoupling, but best performance. Any receiver can provide a small component to the sender that will be used to verify if a message should be send or not.
 **Resources** ¹ [What Starbucks can teach us about software scalability](https://particular.net/blog/what-starbucks-can-teach-us-about-software-scalability) by Weronika Łabaj  
 ² [Queues are still queues](https://lostechies.com/jimmybogard/2010/11/18/queues-are-still-queues/) by Jimmy Bogard

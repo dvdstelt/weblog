@@ -20,8 +20,8 @@ For SDN Event of June 14th I did two presentations
 
 Why are transactions the bottleneck of so many applications? Why isn’t the database always consistent, even though we use transactions? This session explains why everything in a database is a transaction and how a developer should deal with them. Why your software complains that MSDTC isn’t running and how the CAP Theorem can help. After this session you’ll be able to explain to your DBA why he doesn’t understand transactions. [Slidedeck here](http://www.slideshare.net/DennisvanderStelt/transactions-22988855).I spoke about messaging, of which you can find more information here:
 
-  1. [What is messaging](https://bloggingabout.net/2012/04/25/what-is-messaging)
-  1. [High Availability](https://bloggingabout.net/2012/09/19/high-availability) (a good article on benefits of messaging)
+  1. [What is messaging](/2012/04/25/what-is-messaging/)
+  1. [High Availability](/2012/09/19/high-availability/) (a good article on benefits of messaging)
 
 <center>
 <iframe src="https://www.slideshare.net/slideshow/embed_code/key/fBiO1MQqN4wNRv?startSlide=1" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;" allowfullscreen></iframe><div style="margin-bottom:5px"><strong><a href="https://www.slideshare.net/DennisvanderStelt/transactions-22988855" title="Transactions" target="_blank">Transactions</a></strong> from <strong><a href="https://www.slideshare.net/DennisvanderStelt" target="_blank">Dennis van der Stelt</a></strong></div>

@@ -13,7 +13,7 @@ redirect_from:
   - /dennis/2006/11/16/wcf-part-5-consuming-the-service
   - /blogs/dennis/archive/2006/11/16/wcf-part-5-consuming-the-service.aspx
 ---
-[Last time](https://bloggingabout.net/2006/11/09/WCF-Part-4-_3A00_-Make-your-service-visible-through-metadata) we generated the client and configuration file. Whereas in the asmx world we had a proxy class, the WCF team renamed this in the June CTP to client. For us to use the generated files, we need a new console application and add the files. Don’t forget to add the System.ServiceModel reference to the project. Once this is done, it should compile without errors.
+[Last time](/2006/11/09/WCF-Part-4-_3A00_-Make-your-service-visible-through-metadata/) we generated the client and configuration file. Whereas in the asmx world we had a proxy class, the WCF team renamed this in the June CTP to client. For us to use the generated files, we need a new console application and add the files. Don’t forget to add the System.ServiceModel reference to the project. Once this is done, it should compile without errors.
 
 We’ll have to create an instance of the client. At that point, the application configuration on the client will be read. However, there won’t be a connection until the first call has been made. After creating the instance, we can call the HelloWorld operation. Notice that the HelloComputer operation isn’t exposed, as we didn’t apply the OperationContractAttribute in the interface. Besides the generated files, not much code is needed to execute the call.
 
@@ -73,6 +73,6 @@ We’ve setup our first (have we? 😉 running service and client application an
 You can [download the complete solution here](https://bloggingabout-linux.azurewebsites.net/userFiles/dennis%20van%20der%20Stelt/file/wcf/Classa.Wcf.Samples.HelloService.zip), to see how I’ve set everything up. Before we take further steps into the world of Windows Communication Foundation and get beyond the WCF ABC, we’ll examine what we’ve done exactly.
 **<font color="#ff0000">Update</font> :** Be sure to <u>have the WCF/WF extensions installed</u>! You don’t need the >1GB SDK installed.
 
-[[Go to the WCF series article index](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]
 
 

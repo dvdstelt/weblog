@@ -38,7 +38,7 @@ A benefit of brokered queues is that it is very easy to scale out, using the [co
 
 ## Broker vs buses
 
-[![](/images/what-is-a-servicebus/servicebus-4.png)](https://bloggingabout-linux.azurewebsites.net/wp-content/uploads/sites/2/2017/03/servicebus-4.png)There’s a difference between brokered queues and message brokers. It is important to recognize that brokered queues are basically just infrastructure and contain no logic. Whereas message brokers differ from a servicebus in the fact that they can contain (content based) routing, transformations and logic and can aggregate and decompose messages. This can be very handy for integrating with third-party systems, like SAP, SalesForce, etc. The issue is that it is too easy to have too many responsibilities in a broker. Especially when business logic is centralized, [which is a fallacy](https://bloggingabout-linux.azurewebsites.net/2012/04/26/the-11th-fallacy-of-enterprise-computing/).
+[![](/images/what-is-a-servicebus/servicebus-4.png)](https://bloggingabout-linux.azurewebsites.net/wp-content/uploads/sites/2/2017/03/servicebus-4.png)There’s a difference between brokered queues and message brokers. It is important to recognize that brokered queues are basically just infrastructure and contain no logic. Whereas message brokers differ from a servicebus in the fact that they can contain (content based) routing, transformations and logic and can aggregate and decompose messages. This can be very handy for integrating with third-party systems, like SAP, SalesForce, etc. The issue is that it is too easy to have too many responsibilities in a broker. Especially when business logic is centralized, [which is a fallacy](/2012/04/26/the-11th-fallacy-of-enterprise-computing/).
 
 ## Summary
 

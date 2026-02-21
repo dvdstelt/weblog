@@ -18,7 +18,7 @@ It is a common conception that a shared databases massively increases coupling. 
 
 ### Different views make coupling visible
 
-I'm an advocate for looking at your architecture through different lenses. The [4+1 architectural view model](https://bloggingabout.net/2020/08/07/41-architectural-view-model/) provides this and allows us to use different views to see our architecture. In the image below, on the left is a logical view of a system and on the right a physical view of the system. In the logical view you can see that each service has its own *datastore* and is logically separated from any other service. On the right side you can see the same 3 components with their own database. However, some of them also access the database of another service.
+I'm an advocate for looking at your architecture through different lenses. The [4+1 architectural view model](/2020/08/07/41-architectural-view-model/) provides this and allows us to use different views to see our architecture. In the image below, on the left is a logical view of a system and on the right a physical view of the system. In the logical view you can see that each service has its own *datastore* and is logically separated from any other service. On the right side you can see the same 3 components with their own database. However, some of them also access the database of another service.
 
 ![](\images\2024\share-database\shared-database.png)
 

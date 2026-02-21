@@ -16,7 +16,7 @@ redirect_from:
 ---
 Instead of deciding to which queue a priority message should be sent to, a better design is where the sender has no knowledge of priority messages or any receiver. We can achieve this using the publish/subscribe messaging pattern.
 
-This article is example 2 of a series on dealing with message priority and priority queues. You can find the explanation and index in the [opening post](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/).
+This article is example 2 of a series on dealing with message priority and priority queues. You can find the explanation and index in the [opening post](/2020/07/16/priority-queues-why-you-dont-need-them/).
 
 ## Introduction
 
@@ -26,7 +26,7 @@ In this sample, we’ll see how this behavior changes by using publish/subscribe
 
 ## Visual Studio solution setup
 
-Since the [first sample](https://bloggingabout-linux.azurewebsites.net/2020/07/18/priority-queues-sender-decides/) that used SendOptions, the Visual Studio solution did not change. You can find more information about the setup there.
+Since the [first sample](/2020/07/18/priority-queues-sender-decides/) that used SendOptions, the Visual Studio solution did not change. You can find more information about the setup there.
 
 You can find the [complete sample in GitHub](https://github.com/dvdstelt/PriorityQueues/tree/master/src/02%20-%20PublishSubscribe).
 

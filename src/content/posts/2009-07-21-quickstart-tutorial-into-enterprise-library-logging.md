@@ -85,4 +85,4 @@ You’re now done with the configuration. Save it and go to your code. Enter the
 Logger.Write("Hello world");
 ```
 
-Now go check your configured folder for the file. If it’s not that, check the eventlog anyway, as Enterprise Library might have failed and maybe has written the info there. This worked for me, as I ran into this [read or write protected memory error](https://bloggingabout.net/2009/06/08/attempted-to-read-or-write-protected-memory-in-a-net-application) when creating this article.
+Now go check your configured folder for the file. If it’s not that, check the eventlog anyway, as Enterprise Library might have failed and maybe has written the info there. This worked for me, as I ran into this [read or write protected memory error](/2009/06/08/attempted-to-read-or-write-protected-memory-in-a-net-application/) when creating this article.

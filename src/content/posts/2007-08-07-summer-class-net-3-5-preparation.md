@@ -17,7 +17,7 @@ redirect_from:
   - /dennis/2007/08/07/summer-class-net-3-5-preparation
   - /blogs/dennis/archive/2007/08/07/summer-class-net-3-5-preparation.aspx
 ---
-As [said](https://bloggingabout.net/2007/08/03/cannot-drop-database-because-of-replication) [before](https://bloggingabout.net/2007/06/08/summer-classes-2007), we’re currently on location at the “middle of nowhere”, creating material for the upcoming [.NET 3.5 Summer Class](http://www.class-a.nl/index.aspx?id=12&catID=16&sid=22). We’re having a blast, creating slides and hands on labs until way past midnight. I’m busy with the WCF Web stuff, Alex is creating Linq to SQL/XML stuff and Pascal is currently doing Silver (WCF/WF). Yesterday Mike came by to have some fun with us.
+As [said](/2007/08/03/cannot-drop-database-because-of-replication/) [before](/2007/06/08/summer-classes-2007/), we’re currently on location at the “middle of nowhere”, creating material for the upcoming [.NET 3.5 Summer Class](http://www.class-a.nl/index.aspx?id=12&catID=16&sid=22). We’re having a blast, creating slides and hands on labs until way past midnight. I’m busy with the WCF Web stuff, Alex is creating Linq to SQL/XML stuff and Pascal is currently doing Silver (WCF/WF). Yesterday Mike came by to have some fun with us.
 
 ![Hutje op de hei 2007 004 (Small)](/images/summer-class-net-3-5-preparation/hutje-op-de-hei.jpg)
 

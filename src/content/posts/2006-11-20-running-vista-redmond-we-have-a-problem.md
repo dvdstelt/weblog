@@ -73,6 +73,6 @@ GetIPAddress(Dns.GetHostName(), System.Net.Sockets.AddressFamily.InterNetwork );
 ```
 
 I’m currently connected to the internet and our company’s VPN, so I have 6 ip addresses in my AddressList. The first IPv4 address return is indeed what I need and I can only assume this also works in production. I’m still unsure how to write a test* for this though.
-*= I didn’t write unit test, because else [people might start complaining](https://bloggingabout.net/2006/02/10/11017#11020). 😉
+*= I didn’t write unit test, because else [people might start complaining](/2006/02/10/11017#11020/). 😉
 
 

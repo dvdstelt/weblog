@@ -32,4 +32,4 @@ I’ll try to explain them, they’ll get more sense once we advanced in posts.
 
 In the next articles I’ll explain how you can build a service while using the ABC.
 
-[[Go to the WCF series article index](/blogs/dennis/archive/2006/10/18/WCF-Part-0-_3A00_-Introduction.aspx)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]

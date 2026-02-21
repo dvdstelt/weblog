@@ -11,7 +11,7 @@ redirect_from:
   - /dennis/2007/12/11/unit-testing-in-visual-studio-2008-tips
   - /blogs/dennis/archive/2007/12/11/unit-testing-in-visual-studio-2008-tips.aspx
 ---
-I blogged about new [Unit Testing features in Visual Studio 2008](https://bloggingabout.net/2007/09/11/visual-studio-2008-unit-testing), but missed the following features back then. I thought it’s still cool to share these with you.
+I blogged about new [Unit Testing features in Visual Studio 2008](/2007/09/11/visual-studio-2008-unit-testing/), but missed the following features back then. I thought it’s still cool to share these with you.
 **<u>Short cut keys to run tests</u>** I used to use TestDriven.NET in the past for executing my NUnit tests really fast. It always started them in the context you right-clicked for the menu, be it a test method, class or project. Visual Studio 2008 has the right-click context menu as well, but not in classes or projects. Luckily you can also access them with shortcut keys, which is even better<sup>1</sup>.
 * · Ctrl R, T: Execute tests in current context
 * · Ctrl R, C: Execute tests in current test class

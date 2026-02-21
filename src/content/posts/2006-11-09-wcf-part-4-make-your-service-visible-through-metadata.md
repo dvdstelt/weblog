@@ -15,7 +15,7 @@ redirect_from:
   - /dennis/2006/11/09/wcf-part-4-make-your-service-visible-through-metadata
   - /blogs/dennis/archive/2006/11/09/wcf-part-4-make-your-service-visible-through-metadata.aspx
 ---
-[Last time](https://bloggingabout.net/2006/11/09/WCF-Part-3-_3A00_-Hosting-the-service) we saw how we could create an instance of our service by hosting it using some configuration in our app.config. We still need to have it exposed using metadata though. We’ll do this by adding an endpoint that exposed this, using our WCF ABC again. This endpoint is called a MEX endpoint, from **M**etadata **EX**change.
+[Last time](/2006/11/09/WCF-Part-3-_3A00_-Hosting-the-service/) we saw how we could create an instance of our service by hosting it using some configuration in our app.config. We still need to have it exposed using metadata though. We’ll do this by adding an endpoint that exposed this, using our WCF ABC again. This endpoint is called a MEX endpoint, from **M**etadata **EX**change.
 
 For this we don’t have to create any code, just configuration again. Open the Service Configuration Editor again on our app.config. Open the folder “Advanced”, then “Service Behaviors” and choose to add a new service behavior. We’ll change the name *NewBehavior* to *HelloServiceBehavior*. Now click the Add button and select the ‘ServiceMetadata’ option.
 
@@ -75,6 +75,6 @@ svcutil.exe /o:client.cs /config:app.config [http://localhost:8080/HelloService/
 
 If you’re interested, take a look at the generated files. Especially the generated app.config, which should contain an ABC reference to your service.
 
-[[Go to the WCF series article index](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]
 
 

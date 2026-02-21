@@ -16,7 +16,7 @@ redirect_from:
   - /dennis/2020/08/26/priority-queues-interceptors
   - /blogs/dennis/archive/2020/08/26/priority-queues-interceptors.aspx
 ---
-In the [previous articles](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/), I demonstrated why there is not really a need for priority queues. That is because the different messages likely need to be handled differently, both from the business- and infrastructure perspective. Then I created samples for how the [sender can decide](https://bloggingabout-linux.azurewebsites.net/2020/07/18/priority-queues-sender-decides/) what a priority message is, and another for how [publish/subscribe can be used](https://bloggingabout-linux.azurewebsites.net/2020/07/23/priority-queues-publishing/), so that every single receiver can decide if it needs to process the message.
+In the [previous articles](/2020/07/16/priority-queues-why-you-dont-need-them/), I demonstrated why there is not really a need for priority queues. That is because the different messages likely need to be handled differently, both from the business- and infrastructure perspective. Then I created samples for how the [sender can decide](/2020/07/18/priority-queues-sender-decides/) what a priority message is, and another for how [publish/subscribe can be used](/2020/07/23/priority-queues-publishing/), so that every single receiver can decide if it needs to process the message.
 
 But as always, every solution has its trade-offs. The first introduces unnecessary coupling on the sender’s side. The second solution means more I/O which can become a bottleneck and possibly cost more in a cloud environment. In this article, I’m going to demonstrate a third solution, which addresses all of the trade-offs of the other two methods at the expense of some complexity.
 
@@ -26,7 +26,7 @@ In the second sample, I liked that each receiver could decide by itself if the m
 
 What I want to achieve in the third example is that each receiver extracts and removes the code that decides whether or not the message should be processed. Then share this small piece of code with the sender. But in a plugin kind of way, where you can add, remove, or change these pieces of code without altering the sender in any way. That way it’s still decoupled in the sense that the sender itself has no knowledge of any receiver, but the code to determine who should process the message is still executed before sending the message itself.
 
-So in my [4+1 architectural view model](https://bloggingabout-linux.azurewebsites.net/2020/08/07/41-architectural-view-model/) article, I explained that in the logical view, these components are combined with the receivers. But in the physical view, they are deployed together with the sender.
+So in my [4+1 architectural view model](/2020/08/07/41-architectural-view-model/) article, I explained that in the logical view, these components are combined with the receivers. But in the physical view, they are deployed together with the sender.
 
 ## The implementation
 
@@ -52,7 +52,7 @@ Then a notification published via MediatR will automatically call the `Handle `m
 
 ## Visual Studio solution setup
 
-Because this sample is a bit more complex, some changes have been made since the [first sample](https://bloggingabout-linux.azurewebsites.net/2020/07/18/priority-queues-sender-decides/). That article contains most of the information about the project structure though. You’ll also want to read about the proposed solution in the [4+1 architectural view model](https://bloggingabout-linux.azurewebsites.net/2020/08/07/41-architectural-view-model/) article. In this solution two additional projects have been added:
+Because this sample is a bit more complex, some changes have been made since the [first sample](/2020/07/18/priority-queues-sender-decides/). That article contains most of the information about the project structure though. You’ll also want to read about the proposed solution in the [4+1 architectural view model](/2020/08/07/41-architectural-view-model/) article. In this solution two additional projects have been added:
 * **RegularReceiver.Interceptor** This project contains the implementation that decides whether or not a customer is a regular customer. If it is, it will send a message to the `RegularReceiver `component.
 * **StrategicReceiver.Interceptor** This project is exactly like the `RegularReceiver.Interceptor` but for strategic customers.
 
@@ -170,6 +170,6 @@ On line 23 you can see that this interceptor knows who its receiver is. Therefor
 
 ## Conclusion
 
-So this is the final post in the [priority queues series](https://bloggingabout-linux.azurewebsites.net/2020/07/16/priority-queues-why-you-dont-need-them/). We looked at three different options where, combined with the 4+1 architectural view models, I decided I liked this option best. It adds some complexity, but the reason I like it is because it’s the cleanest. There’s the least amount of coupling inside the sender, and the least amount of I/O and costs. Although if I/O and costs aren’t an issue, the second option might be the most acceptable option.
+So this is the final post in the [priority queues series](/2020/07/16/priority-queues-why-you-dont-need-them/). We looked at three different options where, combined with the 4+1 architectural view models, I decided I liked this option best. It adds some complexity, but the reason I like it is because it’s the cleanest. There’s the least amount of coupling inside the sender, and the least amount of I/O and costs. Although if I/O and costs aren’t an issue, the second option might be the most acceptable option.
 
 As always, the only right answer is: *It depends*. Every solution has trade-offs and it’s up to you to decide what option you like best and suits your needs. I hope I’ve made clear why you likely should not be using priority queues, but a different type of solution that suits the problem better.</strategicinterceptor></strategicinterceptor></ordersubmitted></worker></worker></t></worker></imessagesession></worker></ordersubmitted>

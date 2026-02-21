@@ -10,7 +10,7 @@ redirect_from:
   - /dennis/2011/01/11/clickonce-deployment-and-customhostspecified-error
   - /blogs/dennis/archive/2011/01/11/clickonce-deployment-and-customhostspecified-error.aspx
 ---
-Some time ago now I wrote about doing [manual ClickOnce deployment](https://bloggingabout.net/2008/11/26/deploying-clickonce-applications-automated-using-finalbuilder) using the command line and FinalBuilder. One of my readers posted a reaction about the following error.
+Some time ago now I wrote about doing [manual ClickOnce deployment](/2008/11/26/deploying-clickonce-applications-automated-using-finalbuilder/) using the command line and FinalBuilder. One of my readers posted a reaction about the following error.
 
 > The customHostSpecified attribute is not supported for Windows Forms applications.
 

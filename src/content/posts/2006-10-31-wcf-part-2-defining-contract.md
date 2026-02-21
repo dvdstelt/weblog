@@ -72,6 +72,6 @@ public class Hello : IHello
 
 In the next article I’ll show you how you can host this service. In the future we’ll also consume the service and I will try to tell more about contracts and versioning.
 
-[[Go to the WCF series article index](https://bloggingabout.net/2006/10/18/WCF-Part-0-_3A00_-Introduction)]
+[[Go to the WCF series article index](/2006/10/18/WCF-Part-0-_3A00_-Introduction/)]
 
 

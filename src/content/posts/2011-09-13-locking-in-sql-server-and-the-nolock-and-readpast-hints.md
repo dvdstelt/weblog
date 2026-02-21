@@ -17,9 +17,9 @@ I’ve written about transactions, the TransactionScope in .NET before.
 * [System.Transactions : An introduction](https://bloggingabout.net/2006/02/09/11011)
 * [System.Transactions : Unit Testing](https://bloggingabout.net/2006/02/10/11017)
 * [System.Transactions : Promotable Enlistment](https://bloggingabout.net/2006/03/20/11748)
-* [System.Transactions still not working](https://bloggingabout.net/2007/06/28/system-transactions-still-not-working)
-* [System.Transactions : Read Uncommitted](https://bloggingabout.net/2006/12/18/system-transactions-readuncommitted)
-* [System.Transactions : What to choose?](https://bloggingabout.net/2006/09/27/System.Transactions-_3A00_-What-to-choose_3F00_)
+* [System.Transactions still not working](/2007/06/28/system-transactions-still-not-working/)
+* [System.Transactions : Read Uncommitted](/2006/12/18/system-transactions-readuncommitted/)
+* [System.Transactions : What to choose?](/2006/09/27/System.Transactions-_3A00_-What-to-choose_3F00_/)
 
 Still I was recently surprised with the comment that I had to use the READPAST in my queries. So I started investigating and felt I had to blog about this. First of all, I’m not going to discuss every option here, just a few basics so you get what the differences are. If you want to know more, check out the BOL/MSDN documentation. Here’s a good [starting point](http://msdn.microsoft.com/en-us/library/aa213037(v=SQL.80).aspx).
 
