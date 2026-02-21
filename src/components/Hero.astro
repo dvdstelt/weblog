@@ -1,0 +1,26 @@
+---
+const hero = {
+  title: 'Dennis van der Stelt',
+  description: "I'm a developer, international speaker and coach/trainer. I love to discuss code, software architecture and distributed systems, messaging, star wars and lego with anyone who wants to listen or speak. <br /> I currently work at Particular Software on NServiceBus.",
+  image: '/images/hero.jpg',
+};
+---
+<!-- begin hero -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <section class="hero">
+        <div class="hero__inner">
+          <div class="hero__image">
+            <img src={hero.image} alt={hero.title} />
+          </div>
+          <div class="hero__content">
+            <h1 class="hero__title">{hero.title}</h1>
+            <p class="hero__desc" set:html={hero.description} />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+<!-- end hero -->
