@@ -51,12 +51,23 @@ If you're new here, start at the top and work your way down. Each post builds on
 
 <div class="series-entry">
   <div class="series-entry__image">
-    <a href="/2026/02/27/from-claude-specific-to-agent-agnostic/"><img src="/images/2026/from-claude-specific-to-agent-agnostic.png" alt="From Claude-specific to agent-agnostic" /></a>
+    <a href="/2026/02/26/from-claude-specific-to-agent-agnostic/"><img src="/images/2026/from-claude-specific-to-agent-agnostic.png" alt="From Claude-specific to agent-agnostic" /></a>
   </div>
   <div class="series-entry__text">
     <h3>4. From Claude-specific to agent-agnostic</h3>
     <p>Ergonomic fixes, smarter worktrees, terminal key conflicts, and the design principle behind all of it: build infrastructure for the category, not a single tool.</p>
-    <a class="series-read-link" href="/2026/02/27/from-claude-specific-to-agent-agnostic/">Read post &rarr;</a>
+    <a class="series-read-link" href="/2026/02/26/from-claude-specific-to-agent-agnostic/">Read post &rarr;</a>
+  </div>
+</div>
+
+<div class="series-entry">
+  <div class="series-entry__image">
+    <a href="/2026/02/26/sticking-with-claude-code/"><img src="/images/2026/sticking-with-claude-code.png" alt="Sticking with Claude Code" /></a>
+  </div>
+  <div class="series-entry__text">
+    <h3>5. Sticking with Claude Code</h3>
+    <p>A week of daily use later: what OpenCode got right, what didn't work in practice, and why I'm back to Claude Code.</p>
+    <a class="series-read-link" href="/2026/02/26/sticking-with-claude-code/">Read post &rarr;</a>
   </div>
 </div>
 

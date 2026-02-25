@@ -162,4 +162,10 @@ The full set of commands now looks like this:
 
 Both tools share the same Docker image, the same worktree infrastructure, the same git identity setup, and the same entrypoint. The only differences are the tool command and OpenCode's extra config volume. Adding a third tool would mean one more line in the Dockerfile and a three-line launcher script.
 
-The setup went from "a Claude Code wrapper" to "an AI coding agent launcher." That shift in thinking, from building for one tool to building for the category, turned out to be the most useful change. The [next post](/2026/02/27/from-claude-specific-to-agent-agnostic/) is about the rest of that journey: the ergonomic fixes, the terminal quirks, and the design principle that ties it all together.
+## What doesn't transfer
+
+The shared infrastructure works well, but not everything carries over. Claude Code supports a global `CLAUDE.md` and custom skills: reusable prompt fragments you can invoke by name. I use these heavily. My global setup documents conventions like how to use `git-wtadd` for worktrees, and skills let me invoke complex workflows with a short command.
+
+OpenCode doesn't read any of that. It has its own configuration mechanisms, and I haven't explored them fully yet, but the immediate consequence is that anything I want both tools to know has to be duplicated. The shared `AGENTS.md` in each repository handles the project-level conventions, but the global stuff, the cross-project habits and shortcuts, needs to live somewhere OpenCode can find it. For now that means maintaining two separate global configurations, which is exactly the kind of friction that makes a tool feel like more work than it saves.
+
+The setup went from "a Claude Code wrapper" to "an AI coding agent launcher." That shift in thinking, from building for one tool to building for the category, turned out to be the most useful change. The [next post](/2026/02/26/from-claude-specific-to-agent-agnostic/) is about the rest of that journey: the ergonomic fixes, the terminal quirks, and the design principle that ties it all together.
