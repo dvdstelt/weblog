@@ -11,6 +11,8 @@ tags:
   - coding
   - git
 ---
+*This is part 2 of the [AI coding agents in Docker](/2026/02/25/ai-coding-agents-in-docker/) series.*
+
 In my [previous post](/2026/02/19/claude-code-in-docker/) I explained how I run Claude Code inside a Docker container with a full development environment. The basics are there: a Dockerfile with all the tools, launcher scripts to start sessions from any folder, and volume mounts to share files and authentication. But there are a few more pieces that make this setup genuinely pleasant to work with.
 
 ## The parent directory trick
@@ -222,3 +224,5 @@ Let me put all the pieces together. When I want to work on something:
 My machine stays clean. Claude has full access to everything it needs. The worktrees work on both sides of the container boundary. And the configuration files mean I don't have to re-explain my preferences every session.
 
 Is it a perfect setup? No, but a trade off I can live with. Docker adds a layer of indirection, rebuilding the image takes a few minutes, and occasionally you'll install something in a container and forget to add it to the Dockerfile. But compared to the alternative of cluttering my host machine with every tool under the sun, I'll take it.
+
+In the [next post](/2026/02/26/adding-opencode-to-the-docker-toolbox/), I add a second AI coding tool to the same setup and discover that my launcher scripts weren't as portable as I thought.

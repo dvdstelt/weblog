@@ -10,6 +10,8 @@ tags:
   - docker
   - coding
 ---
+*This is part 1 of the [AI coding agents in Docker](/2026/02/25/ai-coding-agents-in-docker/) series.*
+
 This website is generated from Markdown to static HTML using [Jekyll](https://jekyllrb.com/). To run that locally on Windows, I need Ruby with DevKit, Node, Yarn, Jekyll, and what feels like half the internet. Every time an installer spews thousands of lines of text across my console, I get the creeps. It's like watching someone dump a bag of Lego bricks onto a freshly cleaned floor.
 
 I've always liked clean machines. Ask anyone who's seen my desktop -- it has zero icons. Not one. So the idea of installing Ruby, Python, .NET SDK, Node, and all their friends directly onto my Windows box? That doesn't sit well.
