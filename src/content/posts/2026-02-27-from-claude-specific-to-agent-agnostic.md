@@ -4,6 +4,7 @@ author: Dennis van der Stelt
 title: From Claude-specific to agent-agnostic
 description: Container naming, terminal quirks, smarter worktrees, and the principle behind it all
 pubDate: '2026-02-27T01:00:00'
+image: /images/2026/from-claude-specific-to-agent-agnostic.png
 tags:
   - ai
   - docker

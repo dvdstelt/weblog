@@ -4,6 +4,7 @@ author: Dennis van der Stelt
 title: Adding OpenCode to the Docker toolbox
 description: When a second AI tool exposes every assumption baked into your launcher scripts
 pubDate: '2026-02-26T01:00:00'
+image: /images/2026/adding-opencode-to-the-docker-toolbox.png
 tags:
   - ai
   - docker
@@ -99,9 +100,9 @@ One subtlety worth noting: `EXTRA_VOLUMES` has to be a plain `set` variable, not
 
 ## The copy-paste trap
 
-This one was painful to debug. During first-time setup, OpenCode asks you to paste an API key or visit an authentication URL. Normally you'd copy text from the terminal, open a browser, paste, done. In my case this came up when authenticating with Claude MAX: paste the URL, log in, done. Except it wasn't done, because pasting had stopped working.
+This one was painful to debug. During first-time setup, OpenCode asks you to paste an API key or visit an authentication URL. Normally you'd copy text from the terminal, open a browser, paste, done. In my case this came up when authenticating with Claude MAX: copying the URL, log in, paste the code, done. Except it wasn't done, because copy & paste had stopped working.
 
-Except OpenCode's TUI has a feature where selecting text automatically copies it to the clipboard. In a chain of Windows Terminal, Docker, and bash, this breaks spectacularly. The terminal gets confused about who owns the clipboard, and suddenly you can't paste anything at all.
+OpenCode's TUI has a feature where selecting text automatically copies it to the clipboard. In a chain of Windows Terminal, Docker, and bash, this breaks spectacularly during the authentication part.
 
 The fix is an environment variable:
 
