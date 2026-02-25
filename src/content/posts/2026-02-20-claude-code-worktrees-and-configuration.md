@@ -28,7 +28,7 @@ docker run -it ^
     claude-code
 ```
 
-If I run `cc` from `D:\git\dvdstelt\omnomnom`, the mount is `D:\git\dvdstelt` to `/workspace`. Claude's working directory is set to `/workspace/omnomnom`, so from its perspective nothing changes. But it also has access to sibling folders under `/workspace`.
+If I run `cc` from `C:\projects\omnomnom`, the mount is `C:\projects` to `/workspace`. Claude's working directory is set to `/workspace/omnomnom`, so from its perspective nothing changes. But it also has access to sibling folders under `/workspace`.
 
 Why does that matter? Because of worktrees.
 
@@ -46,11 +46,11 @@ I could use it this way with [OmNomNom](https://github.com/dvdstelt/omnomnom), a
 Because the parent directory is mounted, these worktrees are visible both inside the container *and* on the Windows host. On the Windows side, they show up as:
 
 ```
-D:\git\dvdstelt\omnomnom\
-D:\git\dvdstelt\omnomnom@location\
+C:\projects\omnomnom\
+C:\projects\omnomnom@location\
 ```
 
-There's a catch, though. Git worktrees store absolute paths internally. The worktree's `.git` file points back to the main repository's `.git/worktrees/` directory, and vice versa. A path like `/workspace/omnomnom/.git/worktrees/...` is meaningless on the Windows host, and `D:\git\dvdstelt\omnomnom\.git\worktrees\...` is meaningless inside the container.
+There's a catch, though. Git worktrees store absolute paths internally. The worktree's `.git` file points back to the main repository's `.git/worktrees/` directory, and vice versa. A path like `/workspace/omnomnom/.git/worktrees/...` is meaningless on the Windows host, and `C:\projects\omnomnom\.git\worktrees\...` is meaningless inside the container.
 
 ## git-wtadd: the cross-platform fix
 
@@ -94,7 +94,7 @@ fi
 
 There are two separate path problems to fix, and the script handles both.
 
-The first is the `.git` file inside the new worktree directory. By default, git writes an absolute Linux path there. Rewriting it to a relative path solves this. The relative path from `omnomnom@location` back to `omnomnom/.git/worktrees/...` is identical whether you're looking from `/workspace/` or `D:\git\dvdstelt\`, so both sides can resolve it.
+The first is the `.git` file inside the new worktree directory. By default, git writes an absolute Linux path there. Rewriting it to a relative path solves this. The relative path from `omnomnom@location` back to `omnomnom/.git/worktrees/...` is identical whether you're looking from `/workspace/` or `C:\projects\`, so both sides can resolve it.
 
 The second problem is subtler. Git also maintains a `gitdir` file inside the main repo at `.git/worktrees/<name>/gitdir`. This points back to the worktree's `.git` file, and it's what `git worktree list` and Windows tools like [GitKraken](https://www.gitkraken.com/) read to discover worktrees. By default it contains a Linux container path, which is completely meaningless on Windows.
 
@@ -192,7 +192,7 @@ One thing I added later: a custom status line at the bottom of the Claude Code t
 
 The context percentage is the one I actually watch. When it starts climbing past 50% or 60%, it's a signal that the conversation has grown long enough that Claude might start losing track of details from early in the session. At that point I'll usually wrap up what I'm doing and start fresh.
 
-The working directory display uses `HOST_WORKSPACE` (the same env var the launcher injects) so instead of showing `/workspace/omnomnom` it shows `D:\git\dvdstelt\omnomnom`. A small thing, but it means the status bar reflects where I actually am on disk rather than where the container thinks it is.
+The working directory display uses `HOST_WORKSPACE` (the same env var the launcher injects) so instead of showing `/workspace/omnomnom` it shows `C:\projects\omnomnom`. A small thing, but it means the status bar reflects where I actually am on disk rather than where the container thinks it is.
 
 The status line is configured in `~/.claude/settings.json`:
 
@@ -206,6 +206,14 @@ The status line is configured in `~/.claude/settings.json`:
 ```
 
 And the script itself is a short shell script that reads the JSON Claude pipes to it via stdin, extracts the model name, current directory, and context percentage with `jq`, then prints them with ANSI colors. Because `~/.claude` is mounted from the Windows host, setting this up once means it's available in every container automatically.
+
+One side effect: when Claude Code starts, it sometimes prints a long informational message. With a custom status line active, that message causes the status bar to wrap across twenty or more lines, which makes the terminal nearly unusable. The fix is one environment variable in the entrypoint:
+
+```bash
+export DISABLE_INSTALLATION_CHECKS=1
+```
+
+This suppresses those startup messages. The status line stays on one line, and the terminal stays clean.
 
 ## The full picture
 

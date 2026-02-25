@@ -95,9 +95,11 @@ set "EXTRA_VOLUMES=-v "%USERPROFILE%\.local\share\opencode:/root/.local/share/op
 
 The `EXTRA_VOLUMES` variable is picked up by `docker-run.bat` and injected into the `docker run` command. This pattern keeps tool-specific concerns out of the shared infrastructure.
 
+One subtlety worth noting: `EXTRA_VOLUMES` has to be a plain `set` variable, not a parameter passed on the command line. Batch file parameters strip the inner quotes from values like `-v "%USERPROFILE%\...:/root/..."`, which breaks the `docker run` command. Setting it as an environment variable before calling the shared script sidesteps that quoting problem entirely.
+
 ## The copy-paste trap
 
-This one was painful to debug. During first-time setup, OpenCode asks you to paste an API key or visit an authentication URL. Normally you'd copy text from the terminal, open a browser, paste, done.
+This one was painful to debug. During first-time setup, OpenCode asks you to paste an API key or visit an authentication URL. Normally you'd copy text from the terminal, open a browser, paste, done. In my case this came up when authenticating with Claude MAX: paste the URL, log in, done. Except it wasn't done, because pasting had stopped working.
 
 Except OpenCode's TUI has a feature where selecting text automatically copies it to the clipboard. In a chain of Windows Terminal, Docker, and bash, this breaks spectacularly. The terminal gets confused about who owns the clipboard, and suddenly you can't paste anything at all.
 

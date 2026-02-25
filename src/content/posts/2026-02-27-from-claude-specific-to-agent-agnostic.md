@@ -26,6 +26,8 @@ set "CONTAINER_NAME=ai-%FOLDER_NAME:@=-%"
 
 A small change, but it removes a whole class of "wait, which tool was this container for?" confusion.
 
+There's a practical benefit too. Because the container name is project-based rather than tool-based, I can have Claude, OpenCode, and a plain bash terminal all running inside the same `ai-weblog` container at the same time. Each one is just another `docker exec` session into the same environment. With a tool-specific name like `ccd` or `claude-weblog`, you'd end up with a separate container per tool and lose that sharing.
+
 ## Port mapping
 
 The early versions of the launcher used a hardcoded port. That works until you run two containers at the same time and the second one fails to start because the port is already in use. The fix: pick a random host port every time.
@@ -86,9 +88,9 @@ In the [second post](/2026/02/20/claude-code-worktrees-and-configuration/) I tal
 
 When I added OpenCode, I realized the instructions in that file weren't Claude-specific at all. "Never push to main." "Use `git-wtadd` for worktrees." "Commit after each logical change." These are conventions for any AI coding agent, not just Claude Code.
 
-So I renamed it to `AGENTS.md`.
+It turns out `AGENTS.md` is the standard filename that AI coding agents read by default. It's not a personal convention: it's what the tools expect. So I renamed `CLAUDE.md` to `AGENTS.md`.
 
-Claude Code supports both filenames, so nothing breaks. But the rename signals intent: this file is for any AI agent that works in this repository. If a new tool comes along next month that reads a similar file, the instructions are already there and already tool-agnostic.
+Claude Code supports both filenames, so nothing breaks. The instructions are already there and already tool-agnostic, which is exactly what the standard is designed for.
 
 The content changed too. References to "Claude" became references to "the agent." Tool-specific setup instructions (like how to configure Claude Code's status line) moved into their own files. What remained in `AGENTS.md` is purely about conventions and workflow, things that apply regardless of which tool is doing the work.
 
@@ -98,4 +100,4 @@ Looking back at these changes, there's a pattern. Every decision that seemed sma
 
 AI coding agents are proliferating. Claude Code, OpenCode, Cursor, Windsurf, Aider, and more are appearing regularly. The landscape will keep shifting. Building a setup that's tightly coupled to one tool means rebuilding it when you want to try another. Building for the category means a new tool slots in with a three-line launcher script and inherits everything: the Docker image, the worktrees, the conventions, the port mapping, the terminal fixes.
 
-The setup is [on GitHub](https://github.com/dvdstelt/claude-master) if you want to grab any of it. The name still says "claude-master" because renaming repositories is its own kind of yak shave, but the contents are tool-agnostic now. If you've been running AI coding agents directly on your host machine and are tired of the mess, containerizing the whole thing is worth the initial setup time. And if you're already using Docker for this, I hope some of the cross-platform worktree tricks and terminal fixes save you a few hours of debugging.
+The setup is [on GitHub](https://github.com/dvdstelt/ai-agents) if you want to grab any of it. If you've been running AI coding agents directly on your host machine and are tired of the mess, containerizing the whole thing is worth the initial setup time. And if you're already using Docker for this, I hope some of the cross-platform worktree tricks and terminal fixes save you a few hours of debugging.
