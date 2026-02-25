@@ -1,0 +1,56 @@
+// *************************
+// Tooltip Popups (CSS-only)
+// *************************
+
+abbr[data-tooltip] {
+  position: relative;
+  text-decoration: underline dotted $gray;
+  text-underline-offset: 3px;
+  cursor: help;
+
+  &::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    width: max-content;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: $dark;
+    border: 1px solid $gray;
+    color: $white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: $gray;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+  }
+
+  &:hover::after,
+  &:hover::before,
+  &:focus::after,
+  &:focus::before {
+    opacity: 1;
+  }
+}

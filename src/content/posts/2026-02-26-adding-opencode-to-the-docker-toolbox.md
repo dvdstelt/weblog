@@ -15,7 +15,7 @@ After two posts about running Claude Code in Docker, I had a setup I was genuine
 
 Then I wanted to try [OpenCode](https://opencode.ai/).
 
-OpenCode is another AI coding agent, similar in spirit to Claude Code but with a different TUI and its own opinions about configuration. I figured adding it would be straightforward: install it in the Docker image, write an `oc` launcher script, done.
+OpenCode is another AI coding agent, similar in spirit to Claude Code but with a different <abbr data-tooltip="Terminal User Interface: a text-based app with panels, menus, and keyboard shortcuts, rendered in your terminal instead of a graphical window">TUI</abbr> and its own opinions about configuration. I figured adding it would be straightforward: install it in the Docker image, write an `oc` launcher script, done.
 
 It was not that straightforward.
 
