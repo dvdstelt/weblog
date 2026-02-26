@@ -1,16 +1,17 @@
 ---
 const socialLinks = [
-  { icon: 'ion-logo-twitter',  href: 'https://twitter.com/dvdstelt' },
-  { icon: 'ion-logo-github',   href: 'https://github.com/dvdstelt' },
-  { icon: 'ion-logo-linkedin', href: 'https://www.linkedin.com/in/dvdstelt/' },
-  { icon: 'ion-logo-whatsapp', href: 'https://api.whatsapp.com/send?phone=%2B31648536810' },
+  { icon: 'ion-logo-twitter',  href: 'https://twitter.com/dvdstelt',                        label: 'Twitter' },
+  { icon: 'ion-logo-github',   href: 'https://github.com/dvdstelt',                          label: 'GitHub' },
+  { icon: 'ion-logo-linkedin', href: 'https://www.linkedin.com/in/dvdstelt/',                label: 'LinkedIn' },
+  { icon: 'ion-logo-whatsapp', href: 'https://api.whatsapp.com/send?phone=%2B31648536810',   label: 'WhatsApp' },
+  { icon: 'ion-ios-rss',       href: '/feed.xml',                                            label: 'RSS feed' },
 ];
 ---
 <div class="social">
   <ul class="social__list list-reset">
-    {socialLinks.map(({ icon, href }) => (
+    {socialLinks.map(({ icon, href, label }) => (
       <li class="social__item">
-        <a class="social__link" href={href} aria-label="social icon">
+        <a class="social__link" href={href} aria-label={label}>
           <i class={`ion ${icon}`}></i>
         </a>
       </li>
