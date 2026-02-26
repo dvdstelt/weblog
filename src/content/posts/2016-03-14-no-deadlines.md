@@ -1,7 +1,7 @@
 ---
 id: 578818
 author: Dennis van der Stelt
-title: null
+title: No Deadlines
 description: Delivering an immutable set of features, within a fixed deadline and with a set amoun...
 pubDate: '2016-03-14T05:05:40'
 image: /images/no-deadlines/header.jpg
