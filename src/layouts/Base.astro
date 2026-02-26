@@ -69,6 +69,44 @@ const { title, description, image, pubDate } = Astro.props;
       window.addEventListener('scroll', () => {
         topButton?.classList.toggle('is-active', window.scrollY > window.innerHeight);
       });
+
+      // Lite YouTube embeds: replace iframes with thumbnail + play button
+      document.querySelectorAll<HTMLIFrameElement>(
+        '.post__content iframe[src*="youtube.com/embed"], .page__content iframe[src*="youtube.com/embed"]'
+      ).forEach((iframe) => {
+        const src = iframe.getAttribute('src')?.trim() ?? '';
+        const match = src.match(/youtube\.com\/embed\/([^?&\s]+)/);
+        if (!match) return;
+
+        const videoId = match[1];
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'yt-embed';
+
+        const img = document.createElement('img');
+        img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        img.alt = 'YouTube video';
+        img.loading = 'lazy';
+        img.onerror = () => { img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; };
+
+        const btn = document.createElement('button');
+        btn.className = 'yt-embed__play';
+        btn.setAttribute('aria-label', 'Play video');
+        btn.innerHTML = '<i class="ion ion-ios-play"></i>';
+
+        wrapper.appendChild(img);
+        wrapper.appendChild(btn);
+        iframe.replaceWith(wrapper);
+
+        wrapper.addEventListener('click', () => {
+          const playIframe = document.createElement('iframe');
+          playIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+          playIframe.setAttribute('allowfullscreen', '');
+          playIframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+          playIframe.className = 'yt-embed__player';
+          wrapper.replaceWith(playIframe);
+        }, { once: true });
+      });
     </script>
   </body>
 </html>

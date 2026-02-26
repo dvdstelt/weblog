@@ -131,12 +131,63 @@ pre {
 
 .post__content,
 .page__content {
-  iframe {
+  iframe.yt-embed__player {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     margin: 24px auto;
     border: 0;
+  }
+}
+
+/* Lite YouTube embed */
+.yt-embed {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 24px auto;
+  cursor: pointer;
+  background: $dark;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.02);
+  }
+
+  .yt-embed__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: rgba(#ff0000, 0.88);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: $global-transition;
+    padding-left: 4px;
+
+    i {
+      font-size: 28px;
+      color: $white;
+    }
+
+    .yt-embed:hover & {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.08);
+    }
   }
 }
 
