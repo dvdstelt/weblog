@@ -81,6 +81,10 @@ const { title, description, image, pubDate } = Astro.props;
       document.querySelectorAll<HTMLElement>(
         '.post__content pre, .page__content pre'
       ).forEach((pre) => {
+        // Shiki injects overflow-x: auto as an inline style; remove it so our
+        // stylesheet rule (overflow-x: hidden) applies instead.
+        pre.style.removeProperty('overflow-x');
+
         const target: HTMLElement =
           pre.parentElement?.classList.contains('code-block-wrapper')
             ? pre.parentElement
