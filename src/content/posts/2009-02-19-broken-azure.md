@@ -13,4 +13,4 @@ redirect_from:
 ![azure_failed](/images/broken-azure/azure_5f00_failed_5f00_6c740bec.png) 
 
 Whoops, did I break something?
-**Update : Things got worse!** [![azure_kapot](/images/broken-azure/azure_5f00_kapot_5f00_thumb_5f00_5d88e996.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/azure_5F00_kapot_5F00_2B91490C.png)
+**Update : Things got worse!** ![azure_kapot](/images/broken-azure/azure_5f00_kapot_5f00_thumb_5f00_5d88e996.png)

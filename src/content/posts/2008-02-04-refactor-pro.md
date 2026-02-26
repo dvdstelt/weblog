@@ -42,11 +42,11 @@ But I want the numbers 20 and 12 passed as parameters. With normal Visual Studio
 
 With the first one we can extract the number 20 from the loop by selecting it and performing the refactoring.
 
-[![introduce_local](/images/refactor-pro/introduce_local_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/RefactorPro3_A7CE/introduce_local_2.png) 
+![introduce_local](/images/refactor-pro/introduce_local_thumb.png) 
 
 After that you can promote the variable to a parameter.
 
-[![promote_parameter](/images/refactor-pro/promote_parameter_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/RefactorPro3_A7CE/promote_parameter_2.png) 
+![promote_parameter](/images/refactor-pro/promote_parameter_thumb.png) 
 
 The original call the the extracted method will also be synchronized, meaning that the number 20 will be passed as an argument into the extracted method. If you do the same for the number 12, you end up with the following code. The first line is the calling method.
 

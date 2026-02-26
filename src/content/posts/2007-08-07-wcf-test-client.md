@@ -15,7 +15,7 @@ redirect_from:
 ---
 Two things that should’ve been there since WCF v1.My colleague Alex Thissen already blogged about the WCF Library projects and the [service host](http://www.alexthissen.nl/blogs/main/archive/2007/03/04/wcf-library-projects.aspx) that comes with it. In beta 2 there’s a new **test client** that’ll connect to your service and will show you the available operations, configuration and allows you to invoke the operations.
 
-[![WCFTestClient](/images/wcf-test-client/wcftestclient_thumb_1.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/WCFTestClient_C9B9/WCFTestClient_1.png) 
+![WCFTestClient](/images/wcf-test-client/wcftestclient_thumb_1.png) 
 
 When you take a look at the properties of your service library, you’ll notice that under the “Debug” tab page, a command line argument has been added: /client:”WcfTestClient.exe”. This allows it to start and connect to your service.
 

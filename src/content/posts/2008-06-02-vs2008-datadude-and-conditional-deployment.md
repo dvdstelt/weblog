@@ -63,31 +63,31 @@ msbuild projectname.dbproj /p:DatabaseUser=”Network Service”
     2. Find the file *Permissions.sql* under the *Scripts/Post-Deployment* folder.
     3. At the top you can see the “creat login” script for either your “aspnet” or “network service” user.
     4. With the following script you can make it decide what to use.  
-**I removed some code for clarity. The important part is the IF statement. We defined the *TargetUser* in step 1.4 of this tutorial.** [![sqlscript](/images/vs2008-datadude-and-conditional-deployment/sqlscript_5f00_thumb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/sqlscript_5F00_2.png) 
+**I removed some code for clarity. The important part is the IF statement. We defined the *TargetUser* in step 1.4 of this tutorial.** ![sqlscript](/images/vs2008-datadude-and-conditional-deployment/sqlscript_5f00_thumb.png) 
 4. Save the script and you should be done.
 
 If you’re interested how to use this in FinalBuilder, here’s how.
 1. In your FinalBuilder project, add an MSBuild action and define your dbproj file as in the following image. Pay attention to the Targets that should be executed.
 
-[![msbuild_dbproj](/images/vs2008-datadude-and-conditional-deployment/msbuild_5f00_dbproj_5f00_thumb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/msbuild_5F00_dbproj_5F00_2.png) 
+![msbuild_dbproj](/images/vs2008-datadude-and-conditional-deployment/msbuild_5f00_dbproj_5f00_thumb.png) 
 2. Now set the project properties on the last tab.
 
-[![msbuild_project_properties](/images/vs2008-datadude-and-conditional-deployment/msbuild_5f00_project_5f00_properties_5f00_thumb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/msbuild_5F00_project_5F00_properties_5F00_2.png) 
+![msbuild_project_properties](/images/vs2008-datadude-and-conditional-deployment/msbuild_5f00_project_5f00_properties_5f00_thumb.png) 
 3. I’ve used a %AspNetWorkerUser% variable, defined in FinalBuilder self. Here’s how…
 4. Before building your project, add a “Define variable” action.  
 Here’s how I configured mine.  
 I’ve used “MyAspNetWorkerUser” and set it as a user variable. Later on I copy this variable to a project variable. Just a personal preference. You do need a user variable though, but don’t set a default value. We need this to be empty.
 
- [![fb_aspnetuser](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_aspnetuser_5f00_thumb_5f00_1.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/fb_5F00_aspnetuser_5F00_4.png) 
+ ![fb_aspnetuser](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_aspnetuser_5f00_thumb_5f00_1.png) 
 5. Define an “If … then” action. Make sure that if your AspNetWorkerUser is empty, it executes the underlying action(s).
 
-[![fb_ifthen](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_ifthen_5f00_thumb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/fb_5F00_ifthen_5F00_2.png) 
+![fb_ifthen](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_ifthen_5f00_thumb.png) 
 6. Now add a “Choose one” action. I’ve setup mine as follows:
 
-[![fb_chooseone](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_chooseone_5f00_thumb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/fb_5F00_chooseone_5F00_2.png) 
+![fb_chooseone](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_chooseone_5f00_thumb.png) 
 7. The final result should be something like this
 
-[![fb_flow](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_flow_5f00_thumb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/fb_5F00_flow_5F00_2.png) 
+![fb_flow](/images/vs2008-datadude-and-conditional-deployment/fb_5f00_flow_5f00_thumb.png) 
 
 Good luck! 🙂
 

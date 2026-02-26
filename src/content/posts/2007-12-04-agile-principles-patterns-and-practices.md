@@ -13,7 +13,7 @@ redirect_from:
 ---
 A while ago I read the excellent book by Robert C. Martin, called “Agile Software Development : Principles, Patterns and Practices”, I think one of the -if not the*–* books on [wikipedia:Agile Software Development]. But when in the need for a book for a new course under development about exactly the same subjects, I found that the original now has a C# version.
 
-[![agileincsharp](/images/agile-principles-patterns-and-practices/agileincsharp_thumb.jpg)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/Agileprinciplespatternsandpractices_C2A0/agileincsharp_2.jpg) 
+![agileincsharp](/images/agile-principles-patterns-and-practices/agileincsharp_thumb.jpg) 
 
 This is truly a great book about a lot of Agile practices like pair programming, test driven development, project velocity and more. But it also contains a lot of important patterns and it explains the [wikipedia:Single responsibility principle], something I tend to tell every training I teach. Because the principle is just so powerful.
 

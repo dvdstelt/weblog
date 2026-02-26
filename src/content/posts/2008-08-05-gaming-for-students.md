@@ -17,6 +17,6 @@ Anyway, today Astrid and I connected a 40” TV and the [PlayStation 3](http://n
 
 Here’s me testing out Guitar Hero 3.After seeing the images I think I look much too <strike>sweet</strike> soft to be a Rock Legend, but I did enjoy playing the game though.
 
-[![dennis_gh3_1](/images/gaming-for-students/dennis_5f00_gh3_5f00_1_5f00_thumb.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/dennis_5F00_gh3_5F00_1_5F00_2.jpg) [![dennis_gh3_2](/images/gaming-for-students/dennis_5f00_gh3_5f00_2_5f00_thumb.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/dennis_5F00_gh3_5F00_2_5F00_2.jpg) 
+![dennis_gh3_1](/images/gaming-for-students/dennis_5f00_gh3_5f00_1_5f00_thumb.jpg) ![dennis_gh3_2](/images/gaming-for-students/dennis_5f00_gh3_5f00_2_5f00_thumb.jpg) 
 
 Don’t forget, when you visit us for a training, you _will_ be challenged to play a game! After my vacation I’ll create some .NET questions for Buzz! 🙂

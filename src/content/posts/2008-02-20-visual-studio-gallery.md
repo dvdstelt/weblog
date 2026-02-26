@@ -10,7 +10,7 @@ redirect_from:
 ---
 It seems Microsoft is setting up a new site called “[Visual Studio Gallery](http://www.visualstudiogallery.com/)“, but haven’t said anything yet. The site is live though. I’ve searched through my entire RSS feed database but could not find a single link to this website. 🙂
 
- [![vsgallery](/images/visual-studio-gallery/vsgallery_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/VisualStudioGallery_DB20/vsgallery_2.png)
+ ![vsgallery](/images/visual-studio-gallery/vsgallery_thumb.png)
 
 The site holds a large amount of products and extensions that aid Visual Studio developers in their daily work. It’s really nice to have a site like this. I only hope, before this site will go ‘live’, they’ll implement some rating options and perhaps add a review ability so you’ll know a bit faster what the best tools are.
 

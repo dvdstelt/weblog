@@ -46,7 +46,7 @@ If you repeat this 100 times and increase the version number a bit every time, y
 **So how is this done in FinalBuilder?** I’m using version 6.x, although I think version 5.x will do just fine.
 **Increase version number** I’ll first show you how we increased the version number of all AssemblyInfo.cs files.
 
-[![increaseversion](/images/deploying-clickonce-applications-automated-using-finalbuilder/increaseversion_5f00_thumb_5f00_48c64d33.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/increaseversion_5F00_694D8CE5.png)  
+![increaseversion](/images/deploying-clickonce-applications-automated-using-finalbuilder/increaseversion_5f00_thumb_5f00_48c64d33.png)  
 
 First you need to define a PropertySet and select the type “.NET Assembly Numbers”. I gave the PropertySet the name “VersionInfo”. 
 Next we need to have the current version and update all AssemblyInfo.cs files. We load a specific AssemblyInfo.cs which we’ve specified as leading. We can manually increase minor and major build whenever we want. Use the “PropertySet Load” action. 
@@ -58,7 +58,7 @@ Next we compile the project(s) and execute unit tests.
 We need to copy the files to the destination folder, using the VersionInfo PropertySet.       
 (Side node : I have my ClickOnce deployment in another ActionList and I did not want per package configuration in there, therefor I first change the configuration in the binrelease folder. After that I copy the files to the right location. That’s not what we’re doing here.)
 
-[![copyprojectfiles](/images/deploying-clickonce-applications-automated-using-finalbuilder/copyprojectfiles_5f00_thumb_5f00_3611537c.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/copyprojectfiles_5F00_2F5E49F9.png)  
+![copyprojectfiles](/images/deploying-clickonce-applications-automated-using-finalbuilder/copyprojectfiles_5f00_thumb_5f00_3611537c.png)  
 
 We first create the folder which is hosted in IIS. Since FinalBuilder 6.1 there are actions for IIS6 <u>and</u> IIS7 so you can create the website if it doesn’t exist yet as well. But ClickOnce works well from normal folders, so it’s optional.
 We define a FileSet and include all files that are necessary for our ClickOnce application deployment. 
@@ -67,7 +67,7 @@ Imagine the folder we created in step 3.1 was C:InetpubwwwrootMyDemoApp then the
 
 Now we need to create the application manifest. Two tab pages need configuration.
 
-[![clickoncefb01](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb01_5f00_thumb_5f00_67308e1c.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb01_5F00_55C02D44.png)  [![clickoncefb02](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb02_5f00_thumb_5f00_7e7b928d.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb02_5F00_540F6170.png) 
+![clickoncefb01](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb01_5f00_thumb_5f00_67308e1c.png)  ![clickoncefb02](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb02_5f00_thumb_5f00_7e7b928d.png) 
 
 Project Path is where your .exe and .dll are located.
 Project Version is the version number you gave your assemblies in step 1.Again, this can be any number, I chose to use the same as the assemblies.
@@ -78,12 +78,12 @@ Side note : Do **<u>not</u>** put a trailing slash to the end of this folder. Th
 
 Now we’ve created the application manifest, we should create the deployment manifest. As explained in step 3 of the previous list, we cannot recreate this file every time, so we need to do some extra work.
 
-[![clickoncefb03](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb03_5f00_thumb_5f00_1ce5d377.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb03_5F00_643B2969.png) 
+![clickoncefb03](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb03_5f00_thumb_5f00_1ce5d377.png) 
 
 First we need to check if the deployment manifest (the .application file) already exists.
 If it doesn’t exist, we need to create one.
 
-[![clickoncefb04](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb04_5f00_thumb_5f00_62f6908a.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb04_5F00_6A81FFF7.png)    [![clickoncefb05](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb05_5f00_thumb_5f00_7a4194fb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb05_5F00_36D99399.png) 
+![clickoncefb04](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb04_5f00_thumb_5f00_62f6908a.png)    ![clickoncefb05](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb05_5f00_thumb_5f00_7a4194fb.png) 
 
 In the tab “Mage Options” the project path again points to the original location of the assemblies.
 Do not fill in a certificate yet, we’ll do this later.
@@ -115,7 +115,7 @@ Add an action ‘XML Document Define’
 Set the location to the deployment manifest (the .application file) and give the XML document a proper name.
 Now we need to add the new attribute. This is how it’s done:
 
-[![clickoncefb06](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb06_5f00_thumb_5f00_0c3db2bc.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb06_5F00_2D9D5858.png) 
+![clickoncefb06](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb06_5f00_thumb_5f00_0c3db2bc.png) 
 
 After that, save the XML file to the same location with a ‘Save XML Document’ action.
 Sign the deployment manifest by using and ‘Execute Program’ action.           
@@ -136,7 +136,7 @@ This isn’t really handy, because if you want to make all these steps more gene
 Now we’ve setup the deployment manifest so it’ll support files with the .deploy extension, we actually need to rename all the files.       
 Again, this isn’t hard, but it takes some actions in FinalBuilder.
 
-[![clickoncefb07](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb07_5f00_thumb_5f00_29cf8dbb.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/clickoncefb07_5F00_0A8CE6E8.png) 
+![clickoncefb07](/images/deploying-clickonce-applications-automated-using-finalbuilder/clickoncefb07_5f00_thumb_5f00_29cf8dbb.png) 
 
 Define a fileset with all files. You can most likely include all files in the “C:BuildsMyProject%VersionInfo%” folder, but exlude the *.manifest files.
 Add a FileSet Iterator. Select the just defined FileSet and store the result in a variable named “ClickOnceDeployableFileFullPath”. Mark the checkbox “Include Path when setting variable”.

@@ -19,7 +19,7 @@ redirect_from:
 
 For this we don’t have to create any code, just configuration again. Open the Service Configuration Editor again on our app.config. Open the folder “Advanced”, then “Service Behaviors” and choose to add a new service behavior. We’ll change the name *NewBehavior* to *HelloServiceBehavior*. Now click the Add button and select the ‘ServiceMetadata’ option.
 
-[![Our added service behavior for the MEX endpoint.](/images/wcf-part-4-make-your-service-visible-through-metadata/wcf_mexbehavior01_thumb.png)](https://bloggingabout-linux.azurewebsites.net/UserFiles/Dennis%20van%20der%20Stelt/LiveWriter/wcf_mexbehavior01.png) 
+![Our added service behavior for the MEX endpoint.](/images/wcf-part-4-make-your-service-visible-through-metadata/wcf_mexbehavior01_thumb.png) 
 
 Now we’ll configure our new behavior in and endpoint. Select your service again in the tree. This is something you’ll probably forget a lot in the future, but you’ll have to bind the just configured behavior to your service. You should be able to select it from the list in the BehaviorConfiguration property on your service.
 

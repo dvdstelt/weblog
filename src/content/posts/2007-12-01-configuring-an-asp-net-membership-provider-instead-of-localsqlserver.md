@@ -30,7 +30,7 @@ In the folder there should be a file called machine.config in which the configur
 
 Here you can find the name and the data source (server) it’s looking for, which is a SQL Server 2005 Express edition by default. That’s where Arjen’s problem originated from. But let’s see why the Membership provider uses this specific connection string, besides the fact that it’s the only one available. In your machine.config you can again find this information. Click the image below for a larger version.
 
-[![machine_config_membership](/images/configuring-an-asp-net-membership-provider-instead-of-localsqlserver/machine_config_membership_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/test_D66/machine_config_membership_2.png) 
+![machine_config_membership](/images/configuring-an-asp-net-membership-provider-instead-of-localsqlserver/machine_config_membership_thumb.png) 
 
 Under the *membership* element you find the providers. There’s only one provider here, called “AspNetSqlMembershipProvider”. You’ll notice the attribute “connectionStringName” and where it points at! I don’t think it’s wise to change these settings, even if you want to really badly. Again, Arjen gives an easy and fast solution that works much better than just changing the machine.config. But we decided that we wanted more.
 

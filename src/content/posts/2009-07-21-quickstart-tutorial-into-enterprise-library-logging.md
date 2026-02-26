@@ -31,18 +31,19 @@ Again, I could talk about priorities and more, but this is just the basics. For 
 When you’ve installed Enterprise Library 4.1 correctly, you should have the assemblies in your “Add Reference…” dialog under the .NET tab. If not, you can always add them from the folder *C:Program FilesMicrosoft Enterprise Library 4.1 – October 2008Bin* or from *C:Program Files (x86)Microsoft Enterprise Library 4.1 – October 2008Bin* if you’re running on a 64bit machine.
 **Sidenote** : It’s always best to copy the necessary assemblies to a project specific lib folder so that everyone can use your logging solution without installing Enterprise Library. This also goes for the build server, which should obtain the assemblies from source control.
 
-[![addreferencedialog](/images/quickstart-tutorial-into-enterprise-library-logging/0777_addreferencedialog_5f00_thumb_5f00_6397a9a0.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/0755.addreferencedialog_5F00_6B23190D.png)
+![addreferencedialog](/images/quickstart-tutorial-into-enterprise-library-logging/0777_addreferencedialog_5f00_thumb_5f00_6397a9a0.png)
 
 In the above image you can see the “Enterprise Logging Application Block” we should add. In Visual Studio this is the only reference you <u>need</u> to add. After you’ve compiled your project however, you’ll notice additional assemblies being added to the /bin/ folder. It’s out of the scope of this article, what these assemblies do. But the following assemblies are the minimum you need to use Enterprise Library logging. If you have /lib/ folder in source control, put these assemblies in, for the build server to correctly build your projects.
 * Microsoft.Practices.EnterpriseLibrary.Common.dll 
 * Microsoft.Practices.EnterpriseLibrary.Logging.dll 
-* Microsoft.Practices.ObjectBuilder2.dll[![EditConfiguration](/images/quickstart-tutorial-into-enterprise-library-logging/7624_editconfiguration_5f00_thumb_5f00_7169ef9b.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/6116.EditConfiguration_5F00_2A80CC9E.png) 
+* Microsoft.Practices.ObjectBuilder2.dll![EditConfiguration](/images/quickstart-tutorial-into-enterprise-library-logging/7624_editconfiguration_5f00_thumb_5f00_7169ef9b.png) 
 * Microsoft.Practices.Unity.dll 
 
 ### Adding minimal configuration
 
 If you haven’t, first add a web.config or app.config to your application. If installed correctly, right-click your configuration file and select “*Edit Enterprise Library Configuration*” as shown on the right in image 2.
-[![InitialConfig](/images/quickstart-tutorial-into-enterprise-library-logging/4571_initialconfig_5f00_thumb_5f00_514ee2de.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/3414.InitialConfig_5F00_38531299.png)The Enterprise Library configuration tool will be opened. If not, run the tool from the start menu or locate it in the above mentioned folder. After opening it, you should see the empty configuration, as shown in image 3.There’s already a connectionstring in the Data Access block, which is ‘inherited’ from machine.config.
+
+![InitialConfig](/images/quickstart-tutorial-into-enterprise-library-logging/4571_initialconfig_5f00_thumb_5f00_514ee2de.png)The Enterprise Library configuration tool will be opened. If not, run the tool from the start menu or locate it in the above mentioned folder. After opening it, you should see the empty configuration, as shown in image 3.There’s already a connectionstring in the Data Access block, which is ‘inherited’ from machine.config.
 
 In image 3 you can see an arrow where you should right-click and select “New” and “Logging Application Block”. When the configuration is added, these are the folders that are added
 1. **Filters** I won’t discuss these, but they’re not too difficult to understand either. 
@@ -56,11 +57,11 @@ We’ll start with these.
 
 #### Formatters
 
-[![FormatterTemplateProperties](/images/quickstart-tutorial-into-enterprise-library-logging/2437_formattertemplateproperties_5f00_thumb_5f00_3133d621.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/0361.FormatterTemplateProperties_5F00_183805DC.png)Open up the “Formatters” folder and select “Text Formatter”. In the properties pane (press F4 if it’s not there or select from the menu “View” and “Properties Window”. In the properties pane (or window) there’s a property called “Tempalte”. Select its value and press the button on the site as shown on the right.
+![FormatterTemplateProperties](/images/quickstart-tutorial-into-enterprise-library-logging/2437_formattertemplateproperties_5f00_thumb_5f00_3133d621.png)Open up the “Formatters” folder and select “Text Formatter”. In the properties pane (press F4 if it’s not there or select from the menu “View” and “Properties Window”. In the properties pane (or window) there’s a property called “Tempalte”. Select its value and press the button on the site as shown on the right.
 
 A new dialog window should open with the current message template. As you can see there’s a lot of data there. The minimum message you can use should probably be something like below. When logging to, for example, a database or you’re tracing a lot of messages for some reason, this is probably easier to digest. You can use a cool tool like [baretail](http://www.baremetalsoft.com/baretail/) to read the messages while they’re being written to the logfile on the server. When you’re logging exceptions or other information, you probably want much more detail. At the bottom of the dialog or the possible tokens you can insert. For now, leave it like it is.
 
-[![FormatterTemplateEditor](/images/quickstart-tutorial-into-enterprise-library-logging/0383_formattertemplateeditor_5f00_thumb_5f00_1118c964.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/7217.FormatterTemplateEditor_5F00_781CF91E.png)
+![FormatterTemplateEditor](/images/quickstart-tutorial-into-enterprise-library-logging/0383_formattertemplateeditor_5f00_thumb_5f00_1118c964.png)
 
 However, do rename the formatter from “Text Formatter” to “My Formatter”. Now right-click any node in the configuration editor and select “Validate”. You’ll see everything validates, even though you just changed the name of the formatter. That’s how cool Enterprise Library is. 😉
 

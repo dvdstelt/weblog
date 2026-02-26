@@ -16,12 +16,12 @@ I regularly forget, after re-installing my desktop or laptop, what settings I ha
 ![tabs](/images/visual-studio-settings/tabs_5f00_thumb_5f00_688e0d6a.png)<u>**Track items in solution explorer   
 **</u>When you’re inside some code, you’re not always sure which file in the solution explorer you’re working with, because jumping all files with the best shortcut keys might result in me getting lost. With this setting on, the solution explorer selects the file you’re working in.
 
-[![track-item-solution-explorer](/images/visual-studio-settings/trackitemsolutionexplorer_5f00_thumb_5f00_52777c0b.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/trackitemsolutionexplorer_5F00_004544D1.png) 
+![track-item-solution-explorer](/images/visual-studio-settings/trackitemsolutionexplorer_5f00_thumb_5f00_52777c0b.png) 
 **<u>XAML Viewer, no designer   
 </u>**Most of the time I don’t work with the designer and I only want to see the XAML. Also because the designer takes a while to load, especially the first time. This makes sure the XAML is full screen when you click a WPF/Silverlight file.
 
-[![xaml-viewer](/images/visual-studio-settings/xamlviewer_5f00_thumb_5f00_69c2807c.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/xamlviewer_5F00_0396B6AC.png) 
+![xaml-viewer](/images/visual-studio-settings/xamlviewer_5f00_thumb_5f00_69c2807c.png) 
 **<u>Double-click failed test takes you to failing line in code   
 </u>**This option is very useful if you’re doing unit testing and your test fails. Instead of multiple clicks, one click on the error (the row in the testresults pane) take you immediately to the failing line.
 
-[![failed-test-clickable](/images/visual-studio-settings/failedtestclickable_5f00_thumb_5f00_6811b4a8.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/failedtestclickable_5F00_3B68FACF.png)
+![failed-test-clickable](/images/visual-studio-settings/failedtestclickable_5f00_thumb_5f00_6811b4a8.png)

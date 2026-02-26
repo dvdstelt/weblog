@@ -31,7 +31,8 @@ You can find the NuGet packages for the Colored Console Trace Listener here:
 * I love [Common.Logging](http://netcommon.sourceforge.net/) and I’ve added color coding based on TraceEventType that the Common.Logging provides to Enterprise Library. If you’re not using it yet, you might start doing so. It’s really easy to program against and swapping out one logging framework for another is a breeze as well.
 **Add Common.Logging  
 ** In this part we’ll create a new project and will add Common.Logging to the project. If you don’t want to use Common.Logging you can skip this step entirely.
-1. After you’ve started Visual Studio, create a new Console Application called ConsoleApplication1.2. If you haven’t got the Package Manager Console available yet, do so via View –> Other Windows –> Package Manager Console.
+1. After you’ve started Visual Studio, create a new Console Application called ConsoleApplication1.
+2. If you haven’t got the Package Manager Console available yet, do so via View –> Other Windows –> Package Manager Console.
 3. Open the Package Manager Console and execute the following commands
     1. Install-Package Common.Logging  
 
@@ -73,7 +74,7 @@ What we see here is the config section for Common.Logging defined and the sectio
 5. Right-click the App.config file and select “Edit configuration file”
 6. Select “Blocks” from the menu and select “Add logging settings”
 7. Click the 4 blocks in the most left column
-    1. [![1](/images/colored-console-tracelistener-for-enterprise-library-5-0/2451_1_5f00_thumb_5f00_6cafef59.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/1778.1_5F00_7CBC2D5F.png)“General” is a category. Everything you want to log with default Enterprise Library, without specifying a category, will automatically log under this category. After clicking it, you can see that it is linked to the “Event Log Listener”, which logs all information to the EventLog. Because we won’t be using this, we’ll remove the link. Click the little arrow in the left corner and the window will expand. You can see the “Event Log Listener”, click the cross behind it so it’ll be removed. You can see this in the image on the right.
+    1. ![1](/images/colored-console-tracelistener-for-enterprise-library-5-0/2451_1_5f00_thumb_5f00_6cafef59.png)“General” is a category. Everything you want to log with default Enterprise Library, without specifying a category, will automatically log under this category. After clicking it, you can see that it is linked to the “Event Log Listener”, which logs all information to the EventLog. Because we won’t be using this, we’ll remove the link. Click the little arrow in the left corner and the window will expand. You can see the “Event Log Listener”, click the cross behind it so it’ll be removed. You can see this in the image on the right.
     2. “All Events” is a catch-it-all.
     3. “Unprocessed Category” is where everything that does not have its own category will go through. We will use this to output the logging information to console and to a file. When appropriate, we’ll log to a specific category, but we’ll get back to that in a next blogpost.
     4. “Logging Errors & Warnings” is for when Enterprise Library itself crashes. This is useful for debugging purposes, but you have to be absolutely sure that this will be able to log. It’s useless to put an EventLog listener under here, if you’re not 100% sure you are authorized to log to the eventlog. As you can see this is configured by default however.
@@ -140,7 +141,7 @@ When you execute the code, at the given location (d:loggingconsoleapp1) there sh
 7. In the window that just popped up, press the “Add from file” button.
 8. Browse to the folder where your ConsoleApplication1 is located and find the “packages” folder, where NuGet stores its packages.Is should be located around here : packagesColoredConsoleTraceListener.1.0.1libnet40EnterpriseLibrary.ConsoleTraceListener.dll
 9. Select the EnterpriseLibrary.ConsoleTraceListener.dll file
-10. [![2](/images/colored-console-tracelistener-for-enterprise-library-5-0/8030_2_5f00_thumb_5f00_60adff25.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/3718.2_5F00_1A310F1D.png)The original window that popped up should now contain a tree where you can select the “ConsoleTraceListener” as shown in the image on the right.
+10. ![2](/images/colored-console-tracelistener-for-enterprise-library-5-0/8030_2_5f00_thumb_5f00_60adff25.png)The original window that popped up should now contain a tree where you can select the “ConsoleTraceListener” as shown in the image on the right.
 11. The only thing we need to configure is the formatter. We’ll create a new one because the current one is much too verbose.
 12. In the right pane, click the plus sign next to “Log Message Formatters”
 13. Select “Add Log Message Formatters”
@@ -158,6 +159,6 @@ Now without changing a single line of code, the console window should look as fo
 
 ![3](/images/colored-console-tracelistener-for-enterprise-library-5-0/7266_3_5f00_0e2f1ee9.png)
 
-[![4](/images/colored-console-tracelistener-for-enterprise-library-5-0/6170_4_5f00_thumb_5f00_1dd1baab.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/8130.4_5F00_14E2286C.png)
+![4](/images/colored-console-tracelistener-for-enterprise-library-5-0/6170_4_5f00_thumb_5f00_1dd1baab.png)
 
 Update : Updated for Enterprise Library 5, since 6.0 came out

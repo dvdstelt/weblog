@@ -14,7 +14,7 @@ I was having some troubles adding class resources to my SharePoint feature, whil
 
 First you need to start with a good project. You can build one pretty fast if you create a new WSPBuilder project and add a “WebPart with feature” to the project. Now the WSPBuilder templates should have created a project with the 12-hive folder inside your project where your webpart feature should be specified.
 
-[![folderstructure](/images/adding-sharepoint-class-resources-to-your-feature-using-wspbuilder/2352_folderstructure_5f00_thumb_5f00_511f6587.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/0876.folderstructure_5F00_6AF39BB6.png)If you want to add a nice .jpg image to your feature, there are two ways. Embedding it in a .resx file (that’s another blogpost) or copying it to the filesystem of the SharePoint server. Of course not manually, but from inside your feature. Here’s how.
+![folderstructure](/images/adding-sharepoint-class-resources-to-your-feature-using-wspbuilder/2352_folderstructure_5f00_thumb_5f00_511f6587.png)If you want to add a nice .jpg image to your feature, there are two ways. Embedding it in a .resx file (that’s another blogpost) or copying it to the filesystem of the SharePoint server. Of course not manually, but from inside your feature. Here’s how.
 1. Add a new folder and name it “80” 
 2. Add a new folder and give it the name of your project 
 3. Add the .jpg to this folder, or create subfolders if you’d like. 

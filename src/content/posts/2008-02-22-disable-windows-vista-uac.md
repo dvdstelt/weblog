@@ -20,6 +20,6 @@ For personal reference and to inform others I’m posting it here again, in shor
 3. From the snap-in, select “Local Policies” -> “Security Options”
 4. Scroll all the way down and find the elevation prompt property. Set the proper option for yourself.
 
-[![uac](/images/disable-windows-vista-uac/uac_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/DisableWindowsVistaUAC_E683/uac_2.png) 
+![uac](/images/disable-windows-vista-uac/uac_thumb.png) 
 
 Thanks Tim Sneath!

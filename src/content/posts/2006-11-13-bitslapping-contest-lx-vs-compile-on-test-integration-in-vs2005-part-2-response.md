@@ -30,7 +30,7 @@ Alex should’ve checked out the tools I’m using before he wants to slap me ar
     1. Instrument any assembly? Of course NCover does that!
     2. Watch code with color highlighting? NCoverExplorer does that as well!
     3. Code coverage results? Ha! Alex, where are your status-bars? I can only see numbers. How about that quick-scan through hundreds of methods?  
-[![](/images/bitslapping-contest-lx-vs-compile-on-test-integration-in-vs2005-part-2-response/ncoverexplorer_1_3_5_functioncoverag5b15d.png)](https://bloggingabout-linux.azurewebsites.net/UserFiles/Dennis%20van%20der%20Stelt/WindowsLiveWriter/4692c191f9fb_C22F/NCoverExplorer_1.3.5_FunctionCoverag.png)
+![](/images/bitslapping-contest-lx-vs-compile-on-test-integration-in-vs2005-part-2-response/ncoverexplorer_1_3_5_functioncoverag5b15d.png)
     4. Oh, don’t forget the code coverage reports based on number of visits? And coverage based on sequence points? And the satisfactory threshold you can set!
     5. Alex, can you generate MSBuild and Nant scripts with the click of a button, so we can include these in our daily build scripts and create separate reports for those?
     6. A feature I also love is that I can look at my code coverage in NCoverExplorer, while continue to develop in my favorite; not having to rerun my code coverage every time just saves me so much time.

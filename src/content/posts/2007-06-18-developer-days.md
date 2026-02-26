@@ -18,7 +18,7 @@ When the photographer made a comment about me being a “Trekkie”, when I knew
 
 Anyway, here are the pictures! 🙂
 
-[![devdays2007-starwars1](/images/developer-days/devdays2007-starwars1_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/DeveloperDays_C302/devdays2007-starwars1.png)
- **Alex Thissen and me** [![devdays2007-starwars2](/images/developer-days/devdays2007-starwars2_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/DeveloperDays_C302/devdays2007-starwars2.png) 
-**Marco Stolk, Robert Jan van Holland, me and Patrick Bes** [![devdays2007-starwars3](/images/developer-days/devdays2007-starwars3_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/DeveloperDays_C302/devdays2007-starwars3.png) 
+![devdays2007-starwars1](/images/developer-days/devdays2007-starwars1_thumb.png)
+ **Alex Thissen and me** ![devdays2007-starwars2](/images/developer-days/devdays2007-starwars2_thumb.png) 
+**Marco Stolk, Robert Jan van Holland, me and Patrick Bes** ![devdays2007-starwars3](/images/developer-days/devdays2007-starwars3_thumb.png) 
 

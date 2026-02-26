@@ -70,7 +70,7 @@ Daniel also explains that other features don’t work, because they rely on the 
 
 Now you get a nice error…
 
-[![extensionmethoderror](/images/using-c-3-0-from-net-2-0/extensionmethoderror_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/UsingC3.0from.NET2.0_11681/extensionmethoderror_2.png) 
+![extensionmethoderror](/images/using-c-3-0-from-net-2-0/extensionmethoderror_thumb.png) 
 
 Daniel again explains that this is really easy by adding that attribute ourselves. Check his [C# 3.0 features in .NET 2.0](http://www.danielmoth.com/Blog/2007/05/using-c-30-from-net-20.html) article for it. I’ve created a full solution though, which you can download at the bottom.
 

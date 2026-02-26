@@ -11,7 +11,7 @@ redirect_from:
   - /dennis/2005/09/13/maxxed-out-on-avalon
   - /blogs/dennis/archive/2005/09/13/maxxed-out-on-avalon.aspx
 ---
-[![Screenshot of Max on WPF](/images/maxxed-out-on-avalon/200x150.aspx)](https://bloggingabout-linux.azurewebsites.net/photos/dennis_van_der_stelt/picture9348.aspx)I just watched a part of the keynote of the PDC05 via the webcast. I got in while Don and Chris were presenting Avalon, currently names the Windows Presentation Foundation. More info on WinFX and all it’s APIs at [Microsoft](http://msdn.microsoft.com/winfx/).
+![Screenshot of Max on WPF](/images/maxxed-out-on-avalon/200x150.aspx)I just watched a part of the keynote of the PDC05 via the webcast. I got in while Don and Chris were presenting Avalon, currently names the Windows Presentation Foundation. More info on WinFX and all it’s APIs at [Microsoft](http://msdn.microsoft.com/winfx/).
 
 Anyway, some guy came in to give a demonstration of a [demo application called "Max"](http://www.microsoft.com/max/). He showed how to share photos with friends. I cannot say enough how much I like the new Microsoft user interfaces they keep coming up with. Especially those sexy icons they keep using for Avalon based presentations like Max. Max itself also looks really smooth, which is also made possible with Avalon. Once you’ve created a gallery you can shared these with friends. Those galleries are shared through Indigo, or the Windows Communications Foundation.
 

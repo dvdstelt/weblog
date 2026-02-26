@@ -21,7 +21,7 @@ Now this is a great initiative! Billy McCafferty is doing a weekly contest where
 
 Oh, Alex, sorry mate, but the tests are written for NUnit. Of course I immediately ran NCover over it and NCoverExplorer produced this result:
 
-[![](/images/refactor-it/refactoritcodecoverage_thumb5b35d.png)](https://bloggingabout-linux.azurewebsites.net/UserFiles/Dennis%20van%20der%20Stelt/WindowsLiveWriter/Refactorit_7E73/refactoritcodecoverage%5B3%5D.png) 
+![](/images/refactor-it/refactoritcodecoverage_thumb5b35d.png) 
 
 There’s one line of code that throws an error when you pass in a null value into the method. Meaning this probably wasn’t written using Test-Driven Development. Not the worst case, but it would be nice to show people how good the tests could be when TDD was used. Besides that, I again have to say I love the initiative and will keep an eye out for the results.
 

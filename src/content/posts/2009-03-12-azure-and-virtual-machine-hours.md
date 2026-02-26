@@ -20,7 +20,7 @@ First of all, these statistics are about my [speed traps](/2009/02/23/cloud-serv
 
 So here are the statistics for my service and my website. Urls can be found in the previous post.
 
-[![vmhours_hourly_usage](/images/azure-and-virtual-machine-hours/vmhours_5f00_hourly_5f00_usage_5f00_thumb_5f00_5c41a06f.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/vmhours_5F00_hourly_5F00_usage_5F00_76820993.png) [![vmhours_daily_usage](/images/azure-and-virtual-machine-hours/vmhours_5f00_daily_5f00_usage_5f00_thumb_5f00_29056706.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/vmhours_5F00_daily_5F00_usage_5F00_14EC4A7D.png) 
+![vmhours_hourly_usage](/images/azure-and-virtual-machine-hours/vmhours_5f00_hourly_5f00_usage_5f00_thumb_5f00_5c41a06f.png) ![vmhours_daily_usage](/images/azure-and-virtual-machine-hours/vmhours_5f00_daily_5f00_usage_5f00_thumb_5f00_29056706.png) 
 
 In the left image you can see the number of VM hours used every hour. This means that every hour of the day, I use up 4 hours of VM usage. This results in 96 VM hours per day. Which is kind of weird, as you get a max of 2000 VM hours per trial-key, which means my service should not be able to run for 21 days straight. Meaning that my speed traps service should start failing any day now! Here’s how…
 
@@ -28,4 +28,4 @@ In the left image you can see the number of VM hours used every hour. This means
 
 The following two pictures are about my storage. In the left image you can see the daily network usage in megabytes. Per day I transfer a maximum of about 2 megabytes. On the right side you can see the daily storage usage in megabytes as well. The funny thing is, as I’ve told, that every time before I store the latest speed traps, I delete all current available in my table storage. But still I use up to 40 MB of storage per day. Is that accumulated? No idea.
 
-[![storage_networkusage](/images/azure-and-virtual-machine-hours/storage_5f00_networkusage_5f00_thumb_5f00_19ee882c.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/storage_5F00_networkusage_5F00_1AC6EE16.png) [![storage_mbstored](/images/azure-and-virtual-machine-hours/storage_5f00_mbstored_5f00_thumb_5f00_26e8683d.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/storage_5F00_mbstored_5F00_0BB00F3C.png)
+![storage_networkusage](/images/azure-and-virtual-machine-hours/storage_5f00_networkusage_5f00_thumb_5f00_19ee882c.png) ![storage_mbstored](/images/azure-and-virtual-machine-hours/storage_5f00_mbstored_5f00_thumb_5f00_26e8683d.png)

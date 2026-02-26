@@ -15,7 +15,7 @@ redirect_from:
 ---
 This is the geek pr0n session Don Box mentioned. Chris Anderson and Giovanni Della-Libera are presenting, the entire Oslo team that’s here is inside this room.
 
-[![IMG_3257](/images/oslo-building-textual-dsls/img_5f00_3257_5f00_thumb_5f00_09e9218e.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3257_5F00_5DDC4A69.jpg) [![IMG_3260](/images/oslo-building-textual-dsls/img_5f00_3260_5f00_thumb_5f00_3b83f349.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3260_5F00_32C410CA.jpg) 
+![IMG_3257](/images/oslo-building-textual-dsls/img_5f00_3257_5f00_thumb_5f00_09e9218e.jpg) ![IMG_3260](/images/oslo-building-textual-dsls/img_5f00_3260_5f00_thumb_5f00_3b83f349.jpg) 
 
 
 ```csharp
@@ -44,7 +44,7 @@ module PDC
 
 Tokenize is the first thing to do. The above can transform “Contact : dvdstelt – 425-555-1212”, and it removes weird characters. Chris and Gio than show how lists work, how the recursive results are flattened out, how to add comments and
 
-[![IMG_3263](/images/oslo-building-textual-dsls/img_5f00_3263_5f00_thumb_5f00_26161814.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3263_5F00_1FFEF146.jpg) mgx.exe is used to generated an mgx file.
+![IMG_3263](/images/oslo-building-textual-dsls/img_5f00_3263_5f00_thumb_5f00_26161814.jpg) mgx.exe is used to generated an mgx file.
 
 mgx /r:contacts.mgx input.contacts will generate M language code. The mgx is just a plain .zip file, as said before in one of my posts.
 

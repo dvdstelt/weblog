@@ -14,7 +14,7 @@ Blogging live at the PDC 2008 keynote…
 **Windows Azure   
 **This new version of Windows was just announced. We’ve got desktop and server (back-end) versions of Windows and this should be the web tier, the operating system for the cloud. Windows Azure is about scaling up and keeping your applications and services up 24/7, no need to take them offline when updating. It contains Live Services, .NET Services, SQL Services, SharePoint Services, Dynamics CRM Services. 
 
-[![servicesPlatform](/images/pdc2008-keynote-windows-azure/servicesplatform_5f00_thumb_5f00_4958ac6d.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/servicesPlatform_5F00_452ED4A8.jpg) 
+![servicesPlatform](/images/pdc2008-keynote-windows-azure/servicesplatform_5f00_thumb_5f00_4958ac6d.jpg) 
 
 Microsoft is betting big on Windows Azure and cloud computing and will be offering the following products in Microsoft Online Services initiative.
 * Exchange online 

@@ -10,7 +10,7 @@ redirect_from:
   - /dennis/2005/10/18/big-change-in-life
   - /blogs/dennis/archive/2005/10/18/big-change-in-life.aspx
 ---
-[![Class-A Businesscard](/images/big-change-in-life/class-a_visitekaartje_thumb.jpg)](https://bloggingabout-linux.azurewebsites.net/UserFiles/Dennis van der Stelt/Image/Miscellaneous/Class-A/class-a_visitekaartje.png)
+![Class-A Businesscard](/images/big-change-in-life/class-a_visitekaartje_thumb.jpg)
 
 Besides the fact I haven’t started yet, it can’t get much more official then this.
 

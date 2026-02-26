@@ -15,7 +15,7 @@ redirect_from:
 ---
 I got an e-mail with the question how to turn off automatic checking for updates, when you’re doing a [manual check for updates with ClickOnce](/2007/11/05/manual-check-for-updates-with-clickonce/). Strangely enough I forgot to mention this in my previous article.
 
-[![ClickOnceAutoUpdateOff](/images/turn-off-automatic-updates-with-clickonce/clickonceautoupdateoff_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/TurnoffautomaticupdateswithClickOnce_BC54/ClickOnceAutoUpdateOff_2.png) 
+![ClickOnceAutoUpdateOff](/images/turn-off-automatic-updates-with-clickonce/clickonceautoupdateoff_thumb.png) 
 
 The above dialog window can be obtained in the properties window of your project (Right-click your project in the solution explorer), under the “Publish” tabpage, using the “Updates…” button.
 

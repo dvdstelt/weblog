@@ -21,7 +21,7 @@ I hate it when I just missed the information about traffic jams and have to wait
 **Description  
 **“Dennis” is an application that will show ‘Flitsers’ and ‘Files’ (traffic jams) in The Netherlands.
 
-[![dennis1](/images/wat-zegt-dennis/dennis1_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/WatzegtDennis_A1D/dennis1_2.png)  [![dennis2](/images/wat-zegt-dennis/dennis2_thumb.png)](https://bloggingabout-linux.azurewebsites.net/blogs/dennis/WindowsLiveWriter/WatzegtDennis_A1D/dennis2_2.png) 
+![dennis1](/images/wat-zegt-dennis/dennis1_thumb.png)  ![dennis2](/images/wat-zegt-dennis/dennis2_thumb.png) 
 
 You can start it up via an icon in the ‘Programs’ folder, it’s called ‘Wat zegt Dennis’.
 

@@ -33,18 +33,18 @@ Shapes are the squares on the canvas and are a model or a part of a model
 * <u>Hyper icons          
 </u>Hyper icons are the blue icons I talked about. They can be dragged out of the shape and become a new shape themselves. 
 
-[![IMG_3234](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3234_5f00_thumb_5f00_629b7330.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3234_5F00_7B5AC040.jpg)  [![IMG_3235](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3235_5f00_thumb_5f00_0ad5aa12.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3235_5F00_7089F0C6.jpg)  [![IMG_3236](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3236_5f00_thumb_5f00_5615023c.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3236_5F00_77189AB0.jpg) 
+![IMG_3234](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3234_5f00_thumb_5f00_629b7330.jpg)  ![IMG_3235](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3235_5f00_thumb_5f00_0ad5aa12.jpg)  ![IMG_3236](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3236_5f00_thumb_5f00_5615023c.jpg) 
 **Using Quadrant Takeaways** * “Quadrant” connects people to data 
 * Diverse data sets 
 * Diverse interaction styles 
 * Extensible
     * Create new or extend existing models 
     * Create new or extend existing editing experiences 
-**[![IMG_3238](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3238_5f00_thumb_5f00_360a3532.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3238_5F00_34698F2B.jpg) ** **Customizing “Quadrant” Takeaways** * Quadrant is a model-driven application 
+**![IMG_3238](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3238_5f00_thumb_5f00_360a3532.jpg) ** **Customizing “Quadrant” Takeaways** * Quadrant is a model-driven application 
 * Customization via data stored in repository 
 * View specification based on query/functional evaluation 
 **Quadrant Architecture** The shell and surface has some core services like drag/drop, undo/redo, error handling, search, etc. The composition engine is getting data from a dataflow engine, giving queryable data, having target data, configuration and view state, which is all coming from M.
 
-[![IMG_3239](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3239_5f00_thumb_5f00_1add2c58.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3239_5F00_2D861441.jpg) 
+![IMG_3239](/images/oslo-customizing-and-extending-the-visual-design-experience/img_5f00_3239_5f00_thumb_5f00_1add2c58.jpg) 
 **Where are we?** * “Quadrant” is a flexible tool for interacting with diverse data 
 * “Quadrant” uses the repository for both specification and state

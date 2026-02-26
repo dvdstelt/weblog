@@ -11,7 +11,7 @@ redirect_from:
   - /dennis/2009/10/26/zune-player-in-taskbar
   - /blogs/dennis/archive/2009/10/26/zune-player-in-taskbar.aspx
 ---
-[![zunetaskbar](/images/zune-player-in-taskbar/0412_zunetaskbar_5f00_thumb_5f00_267095ce.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis.metablogapi/8831.zunetaskbar_5F00_46F7D580.png) This is pretty sweet, you can have the Zune player in your taskbar.
+![zunetaskbar](/images/zune-player-in-taskbar/0412_zunetaskbar_5f00_thumb_5f00_267095ce.png) This is pretty sweet, you can have the Zune player in your taskbar.
 
 On previous version of Windows, I had my media player up there. But now the Zune player has this ability in Windows 7 as well.
 

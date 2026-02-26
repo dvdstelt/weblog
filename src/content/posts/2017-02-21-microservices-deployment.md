@@ -13,7 +13,7 @@ redirect_from:
 ---
 In the past we used to have monoliths. These were bad. Big balls of mud. Whenever we changed something, it was impossible to predict which part of the big ball of mud we might have broken. That’s why microservices are so great. They aren’t bug balls of mud. They are small, autonomous and independently deployable units. We basically went from the picture on the left, to the picture on the right.
 
-[![Showing difference between most monolith & microservices implementation is purely based on RPC calls.](/images/microservices-deployment/microservices-1-1.png)](https://bloggingabout-linux.azurewebsites.net/wp-content/uploads/sites/2/2017/02/microservices-1-1.png)  
+![Showing difference between most monolith & microservices implementation is purely based on RPC calls.](/images/microservices-deployment/microservices-1-1.png)  
  So let’s have a look what changed. Initially, we had a lot of in-process calls throughout our code. But due to a lot of coupling, our system easily broke after touching the code. We now have RPC style calls. According to a lot of sources this happens preferably via REST/HTTP. So the result is that deployment of our architecture is far more complex than it used to be. And the RPC style calls over HTTP introduce an insane amount of latency. Oh, and we also still have the issue of easily breaking the system after touching the code. So what did microservices solve again?
 
 ## Changing technology doesn’t change coupling

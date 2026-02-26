@@ -12,7 +12,7 @@ redirect_from:
 ---
 I just noticed the PDC session schedule is online. This means you can find out which sessions are in which slot(s) and you can finally start really planning sessions. This is always extremely difficult as I always want to be in multiple rooms at the same time! 🙂 I haven’t figured out if some sessions are repeated, as this makes choices sometimes more easy.
 
-[![pdcschedule](/images/pdc-session-schedule-online/pdcschedule_5f00_thumb_5f00_2f868862.png)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/pdcschedule_5F00_181BF9FE.png) 
+![pdcschedule](/images/pdc-session-schedule-online/pdcschedule_5f00_thumb_5f00_2f868862.png) 
 
 Very nice is that you can click sessions in the agenda and mark them so you’ll know which one you want to visit. You can also create a printable version you can take with you to the PDC. Or if you have Windows Mobile (or Outlook on your laptop) you can import the schedule. That should make it also very easy to see where to be at which time! 🙂
 

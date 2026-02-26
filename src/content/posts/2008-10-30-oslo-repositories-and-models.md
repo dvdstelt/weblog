@@ -12,7 +12,7 @@ redirect_from:
   - /dennis/2008/10/30/oslo-repositories-and-models
   - /blogs/dennis/archive/2008/10/30/oslo-repositories-and-models.aspx
 ---
-**[![IMG_3245](/images/oslo-repositories-and-models/img_5f00_3245_5f00_thumb_5f00_3ea8adde.jpg)](https://bloggingabout-linux.azurewebsites.net/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/dennis/IMG_5F00_3245_5F00_13846271.jpg)**Just saw Chris Sells show a session on some other expects of Oslo that wasn’t introduced yet.
+**![IMG_3245](/images/oslo-repositories-and-models/img_5f00_3245_5f00_thumb_5f00_3ea8adde.jpg)**Just saw Chris Sells show a session on some other expects of Oslo that wasn’t introduced yet.
 
 It was again stated that the repository in Oslo is a normal SQL Server database. All your models are just SQL in the database and everything is designed for extensibility.
 
