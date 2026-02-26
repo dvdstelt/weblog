@@ -70,6 +70,33 @@ const { title, description, image, pubDate } = Astro.props;
         topButton?.classList.toggle('is-active', window.scrollY > window.innerHeight);
       });
 
+      // Lightbox for standalone images in post/page content
+      (() => {
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        const overlayImg = document.createElement('img');
+        overlay.appendChild(overlayImg);
+        document.body.appendChild(overlay);
+
+        const close = () => overlay.classList.remove('is-open');
+
+        overlay.addEventListener('click', close);
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'Escape') close();
+        });
+
+        document.querySelectorAll<HTMLImageElement>(
+          '.post__content img, .page__content img'
+        ).forEach((img) => {
+          if (img.closest('a')) return;
+          img.addEventListener('click', () => {
+            overlayImg.src = img.src;
+            overlayImg.alt = img.alt;
+            overlay.classList.add('is-open');
+          });
+        });
+      })();
+
       // Lite YouTube embeds: replace iframes with thumbnail + play button
       document.querySelectorAll<HTMLIFrameElement>(
         '.post__content iframe[src*="youtube.com/embed"], .page__content iframe[src*="youtube.com/embed"]'
