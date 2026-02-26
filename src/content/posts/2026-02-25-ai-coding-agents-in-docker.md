@@ -73,4 +73,4 @@ If you're new here, start at the top and work your way down. Each post builds on
 
 ## The repository
 
-All scripts, the Dockerfile, and the documentation live in a single repository. Each post references specific files and commits from it, so you can follow along or just grab what you need.
+All scripts, the Dockerfile, and the documentation live in a single repository: [dvdstelt/ai-agents](https://github.com/dvdstelt/ai-agents). Each post references specific files and commits from it, so you can follow along or just grab what you need.
