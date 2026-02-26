@@ -10,6 +10,8 @@ tags:
   - docker
   - coding
 ---
+*This is part 1 of the [AI coding agents in Docker](/2026/02/25/ai-coding-agents-in-docker/) series.*
+
 This website is generated from Markdown to static HTML using [Jekyll](https://jekyllrb.com/). To run that locally on Windows, I need Ruby with DevKit, Node, Yarn, Jekyll, and what feels like half the internet. Every time an installer spews thousands of lines of text across my console, I get the creeps. It's like watching someone dump a bag of Lego bricks onto a freshly cleaned floor.
 
 I've always liked clean machines. Ask anyone who's seen my desktop -- it has zero icons. Not one. So the idea of installing Ruby, Python, .NET SDK, Node, and all their friends directly onto my Windows box? That doesn't sit well.
@@ -81,9 +83,9 @@ docker run -it ^
     claude-code %*
 ```
 
-A few things happen here. The script derives a container name from the folder you're in, so running `cc` from `D:\git\dvdstelt\weblog` creates a container called `claude-weblog`. The `@` character is replaced with `-` in container names, so running from a worktree like `weblog@feature-x` gives you `claude-weblog-feature-x`. It passes two environment variables and mounts three volumes:
+A few things happen here. The script derives a container name from the folder you're in, so running `cc` from `C:\projects\weblog` creates a container called `claude-weblog`. The `@` character is replaced with `-` in container names, so running from a worktree like `weblog@feature-x` gives you `claude-weblog-feature-x`. It passes two environment variables and mounts three volumes:
 
-- **`HOST_WORKSPACE`** is set to the current Windows directory (e.g. `D:\git\dvdstelt\weblog`). Inside the container, things like the status bar and worktree tooling use this to show and record the real Windows path instead of the Linux container path.
+- **`HOST_WORKSPACE`** is set to the current Windows directory (e.g. `C:\projects\weblog`). Inside the container, things like the status bar and worktree tooling use this to show and record the real Windows path instead of the Linux container path.
 - **`CONTAINER_WORKDIR`** is the corresponding path inside the container (e.g. `/workspace/weblog`). Together with `HOST_WORKSPACE`, this lets scripts translate between the two.
 - **`%USERPROFILE%\.claude`** maps to `/root/.claude` inside the container. This is where Claude stores its authentication, settings, and plugin configuration. By mounting this from the host, you only need to log in once and that auth persists across all containers.
 - **`%USERPROFILE%\.config`** maps to `/root/.config` for general application configuration.
@@ -93,7 +95,7 @@ The container name matters because of `ccc`, a shortcut for `cc --continue`. If 
 
 ## Environment variables
 
-If your projects need API keys or secrets, you drop a `.env` file in the `claude-master` folder. The launcher scripts detect it automatically:
+If your projects need API keys or secrets, you drop a `.env` file in the `ai-agents` folder. The launcher scripts detect it automatically:
 
 ```bat
 if exist "%~dp0.env" (
@@ -105,11 +107,11 @@ One `.env` file, shared across all containers. No more copy-pasting keys into ev
 
 ## Adding it to PATH
 
-To make `cc`, `ccc`, and `ccd` available from any folder, you add the `claude-master` directory to your Windows `PATH`:
+To make `cc`, `ccc`, and `ccd` available from any folder, you add the `ai-agents` directory to your Windows `PATH`:
 
 1. Open **Start** and search for *Edit environment variables for your account*
 2. Edit the `Path` variable
-3. Add the path to your `claude-master` folder (e.g. `D:\git\dvdstelt\claude-master`)
+3. Add the path to your `ai-agents` folder (e.g. `C:\projects\ai-agents`)
 4. Restart your terminal
 
 After that, you can `cd` into any project and just type `cc` to start a Claude Code session with your full development environment ready to go.
