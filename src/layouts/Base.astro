@@ -70,6 +70,25 @@ const { title, description, image, pubDate } = Astro.props;
         topButton?.classList.toggle('is-active', window.scrollY > window.innerHeight);
       });
 
+      // Code block hover-expand: let the pre grow beyond the content column
+      // to the viewport edge without adding a page-level horizontal scrollbar.
+      // Technique: when <html> has no explicit overflow, <body>'s overflow-x
+      // propagates to the viewport. Setting html to 'hidden' takes ownership
+      // of the viewport, freeing body to 'visible' so descendants can overflow
+      // the column — clipped only by the viewport, not by body.
+      document.querySelectorAll<HTMLElement>(
+        '.post__content pre, .page__content pre'
+      ).forEach((pre) => {
+        pre.addEventListener('mouseenter', () => {
+          document.documentElement.style.overflowX = 'hidden';
+          document.body.style.overflowX = 'visible';
+        });
+        pre.addEventListener('mouseleave', () => {
+          document.documentElement.style.overflowX = '';
+          document.body.style.overflowX = '';
+        });
+      });
+
       // Lightbox for standalone images in post/page content
       (() => {
         const overlay = document.createElement('div');

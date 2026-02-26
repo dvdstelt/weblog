@@ -247,8 +247,10 @@
   }
 }
 
-// On pointer-capable devices, hovering a code block switches from
-// line-wrapping to horizontal scroll so long lines stay on one line.
+// On pointer-capable devices, hovering a code block expands it to the
+// right so long lines are visible without wrapping. The JS in Base.astro
+// temporarily swaps html/body overflow so the block can escape the
+// content column without creating a page-level horizontal scrollbar.
 @media (hover: hover) {
   .post__content,
   .page__content {
@@ -256,7 +258,7 @@
       white-space: pre;
       word-break: normal;
       word-wrap: normal;
-      overflow-x: auto;
+      width: max-content;
     }
 
     pre:hover code[class*='language-'] {
