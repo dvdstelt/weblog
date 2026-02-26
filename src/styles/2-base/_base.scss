@@ -129,6 +129,17 @@ pre {
   word-break: break-all;
 }
 
+.post__content,
+.page__content {
+  iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 24px auto;
+    border: 0;
+  }
+}
+
 :not(pre) > code {
   padding: 2px 6px;
   border-radius: 4px;
