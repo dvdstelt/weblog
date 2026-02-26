@@ -76,14 +76,20 @@ const { title, description, image, pubDate } = Astro.props;
       // propagates to the viewport. Setting html to 'hidden' takes ownership
       // of the viewport, freeing body to 'visible' so descendants can overflow
       // the column — clipped only by the viewport, not by body.
+      // We attach to the .code-block-wrapper when present so that moving the
+      // mouse onto the copy button (a sibling of pre) does not collapse it.
       document.querySelectorAll<HTMLElement>(
         '.post__content pre, .page__content pre'
       ).forEach((pre) => {
-        pre.addEventListener('mouseenter', () => {
+        const target: HTMLElement =
+          pre.parentElement?.classList.contains('code-block-wrapper')
+            ? pre.parentElement
+            : pre;
+        target.addEventListener('mouseenter', () => {
           document.documentElement.style.overflowX = 'hidden';
           document.body.style.overflowX = 'visible';
         });
-        pre.addEventListener('mouseleave', () => {
+        target.addEventListener('mouseleave', () => {
           document.documentElement.style.overflowX = '';
           document.body.style.overflowX = '';
         });

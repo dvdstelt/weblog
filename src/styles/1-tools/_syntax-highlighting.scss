@@ -254,8 +254,10 @@
 @media (hover: hover) {
   .post__content,
   .page__content {
+    .code-block-wrapper:hover pre,
     pre:hover {
       width: max-content;
+      min-width: 100%;
     }
   }
 }
