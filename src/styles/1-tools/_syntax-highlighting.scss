@@ -255,15 +255,7 @@
   .post__content,
   .page__content {
     pre:hover {
-      white-space: pre;
-      word-break: normal;
-      word-wrap: normal;
       width: max-content;
-    }
-
-    pre:hover code[class*='language-'] {
-      white-space: pre;
-      word-break: normal;
     }
   }
 }
