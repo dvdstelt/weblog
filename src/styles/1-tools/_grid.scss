@@ -1,13 +1,10 @@
 @use 'sass:math';
+@use '../0-settings' as *;
 
 $columns: 12;
 $container-base-width: 1300px;
 $container-big-width: 1600px;
 $container-offset: 20px;
-
-$desktop: 992px;
-$tablet:  768px;
-$mobile:  576px;
 
 $mq: ( $mobile:$columns, $tablet:$columns, $desktop:$columns );
 
