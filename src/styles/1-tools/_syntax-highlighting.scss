@@ -246,3 +246,22 @@
     font-weight: bold;
   }
 }
+
+// On pointer-capable devices, hovering a code block switches from
+// line-wrapping to horizontal scroll so long lines stay on one line.
+@media (hover: hover) {
+  .post__content,
+  .page__content {
+    pre:hover {
+      white-space: pre;
+      word-break: normal;
+      word-wrap: normal;
+      overflow-x: auto;
+    }
+
+    pre:hover code[class*='language-'] {
+      white-space: pre;
+      word-break: normal;
+    }
+  }
+}
