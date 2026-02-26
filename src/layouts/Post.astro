@@ -157,7 +157,8 @@ const shareDesc = encodeURIComponent(description);
             const button = document.createElement('button');
             button.className = 'code-copy-btn';
             button.setAttribute('aria-label', 'Copy code');
-            button.textContent = 'Copy';
+            button.setAttribute('data-tooltip', 'Copy');
+            button.innerHTML = '<i class="ion ion-ios-copy"></i>';
             wrapper.appendChild(button);
 
             button.addEventListener('click', async () => {
@@ -165,10 +166,16 @@ const shareDesc = encodeURIComponent(description);
               const text = code?.textContent ?? pre.textContent ?? '';
               try {
                 await navigator.clipboard.writeText(text);
-                button.textContent = 'Copied!';
-                setTimeout(() => { button.textContent = 'Copy'; }, 2000);
+                button.innerHTML = '<i class="ion ion-ios-checkmark"></i>';
+                button.setAttribute('data-tooltip', 'Copied!');
+                button.classList.add('is-copied');
+                setTimeout(() => {
+                  button.innerHTML = '<i class="ion ion-ios-copy"></i>';
+                  button.setAttribute('data-tooltip', 'Copy');
+                  button.classList.remove('is-copied');
+                }, 2000);
               } catch {
-                button.textContent = 'Copy';
+                button.innerHTML = '<i class="ion ion-ios-copy"></i>';
               }
             });
           });
