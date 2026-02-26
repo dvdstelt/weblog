@@ -2,6 +2,40 @@
   Syntax Highlighting
 */
 
+/* Code block copy button */
+.code-block-wrapper {
+  position: relative;
+
+  .code-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-family: $heading-font-family;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba($text-color, 0.6);
+    background: rgba($white, 0.08);
+    border: 1px solid rgba($white, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: $global-transition;
+    z-index: 1;
+    line-height: 1.6;
+
+    &:hover {
+      color: $text-color;
+      background: rgba($white, 0.18);
+      border-color: rgba($white, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
 .highlight {
   color: $text-color;
   background: $dark;

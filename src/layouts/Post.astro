@@ -146,6 +146,33 @@ const shareDesc = encodeURIComponent(description);
           <GiscusComments />
 
         </article>
+
+        <script>
+          document.querySelectorAll('.post__content pre').forEach((pre) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'code-block-wrapper';
+            pre.parentNode?.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            const button = document.createElement('button');
+            button.className = 'code-copy-btn';
+            button.setAttribute('aria-label', 'Copy code');
+            button.textContent = 'Copy';
+            wrapper.appendChild(button);
+
+            button.addEventListener('click', async () => {
+              const code = pre.querySelector('code');
+              const text = code?.textContent ?? pre.textContent ?? '';
+              try {
+                await navigator.clipboard.writeText(text);
+                button.textContent = 'Copied!';
+                setTimeout(() => { button.textContent = 'Copy'; }, 2000);
+              } catch {
+                button.textContent = 'Copy';
+              }
+            });
+          });
+        </script>
         <!-- end post -->
       </div>
     </div>
