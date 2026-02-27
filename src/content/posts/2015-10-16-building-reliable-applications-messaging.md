@@ -8,7 +8,7 @@ image: /images/building-reliable-applications-messaging/header.jpg
 tags:
   - nservicebus
   - messaging
-  - presentation
+  - presenting
 redirect_from:
   - /dennis/2015/10/16/building-reliable-applications-messaging
   - /blogs/dennis/archive/2015/10/16/building-reliable-applications-messaging.aspx
