@@ -99,19 +99,76 @@ const { title, description, image, pubDate } = Astro.props;
         });
       });
 
-      // Lightbox for standalone images in post/page content
+      // Lightbox for standalone images in post/page content.
+      // Images sharing the same parent element form a gallery group,
+      // so consecutive images in markdown (same <p>) get prev/next nav.
       (() => {
         const overlay = document.createElement('div');
         overlay.className = 'lightbox-overlay';
+
         const overlayImg = document.createElement('img');
+
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'lightbox-prev';
+        prevBtn.setAttribute('aria-label', 'Previous image');
+        prevBtn.innerHTML = '<i class="ion ion-ios-arrow-back"></i>';
+
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'lightbox-next';
+        nextBtn.setAttribute('aria-label', 'Next image');
+        nextBtn.innerHTML = '<i class="ion ion-ios-arrow-forward"></i>';
+
+        const counterEl = document.createElement('div');
+        counterEl.className = 'lightbox-counter';
+
+        overlay.appendChild(prevBtn);
         overlay.appendChild(overlayImg);
+        overlay.appendChild(nextBtn);
+        overlay.appendChild(counterEl);
         document.body.appendChild(overlay);
 
-        const close = () => overlay.classList.remove('is-open');
+        let gallery: HTMLImageElement[] = [];
+        let currentIndex = 0;
 
-        overlay.addEventListener('click', close);
+        const show = (index: number) => {
+          currentIndex = index;
+          const img = gallery[index];
+          overlayImg.src = img.src;
+          overlayImg.alt = img.alt;
+          const multi = gallery.length > 1;
+          prevBtn.classList.toggle('is-hidden', !multi);
+          nextBtn.classList.toggle('is-hidden', !multi);
+          counterEl.classList.toggle('is-hidden', !multi);
+          if (multi) {
+            counterEl.textContent = `${index + 1} / ${gallery.length}`;
+            (prevBtn as HTMLButtonElement).disabled = index === 0;
+            (nextBtn as HTMLButtonElement).disabled = index === gallery.length - 1;
+          }
+        };
+
+        const close = () => {
+          overlay.classList.remove('is-open');
+          gallery = [];
+        };
+
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (currentIndex > 0) show(currentIndex - 1);
+        });
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (currentIndex < gallery.length - 1) show(currentIndex + 1);
+        });
+
+        // Close only when clicking the backdrop, not the image or buttons.
+        overlay.addEventListener('click', (e) => {
+          if (e.target === overlay) close();
+        });
         document.addEventListener('keyup', (e) => {
           if (e.key === 'Escape') close();
+          if (!overlay.classList.contains('is-open')) return;
+          if (e.key === 'ArrowLeft'  && currentIndex > 0)                  show(currentIndex - 1);
+          if (e.key === 'ArrowRight' && currentIndex < gallery.length - 1) show(currentIndex + 1);
         });
 
         document.querySelectorAll<HTMLImageElement>(
@@ -119,8 +176,12 @@ const { title, description, image, pubDate } = Astro.props;
         ).forEach((img) => {
           if (img.closest('a')) return;
           img.addEventListener('click', () => {
-            overlayImg.src = img.src;
-            overlayImg.alt = img.alt;
+            // Build gallery from non-linked images sharing the same parent.
+            const siblings = Array.from(
+              img.parentElement?.querySelectorAll<HTMLImageElement>('img') ?? [img]
+            ).filter(i => !i.closest('a'));
+            gallery = siblings.length > 0 ? siblings : [img];
+            show(gallery.indexOf(img));
             overlay.classList.add('is-open');
           });
         });

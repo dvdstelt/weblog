@@ -74,6 +74,54 @@ img.zoom-img {
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
     cursor: default;
   }
+
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba($white, 0.1);
+    border: 1px solid rgba($white, 0.2);
+    border-radius: 50%;
+    color: $white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: $global-transition;
+
+    &:hover {
+      background: rgba($white, 0.22);
+      border-color: rgba($white, 0.4);
+    }
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &.is-hidden { display: none; }
+  }
+
+  .lightbox-prev { left: 20px; }
+  .lightbox-next { right: 20px; }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: $base-font-family;
+    font-size: 13px;
+    color: rgba($white, 0.55);
+    white-space: nowrap;
+
+    &.is-hidden { display: none; }
+  }
 }
 
 .post__content img:not(a img) {
