@@ -6,8 +6,6 @@ description: The team at Amazon Prime published an article where they explain th
 pubDate: '2023-05-16T03:59:12'
 image: /images/amazon-prime-architecture-didnt-change/header.jpg
 tags:
-  - Architecture and Design
-  - 4+1 architectural view model
   - architecture
   - microservices
 redirect_from:

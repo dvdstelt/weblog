@@ -6,8 +6,9 @@ description: Last year during Øredev I presented on how to deal with eventual c
 pubDate: '2020-06-27T11:30:46'
 image: /images/dealing-with-eventual-consistency/header.jpg
 tags:
-  - Architecture and Design
-  - ASP.NET
+  - architecture
+  - asp.net
+  - consistency
 redirect_from:
   - /dennis/2020/06/27/dealing-with-eventual-consistency
   - /blogs/dennis/archive/2020/06/27/dealing-with-eventual-consistency.aspx

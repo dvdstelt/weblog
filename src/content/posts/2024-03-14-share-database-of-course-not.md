@@ -6,9 +6,8 @@ description: What is so bad about shared databases with microservices?
 pubDate: '2024-03-14T09:00:00'
 image: /images/2024/share-database/header.jpg
 tags:
-  - 4+1 architectural view model
+  - architecture
   - microservices
-  - service boundaries
 ---
 Whenever I hear developers or architects talk, almost always everyone agrees that services shouldn't share their database. It's something that is so widely known that everyone tries to avoid it. In this article we'll discuss why *we think* it's a bad idea, but how looking at it from a different angle, we might come to different opinions than we currently have.
 

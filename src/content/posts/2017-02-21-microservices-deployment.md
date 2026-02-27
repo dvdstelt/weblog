@@ -6,7 +6,8 @@ description: In the past we used to have monoliths. These were bad. Big balls of
 pubDate: '2017-02-21T02:43:35'
 image: /images/microservices-deployment/header.png
 tags:
-  - Architecture and Design
+  - architecture
+  - microservices
 redirect_from:
   - /dennis/2017/02/21/microservices-deployment
   - /blogs/dennis/archive/2017/02/21/microservices-deployment.aspx

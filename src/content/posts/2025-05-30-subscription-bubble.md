@@ -6,7 +6,7 @@ description: A witty look at how we're drowning in subscriptions and why it migh
 pubDate: '2025-05-30T01:00:00'
 image: /images/2025/subscription-bubble/header.avif
 tags:
-  - story
+  - personal
 ---
 In the late 1990s, the world lost its collective mind over the internet. The dotcom bubble inflated fast, with venture capitalists throwing money at anything ending in ".com" — even companies without products, plans, or revenue. Pets.com had a sock puppet and a Super Bowl ad. Webvan promised groceries at your door before we had the bandwidth to load their homepage. It all came crashing down around 2000, burning trillions in market value.
 

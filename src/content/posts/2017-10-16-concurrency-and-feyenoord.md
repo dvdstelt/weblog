@@ -6,7 +6,8 @@ description: I just read a great article by Richard Wellum on Eventual Consisten
 pubDate: '2017-10-16T09:06:35'
 image: /images/concurrency-and-feyenoord/header.jpg
 tags:
-  - Architecture and Design
+  - architecture
+  - concurrency
 redirect_from:
   - /dennis/2017/10/16/concurrency-and-feyenoord
   - /blogs/dennis/archive/2017/10/16/concurrency-and-feyenoord.aspx

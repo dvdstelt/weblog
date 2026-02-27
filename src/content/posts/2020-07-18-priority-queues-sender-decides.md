@@ -6,9 +6,9 @@ description: See how to send messages with a higher priority using NServiceBus..
 pubDate: '2020-07-18T12:35:34'
 image: /images/priority-queues-sender-decides/header.jpg
 tags:
-  - Architecture and Design
-  - NServiceBus
-  - priority queues
+  - architecture
+  - nservicebus
+  - messaging
 redirect_from:
   - /dennis/2020/07/18/priority-queues-sender-decides
   - /blogs/dennis/archive/2020/07/18/priority-queues-sender-decides.aspx

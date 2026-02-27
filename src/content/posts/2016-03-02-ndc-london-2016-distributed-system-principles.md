@@ -6,10 +6,10 @@ description: In the eight fallacies, there’s one that says the topology never 
 pubDate: '2016-03-02T11:07:09'
 image: /images/ndc-london-2016-distributed-system-principles/header.png
 tags:
-  - Architecture and Design
-  - Azure
   - architecture
+  - azure
   - distributed systems
+  - presenting
 redirect_from:
   - /dennis/2016/03/02/ndc-london-2016-distributed-system-principles
   - /blogs/dennis/archive/2016/03/02/ndc-london-2016-distributed-system-principles.aspx

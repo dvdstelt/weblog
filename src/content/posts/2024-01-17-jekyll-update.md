@@ -6,8 +6,7 @@ description: A long awaited goal is finally here
 pubDate: '2024-01-17T09:00:00'
 image: /images/2024/jekyll/header.jpg
 tags:
-  - BloggingAbout.NET
-  - Jekyll
+  - blogging
 ---
 It's been exactly 10 years that BloggingAbout.NET switched to Wordpress from, if I recall correctly, Community Server. First as a community and multi-site installation, but later I removed every weblog but my own. But to be honest, I've never really been happy with Wordpress. One of the reasons was that I wanted to keep costs down. For a long time, I ran the site on a cheap virtual machine in Azure. It was dog slow. So I converted to Wordpress and MySql hosted in Azure. And that didn't help, it was still dog slow.
 

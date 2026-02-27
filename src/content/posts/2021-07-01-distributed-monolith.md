@@ -8,7 +8,7 @@ image: /images/distributed-monolith/header.jpeg
 tags:
   - architecture
   - microservices
-  - soa
+  - distributed systems
 redirect_from:
   - /dennis/2021/07/01/distributed-monolith
   - /blogs/dennis/archive/2021/07/01/distributed-monolith.aspx

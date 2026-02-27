@@ -6,7 +6,7 @@ description: In this article I explain how I converted my weblog from WordPress 
 pubDate: '2024-01-27T09:00:00'
 image: /images/2024/how-to-migrate-to-jekyll/header.jpg
 tags:
-  - jekyll
+  - blogging
 ---
 In this article I'm going to describe how I converted my WordPress blog to Jekyll static pages using custom C#. I initially tried to find some tool or WordPress plugin that did the trick. But due to various reasons [I wrote about before](/2024/01/17/jekyll-update/), I had to create my own tool.
 

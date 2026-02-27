@@ -6,10 +6,9 @@ description: Dealing with higher priority for certain messages often requires mo
 pubDate: '2020-07-16T11:33:17'
 image: /images/priority-queues-why-you-dont-need-them/header.jpg
 tags:
-  - Architecture and Design
-  - NServiceBus
-  - message priority
-  - priority queues
+  - architecture
+  - nservicebus
+  - messaging
 redirect_from:
   - /dennis/2020/07/16/priority-queues-why-you-dont-need-them
   - /blogs/dennis/archive/2020/07/16/priority-queues-why-you-dont-need-them.aspx

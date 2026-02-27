@@ -6,13 +6,10 @@ description: Today I gave two presentations at an SDN Event in Zeist. An enginee
 pubDate: '2016-09-02T09:37:36'
 image: /images/presentations-batchjobs-microservices/header.jpg
 tags:
-  - Architecture and Design
-  - NServiceBus
-  - SDN
-  - microservices
+  - architecture
   - nservicebus
-  - sagas
-  - soa
+  - microservices
+  - presenting
 redirect_from:
   - /dennis/2016/09/02/presentations-batchjobs-microservices
   - /blogs/dennis/archive/2016/09/02/presentations-batchjobs-microservices.aspx

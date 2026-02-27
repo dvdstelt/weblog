@@ -6,8 +6,7 @@ description: The first time I read about the concept of a servicebus and saw the
 pubDate: '2017-03-02T08:00:25'
 image: /images/what-is-a-servicebus/header.png
 tags:
-  - servicebus
-  - queue
+  - messaging
 redirect_from:
   - /dennis/2017/03/02/what-is-a-servicebus
   - /blogs/dennis/archive/2017/03/02/what-is-a-servicebus.aspx

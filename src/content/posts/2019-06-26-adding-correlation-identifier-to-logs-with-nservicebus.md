@@ -6,7 +6,7 @@ description: In a production environment, it can be hard to diagnose logfiles an
 pubDate: '2019-06-26T03:22:21'
 image: /images/adding-correlation-identifier-to-logs-with-nservicebus/header.jpg
 tags:
-  - NServiceBus
+  - nservicebus
 redirect_from:
   - /dennis/2019/06/26/adding-correlation-identifier-to-logs-with-nservicebus
   - /blogs/dennis/archive/2019/06/26/adding-correlation-identifier-to-logs-with-nservicebus.aspx

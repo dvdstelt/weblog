@@ -6,7 +6,6 @@ description: Delivering an immutable set of features, within a fixed deadline an
 pubDate: '2016-03-14T05:05:40'
 image: /images/no-deadlines/header.jpg
 tags:
-  - Miscellaneous
   - deadlines
   - estimates
 redirect_from:

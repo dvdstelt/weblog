@@ -6,10 +6,9 @@ description: Instead of deciding to which queue a priority message should be sen
 pubDate: '2020-07-23T11:07:31'
 image: /images/priority-queues-publishing/header.jpg
 tags:
-  - Architecture and Design
-  - NServiceBus
-  - message priority
-  - priority queues
+  - architecture
+  - nservicebus
+  - messaging
 redirect_from:
   - /dennis/2020/07/23/priority-queues-publishing
   - /blogs/dennis/archive/2020/07/23/priority-queues-publishing.aspx

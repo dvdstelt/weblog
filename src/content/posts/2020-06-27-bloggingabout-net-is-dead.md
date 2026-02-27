@@ -6,8 +6,7 @@ description: BloggingAbout.NET as a (domain)name exists since December 14, 2004.
 pubDate: '2020-06-27T12:52:14'
 image: /images/bloggingabout-net-is-dead/header.png
 tags:
-  - BloggingAbout.NET
-  - bloggingabout.net
+  - blogging
   - personal
 redirect_from:
   - /dennis/2020/06/27/bloggingabout-net-is-dead

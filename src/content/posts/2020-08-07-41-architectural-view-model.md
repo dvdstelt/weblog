@@ -6,7 +6,7 @@ description: Once upon a time, I came across a question about a system that was 
 pubDate: '2020-08-07T12:16:39'
 image: /images/41-architectural-view-model/header.jpg
 tags:
-  - 4+1 architectural view model
+  - architecture
   - microservices
 redirect_from:
   - /dennis/2020/08/07/41-architectural-view-model

@@ -8,7 +8,7 @@ image: /images/2025/two-generals/header.jpg
 tags:
   - distributed systems
   - star wars
-  - two generals
+  - concurrency
   - consistency
 ---
 Coordinating distributed systems can feel a lot like trying to plan an attack with two generals on opposite hills who can only communicate by messenger. In my latest blog post for Particular Software, I explore how this age-old paradox—known as the Two Generals’ Problem—highlights the fundamental challenges of reliable communication over unreliable networks.

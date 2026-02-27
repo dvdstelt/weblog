@@ -6,12 +6,10 @@ description: In the previous articles, I demonstrated why there is not really a 
 pubDate: '2020-08-26T11:11:43'
 image: /images/priority-queues-interceptors/header.png
 tags:
-  - 4+1 architectural view model
   - architecture
-  - mediatr
-  - message priority
   - microservices
-  - priority queues
+  - messaging
+  - mediatr
 redirect_from:
   - /dennis/2020/08/26/priority-queues-interceptors
   - /blogs/dennis/archive/2020/08/26/priority-queues-interceptors.aspx

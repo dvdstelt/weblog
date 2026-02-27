@@ -8,6 +8,10 @@ image: /images/nservicebus-sagas-presentation/header.jpg
 redirect_from:
   - /dennis/2016/03/17/nservicebus-sagas-presentation
   - /blogs/dennis/archive/2016/03/17/nservicebus-sagas-presentation.aspx
+tags:
+  - sagas
+  - nservicebus
+  - presenting
 ---
 In a presentation for [Blaak Selectie](http://blaakselectie.nl/) and [Betabit](http://betabit.nl/), I presented on NServiceBus Sagas yesterday. How they can help develop your (long running) business processes better and how to get rid of batch jobs as well.
 
