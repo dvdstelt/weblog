@@ -11,9 +11,8 @@ tags:
   - WCF
   - architecture
   - messaging
-  - msmq
-  - nservicebus
-  - wcf
+  - presenting
+  - events
 redirect_from:
   - /dennis/2014/07/28/lidnug-presentation-messaging
   - /blogs/dennis/archive/2014/07/28/lidnug-presentation-messaging.aspx

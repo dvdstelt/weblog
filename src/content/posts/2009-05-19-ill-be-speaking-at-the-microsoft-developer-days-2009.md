@@ -10,6 +10,8 @@ tags:
   - Personal
   - Team System
   - Visual Studio 2010
+  - presenting
+  - events
 redirect_from:
   - /dennis/2009/05/19/ill-be-speaking-at-the-microsoft-developer-days-2009
   - /blogs/dennis/archive/2009/05/19/ill-be-speaking-at-the-microsoft-developer-days-2009.aspx

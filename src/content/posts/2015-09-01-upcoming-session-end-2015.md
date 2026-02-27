@@ -10,6 +10,8 @@ tags:
   - NServiceBus
   - Personal
   - SDN
+  - events
+  - presenting
 redirect_from:
   - /dennis/2015/09/01/upcoming-session-end-2015
   - /blogs/dennis/archive/2015/09/01/upcoming-session-end-2015.aspx

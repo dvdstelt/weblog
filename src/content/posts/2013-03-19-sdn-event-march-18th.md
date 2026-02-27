@@ -8,6 +8,9 @@ image: /images/sdn-event-march-18th/header.png
 redirect_from:
   - /dennis/2013/03/19/sdn-event-march-18th
   - /blogs/dennis/archive/2013/03/19/sdn-event-march-18th.aspx
+tags:
+  - events
+  - presenting
 ---
 For March 18th I did two presentations
 ## Data replication or data duplication

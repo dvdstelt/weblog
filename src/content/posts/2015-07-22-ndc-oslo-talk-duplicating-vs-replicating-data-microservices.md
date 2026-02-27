@@ -8,6 +8,9 @@ image: /images/ndc-oslo-talk-duplicating-vs-replicating-data-microservices/heade
 redirect_from:
   - /dennis/2015/07/22/ndc-oslo-talk-duplicating-vs-replicating-data-microservices
   - /blogs/dennis/archive/2015/07/22/ndc-oslo-talk-duplicating-vs-replicating-data-microservices.aspx
+tags:
+  - events
+  - presenting
 ---
 Just my luck, my session at [NDC Oslo 2015](http://www.ndcoslo.com/) wasn’t recorded properly. During the session the microphone went dead and [the replacement was apparently never recorded](https://twitter.com/hakanson/status/611090178665545728).
 

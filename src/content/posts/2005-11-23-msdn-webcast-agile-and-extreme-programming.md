@@ -6,6 +6,7 @@ description: "The people behind Enterprise Library will be doing a webcast\_abou
 pubDate: '2005-11-23T06:19:00'
 tags:
   - Agile
+  - events
 redirect_from:
   - /dennis/2005/11/23/msdn-webcast-agile-and-extreme-programming
   - /blogs/dennis/archive/2005/11/23/msdn-webcast-agile-and-extreme-programming.aspx

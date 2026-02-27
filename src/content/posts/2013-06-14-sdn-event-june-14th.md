@@ -10,6 +10,8 @@ tags:
   - Development
   - Enterprise Library
   - SDN
+  - events
+  - presenting
 redirect_from:
   - /dennis/2013/06/14/sdn-event-june-14th
   - /blogs/dennis/archive/2013/06/14/sdn-event-june-14th.aspx
