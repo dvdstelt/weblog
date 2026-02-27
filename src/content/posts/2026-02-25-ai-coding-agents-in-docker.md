@@ -71,6 +71,17 @@ If you're new here, start at the top and work your way down. Each post builds on
   </div>
 </div>
 
+<div class="series-entry">
+  <div class="series-entry__image">
+    <a href="/2026/02/27/autonomous-mode-and-a-git-push-i-almost-missed/"><img src="/images/2026/autonomous-mode-and-a-git-push-i-almost-missed.png" alt="Autonomous mode and a git push I almost missed" /></a>
+  </div>
+  <div class="series-entry__text">
+    <h3>6. Autonomous mode and a git push I almost missed</h3>
+    <p>Two post-series fixes: letting Claude run without interruptions inside Docker using <code>--risk</code> and <code>IS_SANDBOX=1</code>, and a <code>git-wtadd</code> bug that was silently pushing commits to <code>main</code>.</p>
+    <a class="series-read-link" href="/2026/02/27/autonomous-mode-and-a-git-push-i-almost-missed/">Read post &rarr;</a>
+  </div>
+</div>
+
 ## The repository
 
 All scripts, the Dockerfile, and the documentation live in a single repository: [dvdstelt/ai-agents](https://github.com/dvdstelt/ai-agents). Each post references specific files and commits from it, so you can follow along or just grab what you need.
