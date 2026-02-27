@@ -103,7 +103,7 @@ The script uses `HOST_WORKSPACE` and `CONTAINER_WORKDIR` (those env vars passed 
 The script is baked into the Docker image via the Dockerfile, so it's always available as `git-wtadd`.
 
 > [!WARNING]
-> A bug was discovered in `git-wtadd` after this post was published. When creating a worktree from a branch that tracks `origin/main`, git inherits the tracking configuration, which causes `git push` to silently target `main` instead of creating a new remote branch. The bug is fixed in the latest version of the repository. See [part 6](/2026/02/27/autonomous-mode-and-a-git-push-i-almost-missed/) for the full story and how to check your existing worktrees.
+> A bug was discovered in `git-wtadd` after this post was published. When creating a worktree from a branch that tracks `origin/main`, git inherits the tracking configuration, which can cause `git push`—in some Git configurations or tooling (e.g., certain GUIs)—to target `main` instead of creating a new remote branch. The bug is fixed in the latest version of the repository. See [part 6](/2026/02/27/autonomous-mode-and-a-git-push-i-almost-missed/) for the full story and how to check your existing worktrees.
 
 ## Parallel agents, zero stashing
 
