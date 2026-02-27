@@ -5,7 +5,7 @@ title: Developer Days
 description: I’ve had a really good time at the Dutch Developer Days 2007, meeting a lot of people...
 pubDate: '2007-06-18T01:08:23'
 tags:
-  - Personal
+  - personal
   - DevDays
   - DevDays2007
 redirect_from:

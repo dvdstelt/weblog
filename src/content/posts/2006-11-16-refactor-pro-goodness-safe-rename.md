@@ -5,7 +5,7 @@ title: Refactor! Pro goodness  Safe rename
 description: Renames a nonprivate method or property in the class in a manner that does not break...
 pubDate: '2006-11-16T04:54:36'
 tags:
-  - Agile
+  - agile
   - Development
   - Refactoring
 redirect_from:

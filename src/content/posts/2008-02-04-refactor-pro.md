@@ -5,7 +5,7 @@ title: Refactor! Pro
 description: I just finished the two day Professional Agile Programming course in which I introduc...
 pubDate: '2008-02-04T08:18:28'
 tags:
-  - Agile
+  - agile
   - Utilities
 redirect_from:
   - /dennis/2008/02/04/refactor-pro

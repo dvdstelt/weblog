@@ -6,9 +6,9 @@ description: In my last post I explained the problem of coupling. One of the men
 pubDate: '2013-07-30T10:29:48'
 image: /images/partitioning-data-through-events/header.jpg
 tags:
-  - Architecture and Design
-  - CQRS
-  - NServiceBus
+  - architecture
+  - cqrs
+  - nservicebus
 redirect_from:
   - /dennis/2013/07/30/partitioning-data-through-events
   - /blogs/dennis/archive/2013/07/30/partitioning-data-through-events.aspx

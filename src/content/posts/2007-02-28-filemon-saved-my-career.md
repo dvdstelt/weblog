@@ -5,7 +5,7 @@ title: FileMon saved my career!
 description: Okay, maybe I should be more careful with titles, but it is a catchy one! 😉 On my fr...
 pubDate: '2007-02-28T12:43:13'
 tags:
-  - Personal
+  - personal
   - Utilities
 redirect_from:
   - /dennis/2007/02/28/filemon-saved-my-career

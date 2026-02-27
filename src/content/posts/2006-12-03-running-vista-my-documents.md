@@ -5,7 +5,7 @@ title: Running Vista; My Documents
 description: Ranting coming up, you might want to skip 😉 This is not actually a Vista problem, bu...
 pubDate: '2006-12-03T10:42:56'
 tags:
-  - Personal
+  - personal
   - Vista
 redirect_from:
   - /dennis/2006/12/03/running-vista-my-documents

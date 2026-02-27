@@ -5,7 +5,7 @@ title: Nieuwe bloggers
 description: Weer twee bloggers erbij. Marco Stolk en Mark Mooy.Ben vooral benieuwd naar wat die l...
 pubDate: '2004-01-31T02:54:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/01/31/nieuwe-bloggers
   - /blogs/dennis/archive/2004/01/31/nieuwe-bloggers.aspx

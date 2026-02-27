@@ -5,8 +5,8 @@ title: CQRS Journey taking community contributions
 description: Microsoft Patterns & Practices team has started a journey to CQRS with the idea to cr...
 pubDate: '2012-04-02T07:36:25'
 tags:
-  - Architecture and Design
-  - CQRS
+  - architecture
+  - cqrs
 redirect_from:
   - /dennis/2012/04/02/cqrs-journey-taking-community-contributions
   - /blogs/dennis/archive/2012/04/02/cqrs-journey-taking-community-contributions.aspx

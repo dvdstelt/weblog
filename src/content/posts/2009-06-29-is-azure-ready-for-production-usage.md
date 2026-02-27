@@ -5,7 +5,7 @@ title: Is Azure ready for production usage?
 description: Last week at the SDN Event in Houten, I presented a session on Windows Azure and how ...
 pubDate: '2009-06-29T07:59:25'
 tags:
-  - Azure
+  - azure
   - SDN
 redirect_from:
   - /dennis/2009/06/29/is-azure-ready-for-production-usage

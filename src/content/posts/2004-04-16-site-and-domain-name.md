@@ -5,8 +5,8 @@ title: Site and domain name
 description: Now we’ve got the weblogs and my website is about to be completed and to be released,...
 pubDate: '2004-04-16T06:07:00'
 tags:
-  - BloggingAbout.NET
-  - Personal
+  - blogging
+  - personal
 redirect_from:
   - /dennis/2004/04/16/site-and-domain-name
   - /blogs/dennis/archive/2004/04/16/site-and-domain-name.aspx

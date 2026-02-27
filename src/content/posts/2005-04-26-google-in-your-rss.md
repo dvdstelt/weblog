@@ -5,7 +5,7 @@ title: Google in your RSS
 description: We’re still fighting the comment spam here, but over at LonghornBlogs they’ve impleme...
 pubDate: '2005-04-26T11:36:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/04/26/google-in-your-rss
   - /blogs/dennis/archive/2005/04/26/google-in-your-rss.aspx

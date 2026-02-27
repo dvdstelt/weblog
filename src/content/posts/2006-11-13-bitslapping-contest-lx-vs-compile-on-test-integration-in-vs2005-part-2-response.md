@@ -5,10 +5,10 @@ title: Bitslapping contest  LX vs Compile on Test integration in VS2005, part 2 
 description: Well, it seems Alex took things seriously and is slapping his bitstick around. Think...
 pubDate: '2006-11-13T04:49:59'
 tags:
-  - Agile
+  - agile
   - Development
   - Miscellaneous
-  - Personal
+  - personal
   - Team System
   - Utilities
   - NUNit

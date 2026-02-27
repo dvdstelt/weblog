@@ -5,7 +5,7 @@ title: Enterprise Library release
 description: "”Barring any major catastrophes, it is official.\_ On January 28th Enterprise Library ..."
 pubDate: '2005-01-20T06:09:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2005/01/20/enterprise-library-release

@@ -5,8 +5,8 @@ title: SDC 2009 slidedecks and demos
 description: For me this was my first SDC and I really had a lot of fun. Great discussions with sp...
 pubDate: '2009-10-20T09:26:53'
 tags:
-  - Agile
-  - Architecture and Design
+  - agile
+  - architecture
   - SDN
 redirect_from:
   - /dennis/2009/10/20/sdc-2009-slidedecks-and-demos

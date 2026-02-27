@@ -5,7 +5,7 @@ title: Community Server & Redirect of old urls
 description: We’ve been running on .Text for quite a while, but continue to find bugs in it. Espec...
 pubDate: '2005-06-28T03:23:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Development
 redirect_from:
   - /dennis/2005/06/28/community-server-redirect-of-old-urls

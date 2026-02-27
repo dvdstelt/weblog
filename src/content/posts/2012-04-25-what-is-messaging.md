@@ -6,8 +6,8 @@ description: I’ve written in SDN Magazine about messaging and how it relates t
 pubDate: '2012-04-25T06:45:40'
 image: /images/what-is-messaging/header.png
 tags:
-  - Architecture and Design
-  - NServiceBus
+  - architecture
+  - nservicebus
   - SDN
   - WCF
   - WCF4

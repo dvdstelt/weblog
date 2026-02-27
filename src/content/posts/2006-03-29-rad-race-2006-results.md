@@ -5,7 +5,7 @@ title: Rad Race 2006  Results
 description: After a month we finally got to hear the results and at what place we finished in the...
 pubDate: '2006-03-29T08:22:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/03/29/rad-race-2006-results
   - /blogs/dennis/archive/2006/03/29/rad-race-2006-results.aspx

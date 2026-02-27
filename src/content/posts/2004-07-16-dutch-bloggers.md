@@ -5,7 +5,7 @@ title: Dutch Bloggers
 description: Via a trackback I discovered some more dutch bloggers. They stick to writing in Dutch...
 pubDate: '2004-07-16T09:22:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/07/16/dutch-bloggers
   - /blogs/dennis/archive/2004/07/16/dutch-bloggers.aspx

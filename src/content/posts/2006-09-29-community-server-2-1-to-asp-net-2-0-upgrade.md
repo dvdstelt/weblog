@@ -5,7 +5,7 @@ title: Community Server 2.1 to ASP.NET 2.0 upgrade
 description: Until a few hours ago, BloggingAbout.NET ran on ASP.NET 1.1. For multiple reasons I w...
 pubDate: '2006-09-29T02:36:36'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/09/29/community-server-2-1-to-asp-net-2-0-upgrade

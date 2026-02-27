@@ -5,7 +5,7 @@ title: Refactoring For Your Code Base
 description: A few days ago I’ve watched a webcast by Brian Button on refactoring. For the most pa...
 pubDate: '2005-06-03T09:06:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2005/06/03/refactoring-for-your-code-base

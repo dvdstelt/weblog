@@ -5,8 +5,7 @@ title: Spam control
 description: We’re getting some serious comment spam at the moment. Just today I’ve already receiv...
 pubDate: '2006-08-22T06:02:00'
 tags:
-  - Blogging
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/08/22/spam-control

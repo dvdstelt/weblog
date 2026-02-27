@@ -5,7 +5,7 @@ title: Best developer tools
 description: Because of the nature of my work, coaching people onsite and training people in clas...
 pubDate: '2009-03-13T03:05:34'
 tags:
-  - Agile
+  - agile
   - TypeMock
   - Utilities
 redirect_from:

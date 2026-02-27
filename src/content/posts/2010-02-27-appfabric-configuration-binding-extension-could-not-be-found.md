@@ -6,7 +6,7 @@ description: I have recently installed the Windows Azure AppFabric SDK because I
 pubDate: '2010-02-27T08:34:00'
 tags:
   - .NET Framework 4.0
-  - Azure
+  - azure
   - WCF
 redirect_from:
   - /dennis/2010/02/27/appfabric-configuration-binding-extension-could-not-be-found

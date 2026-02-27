@@ -6,7 +6,6 @@ description: In this tutorial I’ll try to explain how publish subscribe (pubsu
 pubDate: '2015-10-28T03:26:46'
 image: /images/nservicebus-publish-subscribe-tutorial/header.jpg
 tags:
-  - NServiceBus
   - nservicebus
   - publish subscribe
 redirect_from:

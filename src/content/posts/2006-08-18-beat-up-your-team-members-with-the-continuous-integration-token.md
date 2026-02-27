@@ -5,7 +5,7 @@ title: Beat up your team members with the Continuous Integration Token
 description: "While writing his upcoming book\_The Art of Agile Development, James Shore is posting ..."
 pubDate: '2006-08-18T12:29:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2006/08/18/beat-up-your-team-members-with-the-continuous-integration-token

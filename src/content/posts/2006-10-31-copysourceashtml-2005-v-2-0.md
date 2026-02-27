@@ -5,7 +5,7 @@ title: CopySourceAsHtml 2005 v. 2.0
 description: In the past, I used Colin Coller‘s CopySourceAsHtml in Visual Studio.NET 2003. Once V...
 pubDate: '2006-10-31T02:10:50'
 tags:
-  - Blogging
+  - blogging
 redirect_from:
   - /dennis/2006/10/31/copysourceashtml-2005-v-2-0
   - /blogs/dennis/archive/2006/10/31/copysourceashtml-2005-v-2-0.aspx

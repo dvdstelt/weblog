@@ -5,7 +5,7 @@ title: Visual Studio 2005 SP1 available!
 description: And suddenly it’s there… Visual Studio 2005 Team Suite SP1 (includes SP1 updates for ...
 pubDate: '2006-12-14T11:29:32'
 tags:
-  - ASP.NET
+  - asp.net
   - Development
   - Team System
   - Vista

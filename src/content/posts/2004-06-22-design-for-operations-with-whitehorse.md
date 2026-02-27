@@ -5,7 +5,7 @@ title: Design for Operations with Whitehorse
 description: There’s a nice article from the MSDN Mag put online on MSDN. It’s about Whitehorse, w...
 pubDate: '2004-06-22T07:04:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2004/06/22/design-for-operations-with-whitehorse
   - /blogs/dennis/archive/2004/06/22/design-for-operations-with-whitehorse.aspx

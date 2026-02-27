@@ -5,7 +5,7 @@ title: Adding Search to my Blog
 description: UPDATE!People (on other websites) have implemented this search feature, without addin...
 pubDate: '2005-01-12T07:24:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/01/12/adding-search-to-my-blog
   - /blogs/dennis/archive/2005/01/12/adding-search-to-my-blog.aspx

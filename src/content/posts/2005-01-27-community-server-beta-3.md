@@ -5,7 +5,7 @@ title: Community Server Beta 3
 description: So I just installed Community Server, Beta 3. I already have some minor problems, alo...
 pubDate: '2005-01-27T08:46:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/01/27/community-server-beta-3
   - /blogs/dennis/archive/2005/01/27/community-server-beta-3.aspx

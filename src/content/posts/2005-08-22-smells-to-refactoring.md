@@ -5,7 +5,7 @@ title: Smells to Refactoring
 description: Today I was browsing a site about Java. Don’t get me wrong, I’m not switching, but I ...
 pubDate: '2005-08-22T10:00:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2005/08/22/smells-to-refactoring

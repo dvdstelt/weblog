@@ -5,7 +5,7 @@ title: Google Analytics
 description: Google has been at it again. As far as I know, they released it kind of silently, but...
 pubDate: '2005-11-16T12:35:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/11/16/google-analytics
   - /blogs/dennis/archive/2005/11/16/google-analytics.aspx

@@ -5,7 +5,7 @@ title: Refrigerator Code
 description: During MIND, a colleague asked the audience if they were developing sexy shit. Bob Ko...
 pubDate: '2005-10-23T10:56:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2005/10/23/refrigerator-code

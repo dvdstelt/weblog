@@ -5,7 +5,7 @@ title: Painting a fence the Agile way
 description: David Anderson nearly choked on his sandwich recently, because his wife said  “You k...
 pubDate: '2005-07-08T05:43:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/07/08/painting-a-fence-the-agile-way
   - /blogs/dennis/archive/2005/07/08/painting-a-fence-the-agile-way.aspx

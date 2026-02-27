@@ -5,7 +5,7 @@ title: Revenge of the Sith
 description: My 200th post. And dedicated to Star Wars. I’ve seen Revenge of the Sith twice now an...
 pubDate: '2005-05-26T06:57:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/05/26/revenge-of-the-sith
   - /blogs/dennis/archive/2005/05/26/revenge-of-the-sith.aspx

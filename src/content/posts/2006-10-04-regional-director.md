@@ -5,7 +5,7 @@ title: Regional Director
 description: Anko, my employer and colleague, became official Regional Directory today. The idea i...
 pubDate: '2006-10-04T10:00:47'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/10/04/regional-director
   - /blogs/dennis/archive/2006/10/04/regional-director.aspx

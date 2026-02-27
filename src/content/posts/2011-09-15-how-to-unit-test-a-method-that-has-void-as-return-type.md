@@ -5,7 +5,7 @@ title: How to unit test a method that has void as return type
 description: How do I test a method that returns void? For example a method like this. public void...
 pubDate: '2011-09-15T06:01:38'
 tags:
-  - Agile
+  - agile
   - Development
   - Testing
 redirect_from:

@@ -5,7 +5,7 @@ title: Statistics
 description: I was just looking at the statistics, mostly because I think there’s a problem with C...
 pubDate: '2005-08-26T01:03:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/08/26/statistics
   - /blogs/dennis/archive/2005/08/26/statistics.aspx

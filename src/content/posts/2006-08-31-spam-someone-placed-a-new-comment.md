@@ -5,7 +5,7 @@ title: Someone placed a new comment!
 description: At this community with some beautiful members who like to blog here, we had a serious...
 pubDate: '2006-08-31T02:22:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/08/31/spam-someone-placed-a-new-comment

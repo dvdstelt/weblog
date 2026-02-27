@@ -5,7 +5,7 @@ title: Conversion to Community Server
 description: As you have probably noticed, Blogging About .NET has been ‘upgraded’ to Community Se...
 pubDate: '2005-07-14T02:16:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/07/14/conversion-to-community-server
   - /blogs/dennis/archive/2005/07/14/conversion-to-community-server.aspx

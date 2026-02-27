@@ -5,7 +5,7 @@ title: Calling all Dutch .NET developer bloggers
 description: Paul Gielens heeft op zijn weblog een oproep gedaan om alle Nederlandse webloggers op...
 pubDate: '2004-02-06T09:21:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/02/06/calling-all-dutch-net-developer-bloggers
   - /blogs/dennis/archive/2004/02/06/calling-all-dutch-net-developer-bloggers.aspx

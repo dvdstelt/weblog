@@ -5,7 +5,7 @@ title: Async invocation pattern
 description: "I\_talked to\_my colleague Alex Thissen recently about the changes in asynchronous invo..."
 pubDate: '2006-12-13T06:16:22'
 tags:
-  - ASP.NET
+  - asp.net
   - Development
 redirect_from:
   - /dennis/2006/12/13/async-invocation-pattern

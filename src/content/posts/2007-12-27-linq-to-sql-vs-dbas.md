@@ -6,7 +6,7 @@ description: Why is it that in Oracle world, it’s much more custom to have a d
 pubDate: '2007-12-27T11:02:11'
 tags:
   - .NET Framework 3.5
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2007/12/27/linq-to-sql-vs-dbas
   - /blogs/dennis/archive/2007/12/27/linq-to-sql-vs-dbas.aspx

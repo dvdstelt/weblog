@@ -6,8 +6,8 @@ description: We’ve had a lot of success applying the principles and practices 
 pubDate: '2012-09-19T07:25:40'
 image: /images/high-availability/header.jpg
 tags:
-  - Architecture and Design
-  - NServiceBus
+  - architecture
+  - nservicebus
 redirect_from:
   - /dennis/2012/09/19/high-availability
   - /blogs/dennis/archive/2012/09/19/high-availability.aspx

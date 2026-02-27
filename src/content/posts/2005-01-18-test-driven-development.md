@@ -5,7 +5,7 @@ title: Test Driven Development
 description: I’m becoming pretty interested in DDD (Domain Driven Design) and TDD (Test Driven Dev...
 pubDate: '2005-01-18T07:57:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2005/01/18/test-driven-development
   - /blogs/dennis/archive/2005/01/18/test-driven-development.aspx

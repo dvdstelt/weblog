@@ -5,7 +5,7 @@ title: Cheese & Contracts
 description: If you’re interested in SOA (Service Orientated Architectures), SOD (Service Orientat...
 pubDate: '2005-07-04T09:41:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2005/07/04/cheese-contracts
   - /blogs/dennis/archive/2005/07/04/cheese-contracts.aspx

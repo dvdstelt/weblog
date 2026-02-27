@@ -5,7 +5,7 @@ title: VS 2005 TestDriven Development?
 description: Unfortunately Visual Studio 2005 RTM isn’t online, as Jeffrey Palermo ‘promised‘. Str...
 pubDate: '2005-10-17T10:47:00'
 tags:
-  - Agile
+  - agile
   - Team System
 redirect_from:
   - /dennis/2005/10/17/vs-2005-test-driven-development

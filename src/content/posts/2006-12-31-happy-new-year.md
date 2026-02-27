@@ -5,8 +5,8 @@ title: Happy new year
 description: Happy new year everyone!!! Of course we wish you all the best for this new year! At t...
 pubDate: '2006-12-31T03:00:00'
 tags:
-  - BloggingAbout.NET
-  - Personal
+  - blogging
+  - personal
 redirect_from:
   - /dennis/2006/12/31/happy-new-year
   - /blogs/dennis/archive/2006/12/31/happy-new-year.aspx

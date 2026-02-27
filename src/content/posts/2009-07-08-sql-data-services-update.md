@@ -5,7 +5,7 @@ title: SQL Data Services update
 description: The Windows Azure and SQL Data Services team have been busy. Workflow was removed fro...
 pubDate: '2009-07-08T11:55:07'
 tags:
-  - Azure
+  - azure
   - SQL Server 2008
 redirect_from:
   - /dennis/2009/07/08/sql-data-services-update

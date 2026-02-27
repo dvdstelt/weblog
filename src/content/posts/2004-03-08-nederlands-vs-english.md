@@ -5,7 +5,7 @@ title: Nederlands vs. English
 description: Carlo, our new blogger, is already complaining about us being blogging in Dutch. And ...
 pubDate: '2004-03-08T11:09:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/03/08/nederlands-vs-english
   - /blogs/dennis/archive/2004/03/08/nederlands-vs-english.aspx

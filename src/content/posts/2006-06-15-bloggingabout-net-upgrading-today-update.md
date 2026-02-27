@@ -5,7 +5,7 @@ title: BloggingAbout.NET Upgrading today [Update]
 description: I’ll be upgrading the website in an hour, because I really feel like it. Hope everyth...
 pubDate: '2006-06-15T09:09:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2006/06/15/bloggingabout-net-upgrading-today-update
   - /blogs/dennis/archive/2006/06/15/bloggingabout-net-upgrading-today-update.aspx

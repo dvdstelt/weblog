@@ -5,7 +5,7 @@ title: Language Oriented Programming
 description: I’ve been reading this article on Language Oriented Programming the next programming...
 pubDate: '2004-11-24T09:17:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2004/11/24/language-oriented-programming
   - /blogs/dennis/archive/2004/11/24/language-oriented-programming.aspx

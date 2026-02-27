@@ -6,7 +6,7 @@ description: Ik heb het er gisteren eigenlijk niet over gehad, maar wilde het t√
 pubDate: '2003-10-29T10:29:00'
 tags:
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2003/10/29/geslaagd-voor-mcad-70-320
   - /blogs/dennis/archive/2003/10/29/geslaagd-voor-mcad-70-320.aspx

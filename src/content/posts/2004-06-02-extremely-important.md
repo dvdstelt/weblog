@@ -6,7 +6,7 @@ description: Although so very offtopic, it’s extremely important news. At leas
 pubDate: '2004-06-02T11:51:00'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/06/02/extremely-important
   - /blogs/dennis/archive/2004/06/02/extremely-important.aspx

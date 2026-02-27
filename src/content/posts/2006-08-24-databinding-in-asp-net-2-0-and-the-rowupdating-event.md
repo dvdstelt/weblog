@@ -5,7 +5,7 @@ title: DataBinding in ASP.NET 2.0 and the RowUpdating event
 description: For a while now I’m trying to figure out why my method, triggered by the GridView.Row...
 pubDate: '2006-08-24T05:43:00'
 tags:
-  - ASP.NET
+  - asp.net
   - Development
 redirect_from:
   - /dennis/2006/08/24/databinding-in-asp-net-2-0-and-the-rowupdating-event

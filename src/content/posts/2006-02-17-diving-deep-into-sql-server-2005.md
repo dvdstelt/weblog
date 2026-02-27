@@ -5,7 +5,7 @@ title: Diving deep into SQLServer 2005
 description: My colleague Anko Duizer has created a rather extensive list of do’s and dont’s about...
 pubDate: '2006-02-17T03:24:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2006/02/17/diving-deep-into-sql-server-2005

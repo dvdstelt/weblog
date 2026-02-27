@@ -5,7 +5,7 @@ title: What is a Smart Client?
 description: A while ago I heard a definition on Smart Clients that was said to be from Microsoft....
 pubDate: '2006-02-15T11:19:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2006/02/15/what-is-a-smart-client
   - /blogs/dennis/archive/2006/02/15/what-is-a-smart-client.aspx

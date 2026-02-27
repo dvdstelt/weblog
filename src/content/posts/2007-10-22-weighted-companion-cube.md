@@ -6,7 +6,7 @@ description: If you’ve finished Portal by now, you know what I’m talking abo
 pubDate: '2007-10-22T02:36:33'
 tags:
   - Games
-  - Personal
+  - personal
   - Half Life 2
   - Portal
   - Companion Cube

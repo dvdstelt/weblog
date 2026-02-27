@@ -5,7 +5,7 @@ title: Ga maar wat knoppen photoshoppen
 description: Een heel vaag gevoel krijg ik ineens.Ik kom via Chris Anderson een link tegen waarin ...
 pubDate: '2004-02-04T08:19:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/02/04/ga-maar-wat-knoppen-photoshoppen
   - /blogs/dennis/archive/2004/02/04/ga-maar-wat-knoppen-photoshoppen.aspx

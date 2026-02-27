@@ -5,7 +5,7 @@ title: Worst day of my life
 description: Today was most definitely the worst day of my life. I’ve decided to not use my weblog...
 pubDate: '2010-07-26T03:26:49'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2010/07/26/worst-day-of-my-life
   - /blogs/dennis/archive/2010/07/26/worst-day-of-my-life.aspx

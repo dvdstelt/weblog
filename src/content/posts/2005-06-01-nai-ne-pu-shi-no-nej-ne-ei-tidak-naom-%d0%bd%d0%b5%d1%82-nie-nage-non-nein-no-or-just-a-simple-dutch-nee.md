@@ -5,7 +5,7 @@ title: naï, né, pù shi, nò, nej, ne, ei, tidak, nãom, Нет, nie, nage, no
 description: After post 200 was about RotS, post 201 is about voting NO! today. I cannot believe w...
 pubDate: '2005-06-01T06:38:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/06/01/nai-ne-pu-shi-no-nej-ne-ei-tidak-naom-%d0%bd%d0%b5%d1%82-nie-nage-non-nein-no-or-just-a-simple-dutch-nee
   - /blogs/dennis/archive/2005/06/01/nai-ne-pu-shi-no-nej-ne-ei-tidak-naom-%d0%bd%d0%b5%d1%82-nie-nage-non-nein-no-or-just-a-simple-dutch-nee.aspx

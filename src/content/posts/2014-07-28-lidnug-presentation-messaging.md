@@ -6,10 +6,9 @@ description: The LinkedIn DotNet User Group (LIDNUG) organisation requested me t
 pubDate: '2014-07-28T11:28:25'
 image: /images/lidnug-presentation-messaging/header.jpg
 tags:
-  - Architecture and Design
-  - NServiceBus
-  - WCF
   - architecture
+  - nservicebus
+  - WCF
   - messaging
   - presenting
   - events

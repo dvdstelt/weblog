@@ -6,7 +6,7 @@ description: For SDN Event of June 14th I did two presentations Transactions Why
 pubDate: '2013-06-14T08:46:30'
 image: /images/sdn-event-june-14th/header.png
 tags:
-  - Architecture and Design
+  - architecture
   - Development
   - Enterprise Library
   - SDN

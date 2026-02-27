@@ -5,7 +5,7 @@ title: Provider Model Madness
 description: Ofcourse we have all read about the Provider Model (part 1, part 2), which Microsoft ...
 pubDate: '2004-10-20T12:59:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2004/10/20/provider-model-madness

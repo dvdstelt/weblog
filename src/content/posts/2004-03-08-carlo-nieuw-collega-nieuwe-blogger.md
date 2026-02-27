@@ -5,7 +5,7 @@ title: Carlo, nieuw collega, nieuwe blogger
 description: Carlo Poli is een nieuw collega welke sinds 2 maart 1 maart bij LogicaCMG in dienst i...
 pubDate: '2004-03-08T08:59:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/03/08/carlo-nieuw-collega-nieuwe-blogger
   - /blogs/dennis/archive/2004/03/08/carlo-nieuw-collega-nieuwe-blogger.aspx

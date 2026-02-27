@@ -5,7 +5,7 @@ title: Community Server newMediaObject
 description: I wanted to see if the newMediaObject module, offered by the Community Server team, h...
 pubDate: '2006-11-10T12:33:08'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
   - Windows Live Writer
   - newMediaObject

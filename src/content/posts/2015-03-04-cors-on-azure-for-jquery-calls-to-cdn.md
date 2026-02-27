@@ -6,8 +6,6 @@ description: For a website I was verifying of images existed on our Windows Azur
 pubDate: '2015-03-04T09:17:20'
 image: /images/cors-on-azure-for-jquery-calls-to-cdn/header.png
 tags:
-  - ASP.NET
-  - Azure
   - asp.net
   - azure
   - security

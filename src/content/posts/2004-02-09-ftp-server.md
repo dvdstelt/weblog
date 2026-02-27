@@ -5,7 +5,7 @@ title: FTP Server
 description: Ik wil een FTP server opzetten zodat de bloggers ook files kunnen uploaden, zodra ze ...
 pubDate: '2004-02-09T01:15:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/02/09/ftp-server
   - /blogs/dennis/archive/2004/02/09/ftp-server.aspx

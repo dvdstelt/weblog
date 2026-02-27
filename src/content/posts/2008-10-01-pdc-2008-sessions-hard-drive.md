@@ -6,7 +6,7 @@ description: I just got a question from Dries which sessions I intend to visit d
 pubDate: '2008-10-01T08:21:07'
 tags:
   - PDC08
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2008/10/01/pdc-2008-sessions-hard-drive
   - /blogs/dennis/archive/2008/10/01/pdc-2008-sessions-hard-drive.aspx

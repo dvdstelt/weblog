@@ -6,7 +6,7 @@ description: You might know that I’m quite the Microsoft addict. While a lot o
 pubDate: '2008-06-06T09:01:49'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2008/06/06/office-live-workspace
   - /blogs/dennis/archive/2008/06/06/office-live-workspace.aspx

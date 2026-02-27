@@ -7,7 +7,7 @@ pubDate: '2007-10-04T07:08:16'
 tags:
   - .NET Compact Framework 3.5
   - .NET Framework 3.5
-  - Personal
+  - personal
   - Silverlight
   - Visual Studio 2008
   - WCF

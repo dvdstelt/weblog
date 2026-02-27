@@ -6,7 +6,7 @@ description: I love (!!!!) the new Powerpoint 2007 presenter view functionality!
 pubDate: '2006-12-14T11:17:25'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
   - Office 2007
   - Powerpoint 2007
 redirect_from:

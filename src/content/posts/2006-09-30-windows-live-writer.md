@@ -5,10 +5,9 @@ title: Windows Live Writer
 description: Since last night’s upgrade, BloggingAbout.NET supports Windows Live Writer 100%. And ...
 pubDate: '2006-09-30T07:05:00'
 tags:
-  - Blogging
-  - BloggingAbout.NET
+  - blogging
   - Community Server
-  - Personal
+  - personal
   - Windows Live Writer
 redirect_from:
   - /dennis/2006/09/30/windows-live-writer

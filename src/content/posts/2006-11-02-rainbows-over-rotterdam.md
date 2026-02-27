@@ -5,7 +5,7 @@ title: Rainbows over Rotterdam
 description: Erwyn is regularly blogging about his Amsterdam apartment and skyline. Although I don...
 pubDate: '2006-11-02T11:38:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/11/02/rainbows-over-rotterdam
   - /blogs/dennis/archive/2006/11/02/rainbows-over-rotterdam.aspx

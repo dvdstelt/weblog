@@ -6,7 +6,7 @@ description: In the not so distant past I was bold enough to call Jan and Patric
 pubDate: '2006-08-28T05:21:00'
 tags:
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/08/28/debugging-part-deux
   - /blogs/dennis/archive/2006/08/28/debugging-part-deux.aspx

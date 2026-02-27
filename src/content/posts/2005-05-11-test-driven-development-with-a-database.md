@@ -5,7 +5,7 @@ title: Test Driven Development with a Database
 description: A lot of times you hear or read about not touching your database when (technically) u...
 pubDate: '2005-05-11T07:33:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2005/05/11/test-driven-development-with-a-database

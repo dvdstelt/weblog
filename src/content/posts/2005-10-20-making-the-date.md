@@ -5,7 +5,7 @@ title: Making the date
 description: It was only recently that I blogged about the Five Pound Bag. Now Ron Jeffreys explai...
 pubDate: '2005-10-20T02:19:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/10/20/making-the-date
   - /blogs/dennis/archive/2005/10/20/making-the-date.aspx

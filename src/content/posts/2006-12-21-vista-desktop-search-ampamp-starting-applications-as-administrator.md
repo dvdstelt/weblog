@@ -5,8 +5,8 @@ title: Vista desktop search amp; starting applications as administrator
 description: Via Tim Sneath I’ve learned that you can start an elevated command prompt from the St...
 pubDate: '2006-12-21T01:28:15'
 tags:
-  - ASP.NET
-  - Personal
+  - asp.net
+  - personal
   - Vista
   - Windows Vista
 redirect_from:

@@ -5,7 +5,7 @@ title: Welkom Patrick & Joris
 description: Kort na elkaar kwamen twee nieuwe aanvragen voor een blog, te weten door Patrick Well...
 pubDate: '2004-02-28T05:49:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/02/28/welkom-patrick-joris
   - /blogs/dennis/archive/2004/02/28/welkom-patrick-joris.aspx

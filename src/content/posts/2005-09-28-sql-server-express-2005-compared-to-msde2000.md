@@ -5,7 +5,7 @@ title: SQL Server Express 2005 compared to MSDE2000
 description: Alex Thissen gives a summary on his weblog from what he has heard at the SQL Pass 200...
 pubDate: '2005-09-28T09:24:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2005/09/28/sql-server-express-2005-compared-to-msde2000

@@ -5,8 +5,7 @@ title: Community Server 2.1 Features
 description: Community Server just keeps getting better and better, providing more features then I...
 pubDate: '2006-08-14T03:17:00'
 tags:
-  - Blogging
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/08/14/community-server-2-1-features

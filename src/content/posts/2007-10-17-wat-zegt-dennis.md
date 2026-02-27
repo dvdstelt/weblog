@@ -7,7 +7,7 @@ pubDate: '2007-10-17T11:42:53'
 tags:
   - .NET Compact Framework 3.5
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2007/10/17/wat-zegt-dennis
   - /blogs/dennis/archive/2007/10/17/wat-zegt-dennis.aspx

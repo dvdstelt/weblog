@@ -6,9 +6,9 @@ description: Software Development Network – September 11th, 2015 The first two
 pubDate: '2015-09-01T12:35:21'
 image: /images/upcoming-session-end-2015/header.png
 tags:
-  - Architecture and Design
-  - NServiceBus
-  - Personal
+  - architecture
+  - nservicebus
+  - personal
   - SDN
   - events
   - presenting

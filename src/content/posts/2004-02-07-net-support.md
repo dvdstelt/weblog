@@ -7,7 +7,7 @@ pubDate: '2004-02-07T09:40:00'
 tags:
   - Development
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/02/07/net-support
   - /blogs/dennis/archive/2004/02/07/net-support.aspx

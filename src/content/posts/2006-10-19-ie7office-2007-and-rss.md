@@ -6,7 +6,7 @@ description: I’m currently using Omea Reader by Jetbrains for all my RSS subsc
 pubDate: '2006-10-19T01:07:27'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/10/19/ie7office-2007-and-rss
   - /blogs/dennis/archive/2006/10/19/ie7office-2007-and-rss.aspx

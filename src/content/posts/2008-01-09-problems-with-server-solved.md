@@ -5,7 +5,7 @@ title: Problems with server, solved?
 description: We experienced some serious problems since almost 20 hours ago or so. Our host wasn’t...
 pubDate: '2008-01-09T12:10:36'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2008/01/09/problems-with-server-solved
   - /blogs/dennis/archive/2008/01/09/problems-with-server-solved.aspx

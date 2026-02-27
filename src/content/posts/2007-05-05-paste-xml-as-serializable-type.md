@@ -6,7 +6,7 @@ description: "I had the\_privilege to see Steve Maine do some coding in a Micros
 pubDate: '2007-05-05T12:35:09'
 tags:
   - MIX07
-  - Personal
+  - personal
   - Utilities
   - BizTalk Services
 redirect_from:

@@ -5,7 +5,7 @@ title: Community Server 2008
 description: Now that was a smooth transition. Within minutes BloggingAbout.NET was upgraded from ...
 pubDate: '2008-04-21T07:05:48'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2008/04/21/community-server-2008

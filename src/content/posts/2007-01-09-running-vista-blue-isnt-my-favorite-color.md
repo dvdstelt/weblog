@@ -5,7 +5,7 @@ title: Running Vista; Blue isn’t my favorite color
 description: I just blogged that I’ll be switching back to Windows XP. One of the problems I forgo...
 pubDate: '2007-01-09T10:34:00'
 tags:
-  - Personal
+  - personal
   - Vista
   - Windows
 redirect_from:

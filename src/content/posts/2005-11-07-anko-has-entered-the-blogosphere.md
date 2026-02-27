@@ -5,7 +5,7 @@ title: Anko has entered the blogosphere
 description: "Anko Duizer, who will\_be my colleague (and boss 😉 in a couple of weeks, has entered ..."
 pubDate: '2005-11-07T02:15:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/11/07/anko-has-entered-the-blogosphere
   - /blogs/dennis/archive/2005/11/07/anko-has-entered-the-blogosphere.aspx

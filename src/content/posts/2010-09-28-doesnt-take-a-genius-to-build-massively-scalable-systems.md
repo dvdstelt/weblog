@@ -6,8 +6,8 @@ description: I was just watching Bytes by MSDN where Billy Hollis interviews Ron
 pubDate: '2010-09-28T02:21:13'
 tags:
   - AppFabric
-  - Architecture and Design
-  - Azure
+  - architecture
+  - azure
 redirect_from:
   - /dennis/2010/09/28/doesnt-take-a-genius-to-build-massively-scalable-systems
   - /blogs/dennis/archive/2010/09/28/doesnt-take-a-genius-to-build-massively-scalable-systems.aspx

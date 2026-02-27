@@ -5,9 +5,9 @@ title: I’ll be speaking at the Microsoft Developer Days 2009
 description: Thanks to the many votes we received on our wildcard proposals from attendees, collea...
 pubDate: '2009-05-19T11:24:54'
 tags:
-  - Agile
+  - agile
   - DevDays09
-  - Personal
+  - personal
   - Team System
   - Visual Studio 2010
   - presenting

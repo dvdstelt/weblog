@@ -5,7 +5,7 @@ title: New skins for .Text – LuxInterior
 description: Gosatango has created a new skin for .Text, called LuxInterior. It’s a really nice sk...
 pubDate: '2004-07-05T07:18:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Miscellaneous
 redirect_from:
   - /dennis/2004/07/05/new-skins-for-text-luxinterior

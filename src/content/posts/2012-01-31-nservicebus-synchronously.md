@@ -5,8 +5,8 @@ title: NServiceBus synchronously
 description: DISCLAMER  Do NOT do this! It’s bad! This article is just here for reference. But se...
 pubDate: '2012-01-31T03:03:17'
 tags:
-  - Architecture and Design
-  - NServiceBus
+  - architecture
+  - nservicebus
 redirect_from:
   - /dennis/2012/01/31/nservicebus-synchronously
   - /blogs/dennis/archive/2012/01/31/nservicebus-synchronously.aspx

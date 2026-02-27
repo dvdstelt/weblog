@@ -5,7 +5,7 @@ title: Template Method Pattern advanced example
 description: This blogpost is part of a series Template Method Pattern explanation Template Method...
 pubDate: '2012-02-10T10:05:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2012/02/10/template-method-pattern-advanced-example

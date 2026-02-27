@@ -6,7 +6,7 @@ description: FreeTextBox is een ASP.NET component. Je kunt hiermee berichtenitem
 pubDate: '2004-03-03T09:43:00'
 tags:
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/03/03/freetextbox-v2-0
   - /blogs/dennis/archive/2004/03/03/freetextbox-v2-0.aspx

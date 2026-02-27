@@ -5,7 +5,7 @@ title: BlogJet & .Text
 description: Thanks to Dmitry, creator of BlogJet, after contacting Scott, creator of .Text, our b...
 pubDate: '2004-06-16T08:11:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Miscellaneous
 redirect_from:
   - /dennis/2004/06/16/blogjet-text

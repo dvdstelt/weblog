@@ -5,7 +5,7 @@ title: BloggingAbout.NET
 description: Wow, a new host… And what a host! 6GB space, 150GB bandwith per month, unlimited pop3...
 pubDate: '2004-12-14T12:36:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/12/14/bloggingabout-net
   - /blogs/dennis/archive/2004/12/14/bloggingabout-net.aspx

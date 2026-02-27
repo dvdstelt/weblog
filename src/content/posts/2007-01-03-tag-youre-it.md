@@ -5,7 +5,7 @@ title: Tag, you’re it
 description: Frans Bouma tagged me. As everyone is joining in on this, I can’t stay behind. So her...
 pubDate: '2007-01-03T06:39:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2007/01/03/tag-youre-it
   - /blogs/dennis/archive/2007/01/03/tag-youre-it.aspx

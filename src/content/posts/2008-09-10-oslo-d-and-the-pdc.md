@@ -5,7 +5,7 @@ title: Oslo, D and the PDC
 description: There’s an article up at eweek about Oslo, the new initiative by Microsoft in create ...
 pubDate: '2008-09-10T08:57:47'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
   - PDC08
 redirect_from:

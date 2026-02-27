@@ -5,7 +5,7 @@ title: Running Vista; I think not!
 description: "I’ve made my decision, I’m\_rolling back to Windows XP. I’ve been using Vista on my la..."
 pubDate: '2007-01-08T09:05:46'
 tags:
-  - Personal
+  - personal
   - Vista
   - Windows
   - XP

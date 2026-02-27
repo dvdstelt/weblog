@@ -5,7 +5,7 @@ title: Architects
 description: "I’m kinda busy, so I haven’t\_blogged about yesterday evening yet. But one thing that ..."
 pubDate: '2004-06-29T02:40:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2004/06/29/architects
   - /blogs/dennis/archive/2004/06/29/architects.aspx

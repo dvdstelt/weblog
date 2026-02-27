@@ -5,7 +5,7 @@ title: MIND Your Business
 description: A rather big event was held yesterday by the company I work for, in coop with Microso...
 pubDate: '2005-10-11T09:45:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/10/11/mind-your-business
   - /blogs/dennis/archive/2005/10/11/mind-your-business.aspx

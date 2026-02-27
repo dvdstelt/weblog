@@ -5,7 +5,7 @@ title: Typing test
 description: It began on Daniel Moth‘s weblog, reading about some typing test he had done with som...
 pubDate: '2007-10-01T12:48:09'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2007/10/01/typing-test
   - /blogs/dennis/archive/2007/10/01/typing-test.aspx

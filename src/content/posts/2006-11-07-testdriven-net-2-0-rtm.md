@@ -5,7 +5,7 @@ title: TestDriven.NET 2.0 RTM
 description: Some time ago I had a discussion with my colleague Alex Thissen about the differences...
 pubDate: '2006-11-07T11:56:11'
 tags:
-  - Agile
+  - agile
   - Development
   - Team System
   - Utilities

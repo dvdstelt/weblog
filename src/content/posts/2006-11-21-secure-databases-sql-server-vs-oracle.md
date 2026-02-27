@@ -5,7 +5,7 @@ title: Secure databases  SQL Server vs. Oracle
 description: Via Steve Eichert I came across an article about database security. It’s based on sec...
 pubDate: '2006-11-21T10:37:13'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
   - Utilities
   - SQL Server 2005

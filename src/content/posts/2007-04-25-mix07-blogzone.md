@@ -6,7 +6,7 @@ description: Alice in wonderland, that’s how I’m going to feel like in Vegas
 pubDate: '2007-04-25T12:04:56'
 tags:
   - MIX07
-  - Personal
+  - personal
   - MIX
   - Venetian
   - Las Vegas

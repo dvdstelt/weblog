@@ -6,7 +6,7 @@ description: We used to have an XBox at ClassA for students to play on. But the 
 pubDate: '2008-08-05T08:04:14'
 tags:
   - Games
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2008/08/05/gaming-for-students
   - /blogs/dennis/archive/2008/08/05/gaming-for-students.aspx

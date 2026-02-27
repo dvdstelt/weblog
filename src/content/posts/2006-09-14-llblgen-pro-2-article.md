@@ -6,7 +6,7 @@ description: Although I’ve written articles for magazines before, it had never
 pubDate: '2006-09-14T12:26:00'
 tags:
   - Development
-  - Personal
+  - personal
   - Utilities
 redirect_from:
   - /dennis/2006/09/14/llblgen-pro-2-article

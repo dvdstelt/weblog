@@ -5,7 +5,7 @@ title: Azure and Virtual Machine hours
 description: I suddenly remember that Azure can supply you with analytics on how your services and...
 pubDate: '2009-03-12T09:04:16'
 tags:
-  - Azure
+  - azure
 redirect_from:
   - /dennis/2009/03/12/azure-and-virtual-machine-hours
   - /blogs/dennis/archive/2009/03/12/azure-and-virtual-machine-hours.aspx

@@ -7,7 +7,7 @@ pubDate: '2006-11-20T03:21:32'
 tags:
   - Development
   - Miscellaneous
-  - Personal
+  - personal
   - Vista
   - Windows Vista
   - Visual Studio 2005

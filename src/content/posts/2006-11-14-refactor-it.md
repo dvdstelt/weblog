@@ -5,11 +5,10 @@ title: Refactor it!
 description: Now this is a great initiative! Billy McCafferty is doing a weekly contest where he u...
 pubDate: '2006-11-14T11:58:07'
 tags:
-  - Agile
+  - agile
   - Development
   - Utilities
   - refactoring
-  - agile
   - tdd
 redirect_from:
   - /dennis/2006/11/14/refactor-it

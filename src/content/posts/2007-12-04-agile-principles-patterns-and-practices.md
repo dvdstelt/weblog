@@ -5,7 +5,7 @@ title: Agile principles, patterns and practices
 description: A while ago I read the excellent book by Robert C. Martin, called “Agile Software Dev...
 pubDate: '2007-12-04T01:12:06'
 tags:
-  - Agile
+  - agile
   - C#
 redirect_from:
   - /dennis/2007/12/04/agile-principles-patterns-and-practices

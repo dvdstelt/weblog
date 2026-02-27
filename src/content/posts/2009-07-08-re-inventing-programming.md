@@ -6,7 +6,7 @@ description: Just subscribed to the next Devnology meeting. This one will be an 
 pubDate: '2009-07-08T03:08:04'
 tags:
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2009/07/08/re-inventing-programming
   - /blogs/dennis/archive/2009/07/08/re-inventing-programming.aspx

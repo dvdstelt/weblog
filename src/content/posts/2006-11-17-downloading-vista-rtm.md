@@ -6,7 +6,7 @@ description: Only 29 seconds left! I’m downloading Vista off of MSDN right now
 pubDate: '2006-11-17T12:28:14'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/11/17/downloading-vista-rtm
   - /blogs/dennis/archive/2006/11/17/downloading-vista-rtm.aspx

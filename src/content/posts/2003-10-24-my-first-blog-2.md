@@ -5,7 +5,7 @@ title: My First Blog
 description: Ik ben begonnen met een artikel over blogging op Wasabi.Het is nog niet helemaal af, ...
 pubDate: '2003-10-24T02:00:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2003/10/24/my-first-blog-2
   - /blogs/dennis/archive/2003/10/24/my-first-blog-2.aspx

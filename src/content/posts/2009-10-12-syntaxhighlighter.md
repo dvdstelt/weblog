@@ -5,7 +5,7 @@ title: Syntaxhighlighter
 description: I’ve tried a lot of tools and addons to use syntax highlighting on my weblog and Blog...
 pubDate: '2009-10-12T06:10:43'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Utilities
 redirect_from:
   - /dennis/2009/10/12/syntaxhighlighter

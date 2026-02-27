@@ -6,7 +6,7 @@ description: A great commercial for XBox 360 did not make it onto American Natio
 pubDate: '2005-11-24T05:08:00'
 tags:
   - Games
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/11/24/xbox-360-stand-off
   - /blogs/dennis/archive/2005/11/24/xbox-360-stand-off.aspx

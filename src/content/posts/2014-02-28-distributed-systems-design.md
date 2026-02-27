@@ -5,6 +5,11 @@ title: Distributed Systems Design
 description: Because Blaak Selectie existed for 3 years, Mark and Sandra wanted to organize an eve...
 pubDate: '2014-02-28T12:30:05'
 image: /images/distributed-systems-design/header.png
+tags:
+  - architecture
+  - distributed systems
+  - presenting
+  - events
 redirect_from:
   - /dennis/2014/02/28/distributed-systems-design
   - /blogs/dennis/archive/2014/02/28/distributed-systems-design.aspx

@@ -5,7 +5,7 @@ title: Embedding images in an app_offline.htm
 description: We have a public website running that we needed to take offline for maintenance. So w...
 pubDate: '2010-11-19T01:03:41'
 tags:
-  - ASP.NET
+  - asp.net
 redirect_from:
   - /dennis/2010/11/19/embedding-images-in-an-app_offline-htm
   - /blogs/dennis/archive/2010/11/19/embedding-images-in-an-app_offline-htm.aspx

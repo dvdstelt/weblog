@@ -5,7 +5,7 @@ title: ASP.NET debugging on VistaIIS7
 description: For some reason, a single project I’m working on wouldn’t let the debugger attach to ...
 pubDate: '2007-01-02T12:41:03'
 tags:
-  - ASP.NET
+  - asp.net
   - Development
   - Vista
   - Windows Vista

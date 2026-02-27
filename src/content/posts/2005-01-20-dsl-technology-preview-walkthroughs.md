@@ -5,7 +5,7 @@ title: DSL Technology Preview & Walkthroughs
 description: Last year a technology preview of the Microsoft Tools for DomainSpecific Languages w...
 pubDate: '2005-01-20T01:23:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2005/01/20/dsl-technology-preview-walkthroughs
   - /blogs/dennis/archive/2005/01/20/dsl-technology-preview-walkthroughs.aspx

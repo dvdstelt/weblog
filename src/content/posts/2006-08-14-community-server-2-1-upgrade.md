@@ -5,7 +5,7 @@ title: Community Server 2.1 upgrade
 description: Monday, august 14 2006, 1230 CETLet’s upgrade to Community Server 2.1. More info on ...
 pubDate: '2006-08-14T01:30:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/08/14/community-server-2-1-upgrade

@@ -5,7 +5,7 @@ title: Big change in life
 description: Besides the fact I haven’t started yet, it can’t get much more official then this. Wh...
 pubDate: '2005-10-18T08:27:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/10/18/big-change-in-life
   - /blogs/dennis/archive/2005/10/18/big-change-in-life.aspx

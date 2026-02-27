@@ -5,7 +5,7 @@ title: Copy constructors
 description: "Download source in attachment\_at the bottom. A while ago I heard the term “copy const..."
 pubDate: '2006-06-16T02:59:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2006/06/16/copy-constructors

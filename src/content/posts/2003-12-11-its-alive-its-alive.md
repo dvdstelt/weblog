@@ -5,7 +5,7 @@ title: It’s alive, IT’S ALIVE!!!
 description: Jaaaaaaaaaaaaa, hij doet ‘t weer!!!Ik moet snel ff MCAD klas wat gaan vertellen! upda...
 pubDate: '2003-12-11T07:08:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2003/12/11/its-alive-its-alive
   - /blogs/dennis/archive/2003/12/11/its-alive-its-alive.aspx

@@ -5,7 +5,7 @@ title: Billy Idle
 description: Nou, ik zit Billy, Billy Idle. Toen ze in december de klant vertelden wat de doorloop...
 pubDate: '2004-02-07T03:02:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/02/07/billy-idle
   - /blogs/dennis/archive/2004/02/07/billy-idle.aspx

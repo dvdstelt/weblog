@@ -5,7 +5,7 @@ title: Unit tests are for functionality, not code!
 description: Marco mailed me this morning with the following sentence Unit tests are meant to test...
 pubDate: '2008-06-13T09:30:48'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2008/06/13/unit-tests-are-for-functionality-not-code
   - /blogs/dennis/archive/2008/06/13/unit-tests-are-for-functionality-not-code.aspx

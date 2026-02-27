@@ -5,7 +5,7 @@ title: Delay course, part 3
 description: For about a year, I’m waiting for a change to follow our internal Object Orientated D...
 pubDate: '2004-03-17T11:50:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/03/17/delay-course-part-3
   - /blogs/dennis/archive/2004/03/17/delay-course-part-3.aspx

@@ -5,7 +5,7 @@ title: New skin for BloggingAbout.NET
 description: Before installing Community Server 2007 I wanted to customize the look and feel of it...
 pubDate: '2007-08-21T09:04:59'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2007/08/21/new-skin-for-bloggingabout-net

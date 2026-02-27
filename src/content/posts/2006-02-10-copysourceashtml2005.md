@@ -5,7 +5,7 @@ title: CopySourceAsHTML2005
 description: Back in the old days, when we all were using Visual Studio.NET 2003, we had this cool...
 pubDate: '2006-02-10T03:12:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Development
 redirect_from:
   - /dennis/2006/02/10/copysourceashtml2005

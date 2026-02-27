@@ -5,8 +5,7 @@ title: Waegis was launched
 description: Keyvan Nayyeri has launched his project today, something he calls “The Web Cleaner”. ...
 pubDate: '2008-07-10T09:04:08'
 tags:
-  - Blogging
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2008/07/10/waegis-was-launched

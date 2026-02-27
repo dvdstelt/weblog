@@ -5,7 +5,7 @@ title: Weblogs verhuist!
 description: "Op Wasabi.NET\_was alles perfect, op één klein ‘dingetje’ na. Helaas zorgde dat kleine..."
 pubDate: '2004-01-29T07:41:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/01/29/weblogs-verhuist
   - /blogs/dennis/archive/2004/01/29/weblogs-verhuist.aspx

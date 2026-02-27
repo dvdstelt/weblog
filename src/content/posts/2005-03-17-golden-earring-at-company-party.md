@@ -5,7 +5,7 @@ title: Golden Earring at company party
 description: Every year our company holds this meeting where every employee from the Netherlands i...
 pubDate: '2005-03-17T09:13:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/03/17/golden-earring-at-company-party
   - /blogs/dennis/archive/2005/03/17/golden-earring-at-company-party.aspx

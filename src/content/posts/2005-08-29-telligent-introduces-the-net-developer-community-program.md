@@ -5,7 +5,7 @@ title: Telligent introduces the .NET Developer Community Program
 description: Telligent software, founded by Rob Howard, former ASP.NET Architect at Microsoft, kee...
 pubDate: '2005-08-29T09:24:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/08/29/telligent-introduces-the-net-developer-community-program
   - /blogs/dennis/archive/2005/08/29/telligent-introduces-the-net-developer-community-program.aspx

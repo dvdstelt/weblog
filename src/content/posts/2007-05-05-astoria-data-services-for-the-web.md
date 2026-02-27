@@ -5,8 +5,8 @@ title: Astoria, data services for the web
 description: "At MIX07 I’ve seen a presentation by Pablo Castro from the ADO.NET team on a new\_proj..."
 pubDate: '2007-05-05T11:46:00'
 tags:
-  - Architecture and Design
-  - ASP.NET
+  - architecture
+  - asp.net
   - MIX07
   - Astoria
   - XML

@@ -5,7 +5,7 @@ title: WinFS delay discussion
 description: A while back I read the article from Frans Bouma about the WinFS delay.Not until toda...
 pubDate: '2004-12-28T08:29:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/12/28/winfs-delay-discussion
   - /blogs/dennis/archive/2004/12/28/winfs-delay-discussion.aspx

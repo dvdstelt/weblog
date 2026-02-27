@@ -5,7 +5,7 @@ title: Twikini, the mobile twitter client
 description: I’ve owned a Windows Mobile for some time, currently the HTC Tytn which sure is up fo...
 pubDate: '2009-07-01T12:01:56'
 tags:
-  - Personal
+  - personal
   - Utilities
 redirect_from:
   - /dennis/2009/07/01/twikini-the-mobile-twitter-client

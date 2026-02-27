@@ -6,11 +6,9 @@ description: In my article on High Availability I mentioned business components.
 pubDate: '2014-02-19T12:31:08'
 image: /images/autonomous-business-components/header.png
 tags:
-  - Architecture and Design
-  - NServiceBus
   - architecture
-  - eda
   - nservicebus
+  - eda
   - soa
 redirect_from:
   - /dennis/2014/02/19/autonomous-business-components

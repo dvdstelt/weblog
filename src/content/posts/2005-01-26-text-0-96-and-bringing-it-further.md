@@ -5,7 +5,7 @@ title: .Text 0.96 and bringing it further
 description: Currently we’re using .Text 0.95 at BloggingAbout.NET. On some sites however, like we...
 pubDate: '2005-01-26T10:14:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/01/26/text-0-96-and-bringing-it-further
   - /blogs/dennis/archive/2005/01/26/text-0-96-and-bringing-it-further.aspx

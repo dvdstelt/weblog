@@ -5,7 +5,7 @@ title: Testing software
 description: Before Test Driven Development (TDD) most developers just randomly clicked through a ...
 pubDate: '2005-08-25T12:38:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2005/08/25/testing-software

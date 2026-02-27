@@ -6,7 +6,7 @@ description: A long time ago, in a home far, far away… I was sitting behind my
 pubDate: '2004-05-14T07:01:00'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/05/14/offtopic-usas-on-your-mobile
   - /blogs/dennis/archive/2004/05/14/offtopic-usas-on-your-mobile.aspx

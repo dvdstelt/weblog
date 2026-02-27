@@ -6,7 +6,7 @@ description: On the frontpage of BloggingAbout.NET you can see who posted commen
 pubDate: '2007-12-01T12:03:27'
 tags:
   - .NET Framework 2.0
-  - ASP.NET
+  - asp.net
   - .NET Framework
   - Membership Provider
   - Security

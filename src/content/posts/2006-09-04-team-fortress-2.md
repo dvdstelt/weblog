@@ -6,7 +6,7 @@ description: It’s been long, very long since we’ve heard something about Tea
 pubDate: '2006-09-04T03:22:00'
 tags:
   - Games
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/09/04/team-fortress-2
   - /blogs/dennis/archive/2006/09/04/team-fortress-2.aspx

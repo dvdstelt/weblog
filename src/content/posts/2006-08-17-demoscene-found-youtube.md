@@ -6,7 +6,7 @@ description: The demoscene seems to have found YouTube.com for getting demos on 
 pubDate: '2006-08-17T12:05:00'
 tags:
   - Demoscene
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/08/17/demoscene-found-youtube
   - /blogs/dennis/archive/2006/08/17/demoscene-found-youtube.aspx

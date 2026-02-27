@@ -5,7 +5,7 @@ title: System.Transactions  ReadUncommitted
 description: Download code & sql scripts here I got a question today about setting the isolationle...
 pubDate: '2006-12-18T12:13:08'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
   - SQL Server 2005
   - System.Transactions

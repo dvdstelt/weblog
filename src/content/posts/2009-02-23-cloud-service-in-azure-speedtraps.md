@@ -5,7 +5,7 @@ title: Cloud service in Azure  Speedtraps
 description: For the 828 event next Thursday I’m developing some examples. One of them is where I ...
 pubDate: '2009-02-23T12:52:51'
 tags:
-  - Azure
+  - azure
   - PDC08
 redirect_from:
   - /dennis/2009/02/23/cloud-service-in-azure-speedtraps

@@ -5,7 +5,7 @@ title: Season greetings from BloggingAbout.NET
 description: Bloggers, visitors and spammer, we have a season greeting for you if you click the li...
 pubDate: '2009-12-23T02:31:49'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2009/12/23/season-greetings-from-bloggingabout-net
   - /blogs/dennis/archive/2009/12/23/season-greetings-from-bloggingabout-net.aspx

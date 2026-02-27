@@ -5,7 +5,7 @@ title: My Zune player arrived!
 description: "Woohoo!!! Am I the first in The Netherlands to have one?! 🙂 \_ Technorati tags Zune..."
 pubDate: '2006-12-07T10:26:25'
 tags:
-  - Personal
+  - personal
   - Zune
 redirect_from:
   - /dennis/2006/12/07/my-zune-player-arrived

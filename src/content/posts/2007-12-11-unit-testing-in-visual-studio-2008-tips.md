@@ -5,7 +5,7 @@ title: Unit testing in Visual Studio 2008 tips
 description: I blogged about new Unit Testing features in Visual Studio 2008, but missed the follo...
 pubDate: '2007-12-11T03:30:49'
 tags:
-  - Agile
+  - agile
   - Visual Studio 2008
 redirect_from:
   - /dennis/2007/12/11/unit-testing-in-visual-studio-2008-tips

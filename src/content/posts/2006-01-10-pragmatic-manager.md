@@ -5,7 +5,7 @@ title: Pragmatic Manager
 description: I’m currently reading Behind Closes Doors, written by Johanna Rothman and Esther Derb...
 pubDate: '2006-01-10T10:49:00'
 tags:
-  - Agile
+  - agile
   - Project Management
 redirect_from:
   - /dennis/2006/01/10/pragmatic-manager

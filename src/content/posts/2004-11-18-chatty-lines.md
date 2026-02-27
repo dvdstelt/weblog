@@ -5,7 +5,7 @@ title: Chatty lines
 description: Lately I’ve read some comments from people all over the internet, on chatty lines. Yo...
 pubDate: '2004-11-18T10:29:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2004/11/18/chatty-lines
   - /blogs/dennis/archive/2004/11/18/chatty-lines.aspx

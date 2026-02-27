@@ -5,7 +5,7 @@ title: RSS & Readers – Which to choose?
 description: Because of the interest in our company in our weblogs and the fact that still not a l...
 pubDate: '2005-01-17T02:57:00'
 tags:
-  - Blogging
+  - blogging
 redirect_from:
   - /dennis/2005/01/17/rss-readers-which-to-choose
   - /blogs/dennis/archive/2005/01/17/rss-readers-which-to-choose.aspx

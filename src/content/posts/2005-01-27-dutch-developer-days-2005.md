@@ -6,7 +6,7 @@ description: So it’s official, I’m going to the Dutch Developer Days 2005. S
 pubDate: '2005-01-27T09:05:00'
 tags:
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/01/27/dutch-developer-days-2005
   - /blogs/dennis/archive/2005/01/27/dutch-developer-days-2005.aspx

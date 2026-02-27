@@ -5,8 +5,7 @@ title: Community Server 2.1 SP1
 description: Just upgraded Community Server 2.1 to Service Pack 1, downtime was only a few minutes...
 pubDate: '2006-11-09T11:51:00'
 tags:
-  - Blogging
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/11/09/community-server-2-1-sp1

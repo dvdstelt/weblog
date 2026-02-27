@@ -5,7 +5,7 @@ title: FinalBuilder  Action lists
 description: As I’ve said before, years ago on some project I first got the opportunity to work wi...
 pubDate: '2008-09-18T07:13:13'
 tags:
-  - Agile
+  - agile
   - Utilities
 redirect_from:
   - /dennis/2008/09/18/finalbuilder-action-lists

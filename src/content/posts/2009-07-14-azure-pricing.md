@@ -5,7 +5,7 @@ title: Azure pricing
 description: So finally they released some information on Azure pricing, or the Azure Business Mod...
 pubDate: '2009-07-14T09:37:57'
 tags:
-  - Azure
+  - azure
 redirect_from:
   - /dennis/2009/07/14/azure-pricing
   - /blogs/dennis/archive/2009/07/14/azure-pricing.aspx

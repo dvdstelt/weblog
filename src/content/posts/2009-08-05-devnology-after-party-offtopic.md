@@ -6,7 +6,7 @@ description: Today the Devnology meeting with Rob Vens was held at ClassA in Woe
 pubDate: '2009-08-05T10:29:00'
 tags:
   - Games
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2009/08/05/devnology-after-party-offtopic
   - /blogs/dennis/archive/2009/08/05/devnology-after-party-offtopic.aspx

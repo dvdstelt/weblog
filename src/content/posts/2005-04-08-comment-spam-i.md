@@ -5,7 +5,7 @@ title: Comment Spam I
 description: In the fight for comment spam I’ve installed Chrissy LeMaire her MTBlackList triggers...
 pubDate: '2005-04-08T09:58:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/04/08/comment-spam-i
   - /blogs/dennis/archive/2005/04/08/comment-spam-i.aspx

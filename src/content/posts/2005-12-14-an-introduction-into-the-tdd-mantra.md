@@ -5,7 +5,7 @@ title: An introduction into the TDD Mantra
 description: A while ago I gave a presentation, called “An introduction into the TDD Mantra”. The ...
 pubDate: '2005-12-14T05:28:00'
 tags:
-  - Agile
+  - agile
   - Development
 redirect_from:
   - /dennis/2005/12/14/an-introduction-into-the-tdd-mantra

@@ -5,7 +5,7 @@ title: Internet Explorer 8 Beta 2 experiences
 description: I just uninstalled Internet Explorer 8 Beta 2 because it constantly kept crashing. A ...
 pubDate: '2008-09-01T07:30:02'
 tags:
-  - Personal
+  - personal
   - Vista
 redirect_from:
   - /dennis/2008/09/01/internet-explorer-8-beta-2-experiences

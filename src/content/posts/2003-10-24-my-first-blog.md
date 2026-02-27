@@ -5,7 +5,7 @@ title: My First Blog
 description: Sinds 22 oktober 2003 bestaat de mogelijkheid om op het intranet van LogicaCMG een we...
 pubDate: '2003-10-24T01:05:00'
 tags:
-  - Blogging
+  - blogging
 redirect_from:
   - /dennis/2003/10/24/my-first-blog
   - /blogs/dennis/archive/2003/10/24/my-first-blog.aspx

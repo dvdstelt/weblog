@@ -5,9 +5,9 @@ title: Publish Subscribe with nServiceBus tutorial
 description: When starting to dig into nServiceBus, you’ll notice almost every single example is e...
 pubDate: '2011-02-03T10:27:18'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
-  - NServiceBus
+  - nservicebus
 redirect_from:
   - /dennis/2011/02/03/publish-subscribe-with-nservicebus-tutorial
   - /blogs/dennis/archive/2011/02/03/publish-subscribe-with-nservicebus-tutorial.aspx

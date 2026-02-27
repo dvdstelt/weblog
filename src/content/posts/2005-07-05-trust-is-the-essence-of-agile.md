@@ -5,7 +5,7 @@ title: Trust is the Essence of Agile
 description: A few years ago two colleagues and me were asked to help out in some project that was...
 pubDate: '2005-07-05T12:57:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/07/05/trust-is-the-essence-of-agile
   - /blogs/dennis/archive/2005/07/05/trust-is-the-essence-of-agile.aspx

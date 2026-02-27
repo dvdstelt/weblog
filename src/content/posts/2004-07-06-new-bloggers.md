@@ -5,7 +5,7 @@ title: New Bloggers
 description: We’ve got some new bloggers joining here at Wasabi. First there’s Rob van der Meijen ...
 pubDate: '2004-07-06T02:35:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/07/06/new-bloggers
   - /blogs/dennis/archive/2004/07/06/new-bloggers.aspx

@@ -6,7 +6,7 @@ description: This is an old article by Ted Neward that I’ve been trying to fin
 pubDate: '2012-04-26T07:11:07'
 image: /images/the-11th-fallacy-of-enterprise-computing/header.png
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2012/04/26/the-11th-fallacy-of-enterprise-computing
   - /blogs/dennis/archive/2012/04/26/the-11th-fallacy-of-enterprise-computing.aspx

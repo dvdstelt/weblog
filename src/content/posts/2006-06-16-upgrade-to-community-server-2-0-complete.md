@@ -5,7 +5,7 @@ title: Upgrade to Community Server 2.0 complete!
 description: Wow, this is it. It happened! I can relax again! We upgraded! Yes it’s true, you’re c...
 pubDate: '2006-06-16T01:30:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2006/06/16/upgrade-to-community-server-2-0-complete
   - /blogs/dennis/archive/2006/06/16/upgrade-to-community-server-2-0-complete.aspx

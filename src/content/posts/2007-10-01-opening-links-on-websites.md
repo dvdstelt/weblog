@@ -5,9 +5,9 @@ title: Opening links on websites
 description: First, let me tell you how I open my websites in Internet Explorer 7 andor Firefox. ...
 pubDate: '2007-10-01T08:07:02'
 tags:
-  - ASP.NET
-  - Blogging
-  - Personal
+  - asp.net
+  - blogging
+  - personal
 redirect_from:
   - /dennis/2007/10/01/opening-links-on-websites
   - /blogs/dennis/archive/2007/10/01/opening-links-on-websites.aspx

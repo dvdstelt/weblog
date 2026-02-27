@@ -5,7 +5,7 @@ title: Enterprise Library finally released
 description: "Waiting all day long and finally\_it’s released, the enterprise library. On the main p..."
 pubDate: '2005-01-28T10:43:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2005/01/28/enterprise-library-finally-released

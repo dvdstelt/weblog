@@ -5,7 +5,7 @@ title: Five Pound Bag
 description: Martin Fowler writes about project planning and why the Agile way is the better way. ...
 pubDate: '2005-10-14T12:18:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/10/14/five-pound-bag
   - /blogs/dennis/archive/2005/10/14/five-pound-bag.aspx

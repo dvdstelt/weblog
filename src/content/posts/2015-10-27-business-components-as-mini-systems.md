@@ -6,11 +6,10 @@ description: In my High Availability article I mentioned business components and
 pubDate: '2015-10-27T10:05:25'
 image: /images/business-components-as-mini-systems/header.jpg
 tags:
-  - CQRS
-  - NServiceBus
+  - cqrs
+  - nservicebus
   - architecture
   - messaging
-  - nservicebus
 redirect_from:
   - /dennis/2015/10/27/business-components-as-mini-systems
   - /blogs/dennis/archive/2015/10/27/business-components-as-mini-systems.aspx

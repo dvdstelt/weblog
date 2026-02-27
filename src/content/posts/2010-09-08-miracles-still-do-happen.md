@@ -5,7 +5,7 @@ title: Miracles still do happen
 description: It’s been six weeks since my last blogpost. And although people could’ve kept up with...
 pubDate: '2010-09-08T09:01:58'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2010/09/08/miracles-still-do-happen
   - /blogs/dennis/archive/2010/09/08/miracles-still-do-happen.aspx

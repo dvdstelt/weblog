@@ -7,7 +7,7 @@ pubDate: '2008-03-12T07:59:14'
 tags:
   - .NET Compact Framework 3.5
   - .NET Framework 3.5
-  - ASP.NET
+  - asp.net
   - Silverlight
   - Visual Studio 2008
 redirect_from:

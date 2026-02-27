@@ -5,7 +5,7 @@ title: IE7 Search Provider
 description: Recently I’ve installed a search provider for IE7 on BloggingAbout.NET. This means th...
 pubDate: '2006-12-07T02:13:31'
 tags:
-  - BloggingAbout.NET
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/12/07/ie7-search-provider

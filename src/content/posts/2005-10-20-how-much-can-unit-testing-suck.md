@@ -5,7 +5,7 @@ title: How much can unit testing suck?
 description: I’m not sure how much, but Wil Shipley seems to think an awfull lot! And he seems to ...
 pubDate: '2005-10-20T05:00:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/10/20/how-much-can-unit-testing-suck
   - /blogs/dennis/archive/2005/10/20/how-much-can-unit-testing-suck.aspx

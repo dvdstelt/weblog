@@ -5,7 +5,7 @@ title: SOA & Data integrity
 description: Clemens Vasters made a post about sharing data stores across services. He says the te...
 pubDate: '2004-05-28T06:43:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2004/05/28/soa-data-integrity
   - /blogs/dennis/archive/2004/05/28/soa-data-integrity.aspx

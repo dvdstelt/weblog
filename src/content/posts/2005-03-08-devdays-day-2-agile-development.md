@@ -5,7 +5,7 @@ title: DevDays Day 2  Agile Development
 description: Because I was too late for the Indigo chat, I decided to meet up with friends at the ...
 pubDate: '2005-03-08T12:16:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/03/08/devdays-day-2-agile-development
   - /blogs/dennis/archive/2005/03/08/devdays-day-2-agile-development.aspx

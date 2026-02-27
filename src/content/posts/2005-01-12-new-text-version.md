@@ -5,7 +5,7 @@ title: New .Text version?
 description: Well, seems telligent systems themselves are already blogging on Community Server  ...
 pubDate: '2005-01-12T12:17:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/01/12/new-text-version
   - /blogs/dennis/archive/2005/01/12/new-text-version.aspx

@@ -5,8 +5,8 @@ title: New BloggingAbout.NET Server
 description: If you’re looking at this, you’re looking at BloggingAbout.NET on a brand new 19″ ser...
 pubDate: '2008-04-11T06:17:47'
 tags:
-  - BloggingAbout.NET
-  - Personal
+  - blogging
+  - personal
 redirect_from:
   - /dennis/2008/04/11/new-bloggingabout-net-server
   - /blogs/dennis/archive/2008/04/11/new-bloggingabout-net-server.aspx

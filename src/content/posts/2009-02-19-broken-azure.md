@@ -5,7 +5,7 @@ title: Broken Azure
 description: Whoops, did I break something? Update  Things got worse!...
 pubDate: '2009-02-19T11:00:03'
 tags:
-  - Azure
+  - azure
 redirect_from:
   - /dennis/2009/02/19/broken-azure
   - /blogs/dennis/archive/2009/02/19/broken-azure.aspx

@@ -5,7 +5,7 @@ title: Best wishes
 description: Well, best wishes to everyone for this new year! I hope this is gonna be a great year...
 pubDate: '2004-12-31T07:06:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2004/12/31/best-wishes
   - /blogs/dennis/archive/2004/12/31/best-wishes.aspx

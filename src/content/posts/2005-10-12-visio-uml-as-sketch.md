@@ -5,8 +5,8 @@ title: Visio UML as Sketch
 description: When reading the latest posts about XP == DATT by Paul Gielens, I noticed him mention...
 pubDate: '2005-10-12T10:47:00'
 tags:
-  - Agile
-  - Architecture and Design
+  - agile
+  - architecture
   - Development
 redirect_from:
   - /dennis/2005/10/12/visio-uml-as-sketch

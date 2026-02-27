@@ -5,7 +5,7 @@ title: Computable begrijpt er niks van!
 description: Sorry, but this post will be in Dutch. Ongelofelijk, wat een belabberd blaadje is Com...
 pubDate: '2006-04-07T02:32:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/04/07/computable-begrijpt-er-niks-van
   - /blogs/dennis/archive/2006/04/07/computable-begrijpt-er-niks-van.aspx

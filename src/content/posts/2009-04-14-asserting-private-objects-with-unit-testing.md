@@ -5,7 +5,7 @@ title: Asserting private objects with unit testing
 description: There’s a lot of discussion going on about designing for testability. One of the prob...
 pubDate: '2009-04-14T09:58:16'
 tags:
-  - Agile
+  - agile
   - Testing
   - TypeMock
 redirect_from:

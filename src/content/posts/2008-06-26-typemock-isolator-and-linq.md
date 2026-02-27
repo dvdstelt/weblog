@@ -5,7 +5,7 @@ title: TypeMock Isolator and LINQ
 description: I’m doing some work with TypeMock and I start to love it more and more. For example, ...
 pubDate: '2008-06-26T09:18:49'
 tags:
-  - Agile
+  - agile
   - TypeMock
   - Visual Studio 2008
 redirect_from:

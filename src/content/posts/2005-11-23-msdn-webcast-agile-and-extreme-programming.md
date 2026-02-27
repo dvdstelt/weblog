@@ -5,7 +5,7 @@ title: MSDN Webcast Agile and eXtreme Programming
 description: "The people behind Enterprise Library will be doing a webcast\_about Agile and eXtreme ..."
 pubDate: '2005-11-23T06:19:00'
 tags:
-  - Agile
+  - agile
   - events
 redirect_from:
   - /dennis/2005/11/23/msdn-webcast-agile-and-extreme-programming

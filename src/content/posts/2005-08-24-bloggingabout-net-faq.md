@@ -5,8 +5,7 @@ title: BloggingAbout.NET FAQ
 description: What is BloggingAbout.NET?BloggingAbout.NET is a community, formed by several people ...
 pubDate: '2005-08-24T05:54:00'
 tags:
-  - Blogging
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/08/24/bloggingabout-net-faq
   - /blogs/dennis/archive/2005/08/24/bloggingabout-net-faq.aspx

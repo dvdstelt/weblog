@@ -6,7 +6,7 @@ description: "For some reason, the news was spread around that TechEd Europe was
 pubDate: '2006-01-25T11:01:00'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/01/25/teched-europe-cancelled
   - /blogs/dennis/archive/2006/01/25/teched-europe-cancelled.aspx

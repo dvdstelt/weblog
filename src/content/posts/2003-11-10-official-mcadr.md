@@ -5,7 +5,7 @@ title: Official MCAD’r
 description: Nou, het is zover. Ik heb vorige week donderdag mijn laatste examen, 70229 SQLServe...
 pubDate: '2003-11-10T09:35:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2003/11/10/official-mcadr
   - /blogs/dennis/archive/2003/11/10/official-mcadr.aspx

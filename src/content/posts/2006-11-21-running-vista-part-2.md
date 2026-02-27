@@ -6,7 +6,7 @@ description: So I’m still running Vista and guess what… I got my first BSOD 
 pubDate: '2006-11-21T05:31:06'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
   - Vista
   - Windows Vista
   - SQL Server 2005

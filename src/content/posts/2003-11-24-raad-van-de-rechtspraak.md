@@ -5,7 +5,7 @@ title: Raad van de Rechtspraak
 description: Idle zijn is toch maar mooi. Kun je heerlijk een weblog opzetten voor iedereen, met n...
 pubDate: '2003-11-24T07:24:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2003/11/24/raad-van-de-rechtspraak
   - /blogs/dennis/archive/2003/11/24/raad-van-de-rechtspraak.aspx

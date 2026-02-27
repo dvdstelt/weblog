@@ -5,10 +5,10 @@ title: Viva Las Vegas
 description: So I arrived… Yesterday the plane landed in Las Vegas and the first thing that I saw ...
 pubDate: '2007-04-29T12:56:13'
 tags:
-  - ASP.NET
+  - asp.net
   - Miscellaneous
   - MIX07
-  - Personal
+  - personal
   - Las Vegas
 redirect_from:
   - /dennis/2007/04/29/viva-las-vegas

@@ -5,7 +5,7 @@ title: Test vanuit w.bloggar
 description: Dit is een test vanuit w.bloggar! Ik ga de komende tijd eens proberen vanuit w.blogga...
 pubDate: '2004-02-05T11:41:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/02/05/test-vanuit-w-bloggar
   - /blogs/dennis/archive/2004/02/05/test-vanuit-w-bloggar.aspx

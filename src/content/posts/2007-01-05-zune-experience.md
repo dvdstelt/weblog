@@ -5,7 +5,7 @@ title: Zune experience
 description: So I’ve been playing around with my new Zune player. I’ve listened to a ton of music,...
 pubDate: '2007-01-05T03:22:58'
 tags:
-  - Personal
+  - personal
   - Zune
   - Microsoft
   - iPod

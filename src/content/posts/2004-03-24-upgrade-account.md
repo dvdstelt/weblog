@@ -5,7 +5,7 @@ title: Upgrade account
 description: Dear customer, We would like to inform you that the speed of your Demon DSL Express c...
 pubDate: '2004-03-24T06:50:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/03/24/upgrade-account
   - /blogs/dennis/archive/2004/03/24/upgrade-account.aspx

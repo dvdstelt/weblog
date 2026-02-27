@@ -5,7 +5,7 @@ title: Login on Microsoft Community Server websites
 description: I don’t know if you can find them, but I have no idea how to get to the login page an...
 pubDate: '2006-12-14T11:36:52'
 tags:
-  - Blogging
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/12/14/login-on-microsoft-community-server-websites

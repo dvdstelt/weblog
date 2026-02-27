@@ -6,9 +6,8 @@ description: Yesterday I presented my messaging presentation again, organized by
 pubDate: '2015-10-16T10:13:33'
 image: /images/building-reliable-applications-messaging/header.jpg
 tags:
-  - NServiceBus
-  - messaging
   - nservicebus
+  - messaging
   - presentation
 redirect_from:
   - /dennis/2015/10/16/building-reliable-applications-messaging

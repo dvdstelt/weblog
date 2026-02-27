@@ -5,7 +5,7 @@ title: FITnesse and .NET
 description: FIT is definitely something I have to dig into in the near future. I’m trying really ...
 pubDate: '2005-11-23T10:18:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/11/23/fitnesse-and-net
   - /blogs/dennis/archive/2005/11/23/fitnesse-and-net.aspx

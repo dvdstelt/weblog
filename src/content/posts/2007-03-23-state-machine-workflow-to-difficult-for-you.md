@@ -6,7 +6,7 @@ description: Recently Anko Duizer started a discussion inside ClassA about Windo
 pubDate: '2007-03-23T04:12:29'
 tags:
   - .NET Framework 3.0
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2007/03/23/state-machine-workflow-to-difficult-for-you
   - /blogs/dennis/archive/2007/03/23/state-machine-workflow-to-difficult-for-you.aspx

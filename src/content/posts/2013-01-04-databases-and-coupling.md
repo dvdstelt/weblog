@@ -6,7 +6,7 @@ description: We probably all learned this at school. When you build software, yo
 pubDate: '2013-01-04T10:36:12'
 image: /images/databases-and-coupling/header.png
 tags:
-  - Architecture and Design
+  - architecture
   - WCF
 redirect_from:
   - /dennis/2013/01/04/databases-and-coupling

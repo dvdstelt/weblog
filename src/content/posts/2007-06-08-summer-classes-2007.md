@@ -5,7 +5,7 @@ title: Summer Classes 2007
 description: At ClassA we’re preparing for the Summer Classes. Last year was the first time we or...
 pubDate: '2007-06-08T06:58:25'
 tags:
-  - Personal
+  - personal
   - DevDays2007
   - .NET 3.5
   - BI

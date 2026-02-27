@@ -5,7 +5,7 @@ title: Zune player in taskbar
 description: This is pretty sweet, you can have the Zune player in your taskbar. On previous versi...
 pubDate: '2009-10-26T07:20:00'
 tags:
-  - Personal
+  - personal
   - Utilities
 redirect_from:
   - /dennis/2009/10/26/zune-player-in-taskbar

@@ -6,7 +6,7 @@ description: I just read a post from Daniel Cazzulino about mocking extension me
 pubDate: '2009-02-21T04:19:57'
 tags:
   - .NET Framework 3.5
-  - Agile
+  - agile
   - TypeMock
 redirect_from:
   - /dennis/2009/02/21/faking-extension-methods

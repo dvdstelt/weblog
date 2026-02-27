@@ -6,7 +6,7 @@ description: As said before, we’re using Windows Workflow Foundation (WF) to s
 pubDate: '2006-02-07T06:20:00'
 tags:
   - .NET Framework 3.0
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2006/02/07/wf-beta-2-developing-on-beta-software
   - /blogs/dennis/archive/2006/02/07/wf-beta-2-developing-on-beta-software.aspx

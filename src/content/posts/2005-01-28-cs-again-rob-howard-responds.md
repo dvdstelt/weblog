@@ -5,7 +5,7 @@ title: CS again, Rob Howard responds
 description: With so many people in the blogging community talking about .Text and wether it’s dea...
 pubDate: '2005-01-28T09:36:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/01/28/cs-again-rob-howard-responds
   - /blogs/dennis/archive/2005/01/28/cs-again-rob-howard-responds.aspx

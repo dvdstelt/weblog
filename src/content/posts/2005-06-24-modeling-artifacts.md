@@ -5,8 +5,8 @@ title: Modeling Artifacts
 description: If you want to know about modeling and Agile modeling specifically, take a visit at S...
 pubDate: '2005-06-24T07:27:00'
 tags:
-  - Agile
-  - Architecture and Design
+  - agile
+  - architecture
 redirect_from:
   - /dennis/2005/06/24/modeling-artifacts
   - /blogs/dennis/archive/2005/06/24/modeling-artifacts.aspx

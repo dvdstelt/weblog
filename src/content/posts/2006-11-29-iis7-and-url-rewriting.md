@@ -5,7 +5,7 @@ title: IIS7 and Url Rewriting
 description: IMPORTANT UPDATEI found out where the <module> tag belongs! 🙂 I was running in Class...
 pubDate: '2006-11-29T12:51:50'
 tags:
-  - ASP.NET
+  - asp.net
   - Development
   - Windows Vista
   - IIS7

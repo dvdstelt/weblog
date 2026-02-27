@@ -6,7 +6,7 @@ description: I’ve been struggling with HTML, CSS, Bootrap 2 and jQuery for som
 pubDate: '2014-04-24T10:53:39'
 image: /images/asp-net-mvc-and-bootstrap-2-buttons-for-radio-buttons/header.png
 tags:
-  - ASP.NET
+  - asp.net
   - Development
   - Bootstrap 2
   - HTML

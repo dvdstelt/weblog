@@ -6,7 +6,7 @@ description: SQL Server 2005 problem solved. The ISO’s I used were probably co
 pubDate: '2006-11-23T12:08:53'
 tags:
   - Miscellaneous
-  - Personal
+  - personal
   - Vista
   - Windows Vista
   - Sql Server 2005

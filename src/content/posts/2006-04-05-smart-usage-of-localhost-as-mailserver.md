@@ -6,7 +6,7 @@ description: Some things are so simple, you’d expect everyone to know these th
 pubDate: '2006-04-05T04:23:00'
 tags:
   - Development
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2006/04/05/smart-usage-of-localhost-as-mailserver
   - /blogs/dennis/archive/2006/04/05/smart-usage-of-localhost-as-mailserver.aspx

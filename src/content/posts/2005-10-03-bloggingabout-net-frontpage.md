@@ -5,7 +5,7 @@ title: BloggingAbout.NET Frontpage
 description: Because of some issues we’re currently having, I disabled some content on the frontpa...
 pubDate: '2005-10-03T11:37:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2005/10/03/bloggingabout-net-frontpage
   - /blogs/dennis/archive/2005/10/03/bloggingabout-net-frontpage.aspx

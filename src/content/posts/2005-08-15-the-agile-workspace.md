@@ -5,7 +5,7 @@ title: The agile workspace
 description: If you pass by here on a regular basis, you might’ve noticed my affection for Agile b...
 pubDate: '2005-08-15T02:22:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/08/15/the-agile-workspace
   - /blogs/dennis/archive/2005/08/15/the-agile-workspace.aspx

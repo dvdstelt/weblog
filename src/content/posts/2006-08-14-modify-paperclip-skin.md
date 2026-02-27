@@ -5,7 +5,7 @@ title: Modify paperclip skin
 description: Because I sometimes want to paste source code into my posts, I want my skins to be a ...
 pubDate: '2006-08-14T04:01:00'
 tags:
-  - Blogging
+  - blogging
   - Community Server
 redirect_from:
   - /dennis/2006/08/14/modify-paperclip-skin

@@ -5,8 +5,8 @@ title: Why developers should not be happy with a project manager
 description: I’ve been on a fair amount of projects in the past 10 to 15 years and almost all of t...
 pubDate: '2009-05-18T03:04:21'
 tags:
-  - Agile
-  - Personal
+  - agile
+  - personal
   - Project Management
 redirect_from:
   - /dennis/2009/05/18/why-developers-should-not-be-happy-with-a-project-manager

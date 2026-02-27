@@ -5,7 +5,7 @@ title: Viewing feedback – problems
 description: It seems there are some problems with viewing postings and their feedback. I have no ...
 pubDate: '2004-12-24T08:17:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2004/12/24/viewing-feedback-problems
   - /blogs/dennis/archive/2004/12/24/viewing-feedback-problems.aspx

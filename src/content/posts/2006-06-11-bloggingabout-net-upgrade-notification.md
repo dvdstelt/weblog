@@ -5,7 +5,7 @@ title: BloggingAbout.NET Upgrade Notification
 description: It’s finally going to happen, BloggingAbout.NET is upgrading to Community Server 2.0....
 pubDate: '2006-06-11T11:51:00'
 tags:
-  - BloggingAbout.NET
+  - blogging
 redirect_from:
   - /dennis/2006/06/11/bloggingabout-net-upgrade-notification
   - /blogs/dennis/archive/2006/06/11/bloggingabout-net-upgrade-notification.aspx

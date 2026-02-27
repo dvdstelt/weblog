@@ -5,7 +5,7 @@ title: MSF for Agile Software Development
 description: MSF for Agile Software Development is a scenariodriven, contextbased, agile softwar...
 pubDate: '2005-02-21T07:30:00'
 tags:
-  - Architecture and Design
+  - architecture
 redirect_from:
   - /dennis/2005/02/21/msf-for-agile-software-development
   - /blogs/dennis/archive/2005/02/21/msf-for-agile-software-development.aspx

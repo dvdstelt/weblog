@@ -6,7 +6,7 @@ description: I hope in the RTM you’ll get more help solving your WCF Ajax prob
 pubDate: '2007-08-14T01:15:51'
 tags:
   - .NET Framework 3.5
-  - ASP.NET
+  - asp.net
   - Visual Studio 2008
   - WCF
   - .NET 3.5

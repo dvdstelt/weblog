@@ -5,7 +5,7 @@ title: Agile vs. RUP
 description: At our company we have these meetings, where people from the same competence in a reg...
 pubDate: '2005-04-20T09:15:00'
 tags:
-  - Agile
+  - agile
 redirect_from:
   - /dennis/2005/04/20/agile-vs-rup
   - /blogs/dennis/archive/2005/04/20/agile-vs-rup.aspx

@@ -5,7 +5,7 @@ title: Workflow Foundation Beta 1.2
 description: This could not have arrived at a better time! I just heard from Marc van de Wert that...
 pubDate: '2006-01-16T11:30:00'
 tags:
-  - Architecture and Design
+  - architecture
   - Development
 redirect_from:
   - /dennis/2006/01/16/workflow-foundation-beta-1-2

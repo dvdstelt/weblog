@@ -6,7 +6,7 @@ description: Last Tuesday, may 18th 2010, I gave a presentation on Microsoft’s
 pubDate: '2010-05-25T05:31:19'
 tags:
   - AppFabric
-  - Azure
+  - azure
   - SDN
   - WCF
 redirect_from:

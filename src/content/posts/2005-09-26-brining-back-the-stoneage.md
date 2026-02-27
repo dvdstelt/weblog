@@ -5,7 +5,7 @@ title: Brining back the stoneage
 description: I created this small internet application where people are able to register themselve...
 pubDate: '2005-09-26T02:26:00'
 tags:
-  - Personal
+  - personal
 redirect_from:
   - /dennis/2005/09/26/brining-back-the-stoneage
   - /blogs/dennis/archive/2005/09/26/brining-back-the-stoneage.aspx
