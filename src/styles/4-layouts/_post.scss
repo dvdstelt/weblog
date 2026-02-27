@@ -336,7 +336,17 @@
       &.share__pinterest {
         color: #bd081c;
       }
+      &.share__github {
+        color: #24292e;
+      }
     }
+  }
+
+  .share__separator {
+    width: 1px;
+    height: 20px;
+    background: rgba($white, 0.2);
+    margin: 0 10px;
   }
 
   @media only screen and (max-width: $mobile) {
