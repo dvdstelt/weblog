@@ -10,9 +10,9 @@ tags:
   - dotnet
 ---
 
-Every blog post on this site that contains code is a small bet that I copied that code correctly. The bet rarely pays out for long. A method gets renamed in the real project, a using statement becomes unnecessary, a config knob moves, and the post quietly drifts. Readers run into errors that don't reproduce, leave a comment if they're patient, give up if they're not.
+A series of posts is on the way, and they lean heavily on code. Long enough that pasting every line into each article would bury the point, and detailed enough that I'd rather readers not have to reverse-engineer what surrounds a snippet just to get it running on their own machine. So before any of those posts go out, the plumbing for it: code in articles is now pulled from real source files that live in this repo, and every snippet links straight back to its source on GitHub.
 
-I have been wanting to fix this for a while. Today the new setup is live: when I write a post and reference a piece of code, the build pulls it straight from a real source file under [samples/](https://github.com/dvdstelt/weblog/tree/main/samples). That file is part of a `.NET` project that compiles in CI on every change. If a sample stops building, the workflow goes red. If a post references a file or region that no longer exists, the site build fails loud, not silently.
+The mechanics are simple. Under [samples/](https://github.com/dvdstelt/weblog/tree/main/samples) there are real projects, with `.csproj` files, scripts, and configs, whatever a given article happens to need. When a post shows a few interesting lines, those lines come straight out of one of those files at build time, not from my copy-paste. Readers who want the using statements, the imports, the wiring up, or the bits I trimmed for brevity, can click the GitHub icon in the corner of any code block and land on the exact lines, inside a project they can clone and run.
 
 ## What it looks like in a post
 
