@@ -3,7 +3,7 @@ id: 20260520
 author: Dennis van der Stelt
 title: 'Authenticating ServicePulse with Keycloak, Part 1: setting the stage'
 description: ServiceControl 6.13 lets ServicePulse sit behind any OpenID Connect identity provider. This series wires it to Keycloak in Docker, end to end, on a home server.
-pubDate: '2026-05-20T01:00:00'
+pubDate: '2026-05-20T02:00:00'
 image: /images/2026/authenticating-servicepulse-with-keycloak/header01.webp
 topic: keycloak-oidc
 tags:
