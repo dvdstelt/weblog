@@ -13,3 +13,8 @@ dist/
 .tweet-cache/
 .claude/
 .DS_Store
+
+# .NET (samples)
+bin/
+obj/
+.vs/

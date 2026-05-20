@@ -14,6 +14,7 @@
     "@pagefind/default-ui": "^1.4.0",
     "astro": "^5.17.1",
     "remark-github-alerts": "^0.1.1",
-    "sass": "^1.97.3"
+    "sass": "^1.97.3",
+    "unist-util-visit": "^5.1.0"
   }
 }

@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/compilable-code-snippets/">
+    <Project Path="compilable-code-snippets/HelloWorld/HelloWorld.csproj" />
+  </Folder>
+</Solution>
