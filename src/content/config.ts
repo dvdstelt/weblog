@@ -10,6 +10,7 @@ const posts = defineCollection({
     tags: z.array(z.string()).optional().default([]),
     author: z.string(),
     id: z.number(),
+    topic: z.string().optional(),
     redirect_from: z.array(z.string()).optional(),
   }),
 });

@@ -1,18 +1,79 @@
 ---
-const navItems = [
+import { getAllSeries } from '../lib/series';
+
+const series = await getAllSeries();
+const seriesChildren = series.map((s) => ({
+  href: `/series/${s.slug}/`,
+  label: s.title,
+}));
+
+interface NavLeaf {
+  href: string;
+  label: string;
+}
+interface NavParent {
+  label: string;
+  children: NavLeaf[];
+  /** Slug used in submenu ids so multiple Nav renders don't collide. */
+  key: string;
+}
+type NavItem = NavLeaf | NavParent;
+
+const navItems: NavItem[] = [
   { href: '/', label: 'Home' },
+  { label: 'Series', children: seriesChildren, key: 'series' },
   { href: '/about/', label: 'About' },
   { href: '/contact/', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
+const idSuffix = Math.random().toString(36).slice(2, 8);
+
+function isParent(item: NavItem): item is NavParent {
+  return 'children' in item;
+}
 ---
 <ul class="nav__list list-reset">
-  {navItems.map(({ href, label }) => (
-    <li class="nav__item">
-      <a href={href} class={`nav__link${currentPath === href ? ' active-link' : ''}`}>
-        {label}
-      </a>
-    </li>
-  ))}
+  {navItems.map((item) => {
+    if (isParent(item)) {
+      if (item.children.length === 0) return null;
+      const submenuId = `submenu-${item.key}-${idSuffix}`;
+      const activeChild = item.children.some((c) => currentPath.startsWith(c.href));
+      return (
+        <li class="nav__item nav__item--has-children">
+          <button
+            type="button"
+            class={`nav__link nav__link--toggle${activeChild ? ' active-link' : ''}`}
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls={submenuId}
+            data-nav-toggle
+          >
+            {item.label}
+            <span class="nav__chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul id={submenuId} class="nav__submenu list-reset" role="menu">
+            {item.children.map((child) => (
+              <li class="nav__submenu-item" role="none">
+                <a
+                  href={child.href}
+                  role="menuitem"
+                  class={`nav__submenu-link${currentPath === child.href ? ' active-link' : ''}`}
+                >
+                  {child.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      );
+    }
+    return (
+      <li class="nav__item">
+        <a href={item.href} class={`nav__link${currentPath === item.href ? ' active-link' : ''}`}>
+          {item.label}
+        </a>
+      </li>
+    );
+  })}
 </ul>
