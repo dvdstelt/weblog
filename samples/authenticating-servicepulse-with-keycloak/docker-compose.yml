@@ -1,0 +1,181 @@
+# Authenticating ServicePulse with Keycloak, sample stack
+#
+# Bring up:
+#   cp .env.example .env
+#   # edit RABBITMQ_CONNECTIONSTRING and PARTICULAR_LICENSE
+#   docker compose up -d
+#
+# The ServiceControl error and audit containers reach the already-running
+# RabbitMQ instance via host.docker.internal (mapped to the Docker host's
+# gateway IP through extra_hosts), so this stack doesn't share a docker
+# network with the RabbitMQ container, RabbitMQ stays in its own compose
+# file, untouched.
+#
+# The reverse proxy (Nginx Proxy Manager, Traefik, Caddy, anything that
+# forwards X-Forwarded-* headers) terminates TLS and forwards plain HTTP
+# to the Docker host on ports 8080 (Keycloak) and 33333 (ServiceControl),
+# both published below. Readers who want container-name forwarding
+# instead can join the proxy to auth-net; this baseline keeps the stack
+# independent of the proxy's docker network.
+
+services:
+
+  auth-keycloak:
+    image: quay.io/keycloak/keycloak:26
+    container_name: auth-keycloak
+    command: start-dev
+    environment:
+      # region KeycloakEnv
+      # Public URL the browser sees. Keycloak uses this to build every
+      # absolute URL it returns (issuer, redirect_uri, token endpoint).
+      KC_HOSTNAME: ${KEYCLOAK_PUBLIC_URL}
+      KC_HOSTNAME_STRICT_HTTPS: "true"
+      # The reverse proxy terminates TLS and forwards plain HTTP; this
+      # tells Keycloak to trust the X-Forwarded-* headers it sees.
+      KC_PROXY_HEADERS: xforwarded
+      KC_HTTP_ENABLED: "true"
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN_USER}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      # endregion
+    volumes:
+      - auth-keycloak-data:/opt/keycloak/data
+    ports:
+      - "8080:8080"
+    networks:
+      - auth-net
+    restart: unless-stopped
+
+  auth-ravendb:
+    image: particular/servicecontrol-ravendb:6
+    container_name: auth-ravendb
+    volumes:
+      - auth-ravendb-data:/var/lib/ravendb/data
+      - auth-ravendb-config:/etc/ravendb
+    networks:
+      - auth-net
+    restart: unless-stopped
+
+  auth-servicecontrol:
+    image: particular/servicecontrol:6
+    container_name: auth-servicecontrol
+    depends_on:
+      - auth-ravendb
+    # --setup-and-run creates the queues, exchanges, and persistence
+    # databases on first start, then runs. Idempotent on later boots.
+    command: --setup-and-run
+    environment:
+      SERVICECONTROL_TRANSPORTTYPE: ${TRANSPORT_TYPE}
+      SERVICECONTROL_CONNECTIONSTRING: ${RABBITMQ_CONNECTIONSTRING}
+      SERVICECONTROL_RAVENDB_CONNECTIONSTRING: http://auth-ravendb:8080
+      SERVICECONTROL_REMOTEINSTANCES: '[{"api_uri":"http://auth-servicecontrol-audit:44444/api"}]'
+      SERVICECONTROL_ENABLEINTEGRATEDSERVICEPULSE: "true"
+      # Integrated ServicePulse reuses the standalone container's
+      # env vars (no SERVICECONTROL_ prefix). "!" is the sentinel that
+      # disables the monitoring section; replace with a real URL if
+      # you add a particular/servicecontrol-monitoring instance later.
+      MONITORING_URL: "!"
+      PARTICULARSOFTWARE_LICENSE: ${PARTICULAR_LICENSE}
+
+      # region ServiceControlAuthEnv
+      # The vars that change when you swap identity providers. Everything
+      # else in this block is generic OIDC validation policy.
+      SERVICECONTROL_AUTHENTICATION_ENABLED: "true"
+      SERVICECONTROL_AUTHENTICATION_AUTHORITY: ${OIDC_AUTHORITY}
+      SERVICECONTROL_AUTHENTICATION_AUDIENCE: ${OIDC_AUDIENCE}
+      SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_CLIENTID: ${OIDC_SERVICEPULSE_CLIENTID}
+      SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_AUTHORITY: ${OIDC_AUTHORITY}
+      # Single-quoted so YAML doesn't parse the JSON array as a sequence;
+      # the literal string lands in the container's env intact.
+      SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_APISCOPES: '${OIDC_SERVICEPULSE_APISCOPES}'
+      SERVICECONTROL_AUTHENTICATION_VALIDATEISSUER: "true"
+      SERVICECONTROL_AUTHENTICATION_VALIDATEAUDIENCE: "true"
+      SERVICECONTROL_AUTHENTICATION_VALIDATELIFETIME: "true"
+      SERVICECONTROL_AUTHENTICATION_VALIDATESIGNINGKEY: "true"
+      SERVICECONTROL_AUTHENTICATION_REQUIREHTTPSMETADATA: "true"
+      # endregion
+
+      # region ServiceControlForwardedHeaders
+      SERVICECONTROL_FORWARDEDHEADERS_ENABLED: "true"
+      SERVICECONTROL_FORWARDEDHEADERS_TRUSTALLPROXIES: "true"
+      # endregion
+
+      # Optional: mount the license as a file instead of an env var.
+      # PARTICULARSOFTWARE_LICENSE: /etc/particular/license.xml
+    # volumes:
+    #   - ./license.xml:/etc/particular/license.xml:ro
+    ports:
+      - "33333:33333"
+    networks:
+      - auth-net
+    extra_hosts:
+      # Maps host.docker.internal to the Docker host gateway on Linux,
+      # matching Docker Desktop's default behaviour on macOS/Windows.
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  auth-servicecontrol-audit:
+    image: particular/servicecontrol-audit:6
+    container_name: auth-servicecontrol-audit
+    depends_on:
+      - auth-ravendb
+    command: --setup-and-run
+    environment:
+      SERVICECONTROL_AUDIT_TRANSPORTTYPE: ${TRANSPORT_TYPE}
+      SERVICECONTROL_AUDIT_CONNECTIONSTRING: ${RABBITMQ_CONNECTIONSTRING}
+      SERVICECONTROL_AUDIT_RAVENDB_CONNECTIONSTRING: http://auth-ravendb:8080
+      PARTICULARSOFTWARE_LICENSE: ${PARTICULAR_LICENSE}
+
+      # region ServiceControlAuditAuthEnv
+      SERVICECONTROL_AUDIT_AUTHENTICATION_ENABLED: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_AUTHORITY: ${OIDC_AUTHORITY}
+      SERVICECONTROL_AUDIT_AUTHENTICATION_AUDIENCE: ${OIDC_AUDIENCE}
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATEISSUER: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATEAUDIENCE: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATELIFETIME: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATESIGNINGKEY: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_REQUIREHTTPSMETADATA: "true"
+      SERVICECONTROL_AUDIT_FORWARDEDHEADERS_ENABLED: "true"
+      SERVICECONTROL_AUDIT_FORWARDEDHEADERS_TRUSTALLPROXIES: "true"
+      # endregion
+    # The error instance reaches the audit instance over auth-net via
+    # SERVICECONTROL_REMOTEINSTANCES (http://auth-servicecontrol-audit:44444),
+    # so 44444 doesn't need to be published on the host. Uncomment the
+    # ports block to hit the audit API directly from the host for debugging.
+    # ports:
+    #   - "44444:44444"
+    networks:
+      - auth-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  # region StandalonePulse
+  # Only needed for ServiceControl < 6.13, where ServicePulse runs as its
+  # own container instead of being hosted inside ServiceControl. Leave
+  # this block commented out on 6.13 or newer.
+  #
+  # auth-servicepulse:
+  #   image: particular/servicepulse:6
+  #   container_name: auth-servicepulse
+  #   environment:
+  #     SERVICECONTROL_URL: http://auth-servicecontrol:33333/api
+  #     MONITORING_URL: ""
+  #   ports:
+  #     - "9090:9090"
+  #   networks:
+  #     - auth-net
+  #   restart: unless-stopped
+  # endregion
+
+# region Networks
+networks:
+  # The stack's own private bridge, Keycloak, RavenDB, ServiceControl,
+  # and the audit instance all reach each other on this network.
+  auth-net:
+    name: auth-net
+# endregion
+
+volumes:
+  auth-keycloak-data:
+  auth-ravendb-data:
+  auth-ravendb-config:
