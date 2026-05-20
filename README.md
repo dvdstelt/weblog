@@ -36,3 +36,9 @@ A site build will fail loud if a post references a sample file or region that do
 ## Issues and PRs
 
 If you spot something wrong in a post, in a code sample, or anywhere in the site itself, the share section at the bottom of every article and the GitHub icon next to every code block both link back to the right file. Issues and PRs are welcome.
+
+## License
+
+Source code, samples, configs, and stylesheets are [MIT](LICENSE) — use them however you like.
+
+Articles under `src/content/posts/` and post images are (c) Dennis van der Stelt, all rights reserved. Brief quotation with attribution is welcome; republishing or mirroring is not. The advice and techniques inside the posts are of course yours to apply.
