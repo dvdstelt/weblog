@@ -160,10 +160,15 @@ const githubUrl = `https://github.com/dvdstelt/weblog/blob/main/src/content/post
 
         <script>
           document.querySelectorAll('.post__content pre').forEach((pre) => {
+            const prev = pre.previousElementSibling;
+            const sourceLink = prev?.classList.contains('code-source-link') ? prev : null;
+
             const wrapper = document.createElement('div');
             wrapper.className = 'code-block-wrapper';
             pre.parentNode?.insertBefore(wrapper, pre);
             wrapper.appendChild(pre);
+
+            if (sourceLink) wrapper.appendChild(sourceLink);
 
             const button = document.createElement('button');
             button.className = 'code-copy-btn';
