@@ -1,0 +1,39 @@
+# Edit this file and re-render with:
+#   d2 --sketch --theme=4 -l elk \
+#      samples/authenticating-servicepulse-with-keycloak/architecture.d2 \
+#      public/images/2026/authenticating-servicepulse-with-keycloak/architecture.svg
+#
+# theme=4 is "Cool classics". --sketch is the hand-drawn renderer.
+
+direction: right
+
+Browser: Browser {
+  shape: person
+}
+
+Proxy: "Reverse proxy\nterminates TLS"
+
+KC: "auth-keycloak\n:8080"
+
+SC: "auth-servicecontrol  ·  :33333" {
+  SP: "Integrated ServicePulse\nSC 6.13+"
+}
+
+Audit: "auth-servicecontrol-audit\n:44444"
+
+Raven: "auth-ravendb" {
+  shape: cylinder
+}
+
+Rabbit: "RabbitMQ\nexisting instance" {
+  shape: cylinder
+}
+
+Browser -> Proxy: HTTPS
+Proxy -> KC: HTTP
+Proxy -> SC: HTTP
+SC -> Audit
+SC -> Raven
+SC -> Rabbit
+Audit -> Raven
+Audit -> Rabbit

@@ -49,6 +49,30 @@ const { title, description, image, pubDate } = Astro.props;
       menuOpenIcon?.addEventListener('click', () => menuList?.classList.add('is-open'));
       menuCloseIcon?.addEventListener('click', () => menuList?.classList.remove('is-open'));
 
+      // Nav dropdowns (Series, etc.)
+      const navToggles = document.querySelectorAll<HTMLButtonElement>('[data-nav-toggle]');
+      function closeAllNavToggles(except?: HTMLButtonElement) {
+        navToggles.forEach((t) => {
+          if (t !== except) t.setAttribute('aria-expanded', 'false');
+        });
+      }
+      navToggles.forEach((toggle) => {
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          closeAllNavToggles(toggle);
+          toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!(e.target instanceof Element) || !e.target.closest('.nav__item--has-children')) {
+          closeAllNavToggles();
+        }
+      });
+      document.addEventListener('keyup', (e) => {
+        if (e.key === 'Escape') closeAllNavToggles();
+      });
+
       searchOpenIcon?.addEventListener('click', () => {
         searchBox?.classList.add('is-visible');
       });

@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getAllSeries } from '../../lib/series';
+
+const series = await getAllSeries();
+---
+<Base
+  title="Series"
+  description="Multi-part series of posts on the same topic. Each one is meant to be read in order."
+>
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+        <div class="archive-box">
+          <h1 class="archive-title">Series</h1>
+          <p class="archive-description">
+            Multi-part walkthroughs. Each series is meant to be read in order.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+        {series.length === 0 ? (
+          <p>No series yet.</p>
+        ) : (
+          <ul class="series-list list-reset">
+            {series.map((s) => (
+              <li class="series-list__item">
+                <h2 class="series-list__title">
+                  <a href={`/series/${s.slug}/`}>{s.title}</a>
+                </h2>
+                <p class="series-list__description">{s.description}</p>
+                <p class="series-list__meta">
+                  {s.posts.length} {s.posts.length === 1 ? 'post' : 'posts'}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </div>
+</Base>

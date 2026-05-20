@@ -68,6 +68,22 @@ For each file-imported block the plugin also injects an `<a class="code-source-l
 
 To add a new code-bearing post: put the source files under `samples/<post-slug>/`, add any `.csproj` to `samples/Samples.slnx` (`dotnet sln samples/Samples.slnx add <project>.csproj`), wrap the interesting parts in region markers, and reference them from the post with `` ```lang file="samples/<post-slug>/..." region="Name" `` (empty body). The `.NET` samples are built separately by `.github/workflows/samples.yml` with `dotnet build samples/Samples.slnx -warnaserror`, pinned to .NET 10 via `samples/global.json`.
 
+### Diagrams
+
+Architecture and flow diagrams are authored in [D2](https://d2lang.com) and rendered to SVG. Source files live at `samples/<post-slug>/<name>.d2`; the rendered SVG goes to `public/images/<year>/<post-slug>/<name>.svg` so posts can reference it as `/images/<year>/<post-slug>/<name>.svg`.
+
+The conventional render command is:
+
+```bash
+d2 --sketch --theme=4 -l elk \
+   samples/<post-slug>/<name>.d2 \
+   public/images/<year>/<post-slug>/<name>.svg
+```
+
+`--sketch` gives the hand-drawn renderer, `--theme=4` is "Cool classics", `-l elk` uses ELK for hierarchical layout (cleaner than the default Dagre on architecture diagrams). The combination is the blog default; deviate only when a specific diagram needs something else, and put the override in the comment at the top of the `.d2` file.
+
+D2 isn't an npm dependency. Install once from the [release page](https://github.com/terrastruct/d2/releases) — fetch the tarball for the host's OS/arch, copy the `bin/d2` to a directory on `PATH` (e.g. `~/.local/bin`), and verify with `d2 --version`. CI doesn't render diagrams; the committed SVG is what ships, so the local render-and-commit step is part of the post-authoring workflow.
+
 ### Comments
 
 Giscus (GitHub Discussions-based comments) is embedded via `src/components/GiscusComments.astro` and rendered at the bottom of every post.

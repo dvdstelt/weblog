@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getAllSeries } from '../../lib/series';
+import { getPostUrl } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const series = await getAllSeries();
+  return series.map((s) => ({
+    params: { slug: s.slug },
+    props: { series: s },
+  }));
+}
+
+const { series } = Astro.props;
+---
+<Base
+  title={series.title}
+  description={series.description}
+>
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+        <div class="archive-box">
+          <p class="archive-eyebrow">
+            <a href="/series/">Series</a>
+          </p>
+          <h1 class="archive-title">{series.title}</h1>
+          <p class="archive-description">{series.description}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+        <ol class="series-posts list-reset">
+          {series.posts.map((post, idx) => {
+            const url = getPostUrl(post);
+            const dateISO = post.data.pubDate.toISOString();
+            const dateFormatted = post.data.pubDate.toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+            });
+            return (
+              <li class="series-posts__item">
+                <a class="series-posts__thumb" href={url} aria-hidden="true" tabindex="-1">
+                  {post.data.image && (
+                    <img src={post.data.image} alt="" width="240" height="120" loading="lazy" />
+                  )}
+                  <span class="series-posts__index">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                </a>
+                <div class="series-posts__body">
+                  <h2 class="series-posts__title">
+                    <a href={url}>{post.data.title}</a>
+                  </h2>
+                  <p class="series-posts__description">{post.data.description}</p>
+                  <time class="series-posts__date" datetime={dateISO}>{dateFormatted}</time>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    </div>
+  </div>
+</Base>

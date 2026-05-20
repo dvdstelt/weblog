@@ -1,0 +1,51 @@
+# Screenshots: Authenticating ServicePulse with Keycloak
+
+This file is the capture brief and tracker for every screenshot in the series. Dennis takes them; this README defines what each frame must show, what the file is called, and which post references it. The captions in the rightmost column are written for the post: when a post says "see the audience mapper config below" the alt text and figcaption come from here so they stay consistent.
+
+Final PNGs live at `public/images/2026/authenticating-servicepulse-with-keycloak/` and are referenced from posts as `/images/2026/authenticating-servicepulse-with-keycloak/<filename>.png`.
+
+## Conventions
+
+- Filename: `NN-area-action.png`, kebab-case, two-digit prefix so they sort.
+- Crop tight on the relevant form / panel. Hide everything that isn't part of the lesson (avatar menus, unrelated nav, the "What's new in 26.x" banner). The reader's eye should go straight to the field being discussed.
+- 1x or 2x retina is fine; the layout already uses `srcset` for hero images and inline `<img>` for the rest.
+- Dark theme or light theme: pick one and stay with it across the series. Keycloak admin defaults to light; recommend that.
+- When a form spans more than one screen, take two shots and label them `NN-a-…` / `NN-b-…` rather than scrolling-then-screenshot.
+
+## Status legend
+
+`todo`: not taken yet. `taken`: file dropped into `public/images/2026/.../`, awaiting caption review. `approved`: caption signed off, referenced from the post.
+
+## Post 2: Keycloak
+
+| # | Filename                                  | Status | What must be visible                                                                                                                                                                          | Caption                                                                                                                                                                                                                |
+| - | ----------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 | `01-keycloak-create-realm.png`            | todo   | The "Create realm" dialog with `Realm name = particular` and the `Enabled` toggle on. No other fields filled.                                                                                 | Creating the `particular` realm. Everything else in this series sits inside it.                                                                                                                                        |
+| 2 | `02-keycloak-client-scope-create.png`     | todo   | Client scopes → Create. `Name = servicecontrol-api`, `Type = Default` (dropdown visible if possible), `Protocol = openid-connect`.                                                            | The `servicecontrol-api` scope marked `Default`. `Default` means every client request that includes it picks the scope up automatically, no opt-in per token.                                                         |
+| 3 | `03-keycloak-client-scope-mapper.png`     | todo   | Inside the `servicecontrol-api` scope → Mappers tab → "Add mapper → By configured type" → Audience. Form filled: `Name = servicecontrol-api-audience`, `Included Custom Audience = servicecontrol-api`, `Add to access token = On`. | The audience mapper. Without this, tokens leave Keycloak without the `aud` claim ServiceControl expects, and every API call comes back `401 invalid audience`. This is the single most-skipped step in the existing docs. |
+| 4 | `04-keycloak-client-create-general.png`   | todo   | Clients → Create client step 1. `Client type = OpenID Connect`, `Client ID = servicepulse`. `Name` optional.                                                                                  | The `servicepulse` client. The ID has to match the value ServiceControl hands to the browser in `SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_CLIENTID`.                                                                 |
+| 5 | `04a-keycloak-client-create-flow.png`     | todo   | Create client step 2 (*Capability config*). `Client authentication = Off`, `Authorization = Off`, `Standard flow = On`, `Direct access grants = Off`.                                         | ServicePulse is a single-page app, so the client is public (`Client authentication: Off`) and uses only the Standard flow. PKCE is configured on the Advanced tab next.                                                |
+| 6 | `04b-keycloak-client-create-login.png`    | todo   | Create client step 3 (*Login settings*). `Valid redirect URIs = https://sc.famvanderstelt.nl/*`, `Valid post logout redirect URIs = https://sc.famvanderstelt.nl/*`, `Web origins = https://sc.famvanderstelt.nl`. `Root URL` and `Home URL` left blank. | The wizard's third page collects all the URLs Keycloak is allowed to send the browser to. Filling them in here saves a trip back to the client's Settings tab afterwards.                                              |
+| 7 | `06-keycloak-client-pkce.png`             | todo   | Settings tab → *Capability config* section. `Require PKCE = On`, `PKCE Method = S256`.                                                                                                        | PKCE on `S256`. Public clients running in a browser can't keep a secret, so PKCE replaces the client secret with a per-login challenge.                                                                                |
+| 8 | `07-keycloak-client-scopes-tab.png`       | todo   | `servicepulse` client → Client scopes tab. `servicecontrol-api` listed under Default (not Optional).                                                                                          | Attaching the `servicecontrol-api` scope as Default on the client. This is the second place a working setup quietly falls over, Optional looks identical until you check the token.                                  |
+| 9 | `08-keycloak-create-user.png`             | todo   | Users → Add user form, then Credentials tab with `Temporary = Off`. Two crops acceptable as `08-a-…` / `08-b-…` if one shot is awkward.                                                       | A test user with a non-temporary password. Temporary forces a password reset on first login, which derails the redirect-and-callback flow the rest of the post tests.                                                  |
+
+## Post 3: ServiceControl + reverse proxy
+
+| #  | Filename                                  | Status | What must be visible                                                                                                                                                                                                       | Caption                                                                                                                                                                       |
+| -- | ----------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 10 | `09-servicepulse-redirect-to-keycloak.png`| todo   | Browser address bar showing `https://kc.famvanderstelt.nl/realms/particular/protocol/openid-connect/auth?...` and the Keycloak login form below it. Hide bookmarks bar.                                               | The redirect at work. ServicePulse handed the browser a `client_id`, `redirect_uri`, `scope`, and `code_challenge`, and Keycloak is now asking the user to log in.            |
+| 11 | `10-servicepulse-after-login.png`         | todo   | ServicePulse dashboard immediately after login. The signed-in user's name or avatar visible in the top-right. No errors in the page.                                                                                       | Landing in ServicePulse after the round trip. The Bearer token is now attached to every API call ServicePulse makes to ServiceControl.                                        |
+| 12 | `11-npm-proxy-host-kc.png`                | todo   | Nginx Proxy Manager → the proxy host entry for `kc.famvanderstelt.nl`. Forward host the Docker host's LAN IP, port `8080`, SSL certificate assigned, `Force SSL`, `HTTP/2 Support`, `Block Common Exploits` toggles visible. | The Keycloak proxy host in Nginx Proxy Manager. The only thing that matters here is that TLS terminates at NPM and the upstream is HTTP, Keycloak picks that up via `KC_PROXY_HEADERS`. |
+| 13 | `12-npm-proxy-host-sc.png`                | todo   | Same panel for `sc.famvanderstelt.nl`, forward host the same Docker host IP, port `33333`.                                                                                                                                  | The ServiceControl proxy host. ServiceControl trusts forwarded headers because the compose file sets `SERVICECONTROL_FORWARDEDHEADERS_*`, without those, request URLs would be rewritten as HTTP and OIDC discovery breaks. |
+
+## Skipped on purpose
+
+- The Keycloak login page itself. Every reader has seen a login page.
+- The Realm settings landing screen. Adds nothing once the realm is created.
+- The ServicePulse home page in a "before login" state. The redirect happens before the user sees anything useful.
+- NPM SSL certificate config. Generic Let's Encrypt; covered well enough by NPM's own docs.
+
+## Adding a new screenshot mid-series
+
+If the post drafts surface a missing capture, add a row in the relevant table with status `todo` and tell Dennis. Renumbering is fine as long as the post fences are updated in the same commit.
