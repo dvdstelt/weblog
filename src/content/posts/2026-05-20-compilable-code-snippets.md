@@ -4,6 +4,7 @@ author: Dennis van der Stelt
 title: Compilable code snippets in this blog
 description: How this blog now pulls snippets from real source files at build time, with a CI check that fails when an example stops compiling and a per-snippet link straight to GitHub.
 pubDate: '2026-05-20T01:00:00'
+image: /images/2026/compileable-code-snippets.png
 tags:
   - meta
   - astro
