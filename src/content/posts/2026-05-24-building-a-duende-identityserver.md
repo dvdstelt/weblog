@@ -18,8 +18,6 @@ tags:
 
 The big shift versus Keycloak is what the <abbr data-tooltip="Identity provider. The service that authenticates users and issues access tokens; in this series, either Keycloak or Duende IdentityServer.">IdP</abbr> *is*. Keycloak is a turnkey server with an admin console; you point a container at a database and click through a realm. Duende IdentityServer is a NuGet library that you embed in an ASP.NET Core app you write yourself. There's no container Duende ships and runs for you, no admin UI out of the box, no managed user store. You get a small set of building blocks and you build the server. The trade is more control and more code in exchange for the UI convenience.
 
-License-wise, Duende is free for development, test, and personal projects, and paid for production deployments. For everything in this series the free dev licence covers it. Production tiers start at $1,500/year; see [Duende's pricing](https://duendesoftware.com/products/identityserver) for the breakdown.
-
 ## A small ASP.NET Core app
 
 The starting point is the `dotnet new isinmem` template, part of `Duende.IdentityServer.Templates`. It scaffolds a Razor Pages-based ASP.NET Core project with in-memory client and scope configuration, a basic login/consent/logout UI, and a `TestUsers` list. We've checked the result into the sample folder so you can clone the repo and follow along; the structure under [samples/2026/authenticating-servicepulse-with-duende/IdentityServer/](https://github.com/dvdstelt/weblog/tree/main/samples/2026/authenticating-servicepulse-with-duende/IdentityServer) is what the template gives you, plus the customisations described below.
