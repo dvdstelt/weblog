@@ -22,9 +22,9 @@ This is the post where everything connects. By the end, the browser hits `https:
 
 Three things distinguish one identity provider from another, from ServiceControl's point of view. The authority URL says where to fetch the public keys and metadata. The audience value says which `aud` claim to accept. The client ID and scopes say what to put into the redirect URL when sending the browser to log in. Everything else, the JWT validation flags, the HTTPS metadata requirement, the forwarded-headers configuration, doesn't change when you swap providers. Move from Keycloak to Duende IdentityServer, or to Auth0, or to Microsoft Entra, and only those four values change. That's the framing worth keeping in mind as the next few env vars roll past.
 
-The block looks like this in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/authenticating-servicepulse-with-keycloak/docker-compose.yml):
+The block looks like this in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml):
 
-```yaml file="samples/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="ServiceControlAuthEnv"
+```yaml file="samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="ServiceControlAuthEnv"
 ```
 
 The first group is the API side. `SERVICECONTROL_AUTHENTICATION_ENABLED` flips <abbr data-tooltip="OpenID Connect: an authentication layer built on top of OAuth 2.0. The identity provider issues signed tokens that applications validate on every request.">OIDC</abbr> on; nothing else here matters when it's off. `AUTHORITY` points at the realm's base URL, the one whose `/.well-known/openid-configuration` ServiceControl fetches at startup to learn where to find Keycloak's signing keys. `AUDIENCE` is the value ServiceControl compares against the `aud` claim on every incoming token. It has to match `servicecontrol-api`, the value the audience mapper from Part 2 puts in the token.
@@ -37,7 +37,7 @@ The third group is JWT validation policy. All five flags should be on. Issuer va
 
 ServiceControl runs as two cooperating instances: the error instance that hosts the API and ServicePulse, and the audit instance that stores message history. Both expose HTTP endpoints. Both verify JWTs. Both need to know about Keycloak. The audit instance uses the same env vars, prefixed with `SERVICECONTROL_AUDIT_` instead of `SERVICECONTROL_`:
 
-```yaml file="samples/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="ServiceControlAuditAuthEnv"
+```yaml file="samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="ServiceControlAuditAuthEnv"
 ```
 
 The audit instance has no SPA of its own (ServicePulse talks to it through the error instance), so there's no `SERVICEPULSE_*` block to mirror. Everything else lines up one-to-one. If the two ever diverge, it's almost always because someone updated the error instance's env vars and forgot the audit's. A sanity check after any change: grep the compose file for `AUTHENTICATION_AUTHORITY` and confirm both occurrences read the same value.
@@ -46,7 +46,7 @@ The audit instance has no SPA of its own (ServicePulse talks to it through the e
 
 The reverse proxy in front terminates TLS and forwards plain HTTP to ServiceControl. From inside the container, the request looks like `http://auth-servicecontrol:33333/...`, but the browser used `https://sc.<yourdomain>/...`. ServiceControl needs to know the original protocol and host, because it has to build redirect URLs that send the browser back to itself, and `http://auth-servicecontrol:33333` is not a URL the browser knows what to do with.
 
-```yaml file="samples/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="ServiceControlForwardedHeaders"
+```yaml file="samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="ServiceControlForwardedHeaders"
 ```
 
 `FORWARDEDHEADERS_ENABLED` makes ServiceControl read the `X-Forwarded-Proto`, `X-Forwarded-Host`, and `X-Forwarded-For` headers and rewrite the request URL accordingly. `TRUSTALLPROXIES` says any caller adding those headers is to be trusted; in a POC with a single reverse proxy on a private network that's fine. In production this is the place to whitelist the proxy's IP range instead.

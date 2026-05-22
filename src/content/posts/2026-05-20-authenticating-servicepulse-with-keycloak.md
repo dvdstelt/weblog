@@ -30,7 +30,7 @@ The series covers two identity providers, with this post as the shared overview.
 
 Parts 2-4 and Parts 5-6 are independent. Read either subset; this post is the only shared prerequisite.
 
-Companion code lives at [samples/authenticating-servicepulse-with-keycloak](https://github.com/dvdstelt/weblog/tree/main/samples/authenticating-servicepulse-with-keycloak) and [samples/authenticating-servicepulse-with-duende](https://github.com/dvdstelt/weblog/tree/main/samples/authenticating-servicepulse-with-duende), one folder per path. Each ships a self-contained compose file you can clone, edit `.env`, and bring up.
+Companion code lives at [samples/2026/authenticating-servicepulse-with-keycloak](https://github.com/dvdstelt/weblog/tree/main/samples/2026/authenticating-servicepulse-with-keycloak) and [samples/2026/authenticating-servicepulse-with-duende](https://github.com/dvdstelt/weblog/tree/main/samples/2026/authenticating-servicepulse-with-duende), one folder per path. Each ships a self-contained compose file you can clone, edit `.env`, and bring up.
 
 ## The shape of the thing
 
@@ -95,6 +95,6 @@ docker exec <your-rabbit-container> rabbitmqctl set_user_tags auth-poc administr
 
 The user `auth-poc` can read and write everything inside `auth-poc`, and nothing outside it. The `administrator` tag is the extra bit that grants management-API access — RabbitMQ keeps that permission separate from AMQP permissions, so a user with full vhost rights but no tag will still be rejected by the management endpoints. `monitoring` works too if you want a read-only tag for production; for the POC `administrator` keeps the troubleshooting story simple. When `.env.example` later asks for a RabbitMQ connection string, this is what feeds into it.
 
-The connection string itself uses `host.docker.internal` rather than the RabbitMQ container's name. The ServiceControl and audit services in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/authenticating-servicepulse-with-keycloak/docker-compose.yml) carry an `extra_hosts: ["host.docker.internal:host-gateway"]` entry, which maps the magic hostname to the Docker host gateway from inside the container on Linux, matching Docker Desktop's default on macOS and Windows. The trade-off: traffic crosses the host's loopback rather than staying on a private bridge, which is fine on a single-host POC and worth revisiting in production.
+The connection string itself uses `host.docker.internal` rather than the RabbitMQ container's name. The ServiceControl and audit services in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml) carry an `extra_hosts: ["host.docker.internal:host-gateway"]` entry, which maps the magic hostname to the Docker host gateway from inside the container on Linux, matching Docker Desktop's default on macOS and Windows. The trade-off: traffic crosses the host's loopback rather than staying on a private bridge, which is fine on a single-host POC and worth revisiting in production.
 
 That's all the preparation. In Part 2 we bring up Keycloak on its own, set up the realm, and walk through the client scope and audience mapper that make every subsequent step actually work.

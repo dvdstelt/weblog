@@ -66,17 +66,17 @@ Marker lines are stripped from the rendered snippet and common leading whitespac
 
 For each file-imported block the plugin also injects an `<a class="code-source-link">` sibling pointing at the source on GitHub, with a `#Lstart-Lend` fragment for region-based snippets. The wrapper script at the bottom of `Post.astro` pulls that anchor into the same `.code-block-wrapper` as the copy button; styles live in `src/styles/1-tools/_syntax-highlighting.scss`. The GitHub URL prefix and the `main` branch are hardcoded as `GITHUB_BLOB_URL` near the top of `astro.config.mjs` — update both if the repo or default branch ever moves.
 
-To add a new code-bearing post: put the source files under `samples/<post-slug>/`, add any `.csproj` to `samples/Samples.slnx` (`dotnet sln samples/Samples.slnx add <project>.csproj`), wrap the interesting parts in region markers, and reference them from the post with `` ```lang file="samples/<post-slug>/..." region="Name" `` (empty body). The `.NET` samples are built separately by `.github/workflows/samples.yml` with `dotnet build samples/Samples.slnx -warnaserror`, pinned to .NET 10 via `samples/global.json`.
+To add a new code-bearing post: put the source files under `samples/<year>/<post-slug>/` (year of the post's publication date), add any `.csproj` to `samples/Samples.slnx` (`dotnet sln samples/Samples.slnx add samples/<year>/<post-slug>/<Project>/<Project>.csproj`), wrap the interesting parts in region markers, and reference them from the post with `` ```lang file="samples/<year>/<post-slug>/..." region="Name" `` (empty body). The `.NET` samples are built separately by `.github/workflows/samples.yml` with `dotnet build samples/Samples.slnx -warnaserror`, pinned to .NET 10 via `samples/global.json`.
 
 ### Diagrams
 
-Architecture and flow diagrams are authored in [D2](https://d2lang.com) and rendered to SVG. Source files live at `samples/<post-slug>/<name>.d2`; the rendered SVG goes to `public/images/<year>/<post-slug>/<name>.svg` so posts can reference it as `/images/<year>/<post-slug>/<name>.svg`.
+Architecture and flow diagrams are authored in [D2](https://d2lang.com) and rendered to SVG. Source files live at `samples/<year>/<post-slug>/<name>.d2`; the rendered SVG goes to `public/images/<year>/<post-slug>/<name>.svg` so posts can reference it as `/images/<year>/<post-slug>/<name>.svg`.
 
 The conventional render command is:
 
 ```bash
 d2 --sketch --theme=4 -l elk \
-   samples/<post-slug>/<name>.d2 \
+   samples/<year>/<post-slug>/<name>.d2 \
    public/images/<year>/<post-slug>/<name>.svg
 ```
 
