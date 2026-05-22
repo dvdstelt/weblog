@@ -97,6 +97,4 @@ Another at first login: **`invalid_scope` for `offline_access`.** ServicePulse's
 
 One more Duende-specific gotcha worth flagging is **signing-key regeneration on container restart**. Duende generates a new JWT signing key on startup unless you persist it. After a restart, any token already issued is unsigned by the new key set and gets rejected; the symptom is "I was logged in five minutes ago and now every XHR returns 401". Fix is to log in again. The permanent fix is the EF integration, which persists keys in the operational store; that's the same "what this leaves out" trade-off as in-memory configuration from Part 5.
 
-The other Duende-vs-Keycloak gap: there's no equivalent to Keycloak's *Client scopes → Evaluate* tab from Part 2. To preview what Duende would issue for a given user, the closest thing is calling the token endpoint manually (with `curl` or the `Duende.IdentityModel` library) or trusting the configuration in `Config.cs` and decoding a token that came out of a real login at [jwt.io](https://jwt.io). Less convenient; the same `aud`/`iss`/`scope` claims to look at.
-
 Two posts to wire a different IdP. The ServiceControl side stayed the same; the work was all on the Duende side, building the server in Part 5, configuring it for the same audience. The four env vars worked as advertised.
