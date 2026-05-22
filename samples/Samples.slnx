@@ -2,4 +2,7 @@
   <Folder Name="/2026/compilable-code-snippets/">
     <Project Path="2026/compilable-code-snippets/HelloWorld/HelloWorld.csproj" />
   </Folder>
+  <Folder Name="/2026/authenticating-servicepulse-with-duende/">
+    <Project Path="2026/authenticating-servicepulse-with-duende/IdentityServer/IdentityServer.csproj" />
+  </Folder>
 </Solution>

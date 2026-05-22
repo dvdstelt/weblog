@@ -1,0 +1,128 @@
+# Authenticating ServicePulse with Duende IdentityServer, sample stack
+#
+# Bring up:
+#   cp .env.example .env
+#   # edit RABBITMQ_CONNECTIONSTRING and PARTICULAR_LICENSE
+#   docker compose up -d
+#
+# The reverse proxy terminates TLS on is.<your-domain> and
+# sc.<your-domain> and forwards plain HTTP to the Docker host on
+# ports 8080 (IdentityServer) and 33333 (ServiceControl).
+#
+# Heads-up: container names mirror the Keycloak stack (auth-servicecontrol
+# et al.) so the two compose files can't run side by side without renaming
+# one. To run both, change container_name: + the compose project name on
+# this file.
+
+services:
+
+  auth-identityserver:
+    image: auth-identityserver:latest
+    container_name: auth-identityserver
+    environment:
+      # region IdentityServerEnv
+      # Public URL ServicePulse will redirect the user back to after
+      # login. Duende uses it to build the RedirectUris allowlist and
+      # the CORS origin on the servicepulse client.
+      ServicePulseUrl: ${SERVICEPULSE_URL}
+
+      # Trust the reverse proxy so Duende sees the public scheme/host
+      # (https://is.<yourdomain>) rather than the container's
+      # internal one. UseForwardedHeaders is wired up in
+      # HostingExtensions.cs to honour these.
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      # endregion
+    ports:
+      - "8080:8080"
+    networks:
+      - auth-net
+    restart: unless-stopped
+
+  auth-ravendb:
+    image: particular/servicecontrol-ravendb:6
+    container_name: auth-ravendb
+    volumes:
+      - auth-ravendb-data:/var/lib/ravendb/data
+      - auth-ravendb-config:/etc/ravendb
+    networks:
+      - auth-net
+    restart: unless-stopped
+
+  auth-servicecontrol:
+    image: particular/servicecontrol:6
+    container_name: auth-servicecontrol
+    depends_on:
+      - auth-ravendb
+    command: --setup-and-run
+    environment:
+      SERVICECONTROL_TRANSPORTTYPE: ${TRANSPORT_TYPE}
+      SERVICECONTROL_CONNECTIONSTRING: ${RABBITMQ_CONNECTIONSTRING}
+      SERVICECONTROL_RAVENDB_CONNECTIONSTRING: http://auth-ravendb:8080
+      SERVICECONTROL_REMOTEINSTANCES: '[{"api_uri":"http://auth-servicecontrol-audit:44444/api"}]'
+      SERVICECONTROL_ENABLEINTEGRATEDSERVICEPULSE: "true"
+      MONITORING_URL: "!"
+      PARTICULARSOFTWARE_LICENSE: ${PARTICULAR_LICENSE}
+
+      # region ServiceControlAuthEnv
+      # The four values that change when you swap identity providers,
+      # repointed at Duende. See Part 3 of the series for the
+      # explanation of each.
+      SERVICECONTROL_AUTHENTICATION_ENABLED: "true"
+      SERVICECONTROL_AUTHENTICATION_AUTHORITY: ${OIDC_AUTHORITY}
+      SERVICECONTROL_AUTHENTICATION_AUDIENCE: ${OIDC_AUDIENCE}
+      SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_CLIENTID: ${OIDC_SERVICEPULSE_CLIENTID}
+      SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_AUTHORITY: ${OIDC_AUTHORITY}
+      SERVICECONTROL_AUTHENTICATION_SERVICEPULSE_APISCOPES: '${OIDC_SERVICEPULSE_APISCOPES}'
+
+      SERVICECONTROL_AUTHENTICATION_VALIDATEISSUER: "true"
+      SERVICECONTROL_AUTHENTICATION_VALIDATEAUDIENCE: "true"
+      SERVICECONTROL_AUTHENTICATION_VALIDATELIFETIME: "true"
+      SERVICECONTROL_AUTHENTICATION_VALIDATESIGNINGKEY: "true"
+      SERVICECONTROL_AUTHENTICATION_REQUIREHTTPSMETADATA: "true"
+      # endregion
+
+      SERVICECONTROL_FORWARDEDHEADERS_ENABLED: "true"
+      SERVICECONTROL_FORWARDEDHEADERS_TRUSTALLPROXIES: "true"
+    ports:
+      - "33333:33333"
+    networks:
+      - auth-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  auth-servicecontrol-audit:
+    image: particular/servicecontrol-audit:6
+    container_name: auth-servicecontrol-audit
+    depends_on:
+      - auth-ravendb
+    command: --setup-and-run
+    environment:
+      SERVICECONTROL_AUDIT_TRANSPORTTYPE: ${TRANSPORT_TYPE}
+      SERVICECONTROL_AUDIT_CONNECTIONSTRING: ${RABBITMQ_CONNECTIONSTRING}
+      SERVICECONTROL_AUDIT_RAVENDB_CONNECTIONSTRING: http://auth-ravendb:8080
+      PARTICULARSOFTWARE_LICENSE: ${PARTICULAR_LICENSE}
+
+      SERVICECONTROL_AUDIT_AUTHENTICATION_ENABLED: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_AUTHORITY: ${OIDC_AUTHORITY}
+      SERVICECONTROL_AUDIT_AUTHENTICATION_AUDIENCE: ${OIDC_AUDIENCE}
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATEISSUER: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATEAUDIENCE: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATELIFETIME: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_VALIDATESIGNINGKEY: "true"
+      SERVICECONTROL_AUDIT_AUTHENTICATION_REQUIREHTTPSMETADATA: "true"
+      SERVICECONTROL_AUDIT_FORWARDEDHEADERS_ENABLED: "true"
+      SERVICECONTROL_AUDIT_FORWARDEDHEADERS_TRUSTALLPROXIES: "true"
+    networks:
+      - auth-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+networks:
+  auth-net:
+    name: auth-net
+
+volumes:
+  auth-ravendb-data:
+  auth-ravendb-config:

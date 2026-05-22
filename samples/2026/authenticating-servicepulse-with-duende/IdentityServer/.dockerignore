@@ -1,0 +1,17 @@
+# Build output. Especially obj/, which contains project.assets.json with
+# absolute paths into the host's NuGet cache; copying it into the image
+# breaks the "restore in one layer, publish in a later layer" pattern
+# (NETSDK1064 "package was not found"), because --no-restore then reads
+# host paths that don't exist inside the container.
+bin/
+obj/
+out/
+
+# IDE
+.vs/
+.idea/
+*.user
+
+# Local state
+.env
+*.tar
