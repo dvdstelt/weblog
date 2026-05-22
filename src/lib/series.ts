@@ -10,9 +10,9 @@ import { getCollection, type CollectionEntry } from 'astro:content';
  * fails the build with a clear error.
  */
 export const SERIES = {
-  'keycloak-oidc': {
-    title: 'Authenticating ServicePulse with Keycloak',
-    description: 'A four-part walkthrough of putting Keycloak in front of ServicePulse with OpenID Connect, end to end, in Docker.',
+  'servicepulse-oidc': {
+    title: 'Authenticating ServicePulse',
+    description: 'OpenID Connect for ServicePulse, end to end in Docker. Covers the Keycloak path and the Duende IdentityServer path; pick one.',
   },
 } as const satisfies Record<string, { title: string; description: string }>;
 

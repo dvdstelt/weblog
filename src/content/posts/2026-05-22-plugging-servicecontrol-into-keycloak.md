@@ -5,7 +5,7 @@ title: 'Authenticating ServicePulse with Keycloak, Part 3: plugging ServiceContr
 description: The four values that change when you swap identity providers, the audit instance that mirrors them, the forwarded headers ServiceControl trusts behind a reverse proxy, and the moment the browser finally lands back in ServicePulse with a token.
 pubDate: '2026-05-22T01:00:00'
 image: /images/2026/authenticating-servicepulse-with-keycloak/header03.webp
-topic: keycloak-oidc
+topic: servicepulse-oidc
 tags:
   - servicecontrol
   - servicepulse

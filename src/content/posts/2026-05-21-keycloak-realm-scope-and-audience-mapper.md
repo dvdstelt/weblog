@@ -5,7 +5,7 @@ title: 'Authenticating ServicePulse with Keycloak, Part 2: the Keycloak side'
 description: A realm, a client scope, the audience mapper that catches every first-time setup, and the public client ServicePulse uses to redirect through Keycloak.
 pubDate: '2026-05-21T01:00:00'
 image: /images/2026/authenticating-servicepulse-with-keycloak/header02.webp
-topic: keycloak-oidc
+topic: servicepulse-oidc
 tags:
   - oidc
   - keycloak
