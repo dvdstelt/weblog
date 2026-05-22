@@ -38,7 +38,7 @@ public static class TestUsers
                         // automatically from its `username` field; Duende
                         // doesn't project TestUser.Username, so it has to be
                         // listed here explicitly.
-                        new Claim(JwtClaimTypes.PreferredUserName, "arya"),
+                        new Claim(JwtClaimTypes.PreferredUserName, "Arya"),
                         new Claim(JwtClaimTypes.Name, "Arya Stark"),
                         new Claim(JwtClaimTypes.GivenName, "Arya"),
                         new Claim(JwtClaimTypes.FamilyName, "Stark"),
@@ -55,7 +55,7 @@ public static class TestUsers
                     Password = "jon",
                     Claims =
                     {
-                        new Claim(JwtClaimTypes.PreferredUserName, "jon"),
+                        new Claim(JwtClaimTypes.PreferredUserName, "Jon"),
                         new Claim(JwtClaimTypes.Name, "Jon Snow"),
                         new Claim(JwtClaimTypes.GivenName, "Jon"),
                         new Claim(JwtClaimTypes.FamilyName, "Snow"),
