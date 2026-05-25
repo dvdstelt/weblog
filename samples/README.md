@@ -12,21 +12,26 @@ loudly — no silent empty blocks.
 
 ## Layout
 
-One folder per post (slug-based):
+Grouped by year of post publication, then by post slug:
 
 ```
 samples/
-  <post-slug>/
-    README.md            # back-link to the post; brief notes per region
-    <Project>/<Project>.csproj
-    <Project>/Program.cs
-    docker/Dockerfile
-    scripts/deploy.sh
+  <year>/
+    <post-slug>/
+      README.md            # back-link to the post; brief notes per region
+      <Project>/<Project>.csproj
+      <Project>/Program.cs
+      docker/Dockerfile
+      scripts/deploy.sh
 ```
 
-When the first .NET sample lands, add an aggregate `samples/Samples.sln` and a
-`.github/workflows/samples.yml` that runs `dotnet build -warnaserror` on
-changes to `samples/**`. Shell + Dockerfile linting can join the same workflow.
+The year folder keeps the top-level browsable as the blog grows. New samples
+land under the year their host post is published in.
+
+`samples/Samples.slnx` aggregates every `.csproj` for the
+`.github/workflows/samples.yml` build, which runs `dotnet build -warnaserror`
+on changes to `samples/**`. Add new projects with
+`dotnet sln samples/Samples.slnx add samples/<year>/<post-slug>/<Project>/<Project>.csproj`.
 
 ## Authoring a snippet in a post
 
@@ -35,7 +40,7 @@ optionally `region=` on the info line. The fence body stays empty — the build
 fills it in.
 
 ````markdown
-```csharp file="samples/messaging-intro/Publisher/Program.cs" region="Setup"
+```csharp file="samples/2026/messaging-intro/Publisher/Program.cs" region="Setup"
 ```
 ````
 

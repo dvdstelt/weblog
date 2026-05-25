@@ -5,7 +5,7 @@ title: 'Authenticating ServicePulse with Keycloak, Part 4: when OIDC goes wrong,
 description: The error messages every first-time setup hits, what each one actually means, the fix, and the list of things that need to change before this configuration leaves the lab.
 pubDate: '2026-05-23T01:00:00'
 image: /images/2026/authenticating-servicepulse-with-keycloak/header04.webp
-topic: keycloak-oidc
+topic: servicepulse-oidc
 tags:
   - oidc
   - keycloak

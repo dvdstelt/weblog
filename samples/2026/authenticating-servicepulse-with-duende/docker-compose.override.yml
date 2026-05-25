@@ -1,0 +1,20 @@
+# docker compose picks this file up automatically when it sits next to
+# docker-compose.yml. The override adds the `build:` directive only on
+# machines that have the IdentityServer source folder (i.e. your dev
+# box / a clone of the repo).
+#
+# Why this file exists separately: when the compose stack ships to a
+# server, only docker-compose.yml and .env get copied, not the
+# IdentityServer source. Without this split, the base file's `build:`
+# would point at a path that doesn't exist on the server and `docker
+# compose up` would crash with `path "./IdentityServer" not found`.
+# Keeping `image:` in the base file and `build:` here means the same
+# base file works in both places: dev builds and runs, server pulls
+# the locally-loaded image (shipped via docker save | scp | docker
+# load) and runs.
+
+services:
+  auth-identityserver:
+    build:
+      context: ./IdentityServer
+      dockerfile: Dockerfile

@@ -5,7 +5,7 @@ title: 'Authenticating ServicePulse with Keycloak, Part 2: the Keycloak side'
 description: A realm, a client scope, the audience mapper that catches every first-time setup, and the public client ServicePulse uses to redirect through Keycloak.
 pubDate: '2026-05-21T01:00:00'
 image: /images/2026/authenticating-servicepulse-with-keycloak/header02.webp
-topic: keycloak-oidc
+topic: servicepulse-oidc
 tags:
   - oidc
   - keycloak
@@ -19,9 +19,9 @@ The first time anyone tries to wire ServiceControl to Keycloak, everything looks
 
 ## Bring Keycloak up on its own
 
-ServiceControl can't start until it can fetch the <abbr data-tooltip="OpenID Connect: an authentication layer built on top of OAuth 2.0. The identity provider issues signed tokens that applications validate on every request.">OIDC</abbr> discovery document from Keycloak, so the order matters: Keycloak first, alone, then the rest. The service block in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/authenticating-servicepulse-with-keycloak/docker-compose.yml) is small. The environment variables are the interesting part:
+ServiceControl can't start until it can fetch the <abbr data-tooltip="OpenID Connect: an authentication layer built on top of OAuth 2.0. The identity provider issues signed tokens that applications validate on every request.">OIDC</abbr> discovery document from Keycloak, so the order matters: Keycloak first, alone, then the rest. The service block in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml) is small. The environment variables are the interesting part:
 
-```yaml file="samples/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="KeycloakEnv"
+```yaml file="samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml" region="KeycloakEnv"
 ```
 
 `KC_HOSTNAME` is the public URL Keycloak hands out in every absolute link it builds. Without it, Keycloak introspects the request and assumes the URL the browser used was the one the container saw, which on the inside is `http://auth-keycloak:8080`. Every redirect would then send the browser to that hostname, and the browser couldn't resolve it. `KC_HOSTNAME_STRICT_HTTPS` keeps Keycloak honest if anything starts handing it `http://` URLs; the reverse proxy in front speaks HTTPS to the browser, so this is what we want.

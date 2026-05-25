@@ -19,22 +19,22 @@ The mechanics are simple. Under [samples/](https://github.com/dvdstelt/weblog/tr
 
 Here's the `Greet` method from a tiny `HelloWorld` project that lives in this repo:
 
-```csharp file="samples/compilable-code-snippets/HelloWorld/Program.cs" region="Greet"
+```csharp file="samples/2026/compilable-code-snippets/HelloWorld/Program.cs" region="Greet"
 ```
 
 And the matching `Main`:
 
-```csharp file="samples/compilable-code-snippets/HelloWorld/Program.cs" region="Main"
+```csharp file="samples/2026/compilable-code-snippets/HelloWorld/Program.cs" region="Main"
 ```
 
-Both blocks come from the same [Program.cs](https://github.com/dvdstelt/weblog/blob/main/samples/compilable-code-snippets/HelloWorld/Program.cs). Each rendered code block has a little GitHub icon in the top-right corner, next to the existing copy button. Hovering shows "Improve this code". Clicking takes you to the exact lines in the source file, so anyone who spots a smell or a missing edge case can open a PR without leaving the page.
+Both blocks come from the same [Program.cs](https://github.com/dvdstelt/weblog/blob/main/samples/2026/compilable-code-snippets/HelloWorld/Program.cs). Each rendered code block has a little GitHub icon in the top-right corner, next to the existing copy button. Hovering shows "Improve this code". Clicking takes you to the exact lines in the source file, so anyone who spots a smell or a missing edge case can open a PR without leaving the page.
 
 ## How a post references code
 
 Posts are still plain Markdown. The new bit is the info string on the fence:
 
 ````markdown
-```csharp file="samples/compilable-code-snippets/HelloWorld/Program.cs" region="Greet"
+```csharp file="samples/2026/compilable-code-snippets/HelloWorld/Program.cs" region="Greet"
 ```
 ````
 

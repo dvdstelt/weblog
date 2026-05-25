@@ -5,7 +5,7 @@ title: 'Authenticating ServicePulse with Keycloak, Part 1: setting the stage'
 description: ServiceControl 6.13 lets ServicePulse sit behind any OpenID Connect identity provider. This series wires it to Keycloak in Docker, end to end, on a home server.
 pubDate: '2026-05-20T02:00:00'
 image: /images/2026/authenticating-servicepulse-with-keycloak/header01.webp
-topic: keycloak-oidc
+topic: servicepulse-oidc
 tags:
   - oidc
   - keycloak
@@ -22,14 +22,15 @@ This is the first post in a short series that wires up that flow end to end. By 
 
 ## What the series builds
 
-Across four posts, we put the following on the table:
+The series covers two identity providers, with this post as the shared overview. Pick the path that fits.
 
 - Part 1 (this one): the architecture, a brief OIDC primer, the prerequisites, and one RabbitMQ housekeeping step.
-- Part 2: a Keycloak <abbr data-tooltip="A Keycloak realm is an isolated workspace for users, roles, and client applications. Each realm has its own users and configuration; nothing crosses between realms unless you configure it to.">realm</abbr> with a client scope, an audience mapper, and the public `servicepulse` client. This is the bit the existing docs gloss over.
-- Part 3: ServiceControl and the integrated ServicePulse wired into Keycloak, plus the reverse proxy in front.
-- Part 4: when things go wrong, what each error message actually means, and the list of things this POC deliberately is not ready for in production.
+- Parts 2-4: the **Keycloak** path. A Keycloak <abbr data-tooltip="A Keycloak realm is an isolated workspace for users, roles, and client applications. Each realm has its own users and configuration; nothing crosses between realms unless you configure it to.">realm</abbr> with a client scope and the audience mapper that catches every first-time setup, then ServiceControl wired in, then a troubleshooting catalogue and a list of what the POC deliberately leaves out for production.
+- Parts 5-6: the **Duende IdentityServer** path. A minimal ASP.NET Core app hosting Duende, configured for the same `servicecontrol-api` audience as the Keycloak path, then ServiceControl wired into it. Same four env vars on the ServiceControl side as Part 3, repointed.
 
-The companion code lives at [samples/authenticating-servicepulse-with-keycloak](https://github.com/dvdstelt/weblog/tree/main/samples/authenticating-servicepulse-with-keycloak). One `docker compose up -d` after editing three values in `.env`, and the stack comes up.
+Parts 2-4 and Parts 5-6 are independent. Read either subset; this post is the only shared prerequisite.
+
+Companion code lives at [samples/2026/authenticating-servicepulse-with-keycloak](https://github.com/dvdstelt/weblog/tree/main/samples/2026/authenticating-servicepulse-with-keycloak) and [samples/2026/authenticating-servicepulse-with-duende](https://github.com/dvdstelt/weblog/tree/main/samples/2026/authenticating-servicepulse-with-duende), one folder per path. Each ships a self-contained compose file you can clone, edit `.env`, and bring up.
 
 ## The shape of the thing
 
@@ -94,6 +95,6 @@ docker exec <your-rabbit-container> rabbitmqctl set_user_tags auth-poc administr
 
 The user `auth-poc` can read and write everything inside `auth-poc`, and nothing outside it. The `administrator` tag is the extra bit that grants management-API access — RabbitMQ keeps that permission separate from AMQP permissions, so a user with full vhost rights but no tag will still be rejected by the management endpoints. `monitoring` works too if you want a read-only tag for production; for the POC `administrator` keeps the troubleshooting story simple. When `.env.example` later asks for a RabbitMQ connection string, this is what feeds into it.
 
-The connection string itself uses `host.docker.internal` rather than the RabbitMQ container's name. The ServiceControl and audit services in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/authenticating-servicepulse-with-keycloak/docker-compose.yml) carry an `extra_hosts: ["host.docker.internal:host-gateway"]` entry, which maps the magic hostname to the Docker host gateway from inside the container on Linux, matching Docker Desktop's default on macOS and Windows. The trade-off: traffic crosses the host's loopback rather than staying on a private bridge, which is fine on a single-host POC and worth revisiting in production.
+The connection string itself uses `host.docker.internal` rather than the RabbitMQ container's name. The ServiceControl and audit services in [docker-compose.yml](https://github.com/dvdstelt/weblog/blob/main/samples/2026/authenticating-servicepulse-with-keycloak/docker-compose.yml) carry an `extra_hosts: ["host.docker.internal:host-gateway"]` entry, which maps the magic hostname to the Docker host gateway from inside the container on Linux, matching Docker Desktop's default on macOS and Windows. The trade-off: traffic crosses the host's loopback rather than staying on a private bridge, which is fine on a single-host POC and worth revisiting in production.
 
 That's all the preparation. In Part 2 we bring up Keycloak on its own, set up the realm, and walk through the client scope and audience mapper that make every subsequent step actually work.
