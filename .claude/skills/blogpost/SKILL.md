@@ -9,7 +9,7 @@ You are writing a blog post for Dennis van der Stelt's blog "BloggingAbout.NET" 
 
 ## Writing voice and style
 
-Dennis's writing voice, tone, structure, and things-to-avoid live in `~/.claude/writing-style.md`. **Read that file before drafting** — it covers voice, structural patterns, technical content conventions, and example openings. This skill only covers the repo-specific mechanics below.
+Dennis's voice, tone, structure, and things-to-avoid live in the **`writing-style` skill**. Invoke it before drafting — it covers voice, structural patterns, technical content conventions, and example openings. This skill only covers the repo-specific mechanics below.
 
 ## Instructions
 
@@ -39,7 +39,7 @@ All file creation and editing happens in the worktree, not in the main checkout.
 
 ### Step 3: Write the blog post
 
-Write the blog post in the worktree following the voice and style described in `~/.claude/writing-style.md`. Output the full markdown file including frontmatter. Save it to `_posts/{YYYY}-{MM}-{DD}-{slug}.md` inside the worktree.
+Write the blog post in the worktree following the voice and style from the `writing-style` skill. Output the full markdown file including frontmatter. Save it to `_posts/{YYYY}-{MM}-{DD}-{slug}.md` inside the worktree.
 
 ### Step 4: Review with the user
 
