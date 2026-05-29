@@ -70,9 +70,11 @@ To add a new code-bearing post: put the source files under `samples/<year>/<post
 
 ### Diagrams
 
-Architecture and flow diagrams are authored in [D2](https://d2lang.com) and rendered to SVG. Source files live at `samples/<year>/<post-slug>/<name>.d2`; the rendered SVG goes to `public/images/<year>/<post-slug>/<name>.svg` so posts can reference it as `/images/<year>/<post-slug>/<name>.svg`.
+Architecture and flow diagrams are authored in [D2](https://d2lang.com). There are two ways to embed them:
 
-The conventional render command is:
+**Inline fenced block (paste-and-go).** A fenced ` ```d2 ` block in a post is rendered at build time by the `remarkD2` plugin in `astro.config.mjs`, which shells out to the `d2` CLI and inlines the resulting SVG inside a `<figure class="d2-diagram">`. Use this for small diagrams that are intrinsic to a single post. The plugin uses the same defaults as the manual command below (`--sketch --theme=4 -l elk`); it has no per-block override syntax yet, so reach for the file-based workflow when you need a different theme or layout.
+
+**Pre-rendered SVG file.** Source files live at `samples/<year>/<post-slug>/<name>.d2`; the rendered SVG goes to `public/images/<year>/<post-slug>/<name>.svg` so posts can reference it as `/images/<year>/<post-slug>/<name>.svg`. The conventional render command is:
 
 ```bash
 d2 --sketch --theme=4 -l elk \
@@ -82,7 +84,7 @@ d2 --sketch --theme=4 -l elk \
 
 `--sketch` gives the hand-drawn renderer, `--theme=4` is "Cool classics", `-l elk` uses ELK for hierarchical layout (cleaner than the default Dagre on architecture diagrams). The combination is the blog default; deviate only when a specific diagram needs something else, and put the override in the comment at the top of the `.d2` file.
 
-D2 isn't an npm dependency. Install once from the [release page](https://github.com/terrastruct/d2/releases) — fetch the tarball for the host's OS/arch, copy the `bin/d2` to a directory on `PATH` (e.g. `~/.local/bin`), and verify with `d2 --version`. CI doesn't render diagrams; the committed SVG is what ships, so the local render-and-commit step is part of the post-authoring workflow.
+Either way, the `d2` CLI must be on `PATH` (inline blocks render during `astro build`; pre-rendered files render manually before commit). D2 isn't an npm dependency. Install once from the [release page](https://github.com/terrastruct/d2/releases), copy `bin/d2` into a directory on `PATH` (e.g. `~/.local/bin`), and verify with `d2 --version`. CI does not have `d2` installed, so any post using an inline ` ```d2 ` block requires CI to gain `d2` before it can build there; until then, render locally and inspect the output, or use the pre-rendered SVG path for production posts.
 
 ### Comments
 
