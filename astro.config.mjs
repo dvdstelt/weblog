@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import remarkGithubAlerts from 'remark-github-alerts';
@@ -121,6 +122,31 @@ function remarkCodeRegion() {
 }
 
 /** @type {() => import('unified').Plugin} */
+function remarkD2() {
+  return (tree, file) => {
+    visit(tree, 'code', (node, index, parent) => {
+      if (node.lang !== 'd2') return;
+      let svg;
+      try {
+        svg = execFileSync(
+          'd2',
+          ['--sketch', '--theme=4', '-l', 'elk', '-', '-'],
+          { input: node.value, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] },
+        );
+      } catch (err) {
+        failHard(`[remark-d2] failed to render diagram in ${file.path ?? 'unknown post'}: ${err.stderr || err.message}`);
+        return;
+      }
+      svg = svg.replace(/^<\?xml[^?]*\?>\s*/, '').trim();
+      parent.children.splice(index, 1, {
+        type: 'html',
+        value: `<figure class="d2-diagram">${svg}</figure>`,
+      });
+    });
+  };
+}
+
+/** @type {() => import('unified').Plugin} */
 function rehypeImageLayout() {
   const VALID_KEYWORDS = new Set(['left', 'right', 'small', 'medium']);
   return (tree) => {
@@ -147,7 +173,7 @@ export default defineConfig({
   site: 'https://bloggingabout.net',
   trailingSlash: 'always',
   markdown: {
-    remarkPlugins: [remarkCodeRegion, remarkGithubAlerts],
+    remarkPlugins: [remarkCodeRegion, remarkD2, remarkGithubAlerts],
     rehypePlugins: [rehypeImageLayout],
   },
   integrations: [
