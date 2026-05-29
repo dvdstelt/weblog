@@ -1,57 +1,43 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-/**
- * Series registry. Each key is the slug used in a post's `topic:` frontmatter
- * field and in the /series/<slug>/ URL. The title and description are what the
- * menu, the series index, and the per-series page display.
- *
- * Add a new series by adding an entry here, then setting `topic: <slug>` on
- * the posts that belong to it. A post with a topic that isn't in this map
- * fails the build with a clear error.
- */
-export const SERIES = {
-  'servicepulse-oidc': {
-    title: 'Authenticating ServicePulse',
-    description: 'OpenID Connect for ServicePulse, end to end in Docker. Covers the Keycloak path and the Duende IdentityServer path; pick one.',
-  },
-} as const satisfies Record<string, { title: string; description: string }>;
-
-export type SeriesSlug = keyof typeof SERIES;
-
 export interface SeriesSummary {
-  slug: SeriesSlug;
+  slug: string;
   title: string;
   description: string;
+  order: number;
   posts: CollectionEntry<'posts'>[];
   latestPubDate: Date;
-}
-
-function isKnownSlug(slug: string): slug is SeriesSlug {
-  return Object.prototype.hasOwnProperty.call(SERIES, slug);
 }
 
 let cached: SeriesSummary[] | null = null;
 
 /**
- * Return every series that has at least one post, sorted so the most recently
- * updated series comes first. Posts inside each series are sorted by pubDate
- * ascending so Part 1 is the first item the reader sees.
+ * Return every registered series that has at least one post, sorted by the
+ * `order:` field on each series file (lower first, ties broken by title).
+ * Posts inside each series are sorted by pubDate ascending so Part 1 is the
+ * first item the reader sees.
  *
- * Fails loudly at build time if any post sets a topic that isn't registered.
+ * Fails loudly at build time if any post sets a `topic:` that doesn't match a
+ * file in src/content/series/.
  */
 export async function getAllSeries(): Promise<SeriesSummary[]> {
   if (cached) return cached;
 
-  const allPosts = await getCollection('posts');
-  const grouped = new Map<SeriesSlug, CollectionEntry<'posts'>[]>();
+  const [seriesEntries, allPosts] = await Promise.all([
+    getCollection('series'),
+    getCollection('posts'),
+  ]);
+
+  const knownSlugs = new Set(seriesEntries.map((s) => s.id.replace(/\.md$/, '')));
+  const grouped = new Map<string, CollectionEntry<'posts'>[]>();
 
   for (const post of allPosts) {
     const topic = post.data.topic;
     if (!topic) continue;
-    if (!isKnownSlug(topic)) {
+    if (!knownSlugs.has(topic)) {
       throw new Error(
-        `Post "${post.id}" has topic="${topic}" but no entry in SERIES (src/lib/series.ts). ` +
-          `Either fix the typo, or register the new series.`,
+        `Post "${post.id}" has topic="${topic}" but no matching file in src/content/series/. ` +
+          `Either fix the typo, or create src/content/series/${topic}.md.`,
       );
     }
     const bucket = grouped.get(topic) ?? [];
@@ -60,7 +46,10 @@ export async function getAllSeries(): Promise<SeriesSummary[]> {
   }
 
   const result: SeriesSummary[] = [];
-  for (const [slug, posts] of grouped) {
+  for (const entry of seriesEntries) {
+    const slug = entry.id.replace(/\.md$/, '');
+    const posts = grouped.get(slug);
+    if (!posts || posts.length === 0) continue;
     posts.sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime());
     const latest = posts.reduce(
       (max, p) => (p.data.pubDate.getTime() > max.getTime() ? p.data.pubDate : max),
@@ -68,20 +57,20 @@ export async function getAllSeries(): Promise<SeriesSummary[]> {
     );
     result.push({
       slug,
-      title: SERIES[slug].title,
-      description: SERIES[slug].description,
+      title: entry.data.title,
+      description: entry.data.description,
+      order: entry.data.order,
       posts,
       latestPubDate: latest,
     });
   }
 
-  result.sort((a, b) => b.latestPubDate.getTime() - a.latestPubDate.getTime());
+  result.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
   cached = result;
   return result;
 }
 
 export async function getSeriesBySlug(slug: string): Promise<SeriesSummary | null> {
-  if (!isKnownSlug(slug)) return null;
   const all = await getAllSeries();
   return all.find((s) => s.slug === slug) ?? null;
 }

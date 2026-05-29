@@ -15,4 +15,13 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = { posts };
+const series = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number(),
+  }),
+});
+
+export const collections = { posts, series };
