@@ -126,12 +126,15 @@ function remarkD2() {
   return (tree, file) => {
     visit(tree, 'code', (node, index, parent) => {
       if (node.lang !== 'd2') return;
-      const flags = new Set((node.meta ?? '').split(/\s+/).filter(Boolean));
+      const tokens = (node.meta ?? '').split(/\s+/).filter(Boolean);
+      const flags = new Set(tokens);
+      const themeToken = tokens.find(t => /^theme=\d+$/.test(t));
+      const theme = themeToken ? themeToken.slice('theme='.length) : '4';
       let svg;
       try {
         svg = execFileSync(
           'd2',
-          ['--sketch', '--theme=4', '-l', 'elk', '-', '-'],
+          ['--sketch', `--theme=${theme}`, '-l', 'elk', '-', '-'],
           { input: node.value, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] },
         );
       } catch (err) {
