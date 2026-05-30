@@ -100,22 +100,32 @@ style.fill: "#16151F"
 
 Customer: {
   shape: class
+  " ": ""
+  "  ": ""
 }
 
 Order: {
   shape: class
+  " ": ""
+  "  ": ""
 }
 
 Product: {
   shape: class
+  " ": ""
+  "  ": ""
 }
 
 Shipment: {
   shape: class
+  " ": ""
+  "  ": ""
 }
 
 Payment: {
   shape: class
+  " ": ""
+  "  ": ""
 }
 
 Customer -> Order: places
