@@ -13,7 +13,7 @@ tags:
   - architecture
   - omnomnom
 ---
-At this moment, dozens of systems contain a record of you. None of them describe the same person.
+Right now, dozens of systems contain a record of you. None of them describes the same person.
 
 Your bank knows an account holder, a tax identifier, and a pattern of money moving in and out. Your employer knows an employee, a salary band, and how many vacation days remain. Your phone provider knows a subscriber, a device, and a monthly data allowance. Your doctor knows a blood pressure history, a height, and that thing with your knee.
 
@@ -23,7 +23,7 @@ The bank should not know about your knee. The doctor should not know your superm
 
 The interesting thing is not that these models are incomplete. It is that they are intentionally incomplete.
 
-Now imagine somebody decided to bring all of this together. One system. One schema. One canonical definition of a person. Every bank, employer, doctor, supermarket, and phone provider reading from and writing to the same record.
+Now imagine somebody decided to bring all of this together. One system. One schema. One canonical definition of a person. Every bank, employer, doctor, supermarket, and phone provider reading and writing the same record.
 
 You can almost feel the design meeting stretching into its third month.
 
