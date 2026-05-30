@@ -3,7 +3,7 @@ id: 20260529
 author: Dennis van der Stelt
 title: Service boundaries are about authority
 description: Service boundaries are not about data shape or workflow. They are about authority, and most diagrams skip the part that matters.
-pubDate: '2026-05-29T01:00:00'
+pubDate: '2026-05-30T01:00:00'
 image: /images/2026/service-boundaries-are-about-authority.png
 topic: omnomnom
 tags:
