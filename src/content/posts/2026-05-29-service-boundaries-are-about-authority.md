@@ -89,7 +89,7 @@ A service is not a single decision. It is the technical authority for a business
 
 Here is something I see over and over. An architect draws a diagram. Boxes are nouns: Customer, Order, Product. Arrows are verbs: places, contains, ships.
 
-```d2
+```d2 hide-class-markers
 # Inverted palette: page-matched background, white boxes and lines, white connection labels
 style.fill: "#16151F"
 *.style.fill: "#FFFFFF"

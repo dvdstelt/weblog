@@ -126,6 +126,7 @@ function remarkD2() {
   return (tree, file) => {
     visit(tree, 'code', (node, index, parent) => {
       if (node.lang !== 'd2') return;
+      const flags = new Set((node.meta ?? '').split(/\s+/).filter(Boolean));
       let svg;
       try {
         svg = execFileSync(
@@ -138,6 +139,12 @@ function remarkD2() {
         return;
       }
       svg = svg.replace(/^<\?xml[^?]*\?>\s*/, '').trim();
+      // Opt-in: drop UML class visibility glyphs (+/-/#). d2 hard-codes their
+      // color to the theme accent and offers no styling hook, so empty-row
+      // compartments (`" ": ""`) otherwise show a stray marker.
+      if (flags.has('hide-class-markers')) {
+        svg = svg.replace(/<text\b[^>]*>\s*[+\-#]\s*<\/text>/g, '');
+      }
       parent.children.splice(index, 1, {
         type: 'html',
         value: `<figure class="d2-diagram">${svg}</figure>`,
