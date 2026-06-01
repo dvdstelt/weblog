@@ -148,9 +148,16 @@ function remarkD2() {
       if (flags.has('hide-class-markers')) {
         svg = svg.replace(/<text\b[^>]*>\s*[+\-#]\s*<\/text>/g, '');
       }
+      // Optional size modifiers (`small`, `medium`) cap the rendered figure
+      // width. Mirrors the image keyword pattern in rehypeImageLayout.
+      const sizeClass = flags.has('small')
+        ? ' d2-small'
+        : flags.has('medium')
+          ? ' d2-medium'
+          : '';
       parent.children.splice(index, 1, {
         type: 'html',
-        value: `<figure class="d2-diagram">${svg}</figure>`,
+        value: `<figure class="d2-diagram${sizeClass}">${svg}</figure>`,
       });
     });
   };

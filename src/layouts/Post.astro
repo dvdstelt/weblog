@@ -158,7 +158,139 @@ const githubUrl = `https://github.com/dvdstelt/weblog/blob/main/src/content/post
 
         </article>
 
+        <!-- Full-screen viewer for inline d2 diagrams. Markup is empty until a
+             diagram is clicked; the script clones the clicked SVG into .d2-zoom-content. -->
+        <dialog class="d2-zoom-dialog" aria-label="Diagram viewer">
+          <button type="button" class="d2-zoom-close" aria-label="Close diagram viewer">&times;</button>
+          <div class="d2-zoom-stage" data-d2-zoom-stage>
+            <div class="d2-zoom-center">
+              <div class="d2-zoom-content" data-d2-zoom-content></div>
+            </div>
+          </div>
+          <p class="d2-zoom-hint">scroll to zoom, drag to pan, esc to close</p>
+        </dialog>
+
         <script>
+          // D2 diagram fullscreen viewer: click any .d2-diagram to open the SVG
+          // in a fullscreen dialog with mouse-wheel zoom and click-drag pan.
+          (function setupD2Zoom() {
+            const dialog = document.querySelector('.d2-zoom-dialog');
+            if (!dialog || typeof dialog.showModal !== 'function') return;
+            const stage = dialog.querySelector('[data-d2-zoom-stage]');
+            const content = dialog.querySelector('[data-d2-zoom-content]');
+            const closeBtn = dialog.querySelector('.d2-zoom-close');
+
+            let scale = 1;
+            let tx = 0;
+            let ty = 0;
+            let dragging = false;
+            let lastX = 0;
+            let lastY = 0;
+            // Track whether the viewer was opened by keyboard so we can
+            // suppress the lingering focus ring on the trigger figure
+            // after a mouse-initiated close. Keyboard users still get
+            // focus restored to the trigger, which is what they need.
+            let openedByKeyboard = false;
+
+            function apply() {
+              content.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+            }
+
+            function reset() {
+              scale = 1;
+              tx = 0;
+              ty = 0;
+              apply();
+            }
+
+            function open(originalSvg, fromKeyboard) {
+              const clone = originalSvg.cloneNode(true);
+              // Strip width/height so CSS controls the size in the viewer.
+              clone.removeAttribute('width');
+              clone.removeAttribute('height');
+              content.replaceChildren(clone);
+              // Match the dialog chrome to the diagram's canvas fill so the
+              // SVG extends seamlessly. d2 emits a root <rect> with the
+              // canvas colour as its first descendant. Fall back to the CSS
+              // default if anything looks off.
+              const canvasRect = clone.querySelector('rect');
+              const canvasFill = canvasRect?.getAttribute('fill');
+              dialog.style.background = canvasFill || '';
+              openedByKeyboard = fromKeyboard === true;
+              reset();
+              dialog.showModal();
+            }
+
+            function close() {
+              dialog.close();
+            }
+
+            document.querySelectorAll('.post__content .d2-diagram').forEach((figure) => {
+              figure.setAttribute('tabindex', '0');
+              figure.setAttribute('role', 'button');
+              figure.setAttribute('aria-label', 'Open diagram in fullscreen viewer');
+
+              figure.addEventListener('click', () => {
+                const svg = figure.querySelector('svg');
+                if (svg) open(svg, false);
+              });
+              figure.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  const svg = figure.querySelector('svg');
+                  if (svg) open(svg, true);
+                }
+              });
+            });
+
+            closeBtn.addEventListener('click', close);
+            // Click on the dialog itself (the backdrop area outside the stage) closes.
+            dialog.addEventListener('click', (e) => {
+              if (e.target === dialog) close();
+            });
+            // Cleanup after any close (button, backdrop click, ESC).
+            dialog.addEventListener('close', () => {
+              content.replaceChildren();
+              dialog.style.background = '';
+              // Mouse open -> drop focus so Chrome doesn't paint a focus ring
+              // around the figure when control returns to the page.
+              if (!openedByKeyboard && document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur();
+              }
+            });
+
+            stage.addEventListener('wheel', (e) => {
+              e.preventDefault();
+              const factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+              scale = Math.max(0.4, Math.min(10, scale * factor));
+              apply();
+            }, { passive: false });
+
+            stage.addEventListener('pointerdown', (e) => {
+              dragging = true;
+              lastX = e.clientX;
+              lastY = e.clientY;
+              stage.setPointerCapture(e.pointerId);
+              stage.classList.add('is-dragging');
+            });
+            stage.addEventListener('pointermove', (e) => {
+              if (!dragging) return;
+              tx += e.clientX - lastX;
+              ty += e.clientY - lastY;
+              lastX = e.clientX;
+              lastY = e.clientY;
+              apply();
+            });
+            function endDrag(e) {
+              if (!dragging) return;
+              dragging = false;
+              try { stage.releasePointerCapture(e.pointerId); } catch {}
+              stage.classList.remove('is-dragging');
+            }
+            stage.addEventListener('pointerup', endDrag);
+            stage.addEventListener('pointercancel', endDrag);
+          })();
+
           document.querySelectorAll('.post__content pre').forEach((pre) => {
             const prev = pre.previousElementSibling;
             const sourceLink = prev?.classList.contains('code-source-link') ? prev : null;
