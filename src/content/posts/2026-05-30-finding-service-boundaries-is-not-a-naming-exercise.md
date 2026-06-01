@@ -15,7 +15,7 @@ tags:
 ---
 I once worked with a company where Sales said they were responsible for almost everything.
 
-They owned the customer relationship. They negotiated deals. They understood the market. They knew what customers were willing to pay. If you asked Sales who decided the price of a product, the answer was obvious.
+They owned the customer relationship. They negotiated deals. They understood the market. They knew what customers were willing to pay. If you asked Sales who decided a product's price, the answer would be obvious.
 
 Sales did.
 
@@ -63,13 +63,13 @@ That is where a service boundary starts to form.
 
 The fastest way to ruin this exercise is to start with names like Product service, Customer service, Inventory service, or Order service.
 
-Those names feel useful because everyone recognizes them. That is exactly the problem. Names are sticky. Once you call something Product, every property that mentions a product starts looking like it belongs there. Once you call something Inventory, every stock-related rule gets pulled toward it. Once you call something Customer, half the organization suddenly wants to store its data there because, technically, a customer was involved.
+Those names feel useful because everyone recognizes them. That is exactly the problem. Names are sticky. Once you call something Product, every property that mentions a product starts to look like it belongs there. Once you call something Inventory, every stock-related rule gets pulled toward it. Once you call something Customer, half the organization suddenly wants to store its data there because, technically, a customer was involved.
 
 Congratulations. You have not found a boundary. You have created a gravity well.
 
 Use boring names at first. Service A, Service B, Blue, Green, or That Weird One In The Corner. The name comes later, after you understand the authority.
 
-This feels silly, but it helps. A meaningless name prevents you from smuggling assumptions into the design too early. It forces you to keep asking what decisions belong together instead of arguing whether some field "sounds like" it belongs in Product.
+This feels silly, but it helps. A meaningless name prevents you from smuggling assumptions into the design too early. It forces you to keep asking which decisions belong together, rather than arguing whether some field "sounds like" it belongs in Product.
 
 ## Look for cohesion, not size
 
@@ -83,7 +83,7 @@ That usually means the boundaries are larger than people expect. In many systems
 
 And yes, there are no solutions, only trade-offs.
 
-A boundary that is too large becomes a dumping ground. A boundary that is too small creates constant negotiation. The trick is finding the point where decisions inside the boundary are strongly related, and decisions outside the boundary can evolve without everyone holding a meeting every time a property changes.
+A boundary that is too large becomes a dumping ground. A boundary that is too small creates constant negotiation. The trick is finding the point where decisions within the boundary are strongly related, and decisions outside the boundary can evolve without everyone having to hold a meeting every time a property changes.
 
 Which is, admittedly, less catchy than "just make everything a microservice".
 
@@ -99,7 +99,7 @@ The kind of information that can safely cross a boundary is the boring stuff. St
 
 That is also why meaningful identifiers are dangerous. An order number should not contain the year, the month, the customer number, or some clever sequence that increments per customer. Clever identifiers invite clever interpretations. If a customer sees order 2026-001 and 2026-003, they will ask what happened to 2026-002. Congratulations, your identifier has become a business process.
 
-Inside a system, the same problem appears. If an identifier carries meaning, some service will eventually depend on that meaning. At that point you are no longer sharing identity. You are sharing business data while wearing a fake moustache.
+Inside a system, the same problem appears. If an identifier carries meaning, some service will eventually depend on that meaning. At that point you are no longer sharing identity. You are sharing business data while wearing a fake mustache.
 
 So the rule is not "share whatever is convenient". The rule is the opposite.
 
