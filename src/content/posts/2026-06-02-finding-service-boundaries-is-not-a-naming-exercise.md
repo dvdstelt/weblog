@@ -1,9 +1,9 @@
 ---
-id: 20260530
+id: 20260602
 author: Dennis van der Stelt
 title: Finding service boundaries is not a naming exercise
 description: Service boundaries are not named into existence. They are discovered by asking who actually gets to decide, what handoffs exist, and where authority quietly leaks.
-pubDate: '2026-05-30T01:00:00'
+pubDate: '2026-06-02T01:00:00'
 image: /images/2026/finding-service-boundaries.png
 topic: omnomnom
 tags:
