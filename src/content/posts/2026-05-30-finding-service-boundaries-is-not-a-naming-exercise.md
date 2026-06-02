@@ -29,7 +29,7 @@ And now the interesting question is not "where does price live?" The interesting
 
 That is why finding service boundaries is not a naming exercise. You are not looking for nouns on a whiteboard. You are not looking for the department with the loudest opinion. You are looking for authority. Who is allowed to make a decision? Who influences it? Who can override it? Who has built a workaround because the official process was apparently designed during a particularly optimistic workshop?
 
-In the previous post, I argued that service boundaries are about authority. Not databases, deployments, projects, or teams, but the part of the business that gets to make a set of related decisions.
+This is the second post in the OmNomNom series. In [the first one](/2026/05/29/service-boundaries-are-about-authority/), I argued that service boundaries are about authority. Not databases, deployments, projects, or teams, but the part of the business that gets to make a set of related decisions.
 
 That still leaves the annoying question: how do you find them?
 
