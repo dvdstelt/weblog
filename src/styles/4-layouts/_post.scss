@@ -385,6 +385,44 @@
     }
   }
 
+  .d2-zoom-controls {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 2;
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .d2-zoom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: $global-transition;
+
+    &[data-d2-zoom-reset] {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.4);
+      outline: none;
+    }
+  }
+
   .d2-zoom-hint {
     position: absolute;
     bottom: 1rem;
@@ -398,6 +436,12 @@
     background: rgba(0, 0, 0, 0.4);
     border-radius: 999px;
     pointer-events: none;
+  }
+
+  /* On narrow screens the hint and the controls would overlap; the buttons
+     are the important affordance there, so drop the hint text. */
+  @media (max-width: 600px) {
+    .d2-zoom-hint { display: none; }
   }
 }
 
