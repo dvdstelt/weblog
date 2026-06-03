@@ -148,9 +148,46 @@ function remarkD2() {
       if (flags.has('hide-class-markers')) {
         svg = svg.replace(/<text\b[^>]*>\s*[+\-#]\s*<\/text>/g, '');
       }
+      // Markdown-style **bold** marker inside class field text. d2's
+      // `shape: class` has no per-row font-weight, so we wrap the field name
+      // in ** in the d2 source, d2 emits the asterisks literally, and this
+      // pass strips them and visually bolds the matching <text> element.
+      //
+      // The embedded d2 mono font has no real bold weight, so font-weight
+      // alone produces a barely-visible synthesized bold. To make the
+      // emphasis actually readable, we also stroke the glyph in the same
+      // colour as its fill using d2's existing `stroke-NX` classes (which
+      // mirror each `fill-NX`), with `paint-order="stroke"` so the stroke
+      // sits behind the fill. The net effect is a visibly heavier glyph
+      // regardless of font weight support.
+      svg = svg.replace(
+        /<text\b([^>]*)>([^<]*?)<\/text>/g,
+        (match, attrs, body) => {
+          if (!body.includes('**')) return match;
+          const stripped = body.replace(/\*\*([^*]+)\*\*/g, '$1');
+          if (stripped === body) return match;
+          if (/\bfont-weight=/.test(attrs)) return match.replace(body, stripped);
+          const fillClass = attrs.match(/\bfill-([A-Za-z0-9]+)\b/)?.[1];
+          let newAttrs = attrs;
+          if (fillClass && /class="[^"]*"/.test(attrs)) {
+            newAttrs = attrs.replace(
+              /class="([^"]*)"/,
+              (_, classes) => `class="${classes} stroke-${fillClass}"`,
+            );
+          }
+          return `<text${newAttrs} font-weight="bold" paint-order="stroke" stroke-width="1.0">${stripped}</text>`;
+        },
+      );
+      // Optional size modifiers (`small`, `medium`) cap the rendered figure
+      // width. Mirrors the image keyword pattern in rehypeImageLayout.
+      const sizeClass = flags.has('small')
+        ? ' d2-small'
+        : flags.has('medium')
+          ? ' d2-medium'
+          : '';
       parent.children.splice(index, 1, {
         type: 'html',
-        value: `<figure class="d2-diagram">${svg}</figure>`,
+        value: `<figure class="d2-diagram${sizeClass}">${svg}</figure>`,
       });
     });
   };
