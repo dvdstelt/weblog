@@ -21,9 +21,9 @@ In this post, I want to do that for OmNomNom.
 
 OmNomNom is a demo webshop I built. Initially I wanted to incorporate the check out process of the largest e-commerce retailer in the world, but when I started thinking which products I wanted to add, I decided to focus the website around craft beer. Not that the product itself has had any influence on the final solution, I just thought it would be nicer than toilet paper or e-readers.
 
-The website is supposed to be an example on how to find service boundaries and I want to show how to implement them. Because I can be very hand-wavy when talking about service boundaries. This is proven by the fact I already spend two posts on it in the series without going in depth in the demo project.
+The website is supposed to be an example on how to find service boundaries and I want to show how to implement them. Because I can be very hand-wavy when talking about service boundaries. This is proven by the fact I already spend two posts ([one](https://bloggingabout.net/2026/05/29/service-boundaries-are-about-authority/) & [two](https://bloggingabout.net/2026/06/02/finding-service-boundaries-is-not-a-naming-exercise/)) on it in [the series](https://bloggingabout.net/series/omnomnom/) without going in depth in the demo project. And I've got another hand-wavy one coming up.
 
-This is where I should probably say that in a real project, I would talk to domain experts, compare viewpoints, look for disagreements, follow handoffs, and spend a lot more time discovering where the business decisions actually live.
+Anyway, this is where I should probably say that in a real world project, I would talk to domain experts, compare viewpoints, look for disagreements, follow handoffs, and spend a lot more time discovering where the business decisions actually live.
 
 For OmNomNom, the domain expert is me.
 
@@ -41,13 +41,13 @@ The front page of OmNomNom shows beers. Each beer has a name, description, brewe
 
 The naive move is to put all of that in a Product service.
 
-That would be convenient. It would also be exactly the thing I argued against in the first post.
+That would be convenient. It would also be exactly the thing I argued against [in the first post](https://bloggingabout.net/2026/05/29/service-boundaries-are-about-authority/).
 
 So instead of asking "what belongs to Product?", I want to ask a different question: which decisions are being made here, and which of those decisions belong together?
 
 The name, description, image, brewery, and beer style feel like one cohesive set. They describe how the beer appears in the catalog. They are usually created together, reviewed together, and changed for similar reasons. If the brewery name changes, we upload a better product image, or we correct the style from Porter to Stout after someone sends us a strongly worded email, that has nothing to do with the price of the beer or whether it is currently popular.
 
-There may be more complexity hiding here in a real system. Images might go through an approval workflow. Brewery information might have rules around suppliers. But in OmNomNom, I have no reason to split those apart.
+There may be more complexity hiding here in a real system. Images might go through an approval workflow. Brewery information might have rules around suppliers. That doesn't mean it can't be different in other systems. Right now, it might seem unlikely that they have different business rules or different decision makers, but it could be. In OmNomNom, there is no reason to split those apart.
 
 So for now, those properties go into Service A.
 
@@ -68,7 +68,7 @@ style.fill: "#16151F"
 }
 ```
 
-I am deliberately not naming it yet as explained in [the previous post](/2026/06/02/finding-service-boundaries-is-not-a-naming-exercise/). At this stage I want the boundary to earn its name.
+I am deliberately not naming this service yet as explained in [the previous post](/2026/06/02/finding-service-boundaries-is-not-a-naming-exercise/). At this stage I want the boundary to earn its name.
 
 ## Price is not product information
 
@@ -118,7 +118,7 @@ The beer also has a rating and a number of ratings, coming from [Untappd](https:
 
 But screens are terrible at finding boundaries. A screen shows information from multiple places. That does not mean the information belongs together.
 
-The interesting part is not the rating itself. The interesting part is what the business might do with it. If OmNomNom wants to sort products by popularity, highlight trending beers, or promote beers that are getting attention, those are marketing decisions. They are not catalog decisions and they are not pricing decisions.
+The interesting part is not the rating itself. The interesting part is what the business might do with it. If OmNomNom wants to sort products by popularity, highlight trending beers, or promote beers that are getting attention, those are decisions separate from existing services. They are not decisions related to a few characters that form a random name and the same characters do not influence the price, by itself. A very rare beer could influence the price, but that is not based on the name, but other factors. We don't have those (yet) in OmNomNom.
 
 So rating and popularity-related information go into Service C.
 
@@ -153,7 +153,7 @@ style.fill: "#16151F"
 }
 ```
 
-Could I later discover that this belongs with Service A? Sure. This is a demo, not scripture. But for now, there is enough of a separate decision-making area to keep it apart.
+Could I later discover that this belongs with Service A? Or Service B or some other service we didn't define yet? Sure. This is a demo, not scripture. But for now, there is enough of a separate decision-making area to keep it apart.
 
 ## An order is not one thing either
 
@@ -161,7 +161,7 @@ Eventually someone buys beer. That gives us an order.
 
 Again, the naive move is to create an Order service. And again, that is probably just hiding the real decisions under a familiar noun.
 
-To calculate what the customer should pay, Service B needs to know which products were ordered, the quantity that should be billed, and the price that applies. The fact that the price may be made up of a base price and a discount is internal to Service B. Other services do not need to know how Finance got there. They need the result only when it is explicitly shared.
+To calculate what the customer should pay, Service B needs to know which products were ordered, the quantity that should be billed, and the price that applies. The fact that the price may be made up of a base price and a discount is internal to Service B. Other services do not need to know how Service B got to the price, discount or the total, because they don't use either of them.
 
 So Service B stores the order information it needs to calculate the total.
 
@@ -201,9 +201,9 @@ style.fill: "#16151F"
 }
 ```
 
-But stock is a different kind of decision. If we take items from stock, we need to know how many are available, how many were ordered, and whether we can promise delivery. In a real system this can become wonderfully complicated. There is stock on hand, incoming stock, reserved stock, available stock, available to promise, and probably one more term invented by someone who enjoys spreadsheets a little too much.
+But stock is a different kind of decision. If we take items from stock, we need to know how many are available, how many were ordered, and whether we can promise delivery. In a real system this can become wonderfully complicated. There is stock on hand, incoming stock, reserved stock, available stock, available to promise (ATP), and probably one more term invented by someone who enjoys spreadsheets a little too much.
 
-For OmNomNom, I kept this much simpler. I only care about what is in stock and how many items were ordered. For demo purposes, I put that stock-related information in Service A together with the catalog information.
+For OmNomNom, I kept this much simpler. I only care about what is in stock and how many items were ordered. For demo purposes, I put that stock-related information in Service A.
 
 ```d2 theme=200 hide-class-markers
 direction: down
@@ -245,8 +245,7 @@ style.fill: "#16151F"
 }
 ```
 
-
-That is not because stock and catalog are always the same service boundary. They are not. It is a deliberate simplification for the demo. A real webshop may easily have a separate capability around stock, warehouse, or availability.
+That is not because stock and product information are always within the same service boundary. They are not. It is a deliberate simplification for the demo. Eventually, in OmNomNom, the service that deals with stock is the first to try and confirm if an order is correct and having Service A just deal with product name, description and image and nothing else would be boring and not add value to the demo. In a real world system, it might eventually it be obvious to put it stock information in another service, simply because another service has all the capabilities and authority related to a warehouse or availability.
 
 This is an important point. Service boundaries are not discovered by applying universal rules. They are discovered by understanding authority in a specific business.
 
@@ -338,11 +337,11 @@ Service B owns the billing address.
 
 Service D owns the shipping address.
 
-Same characters. Different meaning. Different authority.
+Same characters. Different meaning. Different authority. This becomes even more clear with delivery options.
 
 ## Delivery options have two sides
 
-Delivery options are another nice example because they look like one thing until you ask who decides what.
+Delivery options are another nice example in finding service boundaries, because they look like one thing until you ask who decides what.
 
 We should provide a list of delivery options to the user. If the delivery address is local, maybe the customer can choose slow, fast, or next-day delivery. If the delivery address is outside the country, next-day delivery may not be possible and different options apply. Since we base this on the delivery address, Service D should likely own that decision, so it can connect the delivery constraints to the delivery address.
 
@@ -485,7 +484,7 @@ It might be tempting to put credit card information into Service B because it al
 
 Credit card information does not help decide the price of a product. It does not help calculate a discount. It does not influence the price of delivery. It is not modified together with product prices or billing rules.
 
-So it does not belong in Service B.
+So it doesn't necessarily belong in Service B.
 
 There is another reason to keep it separate: security. Payment information often has stricter access rules, stricter auditing, and stricter operational requirements than the rest of the system. That alone can be a valid reason to keep the authority small and explicit.
 
@@ -562,7 +561,7 @@ So payment information becomes Service E.
 
 ## Finally naming the services
 
-Only now do I want to name the services.
+Right now we're at a point where we found all details and placed them into services. Only now do I want to name the services.
 
 Service A became Catalog. It owns product information such as name, description, image, brewery, and beer style. For demo purposes, it also owns the simplified stock information.
 
@@ -653,7 +652,11 @@ OmNomNom ended up with five service boundaries: Catalog, Finance, Marketing, Shi
 
 That does not mean every webshop should have those five boundaries. It does not even mean OmNomNom would keep exactly those boundaries if it grew into a real business. More complexity could reveal a separate Stock service. Marketing could collapse into Catalog. PaymentInfo could become more sophisticated. Shipping could turn into several capabilities if delivery became the interesting part of the business.
 
-There is no one-size-fits-all because every business is unique.
+At the same time, service boundaries are not supposed to change every sprint. Retail has changed enormously in tools, channels, logistics, and scale, but the core business capabilities are still recognizable. Products are offered. Prices are determined. Orders are placed. Payments are taken. Goods are delivered.
+
+Most of the churn tends to happen inside those boundaries. Rules change. Policies change. Screens change. Integrations change. The authority usually changes much less often.
+
+That is why finding the boundaries matters. You are not trying to model today's database. You are trying to find the parts of the business that can change independently without every change becoming a group project.
 
 What matters is the reasoning. We did not split by noun. We did not create Product, Order, Customer, and Payment because those were the boxes on the diagram. We followed authority. Who decides how a product is shown? Who decides what it costs? Who decides whether it is popular? Who decides where it can be shipped? Who owns the sensitive payment information?
 
