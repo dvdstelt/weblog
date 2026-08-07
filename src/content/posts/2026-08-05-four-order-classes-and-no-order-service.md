@@ -168,7 +168,17 @@ Finance's delivery option is a thing that costs money, unless the order is big e
 
 Neither of them is missing anything. They are two partial models of the same real world thing, each holding what its owner needs to make its own decision, and neither is waiting for the other to fill in the rest.
 
-It carries all the way through. When the customer picks a delivery option during checkout, that single click ends up as two files with identical names in two different projects, [`Finance.ServiceComposition.Workflow.DeliveryOptionWorkflowSlice`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.ServiceComposition/Workflow/DeliveryOptionWorkflowSlice.cs) and [`Shipping.ServiceComposition.Workflow.DeliveryOptionWorkflowSlice`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Shipping.ServiceComposition/Workflow/DeliveryOptionWorkflowSlice.cs), each producing its own `SubmitDeliveryOption` command aimed at its own endpoint. Same click, two commands, two boundaries. Nobody had to agree on a shared definition of what a delivery option is, which was the entire goal.
+It carries through to the contracts. When the customer picks a delivery option during checkout, both boundaries need telling, so both have a command for it in their `.Endpoint.Messages` project. Here they are.
+
+```csharp repo="omnomnom" file="src/Shipping.Endpoint.Messages/Commands/SubmitDeliveryOption.cs"
+```
+
+```csharp repo="omnomnom" file="src/Finance.Endpoint.Messages/Commands/SubmitDeliveryOption.cs"
+```
+
+Same name, same two fields, and no relationship whatsoever. Two types in two assemblies, each handled by the boundary that owns it, each meaning something different on arrival: Shipping records which option to deliver by, Finance records what to charge for it.
+
+One click, two commands, two boundaries, and nobody had to agree on a shared definition of what a delivery option is. That was the entire goal.
 
 ## What is not a boundary
 
