@@ -12,6 +12,10 @@ const posts = defineCollection({
     id: z.number(),
     topic: z.string().optional(),
     redirect_from: z.array(z.string()).optional(),
+    // Commit pins for external repositories this post embeds code from,
+    // keyed by the repo key used in a code fence's repo="..." attribute.
+    // Must be full 40-character SHAs; see remarkCodeRegion in astro.config.mjs.
+    sources: z.record(z.string()).optional(),
   }),
 });
 

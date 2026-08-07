@@ -66,6 +66,15 @@ Marker lines are stripped from the rendered snippet and common leading whitespac
 
 For each file-imported block the plugin also injects an `<a class="code-source-link">` sibling pointing at the source on GitHub, with a `#Lstart-Lend` fragment for region-based snippets. The wrapper script at the bottom of `Post.astro` pulls that anchor into the same `.code-block-wrapper` as the copy button; styles live in `src/styles/1-tools/_syntax-highlighting.scss`. The GitHub URL prefix and the `main` branch are hardcoded as `GITHUB_BLOB_URL` near the top of `astro.config.mjs` — update both if the repo or default branch ever moves.
 
+**Embedding code from another repository.** A fence can also read from a whitelisted external repo by adding `repo="<key>"`: `` ```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs" ``. Known keys live in `REMOTE_SOURCES` in `astro.config.mjs` (currently just `omnomnom` → `dvdstelt/OmNomNom`); post metadata can't point the build at an arbitrary host. The commit is pinned once per post in frontmatter:
+
+```yaml
+sources:
+  omnomnom: 35920e4d1d1f43c3b54a7174348c13e7295ff170
+```
+
+The ref must be a full 40-character SHA — branches and tags are rejected, so a published snippet can never drift from the prose describing it. Files are fetched from `raw.githubusercontent.com` at build time and cached under `node_modules/.cache/remote-code/<key>/<sha>/<path>`; because the SHA makes the content immutable the cache never needs invalidating. A 404, an unknown repo key, a missing pin, or a non-SHA ref all fail the build through the same `failHard` path as local snippets. `region=` works exactly as it does locally, and the injected source link points at the external repo at that commit. Use this instead of copying another project's code into `samples/` — `samples/` is for code that has no other home.
+
 To add a new code-bearing post: put the source files under `samples/<year>/<post-slug>/` (year of the post's publication date), add any `.csproj` to `samples/Samples.slnx` (`dotnet sln samples/Samples.slnx add samples/<year>/<post-slug>/<Project>/<Project>.csproj`), wrap the interesting parts in region markers, and reference them from the post with `` ```lang file="samples/<year>/<post-slug>/..." region="Name" `` (empty body). The `.NET` samples are built separately by `.github/workflows/samples.yml` with `dotnet build samples/Samples.slnx -warnaserror`, pinned to .NET 10 via `samples/global.json`.
 
 ### Diagrams
