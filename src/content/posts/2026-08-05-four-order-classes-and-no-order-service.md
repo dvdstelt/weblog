@@ -13,15 +13,15 @@ tags:
   - architecture
   - omnomnom
 ---
-Open the OmNomNom solution, search for a class called `Order`, and you get four results. Four namespaces, four sets of properties, four separate database files. None of them is the real one.
+Open the [OmNomNom solution](https://github.com/dvdstelt/OmNomNom), search for a class called `Order`, and you get four results. Four namespaces, four sets of properties, four separate database files. None of them is the real one.
 
 In most codebases that is a finding. Somebody copy-pasted a model into a second project three years ago, nobody noticed, and now the two have drifted far enough apart that fixing it needs a meeting. In OmNomNom it is the design. It is what [the previous post](https://bloggingabout.net/2026/06/04/finding-omnomnoms-service-boundaries/) was arguing for, except that post stopped at the point where I named the boundaries and promised to show you the code.
 
-So let me show you the code.
+So let me show you the code. Every snippet below links to the file it came from, pinned to the commit this post was written against, so the two cannot quietly drift apart.
 
 ## Five boundaries, five folders
 
-The five boundaries from the previous post are Catalog, Finance, Marketing, Shipping, and PaymentInfo. In the solution they are five folders, and everything that belongs to a boundary lives in exactly one of them.
+The five boundaries from the previous post are Catalog, Finance, Marketing, Shipping, and PaymentInfo. In the solution they are [five folders](https://github.com/dvdstelt/OmNomNom/tree/35920e4d1d1f43c3b54a7174348c13e7295ff170/src), and everything that belongs to a boundary lives in exactly one of them.
 
 ```
 Catalog/
@@ -45,13 +45,15 @@ That is more projects than a boundary strictly needs, and the reason is that "a 
 
 `<X>.ServiceComposition` is the boundary's contribution to HTTP responses, and `<X>.ServiceComposition.Events` carries the in-process events those contributions raise. Both are for the next post.
 
+Marketing is worth a second look here, because it only has three of these projects. There is no `Marketing.Endpoint.Messages`, and that is not an oversight. Marketing publishes nothing. It subscribes to Catalog's `OrderPlaced`, updates its own counters, and never asks anyone else to care about the result. A boundary that only listens does not need a public contract, so it does not have one. Five projects is what a boundary needs when it both talks and listens, not a template to stamp onto every folder.
+
 The interesting part is not the naming convention. It is that project references make the rule enforceable. "Boundaries only communicate through messages" is the sort of thing that gets written on a wiki page, agreed to in a meeting, and then quietly violated the first time somebody needs a customer's email address and notices that the other team's assembly is right there. Here, `Finance.Endpoint` cannot reference `Catalog.Data`, because nothing does. If you want something from Catalog, you subscribe to a Catalog event, and that is a code review conversation rather than a `using` statement.
 
 ## Four Order classes
 
 Which brings us back to the four hits.
 
-Catalog's `Order` tracks what the customer asked for:
+[Catalog's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Catalog.Data/Models/Order.cs) tracks what the customer asked for:
 
 ```csharp
 namespace Catalog.Data.Models;
@@ -70,7 +72,7 @@ public class OrderItem
 }
 ```
 
-Finance's `Order` tracks what the customer owes:
+[Finance's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/Order.cs) tracks what the customer owes:
 
 ```csharp
 namespace Finance.Data.Models;
@@ -95,7 +97,7 @@ public class OrderItem : IPriced
 }
 ```
 
-Shipping's `Order` tracks where it goes:
+[Shipping's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Shipping.Data/Models/Order.cs) tracks where it goes:
 
 ```csharp
 namespace Shipping.Data.Models;
@@ -109,7 +111,7 @@ public class Order
 }
 ```
 
-And PaymentInfo's `Order` is this:
+And [PaymentInfo's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/PaymentInfo.Data/Models/Order.cs) is this:
 
 ```csharp
 namespace PaymentInfo.Data.Models;
@@ -169,7 +171,7 @@ style.fill: "#16151F"
 "Shipping" -> "PaymentInfo": {style.opacity: 0}
 ```
 
-Marketing is the fifth boundary and it does not appear in that picture, because Marketing has no `Order` class at all. It has this:
+Marketing is the fifth boundary and it does not appear in that picture, because Marketing has no `Order` class at all. It has [`OrderActivity`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Marketing.Data/Models/OrderActivity.cs):
 
 ```csharp
 namespace Marketing.Data.Models;
@@ -185,7 +187,7 @@ public class OrderActivity
 
 An append-only log, one row per ordered line, feeding the trending calculation. Marketing does not care about orders. It cares that something was bought, and when. Modelling that as an `Order` would have been the noun sneaking back in through the side door.
 
-`Product` splits the same way, by the way. Catalog's has name, description, image, style, brewery, and country. Finance's has price and discount. Marketing's has rating, rating count, order count, and trending. Same `ProductId`, three classes, three files, three databases.
+`Product` splits the same way, by the way. [Catalog's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Catalog.Data/Models/Product.cs) has name, description, image, style, brewery, and country. [Finance's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/Product.cs) has price and discount. [Marketing's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Marketing.Data/Models/Product.cs) has rating, rating count, order count, and trending. Same `ProductId`, three classes, three files, three databases.
 
 ## The quantity argument, now with a compiler
 
@@ -199,7 +201,7 @@ Finance's `Fulfilled` flag is where the two meet, and it meets them the long way
 
 The clearest example of all this is the one I already argued for in the previous post: delivery options have two sides.
 
-Shipping's delivery option is a thing with a name that may or may not be available for an address:
+[Shipping's delivery option](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Shipping.Data/Models/DeliveryOption.cs) is a thing with a name that may or may not be available for an address:
 
 ```csharp
 namespace Shipping.Data.Models;
@@ -212,7 +214,7 @@ public class DeliveryOption
 }
 ```
 
-Finance's delivery option is a thing that costs money and might not:
+[Finance's delivery option](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/DeliveryOption.cs) is a thing that costs money and might not:
 
 ```csharp
 namespace Finance.Data.Models;
@@ -229,7 +231,7 @@ public class DeliveryOption
 
 Neither of them is missing anything. They are two partial models of the same real world thing, each holding what its owner needs to make its own decision, and neither is waiting for the other to fill in the rest.
 
-It carries all the way through. When the customer picks a delivery option during checkout, that single click ends up as two files with identical names in two different projects, `Finance.ServiceComposition.Workflow.DeliveryOptionWorkflowSlice` and `Shipping.ServiceComposition.Workflow.DeliveryOptionWorkflowSlice`, each producing its own `SubmitDeliveryOption` command aimed at its own endpoint. Same click, two commands, two boundaries. Nobody had to agree on a shared definition of what a delivery option is, which was the entire goal.
+It carries all the way through. When the customer picks a delivery option during checkout, that single click ends up as two files with identical names in two different projects, [`Finance.ServiceComposition.Workflow.DeliveryOptionWorkflowSlice`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.ServiceComposition/Workflow/DeliveryOptionWorkflowSlice.cs) and [`Shipping.ServiceComposition.Workflow.DeliveryOptionWorkflowSlice`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Shipping.ServiceComposition/Workflow/DeliveryOptionWorkflowSlice.cs), each producing its own `SubmitDeliveryOption` command aimed at its own endpoint. Same click, two commands, two boundaries. Nobody had to agree on a shared definition of what a delivery option is, which was the entire goal.
 
 ## What is not a boundary
 
@@ -237,9 +239,7 @@ There are more projects in the solution than the five folders, and it matters th
 
 `CompositionGateway` is the HTTP front door. `OmNomNom.BackOffice` sends the confirmation emails. `WorkflowComposer` holds in-flight checkout state. `ITOps.Shared` is the endpoint configuration every endpoint calls. `OmNomNom.AllInOne` is a host that runs everything in one process, which is a story for the last post in this series.
 
-My favourite is `Checkout.Endpoint`, which is a fully configured NServiceBus endpoint containing exactly zero message handlers. Its entire job is to process an outbox on behalf of the gateway. It is a good reminder that "endpoint" is a deployment word and "boundary" is an architecture word, and that a demo which conflates them is teaching the wrong lesson. Checkout is infrastructure that happens to be shaped like an endpoint, and the moment you count it as a sixth boundary you are back to counting processes.
-
-Full disclosure while I have the solution open: Marketing's contracts live in `Marketing.Contracts` rather than `Marketing.Endpoint.Messages`, because I wrote it earlier than the others and never came back to it. The convention is not load-bearing, but I would rather tell you than have you find it and wonder what deep principle you were missing.
+My favourite is [`Checkout.Endpoint`](https://github.com/dvdstelt/OmNomNom/tree/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Checkout.Endpoint), which is a fully configured NServiceBus endpoint containing exactly zero message handlers. Its entire job is to process an outbox on behalf of the gateway. It is a good reminder that "endpoint" is a deployment word and "boundary" is an architecture word, and that a demo which conflates them is teaching the wrong lesson. Checkout is infrastructure that happens to be shaped like an endpoint, and the moment you count it as a sixth boundary you are back to counting processes.
 
 ## What this bought
 
