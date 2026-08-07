@@ -6,6 +6,8 @@ description: The five boundaries from the previous post, opened up in the soluti
 pubDate: '2026-08-05T01:00:00'
 image: /images/2026/four-order-classes.png
 topic: omnomnom
+sources:
+  omnomnom: 35920e4d1d1f43c3b54a7174348c13e7295ff170
 tags:
   - distributed systems
   - microservices
@@ -17,7 +19,7 @@ Open the [OmNomNom solution](https://github.com/dvdstelt/OmNomNom), search for a
 
 In most codebases that is a finding. Somebody copy-pasted a model into a second project three years ago, nobody noticed, and now the two have drifted far enough apart that fixing it needs a meeting. In OmNomNom it is the design. It is what [the previous post](https://bloggingabout.net/2026/06/04/finding-omnomnoms-service-boundaries/) was arguing for, except that post stopped at the point where I named the boundaries and promised to show you the code.
 
-So let me show you the code. Every snippet below links to the file it came from, pinned to the commit this post was written against, so the two cannot quietly drift apart.
+So let me show you the code. Every snippet below is pulled straight out of the repository at the commit this post was written against, and the GitHub icon on each block opens that exact file. Nothing here is retyped, so nothing here can quietly drift away from what actually runs.
 
 ## Five boundaries, five folders
 
@@ -53,74 +55,24 @@ The interesting part is not the naming convention. It is that project references
 
 Which brings us back to the four hits.
 
-[Catalog's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Catalog.Data/Models/Order.cs) tracks what the customer asked for:
+Catalog's `Order` tracks what the customer asked for:
 
-```csharp
-namespace Catalog.Data.Models;
-
-public class Order
-{
-    public Guid OrderId { get; set; }
-    public List<OrderItem> Products { get; set; } = [];
-}
-
-public class OrderItem
-{
-    public Guid OrderId { get; set; }
-    public Guid ProductId { get; set; }
-    public int OrderedQuantity { get; set; }
-}
+```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs"
 ```
 
-[Finance's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/Order.cs) tracks what the customer owes:
+Finance's `Order` tracks what the customer owes:
 
-```csharp
-namespace Finance.Data.Models;
-
-public class Order
-{
-    public Guid OrderId { get; set; }
-    public List<OrderItem> Items { get; set; } = [];
-    public Address? BillingAddress { get; set; }
-    public Guid? DeliveryOptionId { get; set; }
-    public decimal ChargedAmount { get; set; }
-}
-
-public class OrderItem : IPriced
-{
-    public Guid OrderId { get; set; }
-    public Guid ProductId { get; set; }
-    public int BillableQuantity { get; set; }
-    public decimal Price { get; set; }
-    public decimal Discount { get; set; }
-    public bool Fulfilled { get; set; } = true;
-}
+```csharp repo="omnomnom" file="src/Finance.Data/Models/Order.cs"
 ```
 
-[Shipping's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Shipping.Data/Models/Order.cs) tracks where it goes:
+Shipping's `Order` tracks where it goes:
 
-```csharp
-namespace Shipping.Data.Models;
-
-public class Order
-{
-    public Guid OrderId { get; set; }
-    public Guid CustomerId { get; set; }
-    public Address? Address { get; set; }
-    public Guid? DeliveryOptionId { get; set; }
-}
+```csharp repo="omnomnom" file="src/Shipping.Data/Models/Order.cs"
 ```
 
-And [PaymentInfo's `Order`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/PaymentInfo.Data/Models/Order.cs) is this:
+And PaymentInfo's `Order` is this:
 
-```csharp
-namespace PaymentInfo.Data.Models;
-
-public class Order
-{
-    public Guid OrderId { get; set; }
-    public Guid CreditCardId { get; set; }
-}
+```csharp repo="omnomnom" file="src/PaymentInfo.Data/Models/Order.cs"
 ```
 
 That is the whole class. PaymentInfo does not know what was ordered, what it cost, or where it is going. It knows which card belongs to which order. That is the extent of its authority, so that is the extent of its data.
@@ -171,18 +123,9 @@ style.fill: "#16151F"
 "Shipping" -> "PaymentInfo": {style.opacity: 0}
 ```
 
-Marketing is the fifth boundary and it does not appear in that picture, because Marketing has no `Order` class at all. It has [`OrderActivity`](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Marketing.Data/Models/OrderActivity.cs):
+Marketing is the fifth boundary and it does not appear in that picture, because Marketing has no `Order` class at all. It has `OrderActivity`:
 
-```csharp
-namespace Marketing.Data.Models;
-
-public class OrderActivity
-{
-    public long Id { get; set; }
-    public Guid ProductId { get; set; }
-    public int Quantity { get; set; }
-    public DateTime OccurredAt { get; set; }
-}
+```csharp repo="omnomnom" file="src/Marketing.Data/Models/OrderActivity.cs"
 ```
 
 An append-only log, one row per ordered line, feeding the trending calculation. Marketing does not care about orders. It cares that something was bought, and when. Modelling that as an `Order` would have been the noun sneaking back in through the side door.
@@ -201,32 +144,14 @@ Finance's `Fulfilled` flag is where the two meet, and it meets them the long way
 
 The clearest example of all this is the one I already argued for in the previous post: delivery options have two sides.
 
-[Shipping's delivery option](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Shipping.Data/Models/DeliveryOption.cs) is a thing with a name that may or may not be available for an address:
+Shipping's delivery option is a thing with a name that may or may not be available for an address:
 
-```csharp
-namespace Shipping.Data.Models;
-
-public class DeliveryOption
-{
-    public Guid DeliveryOptionId { get; set; }
-    public string Name { get; set; } = null!;
-    public string Description { get; set; } = null!;
-}
+```csharp repo="omnomnom" file="src/Shipping.Data/Models/DeliveryOption.cs"
 ```
 
-[Finance's delivery option](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/DeliveryOption.cs) is a thing that costs money and might not:
+Finance's delivery option is a thing that costs money and might not:
 
-```csharp
-namespace Finance.Data.Models;
-
-public class DeliveryOption
-{
-    public Guid DeliveryOptionId { get; set; }
-    public decimal Price { get; set; }
-
-    // Null means this option is never free, regardless of order size.
-    public decimal? FreeShippingThreshold { get; set; }
-}
+```csharp repo="omnomnom" file="src/Finance.Data/Models/DeliveryOption.cs"
 ```
 
 Neither of them is missing anything. They are two partial models of the same real world thing, each holding what its owner needs to make its own decision, and neither is waiting for the other to fill in the rest.
