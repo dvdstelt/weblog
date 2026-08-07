@@ -132,7 +132,7 @@ An append-only log, one row per ordered line, feeding the trending calculation. 
 
 `Product` splits the same way, by the way. [Catalog's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Catalog.Data/Models/Product.cs) has name, description, image, style, brewery, and country. [Finance's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/Product.cs) has price and discount. [Marketing's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Marketing.Data/Models/Product.cs) has rating, rating count, order count, and trending. Same `ProductId`, three classes, three files, three databases.
 
-Now we've looked at how an actual implementation of `Order` and `Product` and how different attributes are split over different service boundaries. No `OrderService` or `ProductService`. But Service Boundaries that don't share data and still are able to work. How it'll all connect together is for the next post.
+That is an actual implementation of `Order` and `Product`, with their attributes split across service boundaries. No `OrderService`, no `ProductService`, and no shared table underneath pretending otherwise.
 
 ## The quantity argument, now with a compiler
 
@@ -150,7 +150,7 @@ Two properties, on two classes that happen to share a name, in two assemblies th
 
 Finance's `Fulfilled` flag is where the two meet, and it meets them the long way around. Catalog decides what it could actually ship, publishes the result, and Finance flips `Fulfilled` to false on the lines that did not make it so the customer is not charged for them. Catalog never writes to a Finance table. It publishes what it decided and Finance decides what that means for the invoice.
 
-This will be come clearer when we'll track what happens in the posts about messaging between Service Boundaries.
+This becomes clearer once we follow the messages themselves, a few posts from now.
 
 ## Delivery options, twice
 
@@ -161,7 +161,7 @@ Shipping's delivery option is a thing with a name that may or may not be availab
 ```csharp repo="omnomnom" file="src/Shipping.Data/Models/DeliveryOption.cs"
 ```
 
-Finance's delivery option is a thing that costs money:
+Finance's delivery option is a thing that costs money, unless the order is big enough:
 
 ```csharp repo="omnomnom" file="src/Finance.Data/Models/DeliveryOption.cs"
 ```
