@@ -57,17 +57,17 @@ Which brings us back to the four hits.
 
 Catalog's `Order` tracks what the customer asked for:
 
-```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs"
+```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs" lines="1-14"
 ```
 
 Finance's `Order` tracks what the customer owes:
 
-```csharp repo="omnomnom" file="src/Finance.Data/Models/Order.cs"
+```csharp repo="omnomnom" file="src/Finance.Data/Models/Order.cs" lines="1-21"
 ```
 
 Shipping's `Order` tracks where it goes:
 
-```csharp repo="omnomnom" file="src/Shipping.Data/Models/Order.cs"
+```csharp repo="omnomnom" file="src/Shipping.Data/Models/Order.cs" lines="1-11"
 ```
 
 And PaymentInfo's `Order` is this:
