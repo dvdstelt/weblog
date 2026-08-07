@@ -124,6 +124,25 @@ async function readRemote(sourceKey, ref, fileRel, postPath) {
   return text;
 }
 
+// Extract an inclusive, 1-based line range ("12-20", or "12" for a single
+// line). Ranges are only safe because the source is addressed by an immutable
+// commit; against a moving branch they would silently start quoting the wrong
+// code. Out-of-range bounds fail the build rather than quietly clamping.
+function extractLines(source, spec, fileRel, postPath) {
+  const m = /^(\d+)(?:-(\d+))?$/.exec(spec.trim());
+  if (!m) {
+    failHard(`[remark-code-region] lines="${spec}" must look like "12-20" or "12" (${fileRel} from ${postPath})`);
+  }
+  const startLine = Number(m[1]);
+  const endLine = m[2] ? Number(m[2]) : startLine;
+  const all = source.split('\n');
+  if (all.length && all[all.length - 1] === '') all.pop();
+  if (startLine < 1 || endLine < startLine || endLine > all.length) {
+    failHard(`[remark-code-region] lines="${spec}" out of range: ${fileRel} has ${all.length} lines (from ${postPath})`);
+  }
+  return { text: dedent(all.slice(startLine - 1, endLine)), startLine, endLine };
+}
+
 function escapeAttr(value) {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -172,8 +191,16 @@ function remarkCodeRegion() {
         href = `${GITHUB_BLOB_URL}/${meta.file}`;
       }
 
+      if (meta.region && meta.lines) {
+        failHard(`[remark-code-region] use either region= or lines=, not both, on ${meta.file} (from ${postPath})`);
+      }
+
       if (meta.region) {
         const { text, startLine, endLine } = extractRegion(source, meta.region, meta.file);
+        node.value = text;
+        href += `#L${startLine}-L${endLine}`;
+      } else if (meta.lines) {
+        const { text, startLine, endLine } = extractLines(source, meta.lines, meta.file, postPath);
         node.value = text;
         href += `#L${startLine}-L${endLine}`;
       } else {
