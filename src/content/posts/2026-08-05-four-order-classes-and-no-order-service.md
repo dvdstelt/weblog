@@ -140,10 +140,10 @@ In the previous post I spent a section arguing that `OrderedQuantity` and `Billa
 
 That was a paragraph of prose, and prose does not survive contact with a developer in a hurry. Here are the two classes. Both are called `OrderItem`, and they live in the same two files as the `Order` classes above.
 
-```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs" lines="16-24"
+```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs" lines="16-24" highlight="23"
 ```
 
-```csharp repo="omnomnom" file="src/Finance.Data/Models/Order.cs" lines="23-38"
+```csharp repo="omnomnom" file="src/Finance.Data/Models/Order.cs" lines="23-38" highlight="29,37"
 ```
 
 Two properties, on two classes that happen to share a name, in two assemblies that cannot see each other. There is no refactoring that accidentally merges them, because there is no place where both are in scope. Note that they do not even agree on what else belongs on a line item: Catalog has a product and a count, Finance has money.
