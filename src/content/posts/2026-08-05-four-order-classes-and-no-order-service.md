@@ -136,7 +136,15 @@ An append-only log, one row per ordered line, feeding the trending calculation. 
 
 In the previous post I spent a section arguing that `OrderedQuantity` and `BillableQuantity` are not the same property with two names. They usually hold the same number. They answer different questions, they change for different reasons, and they belong to different authorities.
 
-That was a paragraph of prose, and prose does not survive contact with a developer in a hurry. In the code it is two properties, on two classes that happen to share the name `OrderItem`, in two assemblies that cannot see each other. There is no refactoring that accidentally merges them, because there is no place where both are in scope.
+That was a paragraph of prose, and prose does not survive contact with a developer in a hurry. Here are the two classes. Both are called `OrderItem`, and they live in the same two files as the `Order` classes above.
+
+```csharp repo="omnomnom" file="src/Catalog.Data/Models/Order.cs" lines="16-24"
+```
+
+```csharp repo="omnomnom" file="src/Finance.Data/Models/Order.cs" lines="23-38"
+```
+
+Two properties, on two classes that happen to share a name, in two assemblies that cannot see each other. There is no refactoring that accidentally merges them, because there is no place where both are in scope. Note that they do not even agree on what else belongs on a line item: Catalog has a product and a count, Finance has money.
 
 Finance's `Fulfilled` flag is where the two meet, and it meets them the long way around. Catalog decides what it could actually ship, publishes the result, and Finance flips `Fulfilled` to false on the lines that did not make it so the customer is not charged for them. Catalog never writes to a Finance table. It publishes what it decided and Finance decides what that means for the invoice.
 
