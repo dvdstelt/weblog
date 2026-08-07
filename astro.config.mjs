@@ -143,6 +143,54 @@ function extractLines(source, spec, fileRel, postPath) {
   return { text: dedent(all.slice(startLine - 1, endLine)), startLine, endLine };
 }
 
+// Translate highlight="27,30-32", written in the *source file's* line numbers,
+// into the snippet-relative numbers Shiki's meta syntax expects. Authors use
+// one numbering scheme throughout: the same one shown on GitHub and used by
+// lines=. A line outside the rendered snippet is an error rather than a
+// silently dropped highlight.
+function toShikiHighlight(spec, firstLine, lineCount, fileRel, postPath) {
+  const lastLine = firstLine + lineCount - 1;
+  const parts = spec.split(',').map(s => s.trim()).filter(Boolean);
+  const out = [];
+  for (const part of parts) {
+    const m = /^(\d+)(?:-(\d+))?$/.exec(part);
+    if (!m) {
+      failHard(`[remark-code-region] highlight="${spec}" must be line numbers like "27" or "27,30-32" (${fileRel} from ${postPath})`);
+    }
+    const from = Number(m[1]);
+    const to = m[2] ? Number(m[2]) : from;
+    if (to < from) {
+      failHard(`[remark-code-region] highlight="${part}" is backwards (${fileRel} from ${postPath})`);
+    }
+    if (from < firstLine || to > lastLine) {
+      failHard(`[remark-code-region] highlight="${part}" is outside the shown lines ${firstLine}-${lastLine} (${fileRel} from ${postPath})`);
+    }
+    const a = from - firstLine + 1;
+    const b = to - firstLine + 1;
+    out.push(a === b ? `${a}` : `${a}-${b}`);
+  }
+  return out.join(',');
+}
+
+// Minimal stand-in for @shikijs/transformers' transformerMetaHighlight, so the
+// blog does not take a dependency for fifteen lines. Reads the {1,3-5} form
+// out of the fence meta and tags those lines for the stylesheet.
+const shikiMetaHighlight = {
+  name: 'meta-highlight',
+  line(node, line) {
+    const raw = this.options.meta?.__raw ?? '';
+    const match = /\{([\d,\s-]+)\}/.exec(raw);
+    if (!match) return;
+    for (const part of match[1].split(',')) {
+      const [from, to] = part.trim().split('-').map(Number);
+      if (line >= from && line <= (to ?? from)) {
+        this.addClassToHast(node, 'highlighted');
+        return;
+      }
+    }
+  },
+};
+
 function escapeAttr(value) {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -195,17 +243,28 @@ function remarkCodeRegion() {
         failHard(`[remark-code-region] use either region= or lines=, not both, on ${meta.file} (from ${postPath})`);
       }
 
+      // Line number the rendered snippet starts at within the source file,
+      // so highlight= can be written in the file's own numbering.
+      let firstLine = 1;
+
       if (meta.region) {
         const { text, startLine, endLine } = extractRegion(source, meta.region, meta.file);
         node.value = text;
+        firstLine = startLine;
         href += `#L${startLine}-L${endLine}`;
       } else if (meta.lines) {
         const { text, startLine, endLine } = extractLines(source, meta.lines, meta.file, postPath);
         node.value = text;
+        firstLine = startLine;
         href += `#L${startLine}-L${endLine}`;
       } else {
         node.value = source.replace(/\n$/, '');
       }
+
+      if (meta.highlight) {
+        node.meta = `${node.meta ?? ''} {${toShikiHighlight(meta.highlight, firstLine, node.value.split('\n').length, meta.file, postPath)}}`;
+      }
+
       insertions.push({ parent, index, html: sourceLinkHtml(href, label) });
     }
 
@@ -314,6 +373,9 @@ export default defineConfig({
   site: 'https://bloggingabout.net',
   trailingSlash: 'always',
   markdown: {
+    shikiConfig: {
+      transformers: [shikiMetaHighlight],
+    },
     remarkPlugins: [remarkCodeRegion, remarkD2, remarkGithubAlerts],
     rehypePlugins: [rehypeImageLayout],
   },
