@@ -4,7 +4,7 @@ author: Dennis van der Stelt
 title: Four Order classes and no Order service
 description: The five boundaries from the previous post, opened up in the solution. Four classes named Order, three named Product, and a compiler that keeps them apart.
 pubDate: '2026-08-05T01:00:00'
-image: /images/2026/four-order-classes.png
+image: /images/2026/four-order-classes.jpg
 topic: omnomnom
 sources:
   omnomnom: 35920e4d1d1f43c3b54a7174348c13e7295ff170
