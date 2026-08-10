@@ -43,13 +43,10 @@ Finance/
 
 A boundary does not necessarily need every one of those projects. The suffix describes the role a project plays.
 
-`<X>.Data` contains the private model: the `DbContext`, entities, and seed data. Other boundaries do not use it.
-
-`<X>.Endpoint` is where decisions happen. It contains message handlers, the occasional saga, and the registration code that turns it into a running NServiceBus endpoint.
-
-`<X>.Endpoint.Messages` contains the public messaging contracts: commands that may be sent to the boundary and events it publishes.
-
-`<X>.ServiceComposition` contains the boundary's contribution to HTTP responses. Some boundaries also have `<X>.ServiceComposition.Events` for the in-process events used while composing those responses. That is the subject of the next post.
+- `<X>.Data` contains the private model: the `DbContext`, entities, and seed data. Other boundaries do not use it.
+- `<X>.Endpoint` is where decisions happen. It contains message handlers, the occasional saga, and the registration code that turns it into a running NServiceBus endpoint.
+- `<X>.Endpoint.Messages` contains the public messaging contracts: commands that may be sent to the boundary and events it publishes.
+- `<X>.ServiceComposition` contains the boundary's contribution to HTTP responses. Some boundaries also have `<X>.ServiceComposition.Events` for the in-process events used while composing those responses. That is the subject of the next post.
 
 Marketing is worth a second look because it only has three of these projects. There is no `Marketing.Endpoint.Messages`, and that is not an oversight. Marketing publishes nothing. It subscribes to Catalog's `OrderPlaced`, updates its own counters, and never asks anyone else to care about the result.
 
