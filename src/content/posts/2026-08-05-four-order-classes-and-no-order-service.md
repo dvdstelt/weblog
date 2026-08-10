@@ -52,6 +52,9 @@ Marketing is worth a second look because it only has three of these projects. Th
 
 A boundary that only listens does not need public messaging contracts of its own. The project structure follows what the boundary actually does instead of applying the same template everywhere.
 
+> [!IMPORTANT]
+> In this demo, there are folders, simply to make sure F5 will start the entire demo and work. In a real system, there are likely different solutions, repos, separately owned by different teams. 
+
 More important than the naming convention are the project references.
 
 If `Finance.Endpoint` wants to reach into `Catalog.Data`, it cannot just add a `using` statement and start reading Catalog's entities. There is no project reference. Crossing that line requires someone to deliberately change the dependencies between the projects.
