@@ -150,11 +150,9 @@ Marketing does not care about an order as a thing. It cares that something was b
 
 `Product` splits in much the same way.
 
-[Catalog's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Catalog.Data/Models/Product.cs) has name, description, image, style, brewery, and country.
-
-[Finance's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/Product.cs) has price and discount.
-
-[Marketing's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Marketing.Data/Models/Product.cs) has rating, rating count, order count, and trending.
+- [Catalog's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Catalog.Data/Models/Product.cs) has name, description, image, style, brewery, and country.
+- [Finance's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Finance.Data/Models/Product.cs) has price and discount.
+- [Marketing's](https://github.com/dvdstelt/OmNomNom/blob/35920e4d1d1f43c3b54a7174348c13e7295ff170/src/Marketing.Data/Models/Product.cs) has rating, rating count, order count, and trending.
 
 Same `ProductId`, three classes, three files, three databases.
 
