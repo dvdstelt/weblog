@@ -1,7 +1,7 @@
 ---
 id: 20260910
 author: Dennis van der Stelt
-title: Is AI another dot-com bubble, about to implode?
+title: Is AI another dot-com bubble, about to burst?
 description: AI may be in a bubble, but Jevons' paradox suggests cheaper intelligence will make usage and infrastructure demand explode anyway.
 pubDate: '2026-09-08T01:00:00'
 image: /images/2026/jevons-paradox.png
