@@ -4,7 +4,7 @@ author: Dennis van der Stelt
 title: Is AI another dot-com bubble, about to burst?
 description: AI may be in a bubble, but Jevons' paradox suggests cheaper intelligence will make usage and infrastructure demand explode anyway.
 pubDate: '2026-09-08T01:00:00'
-image: /images/2026/jevons-paradox.png
+image: /images/2026/jevons-paradox/header.webp
 tags:
   - ai
 ---
@@ -71,6 +71,8 @@ There's another effect as well. Once one company starts doing these things, its 
 The expected level of output changes. What started as an efficiency improvement becomes the new competitive baseline. Customers get used to the additional service, competitors follow, and yesterday's extravagant use of AI becomes tomorrow's normal way of doing business. That's another reason why cheaper AI can result in more consumption rather than merely lower costs.
 
 That is precisely where Jevons becomes interesting.
+
+![](/images/2026/jevons-paradox/jevons-paradox-in-time.webp)
 
 ## Remember the dot-com bubble bursting?
 
