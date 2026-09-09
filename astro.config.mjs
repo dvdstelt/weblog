@@ -12,6 +12,19 @@ const REPO_ROOT = path.dirname(fileURLToPath(import.meta.url));
 const IS_BUILD = process.argv.includes('build');
 const GITHUB_BLOB_URL = 'https://github.com/dvdstelt/weblog/blob/main';
 
+// Repositories, other than this one, that posts may embed code from. A post
+// opts in per code block with repo="<key>" and pins the commit once in its
+// frontmatter under `sources`. Keys are whitelisted here so post metadata can
+// never point the build at an arbitrary host.
+const REMOTE_SOURCES = {
+  omnomnom: { owner: 'dvdstelt', repo: 'OmNomNom' },
+};
+
+// Fetched files are immutable (always addressed by full commit SHA), so the
+// cache never needs invalidating. Lives in node_modules so it is disposable
+// and already gitignored.
+const REMOTE_CACHE_DIR = path.join(REPO_ROOT, 'node_modules', '.cache', 'remote-code');
+
 function failHard(message) {
   if (IS_BUILD) {
     console.error(message);
@@ -78,6 +91,106 @@ function extractRegion(source, regionName, fileRel) {
   };
 }
 
+// Read a file from a whitelisted external repository at a pinned commit.
+// Refuses anything that is not a full 40-character SHA: a branch or tag would
+// let the rendered snippet drift away from the prose describing it, which is
+// the whole problem this is meant to avoid.
+async function readRemote(sourceKey, ref, fileRel, postPath) {
+  const source = REMOTE_SOURCES[sourceKey];
+  if (!source) {
+    failHard(`[remark-code-region] unknown repo "${sourceKey}" (from ${postPath}). Known: ${Object.keys(REMOTE_SOURCES).join(', ')}`);
+  }
+  if (!ref) {
+    failHard(`[remark-code-region] repo="${sourceKey}" needs a commit in the post frontmatter: sources: { ${sourceKey}: <40-char sha> } (from ${postPath})`);
+  }
+  if (!/^[0-9a-f]{40}$/.test(ref)) {
+    failHard(`[remark-code-region] sources.${sourceKey} must be a full 40-character commit SHA, got "${ref}" (from ${postPath}). Branches and tags move; snippets must not.`);
+  }
+  if (fileRel.includes('..')) {
+    failHard(`[remark-code-region] invalid path "${fileRel}" (from ${postPath})`);
+  }
+
+  const cached = path.join(REMOTE_CACHE_DIR, sourceKey, ref, fileRel);
+  if (fs.existsSync(cached)) return fs.readFileSync(cached, 'utf8');
+
+  const url = `https://raw.githubusercontent.com/${source.owner}/${source.repo}/${ref}/${fileRel}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    failHard(`[remark-code-region] ${response.status} fetching ${url} (from ${postPath})`);
+  }
+  const text = await response.text();
+  fs.mkdirSync(path.dirname(cached), { recursive: true });
+  fs.writeFileSync(cached, text);
+  return text;
+}
+
+// Extract an inclusive, 1-based line range ("12-20", or "12" for a single
+// line). Ranges are only safe because the source is addressed by an immutable
+// commit; against a moving branch they would silently start quoting the wrong
+// code. Out-of-range bounds fail the build rather than quietly clamping.
+function extractLines(source, spec, fileRel, postPath) {
+  const m = /^(\d+)(?:-(\d+))?$/.exec(spec.trim());
+  if (!m) {
+    failHard(`[remark-code-region] lines="${spec}" must look like "12-20" or "12" (${fileRel} from ${postPath})`);
+  }
+  const startLine = Number(m[1]);
+  const endLine = m[2] ? Number(m[2]) : startLine;
+  const all = source.split('\n');
+  if (all.length && all[all.length - 1] === '') all.pop();
+  if (startLine < 1 || endLine < startLine || endLine > all.length) {
+    failHard(`[remark-code-region] lines="${spec}" out of range: ${fileRel} has ${all.length} lines (from ${postPath})`);
+  }
+  return { text: dedent(all.slice(startLine - 1, endLine)), startLine, endLine };
+}
+
+// Translate highlight="27,30-32", written in the *source file's* line numbers,
+// into the snippet-relative numbers Shiki's meta syntax expects. Authors use
+// one numbering scheme throughout: the same one shown on GitHub and used by
+// lines=. A line outside the rendered snippet is an error rather than a
+// silently dropped highlight.
+function toShikiHighlight(spec, firstLine, lineCount, fileRel, postPath) {
+  const lastLine = firstLine + lineCount - 1;
+  const parts = spec.split(',').map(s => s.trim()).filter(Boolean);
+  const out = [];
+  for (const part of parts) {
+    const m = /^(\d+)(?:-(\d+))?$/.exec(part);
+    if (!m) {
+      failHard(`[remark-code-region] highlight="${spec}" must be line numbers like "27" or "27,30-32" (${fileRel} from ${postPath})`);
+    }
+    const from = Number(m[1]);
+    const to = m[2] ? Number(m[2]) : from;
+    if (to < from) {
+      failHard(`[remark-code-region] highlight="${part}" is backwards (${fileRel} from ${postPath})`);
+    }
+    if (from < firstLine || to > lastLine) {
+      failHard(`[remark-code-region] highlight="${part}" is outside the shown lines ${firstLine}-${lastLine} (${fileRel} from ${postPath})`);
+    }
+    const a = from - firstLine + 1;
+    const b = to - firstLine + 1;
+    out.push(a === b ? `${a}` : `${a}-${b}`);
+  }
+  return out.join(',');
+}
+
+// Minimal stand-in for @shikijs/transformers' transformerMetaHighlight, so the
+// blog does not take a dependency for fifteen lines. Reads the {1,3-5} form
+// out of the fence meta and tags those lines for the stylesheet.
+const shikiMetaHighlight = {
+  name: 'meta-highlight',
+  line(node, line) {
+    const raw = this.options.meta?.__raw ?? '';
+    const match = /\{([\d,\s-]+)\}/.exec(raw);
+    if (!match) return;
+    for (const part of match[1].split(',')) {
+      const [from, to] = part.trim().split('-').map(Number);
+      if (line >= from && line <= (to ?? from)) {
+        this.addClassToHast(node, 'highlighted');
+        return;
+      }
+    }
+  },
+};
+
 function escapeAttr(value) {
   return String(value)
     .replace(/&/g, '&amp;')
@@ -86,35 +199,75 @@ function escapeAttr(value) {
     .replace(/>/g, '&gt;');
 }
 
-function sourceLinkHtml(href) {
-  return `<a class="code-source-link" href="${escapeAttr(href)}" target="_blank" rel="noopener noreferrer" title="Improve this code on GitHub" aria-label="Improve this code on GitHub"><i class="ion ion-logo-github" aria-hidden="true"></i></a>`;
+function sourceLinkHtml(href, label = 'Improve this code on GitHub') {
+  return `<a class="code-source-link" href="${escapeAttr(href)}" target="_blank" rel="noopener noreferrer" title="${escapeAttr(label)}" aria-label="${escapeAttr(label)}"><i class="ion ion-logo-github" aria-hidden="true"></i></a>`;
 }
 
 /** @type {() => import('unified').Plugin} */
 function remarkCodeRegion() {
-  return (tree, file) => {
-    const insertions = [];
+  return async (tree, file) => {
+    const postPath = file.path ?? 'unknown post';
+    const pins = file.data?.astro?.frontmatter?.sources ?? {};
+    const targets = [];
     visit(tree, 'code', (node, index, parent) => {
       const meta = parseMeta(node.meta);
       if (!meta.file) return;
-      const abs = path.resolve(REPO_ROOT, meta.file);
-      if (!abs.startsWith(REPO_ROOT + path.sep)) {
-        failHard(`[remark-code-region] refusing to read outside repo: ${meta.file} (from ${file.path ?? 'unknown post'})`);
+      targets.push({ node, index, parent, meta });
+    });
+
+    const insertions = [];
+    for (const { node, index, parent, meta } of targets) {
+      let source;
+      let href;
+      let label;
+
+      if (meta.repo) {
+        const ref = pins[meta.repo];
+        source = await readRemote(meta.repo, ref, meta.file, postPath);
+        const { owner, repo } = REMOTE_SOURCES[meta.repo];
+        href = `https://github.com/${owner}/${repo}/blob/${ref}/${meta.file}`;
+        label = `View this code in ${repo} on GitHub`;
+      } else {
+        const abs = path.resolve(REPO_ROOT, meta.file);
+        if (!abs.startsWith(REPO_ROOT + path.sep)) {
+          failHard(`[remark-code-region] refusing to read outside repo: ${meta.file} (from ${postPath})`);
+        }
+        if (!fs.existsSync(abs)) {
+          failHard(`[remark-code-region] file not found: ${meta.file} (from ${postPath})`);
+        }
+        source = fs.readFileSync(abs, 'utf8');
+        href = `${GITHUB_BLOB_URL}/${meta.file}`;
       }
-      if (!fs.existsSync(abs)) {
-        failHard(`[remark-code-region] file not found: ${meta.file} (from ${file.path ?? 'unknown post'})`);
+
+      if (meta.region && meta.lines) {
+        failHard(`[remark-code-region] use either region= or lines=, not both, on ${meta.file} (from ${postPath})`);
       }
-      const source = fs.readFileSync(abs, 'utf8');
-      let href = `${GITHUB_BLOB_URL}/${meta.file}`;
+
+      // Line number the rendered snippet starts at within the source file,
+      // so highlight= can be written in the file's own numbering.
+      let firstLine = 1;
+
       if (meta.region) {
         const { text, startLine, endLine } = extractRegion(source, meta.region, meta.file);
         node.value = text;
+        firstLine = startLine;
+        href += `#L${startLine}-L${endLine}`;
+      } else if (meta.lines) {
+        const { text, startLine, endLine } = extractLines(source, meta.lines, meta.file, postPath);
+        node.value = text;
+        firstLine = startLine;
         href += `#L${startLine}-L${endLine}`;
       } else {
         node.value = source.replace(/\n$/, '');
       }
-      insertions.push({ parent, index, html: sourceLinkHtml(href) });
-    });
+
+      if (meta.highlight) {
+        node.meta = `${node.meta ?? ''} {${toShikiHighlight(meta.highlight, firstLine, node.value.split('\n').length, meta.file, postPath)}}`;
+      }
+
+      insertions.push({ parent, index, html: sourceLinkHtml(href, label) });
+    }
+
     for (const ins of insertions.reverse()) {
       ins.parent.children.splice(ins.index, 0, { type: 'html', value: ins.html });
     }
@@ -220,6 +373,9 @@ export default defineConfig({
   site: 'https://bloggingabout.net',
   trailingSlash: 'always',
   markdown: {
+    shikiConfig: {
+      transformers: [shikiMetaHighlight],
+    },
     remarkPlugins: [remarkCodeRegion, remarkD2, remarkGithubAlerts],
     rehypePlugins: [rehypeImageLayout],
   },

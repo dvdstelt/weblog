@@ -20,6 +20,8 @@ samples/           Compilable source files that posts embed snippets from
 astro.config.mjs   Astro config, including a small custom remark plugin
 ```
 
+**[docs/authoring.md](docs/authoring.md) documents everything a post can do beyond plain markdown**: frontmatter, callouts, image layout, embedding code from this repo or another one, line ranges and highlighting, and diagrams.
+
 The `samples/` folder contains the working code behind any post that ships code. Posts reference it by file path, and every rendered snippet has a GitHub icon in the corner that links to the source. The mechanics are described in [Compilable code snippets in this blog](https://bloggingabout.net/2026/05/20/compilable-code-snippets/).
 
 ## Running locally
