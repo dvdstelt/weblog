@@ -14,9 +14,9 @@ That may sound logical, but it assumes that we'll continue using roughly the sam
 
 ## Making something cheaper can make us use more of it
 
-William Stanley Jevons was studying coal consumption in England. Steam engines were becoming more efficient, so you might expect that less coal would be needed. Instead, coal consumption increased. More efficient engines made steam power economical for more purposes, so even though each individual machine needed less coal to do the same work, there were many more machines doing much more work.
+[William Stanley Jevons](https://en.wikipedia.org/wiki/William_Stanley_Jevons) was studying coal consumption in England. Steam engines were becoming more efficient, so you might expect that less coal would be needed. Instead, coal consumption increased. More efficient engines made steam power economical for more purposes, so even though each individual machine needed less coal to do the same work, there were many more machines doing much more work.
 
-That's Jevons' paradox. It doesn't mean every efficiency improvement automatically causes total consumption to increase, but it does mean that the savings you expect from greater efficiency can be partly or completely offset by increased usage.
+That's [Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox). It doesn't mean every efficiency improvement automatically causes total consumption to increase, but it does mean that the savings you expect from greater efficiency can be partly or completely offset by increased usage.
 
 AI seems like a particularly good candidate for this effect. Suppose a useful AI operation costs ten cents worth of compute today. Hardware improves, models get smaller and smarter, quantization gets better and inference software becomes more efficient. Eventually, the same operation costs one cent. You could conclude that running AI just became 90% cheaper, but that only works if we continue doing the same things with it.
 
@@ -24,7 +24,7 @@ As AI gets cheaper, existing users can simply use more of it. At the same time, 
 
 ## I don't really want cheaper AI
 
-What I really want is more AI. A few years ago, using AI mostly meant opening a chat window, asking a question and getting an answer. I still remember *Tay*, the Microsoft chatbot that survived less than a day before the internet taught it all sorts of things Microsoft probably hadn't included in the product requirements. We've come quite a long way since then.
+What I really want is more AI. A few years ago, using AI mostly meant opening a chat window, asking a question and getting an answer. I still remember *[Tay](https://en.wikipedia.org/wiki/Tay_(chatbot))*, the Microsoft chatbot that survived less than a day before the internet taught it all sorts of things Microsoft probably hadn't included in the product requirements. We've come quite a long way since then.
 
 Today I regularly give AI much larger tasks. I ask it to investigate something, read several documents, compare approaches, review code, search for additional information, challenge its own conclusions and try again. The amount of work happening behind what feels like a single request is already increasing.
 
@@ -54,9 +54,9 @@ The important comparison therefore isn't always how much an AI query costs compa
 
 ## Cheap intelligence is a very large market
 
-We've seen this pattern before with other forms of computing. Storage became cheap, so instead of carefully deciding what to keep, we started storing ridiculous amounts of data. Bandwidth became cheap, so instead of downloading small web pages, we started streaming 4K video. Computing became cheap, so we put processors in cars, televisions, watches, thermostats, doorbells and toothbrushes, because apparently even our toothbrushes were suffering from a lack of computing power.
+We've seen this pattern before with other forms of computing. Storage became cheap, so instead of carefully deciding what to keep, we started storing ridiculous amounts of data. Bandwidth became cheap, so instead of downloading small web pages, we started streaming 4K video. Computing became cheap, so we put processors in cars, televisions, watches, thermostats, doorbells and toothbrushes, because apparently even our toothbrushes were suffering from a lack of computing power. And I can't even use that last one as a joke anymore, because Dyson just released a $499 toothbrush with a camera, machine learning and AI.
 
-We didn't respond to cheaper computing by spending less on computing. We found more things to compute.
+Anyway, we didn't respond to cheaper computing by spending less on computing. We found more things to compute.
 
 AI is interesting because it makes a certain kind of intelligence cheaper. Not human intelligence in every sense, obviously, but things such as reading, summarizing, translating, recognizing patterns, generating text, writing code, analyzing information and increasingly performing longer sequences of work all become cheaper.
 
