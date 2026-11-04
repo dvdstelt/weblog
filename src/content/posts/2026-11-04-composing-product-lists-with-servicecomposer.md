@@ -4,6 +4,7 @@ author: Dennis van der Stelt
 title: Composing product lists with ServiceComposer
 description: A product identifier lets services work independently. A product list first needs someone to select the products. How composition events provide that context without a central controller knowing every service.
 pubDate: '2026-11-04T01:00:00'
+image: /images/2026/composing-product-lists-with-servicecomposer.png
 topic: omnomnom
 sources:
   omnomnom: 9c9bad4b13f956d2e8b792402a9526919acd72d7
