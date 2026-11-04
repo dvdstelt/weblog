@@ -37,19 +37,25 @@ Imagine the product page with a different color around each service's contributi
 
 The page brings these things together because they help the customer make a choice. That does not give Catalog authority over prices, or Finance a reason to start storing beer descriptions.
 
-We could make the browser request each part separately. We could also write a controller that knows how to retrieve the catalog data, look up the price, fetch the rating, and assemble everything. Both approaches can produce a perfectly usable page.
+We could make the browser request each part separately. We could write a controller that retrieves the catalog data, looks up the price, fetches the rating, and assembles everything. Or we could move that work into an API gateway, sometimes built specifically for the frontend and called a BFF, a backend for frontend.
 
-For OmNomNom, I want each service to own the code that contributes its information as well. When Finance changes how it presents a price, I want that work to stay inside Finance, rather than requiring a change to a central controller that understands every service.
+All of those approaches can produce the page. But somewhere, we have introduced code that knows exactly where every piece of information comes from. It knows to ask Catalog for the name, Finance for the price, and Marketing for the rating. Moving that knowledge from the browser to a gateway still leaves us with a component that understands all three services.
 
-The browser will make one request. Each service will contribute its part of the response. The code that hosts the request will provide the place where those contributions come together.
+That is the knowledge we have been trying to keep out of other boundaries. Each service should know everything it needs about its own information and behavior, and as little as possible about the others. Finance knows how to supply a price. Catalog should not need to know how to ask Finance for one. A central gateway should not need that knowledge either.
+
+For OmNomNom, each service owns the code that contributes its information to the page. The browser makes one request, and those contributions come together in a composition gateway. The gateway itself knows nothing about beers, prices, or ratings. It provides a place for the services' code to run.
 
 That is ViewModel composition.
 
-## Where the composition happens
+## A gateway that knows nothing
 
-OmNomNom has an ASP.NET Core application called `CompositionGateway`. The website calls it to retrieve the information needed for a page. It hosts the composition code using [ServiceComposer](https://github.com/ServiceComposer/ServiceComposer.AspNetCore).
+OmNomNom's `CompositionGateway` is an ASP.NET Core application using the [ServiceComposer](https://github.com/ServiceComposer/ServiceComposer.AspNetCore) NuGet package. There is no product controller in that application with a list of services to call.
 
-Each service supplies its own composition component. Catalog's code lives in `Catalog.ServiceComposition`, Finance's in `Finance.ServiceComposition`, and Marketing's in `Marketing.ServiceComposition`. Those components run inside the gateway process, and each accesses its own service's database.
+Instead, during deployment, each service supplies a .NET assembly containing its composition code. Catalog supplies `Catalog.ServiceComposition`, Finance supplies `Finance.ServiceComposition`, and Marketing supplies `Marketing.ServiceComposition`. In this demo, project references bring those assemblies into the gateway application.
+
+ServiceComposer discovers the composition handlers in the supplied assemblies and uses their route declarations to determine which code to run when a URL is requested. It also connects composition events to the handlers that contribute further information. Each service declares how its code participates. The gateway does not contain a handwritten map saying which service supplies which field.
+
+Those components run inside the gateway process, and each accesses its own service's database:
 
 ```d2
 direction: down
@@ -91,7 +97,7 @@ Now we have enough context to open the code.
 
 ## Catalog starts the response
 
-The entry point for this request is Catalog's `ProductComposer`. ServiceComposer recognizes its composition handler attribute and HTTP route:
+The entry point for this request is Catalog's `ProductComposer`. Its composition handler attribute and HTTP route are how Catalog tells ServiceComposer that it has code to run for this URL. That declaration lives in Catalog's assembly:
 
 ```csharp repo="omnomnom" file="src/Catalog.ServiceComposition/Products/ProductComposer.cs" lines="10-18" highlight="13,17"
 ```
@@ -140,7 +146,7 @@ The constructor takes `FinanceDbContext`. That detail is more significant than t
 
 Finance's product has the pricing fields it needs. It does not need Catalog's description to retrieve a price, and it does not inspect the name already present on the ViewModel. The shared identifier is enough.
 
-Catalog did not need to know the name of this handler or how Finance stores its data. ServiceComposer connects the composition event to its registered handlers.
+Catalog did not need to know the name of this handler or how Finance stores its data. Finance declares that it handles `ProductLoaded`, and ServiceComposer connects the event to the discovered handlers. The gateway does not need to name Finance or Marketing to make those contributions happen.
 
 Marketing contributes in the same way. It uses `MarketingDbContext` to find its product, then adds its fields:
 
