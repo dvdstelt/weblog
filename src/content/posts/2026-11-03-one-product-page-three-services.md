@@ -55,7 +55,7 @@ That gives each service a boundary running all the way from its storage schema t
 
 ![Catalog, Finance, and Marketing each own their UI components, composition component, and storage schema.](/images/2026/one-product-page-three-services/service-ownership.png)
 
-The storage boxes here are schemas: the tables and fields each service owns. This view describes ownership without choosing database instances or processes. Putting UI components in the same logical boundary as their composition code does not mean they execute in the same place.
+The schema cards show selected tables and fields owned by each service. This view describes ownership without choosing database instances or processes. Putting UI components in the same logical boundary as their composition code does not mean they execute in the same place.
 
 ## A gateway that knows nothing
 
@@ -69,11 +69,11 @@ Deployment brings components from different services into the same host. The thr
 
 The colors below follow the service ownership from the first diagram, while the outer boxes show where the pieces run and how their data reaches the page:
 
-![Each service reads its own database through its component in the CompositionGateway. The resulting product, pricing, and popularity sections travel in one JSON response to the corresponding service-owned UI components in the browser.](/images/2026/one-product-page-three-services/composition-deployment.svg)
+![Each service reads its own database through its component in the CompositionGateway. The resulting product, pricing, and popularity sections travel in one JSON response to the corresponding service-owned UI components in the browser.](/images/2026/one-product-page-three-services/composition-deployment.png)
 
-The arrows follow response data from storage to the UI. The browser makes one product request, the gateway returns one composed JSON response, and the page passes each section to the components that display it. The colored paths are contributions to that one response.
+The numbered steps start with one product request from the browser. ServiceComposer runs the matching handlers in parallel, and each handler queries its own database. The colored arrows trace those contributions into one composed JSON response. The page then passes each section to the components that display it.
 
-[View the ownership diagram](/images/2026/one-product-page-three-services/service-ownership.png) or [the deployment diagram](/images/2026/one-product-page-three-services/composition-deployment.svg) at full size.
+[View the ownership diagram](/images/2026/one-product-page-three-services/service-ownership.png) or [the deployment diagram](/images/2026/one-product-page-three-services/composition-deployment.png) at full size.
 
 This is an important detail. There are no HTTP calls from the gateway to three backend APIs in this example. The gateway hosts code belonging to three services. Catalog's component can read Catalog's database, Finance's can read Finance's database, and Marketing's can read Marketing's database.
 
