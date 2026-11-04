@@ -47,6 +47,16 @@ For OmNomNom, each service owns the code that contributes its information to the
 
 That is ViewModel composition.
 
+## A service boundary includes the UI
+
+Catalog owns the product information, the composition code that retrieves it, and the UI components that display it. Finance owns the same pieces for pricing. Marketing owns them for ratings and popularity.
+
+That gives each service a boundary running all the way from its storage schema to its part of the user interface:
+
+![Catalog, Finance, and Marketing each own their UI components, composition component, and storage schema.](/images/2026/one-product-page-three-services/service-ownership.png)
+
+The schema cards show selected tables and fields owned by each service. This view describes ownership without choosing database instances or processes. Putting UI components in the same logical boundary as their composition code does not mean they execute in the same place.
+
 ## A gateway that knows nothing
 
 OmNomNom's `CompositionGateway` is an ASP.NET Core application using the [ServiceComposer](https://github.com/ServiceComposer/ServiceComposer.AspNetCore) NuGet package. There is no product controller in that application with a list of services to call.
@@ -55,25 +65,13 @@ Instead, during deployment, each service supplies a .NET assembly containing its
 
 ServiceComposer discovers the composition handlers in the supplied assemblies and uses their route declarations to determine which code to run when a URL is requested. Each service declares how its code participates. The gateway does not contain a handwritten map saying which service supplies which field.
 
-Those components run inside the gateway process, and each accesses its own service's database:
+Deployment brings components from different services into the same host. The three composition assemblies run inside the `CompositionGateway` process. Their UI components run in the browser as parts of the same page. In this demo, each service's storage schema is deployed in its own SQLite database file.
 
-```d2
-direction: down
-browser: "Browser"
-gateway: "CompositionGateway process" {
-  catalog: "Catalog composition"
-  finance: "Finance composition"
-  marketing: "Marketing composition"
-}
-catalog_db: "Catalog database" {shape: cylinder}
-finance_db: "Finance database" {shape: cylinder}
-marketing_db: "Marketing database" {shape: cylinder}
+The colors below follow the service ownership from the first diagram, while the outer boxes show where the pieces run and how their data reaches the page:
 
-browser -> gateway: "One product request / composed response"
-gateway.catalog -> catalog_db: "Reads its own data"
-gateway.finance -> finance_db: "Reads its own data"
-gateway.marketing -> marketing_db: "Reads its own data"
-```
+![Each service reads its own database through its component in the CompositionGateway. The resulting product, pricing, and popularity sections travel in one JSON response to the corresponding service-owned UI components in the browser.](/images/2026/one-product-page-three-services/composition-deployment.png)
+
+The numbered steps start with one product request from the browser. ServiceComposer runs the matching handlers in parallel, and each handler queries its own database. The colored arrows trace those contributions into one composed JSON response. The page then passes each section to the components that display it.
 
 This is an important detail. There are no HTTP calls from the gateway to three backend APIs in this example. The gateway hosts code belonging to three services. Catalog's component can read Catalog's database, Finance's can read Finance's database, and Marketing's can read Marketing's database.
 
