@@ -368,6 +368,40 @@ function rehypeImageLayout() {
   };
 }
 
+// Fails the build when a post file did not produce its page. A content sync
+// can drop an entry without logging anything, and the deploy then publishes a
+// site with the post missing; this turns that into a failed build before the
+// upload step runs. Pages live at dist/YYYY/MM/DD/slug/, the same mapping the
+// post route in src/pages/[year]/[month]/[day]/[slug].astro uses.
+function checkPostsBuilt() {
+  return {
+    name: 'check-posts-built',
+    hooks: {
+      'astro:build:done': ({ dir }) => {
+        const postsDir = path.join(REPO_ROOT, 'src', 'content', 'posts');
+        const distDir = fileURLToPath(dir);
+        const missing = [];
+        for (const name of fs.readdirSync(postsDir)) {
+          if (!name.endsWith('.md')) continue;
+          const match = name.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/);
+          if (!match) {
+            missing.push(`${name} (filename is not YYYY-MM-DD-slug.md, so the post route skips it)`);
+            continue;
+          }
+          const [, year, month, day, slug] = match;
+          const page = path.join(distDir, year, month, day, slug, 'index.html');
+          if (!fs.existsSync(page)) {
+            missing.push(`${name} (expected ${path.relative(REPO_ROOT, page)})`);
+          }
+        }
+        if (missing.length) {
+          failHard(`[check-posts-built] ${missing.length} post(s) have no generated page:\n  ${missing.join('\n  ')}`);
+        }
+      },
+    },
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://bloggingabout.net',
@@ -381,5 +415,6 @@ export default defineConfig({
   },
   integrations: [
     sitemap(),
+    checkPostsBuilt(),
   ],
 });
