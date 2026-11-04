@@ -73,8 +73,6 @@ The colors below follow the service ownership from the first diagram, while the 
 
 The numbered steps start with one product request from the browser. ServiceComposer runs the matching handlers in parallel, and each handler queries its own database. The colored arrows trace those contributions into one composed JSON response. The page then passes each section to the components that display it.
 
-[View the ownership diagram](/images/2026/one-product-page-three-services/service-ownership.png) or [the deployment diagram](/images/2026/one-product-page-three-services/composition-deployment.png) at full size.
-
 This is an important detail. There are no HTTP calls from the gateway to three backend APIs in this example. The gateway hosts code belonging to three services. Catalog's component can read Catalog's database, Finance's can read Finance's database, and Marketing's can read Marketing's database.
 
 Hosting them together does not mean Catalog gets to read Finance's tables. The separation follows the service that owns the code and data, even though its composition code runs alongside other services' composition code.
