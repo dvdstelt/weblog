@@ -1,0 +1,77 @@
+# Logical ownership, independent of deployment topology.
+# Render with: d2 --sketch --theme=4 -l elk samples/2026/one-product-page-three-services/service-ownership.d2 public/images/2026/one-product-page-three-services/service-ownership.svg
+
+style.fill: "#F8FAFC"
+grid-columns: 3
+
+catalog: "Catalog service boundary" {
+  grid-columns: 1
+  style: {
+    fill: "#FFF7ED"
+    stroke: "#B45309"
+    stroke-width: 3
+    font-color: "#92400E"
+    bold: true
+  }
+  ui: "UI components\nBeer name, image, stock" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#B45309"
+  }
+  composition: "Composition component\nCatalog.ServiceComposition" {
+    style.fill: "#FFEDD5"
+    style.stroke: "#B45309"
+    style.bold: true
+  }
+  schema: "Storage schema\nProductId, name, image,\nstock ledger" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#B45309"
+  }
+}
+
+finance: "Finance service boundary" {
+  grid-columns: 1
+  style: {
+    fill: "#ECFDF5"
+    stroke: "#047857"
+    stroke-width: 3
+    font-color: "#065F46"
+    bold: true
+  }
+  ui: "UI components\nPrice and discount" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#047857"
+  }
+  composition: "Composition component\nFinance.ServiceComposition" {
+    style.fill: "#D1FAE5"
+    style.stroke: "#047857"
+    style.bold: true
+  }
+  schema: "Storage schema\nProductId, price,\ndiscount" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#047857"
+  }
+}
+
+marketing: "Marketing service boundary" {
+  grid-columns: 1
+  style: {
+    fill: "#F5F3FF"
+    stroke: "#7C3AED"
+    stroke-width: 3
+    font-color: "#5B21B6"
+    bold: true
+  }
+  ui: "UI components\nRating and rating count" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#7C3AED"
+  }
+  composition: "Composition component\nMarketing.ServiceComposition" {
+    style.fill: "#EDE9FE"
+    style.stroke: "#7C3AED"
+    style.bold: true
+  }
+  schema: "Storage schema\nProductId, rating,\nrating count" {
+    style.fill: "#FFFFFF"
+    style.stroke: "#7C3AED"
+  }
+}

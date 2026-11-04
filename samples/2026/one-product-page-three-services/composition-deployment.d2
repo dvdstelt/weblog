@@ -1,0 +1,89 @@
+# Actual deployment and response data flow for the single-product page.
+# Colors follow service ownership, not process boundaries.
+# Render with: d2 --sketch --theme=4 -l elk samples/2026/one-product-page-three-services/composition-deployment.d2 public/images/2026/one-product-page-three-services/composition-deployment.svg
+
+grid-columns: 4
+style.fill: "#F8FAFC"
+
+classes: {
+  catalog: {
+    width: 220
+    height: 100
+    style.fill: "#FFEDD5"
+    style.stroke: "#B45309"
+    style.font-color: "#92400E"
+  }
+  finance: {
+    width: 220
+    height: 100
+    style.fill: "#D1FAE5"
+    style.stroke: "#047857"
+    style.font-color: "#065F46"
+  }
+  marketing: {
+    width: 220
+    height: 100
+    style.fill: "#EDE9FE"
+    style.stroke: "#7C3AED"
+    style.font-color: "#5B21B6"
+  }
+  host: {
+    style.fill: "#FFFFFF"
+    style.stroke: "#475569"
+    style.stroke-width: 2
+    style.bold: true
+  }
+}
+
+storage: "Databases\nSeparate SQLite files" {
+  grid-columns: 1
+  class: host
+  catalog: "Catalog database" {
+    class: catalog
+    shape: cylinder
+  }
+  finance: "Finance database" {
+    class: finance
+    shape: cylinder
+  }
+  marketing: "Marketing database" {
+    class: marketing
+    shape: cylinder
+  }
+}
+
+gateway: "CompositionGateway\nASP.NET Core process" {
+  grid-columns: 1
+  class: host
+  catalog: "Catalog\ncomposition component" {class: catalog}
+  finance: "Finance\ncomposition component" {class: finance}
+  marketing: "Marketing\ncomposition component" {class: marketing}
+}
+
+response: "One composed\nJSON response" {
+  grid-columns: 1
+  class: host
+  catalog: "product" {class: catalog}
+  finance: "pricing" {class: finance}
+  marketing: "popularity" {class: marketing}
+}
+
+browser: "User interface\nBrowser" {
+  grid-columns: 1
+  class: host
+  catalog: "Catalog UI\nBeer name, image, stock" {class: catalog}
+  finance: "Finance UI\nPrice and discount" {class: finance}
+  marketing: "Marketing UI\nRating and rating count" {class: marketing}
+}
+
+storage.catalog -> gateway.catalog: {style.stroke: "#B45309"}
+storage.finance -> gateway.finance: {style.stroke: "#047857"}
+storage.marketing -> gateway.marketing: {style.stroke: "#7C3AED"}
+
+gateway.catalog -> response.catalog: {style.stroke: "#B45309"}
+gateway.finance -> response.finance: {style.stroke: "#047857"}
+gateway.marketing -> response.marketing: {style.stroke: "#7C3AED"}
+
+response.catalog -> browser.catalog: {style.stroke: "#B45309"}
+response.finance -> browser.finance: {style.stroke: "#047857"}
+response.marketing -> browser.marketing: {style.stroke: "#7C3AED"}
