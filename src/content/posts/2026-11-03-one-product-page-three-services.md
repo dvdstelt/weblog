@@ -197,4 +197,4 @@ The homepage has a different problem. Catalog selects a page of products, taking
 
 OmNomNom uses a composition event to make those selected products available to the other contributors. That introduces a dependency we did not need for the single-product page. It is still composition inside the HTTP request, with each service retrieving its own data.
 
-We will follow that list request in a separate post. It gives us a concrete reason to introduce composition events: one contribution needs context that another contribution produces.
+We follow that list request in [Composing product lists with ServiceComposer](/2026/11/04/composing-product-lists-with-servicecomposer/). It gives us a concrete reason to introduce composition events: one contribution needs context that another contribution produces.
