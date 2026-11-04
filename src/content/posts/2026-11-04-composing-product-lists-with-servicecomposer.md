@@ -47,32 +47,7 @@ At that point, it raises a composition event: `ProductsLoaded`.
 
 Finance and Marketing handle that event. They get the selected identifiers, retrieve their own data in a batch, and add their fields to the corresponding ViewModels. Catalog waits for those contributions before putting the completed list on the response.
 
-```d2
-shape: sequence_diagram
-browser: "Browser"
-composer: "ServiceComposer"
-catalog: "Catalog"
-finance: "Finance"
-marketing: "Marketing"
-
-browser -> composer: "GET /products"
-composer -> catalog: "Compose list"
-catalog.selection: "Select page;\ncreate ViewModels"
-catalog -> composer: "await RaiseEvent\n(ProductsLoaded)"
-
-parallel: "Parallel contributions" {
-  composer -> finance: "ProductsLoaded"
-  composer -> marketing: "ProductsLoaded"
-  finance.query: "Batch-load prices;\nadd own fields"
-  marketing.query: "Batch-load ratings;\nadd own fields"
-  finance -> composer: "Done" {style.stroke-dash: 3}
-  marketing -> composer: "Done" {style.stroke-dash: 3}
-}
-
-composer -> catalog: "Event completed" {style.stroke-dash: 3}
-catalog -> composer: "Ordered list ready" {style.stroke-dash: 3}
-composer -> browser: "Composed JSON" {style.stroke-dash: 3}
-```
+![Sequence diagram: Catalog selects the product page and raises ProductsLoaded; Finance and Marketing contribute in parallel, then the gateway returns one composed response.](/images/2026/composing-product-lists-with-servicecomposer/sequence.png)
 
 All participants except the browser run inside the gateway process. The parallel frame has no fixed ordering between Finance and Marketing; Catalog resumes only after both contributions have completed.
 
