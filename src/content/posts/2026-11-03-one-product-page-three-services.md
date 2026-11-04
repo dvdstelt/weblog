@@ -81,6 +81,8 @@ Hosting them together does not mean Catalog gets to read Finance's tables. The s
 
 We will get to the NServiceBus endpoints when we start processing orders. Reading this product page does not send any NServiceBus messages.
 
+ServiceComposer was created by my friend Mauro Servienti. He also created [ViewModelComposition.com](https://www.viewmodelcomposition.com/), and the code lives in the [ServiceComposer GitHub organization](https://github.com/ServiceComposer). If you want to explore the topic further, his extensive [ViewModel Composition series](https://milestone.topics.it/series/view-model-composition.html) covers the ideas and implementation in much more detail.
+
 ## Following one product request
 
 When the customer opens a product page, the website requests `/product/{productId}` from the gateway, through the website's `/api` proxy. The identifier tells all three contributors which beer we are talking about.
