@@ -53,7 +53,7 @@ Catalog owns the product information, the composition code that retrieves it, an
 
 That gives each service a boundary running all the way from its storage schema to its part of the user interface:
 
-![Catalog, Finance, and Marketing each own their UI components, composition component, and storage schema.](/images/2026/one-product-page-three-services/service-ownership.svg)
+![Catalog, Finance, and Marketing each own their UI components, composition component, and storage schema.](/images/2026/one-product-page-three-services/service-ownership.png)
 
 The storage boxes here are schemas: the tables and fields each service owns. This view describes ownership without choosing database instances or processes. Putting UI components in the same logical boundary as their composition code does not mean they execute in the same place.
 
@@ -73,7 +73,7 @@ The colors below follow the service ownership from the first diagram, while the 
 
 The arrows follow response data from storage to the UI. The browser makes one product request, the gateway returns one composed JSON response, and the page passes each section to the components that display it. The colored paths are contributions to that one response.
 
-[View the ownership diagram](/images/2026/one-product-page-three-services/service-ownership.svg) or [the deployment diagram](/images/2026/one-product-page-three-services/composition-deployment.svg) at full size.
+[View the ownership diagram](/images/2026/one-product-page-three-services/service-ownership.png) or [the deployment diagram](/images/2026/one-product-page-three-services/composition-deployment.svg) at full size.
 
 This is an important detail. There are no HTTP calls from the gateway to three backend APIs in this example. The gateway hosts code belonging to three services. Catalog's component can read Catalog's database, Finance's can read Finance's database, and Marketing's can read Marketing's database.
 
