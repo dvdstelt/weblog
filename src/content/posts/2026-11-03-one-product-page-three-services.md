@@ -4,7 +4,7 @@ author: Dennis van der Stelt
 title: One product page, three services
 description: Catalog owns the name, Finance owns the price, and Marketing owns the rating. How does OmNomNom turn those separate contributions into one product page?
 pubDate: '2026-11-03T01:00:00'
-image: /images/2026/omnomnom-services.png
+image: /images/2026/one-product-page-three-services.png
 topic: omnomnom
 sources:
   omnomnom: 35920e4d1d1f43c3b54a7174348c13e7295ff170
