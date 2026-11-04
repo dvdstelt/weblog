@@ -17,7 +17,7 @@ Everything this blog can do that plain markdown cannot. Written to be skimmed wh
 
 ## Creating a post
 
-One file: `src/content/posts/YYYY-MM-DD-slug.md`. The filename decides the URL, not the frontmatter, so `2026-08-05-four-order-classes.md` is served at `/2026/08/05/four-order-classes/`.
+One file: `src/content/posts/YYYY-MM-DD-slug.md`. The filename decides the URL, not the frontmatter, so `2026-08-05-four-order-classes.md` is served at `/2026/08/05/four-order-classes/`. A filename that does not follow this pattern gets no page, and the build fails on it.
 
 ```yaml
 ---
@@ -241,7 +241,7 @@ There are no tests. `npm run build` is the check.
 
 ## Things that will bite you
 
-**A new post not appearing.** Astro's content cache can miss a newly added file, and the build succeeds without it. Clear it:
+**A new post not appearing.** Astro's content cache can miss a newly added file. The build then fails with `[check-posts-built]`, which lists every post in `src/content/posts/` that has no page in `dist/`. The same cache can also keep a post from another branch after you switch branches, so a local build shows a post that is not on this branch. Clear it:
 
 ```bash
 rm -rf node_modules/.astro .astro && npm run build
