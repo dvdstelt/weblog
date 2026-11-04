@@ -48,21 +48,33 @@ At that point, it raises a composition event: `ProductsLoaded`.
 Finance and Marketing handle that event. They get the selected identifiers, retrieve their own data in a batch, and add their fields to the corresponding ViewModels. Catalog waits for those contributions before putting the completed list on the response.
 
 ```d2
-direction: down
-request: "GET /products: stouts, page 2"
-selection: "Catalog selects the page\nand creates product ViewModels"
-event: "ProductsLoaded\nIdentifiers + ViewModels"
-finance: "Finance\nLoads prices for the selected IDs"
-marketing: "Marketing\nLoads ratings for the selected IDs"
-response: "One composed product list"
+shape: sequence_diagram
+browser: "Browser"
+composer: "ServiceComposer"
+catalog: "Catalog"
+finance: "Finance"
+marketing: "Marketing"
 
-request -> selection
-selection -> event
-event -> finance
-event -> marketing
-finance -> response
-marketing -> response
+browser -> composer: "GET /products"
+composer -> catalog: "Compose list"
+catalog.selection: "Select page;\ncreate ViewModels"
+catalog -> composer: "await RaiseEvent\n(ProductsLoaded)"
+
+parallel: "Parallel contributions" {
+  composer -> finance: "ProductsLoaded"
+  composer -> marketing: "ProductsLoaded"
+  finance.query: "Batch-load prices;\nadd own fields"
+  marketing.query: "Batch-load ratings;\nadd own fields"
+  finance -> composer: "Done" {style.stroke-dash: 3}
+  marketing -> composer: "Done" {style.stroke-dash: 3}
+}
+
+composer -> catalog: "Event completed" {style.stroke-dash: 3}
+catalog -> composer: "Ordered list ready" {style.stroke-dash: 3}
+composer -> browser: "Composed JSON" {style.stroke-dash: 3}
 ```
+
+All participants except the browser run inside the gateway process. The parallel frame has no fixed ordering between Finance and Marketing; Catalog resumes only after both contributions have completed.
 
 This is a change from the previous post. The product detail page could start all three queries from the information in the URL. Here, Finance and Marketing need context that becomes available while Catalog is handling the request.
 
