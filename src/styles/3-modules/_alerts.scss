@@ -10,10 +10,18 @@
 }
 
 .markdown-alert {
+  // Each variant only sets --alert-accent; the border, tint and title colour
+  // all derive from it.
+  --alert-accent: #888;
+
   padding: 0.5rem 1rem;
   margin-bottom: 16px;
   color: inherit;
-  border-left: 0.25em solid #888;
+  // Lift the callout off the #16151f page so it reads as a box rather than an
+  // indented paragraph. Mostly a neutral lightening, with a little of the
+  // accent mixed in so the variant is recognisable before reading the title.
+  background: color-mix(in srgb, var(--alert-accent) 9%, rgba(255, 255, 255, 0.045));
+  border-left: 0.25em solid var(--alert-accent);
 
   > :first-child { margin-top: 0; }
   > :last-child  { margin-bottom: 0; }
@@ -24,6 +32,7 @@
     align-items: center;
     line-height: 1;
     margin-bottom: 0.5rem;
+    color: var(--alert-accent);
 
     .octicon {
       margin-right: 0.5rem;
@@ -41,28 +50,9 @@
     }
   }
 
-  &.markdown-alert-note {
-    border-left-color: var(--color-note);
-    .markdown-alert-title { color: var(--color-note); }
-  }
-
-  &.markdown-alert-tip {
-    border-left-color: var(--color-tip);
-    .markdown-alert-title { color: var(--color-tip); }
-  }
-
-  &.markdown-alert-warning {
-    border-left-color: var(--color-warning);
-    .markdown-alert-title { color: var(--color-warning); }
-  }
-
-  &.markdown-alert-caution {
-    border-left-color: var(--color-caution);
-    .markdown-alert-title { color: var(--color-caution); }
-  }
-
-  &.markdown-alert-important {
-    border-left-color: var(--color-important);
-    .markdown-alert-title { color: var(--color-important); }
-  }
+  &.markdown-alert-note      { --alert-accent: var(--color-note); }
+  &.markdown-alert-tip       { --alert-accent: var(--color-tip); }
+  &.markdown-alert-warning   { --alert-accent: var(--color-warning); }
+  &.markdown-alert-caution   { --alert-accent: var(--color-caution); }
+  &.markdown-alert-important { --alert-accent: var(--color-important); }
 }
