@@ -15,7 +15,7 @@ tags:
   - UI composition
   - omnomnom
 ---
-The customer opens a beer, looks at the price, and notices a discount. We want to show the original price crossed out, the discounted price beside it, and a small "Save 25%" label.
+The customer opens a beer (on the website, not an actual beer), looks at the price, and notices a discount. We want to show the original price crossed out, the discounted price beside it, and a small "Save 25%" label.
 
 Who should implement that?
 
