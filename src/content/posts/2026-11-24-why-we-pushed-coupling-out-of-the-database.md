@@ -4,6 +4,7 @@ author: Dennis van der Stelt
 title: Why we pushed coupling out of the database
 description: OmNomNom gained projects, composition handlers, and microviews just to show some beers. Looking back at the hidden coupling we wanted to avoid, the tradeoffs we made, and when this architecture earns its keep.
 pubDate: '2026-11-24T01:00:00'
+image: /images/2026/why-we-pushed-coupling-out-of-the-database.png
 topic: omnomnom
 tags:
   - distributed systems
