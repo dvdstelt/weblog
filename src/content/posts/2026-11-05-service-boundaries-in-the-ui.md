@@ -127,4 +127,4 @@ Those are useful places to inspect when applying this approach to your own appli
 
 Our customer still sees one product page. Behind it, Catalog owns the beer and stock presentation, Finance owns the pricing presentation, and Marketing owns the rating presentation. Branding brings them together, just as IT/Ops provides the host where their composition components run.
 
-Next, we will follow the customer into checkout. There, several services need to collect their own information before there is a completed order to process.
+Before we follow the customer into checkout, let's take a step back. We have introduced service-owned data, composition components, events, and UI components just to display some beers. That can look like unnecessary complexity, or even overengineering. In the next post, we will look back at why we went through this exercise, what these boundaries buy us, and when the extra work is worth it.
